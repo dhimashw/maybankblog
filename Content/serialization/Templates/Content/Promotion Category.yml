@@ -1,0 +1,47 @@
+﻿---
+ID: "d44f156a-1ab6-4649-97a5-0e13681808b9"
+Parent: "314d3298-ca98-41f1-9cc3-9a459709ade2"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/Content/Promotion Category
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Apps/32x32/listmanagement.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Type: tree list
+  Value: |
+    {1930BBEB-7805-471A-A3BE-4858AC7CF696}
+    {F3D39FE2-DFD0-422A-ADD8-48D6DF9B42B1}
+    {A0956F22-A929-4EA8-9EFF-79B748889B75}
+    {1814EB7B-1839-4238-9E8A-4C7DF3AEB2CA}
+    {E24E0789-A058-48BF-ABB6-C69C0E60B6B7}
+    {196FABF1-23E4-43F4-A5C8-8A922FDD1817}
+    {8631D5B4-04FD-4B59-94C3-26E87DDE6D36}
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{93D150BC-DB00-4642-A598-1355AF230ADD}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180310T071021Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: id
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180516T035301Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

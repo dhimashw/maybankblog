@@ -1,0 +1,49 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Data.Items
+@using Sitecore.Foundation.Indexing.Repositories
+@using Sitecore.Feature.Content.Repositories
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+@{
+    ISearchServiceRepository searchServiceRepository = new SearchServiceRepository();
+
+    ArticlesRepository repo = new ArticlesRepository(searchServiceRepository);
+}
+
+@if (Model.Data.Count() > 0)
+{
+    foreach (Item item in Model.Data)
+    {
+        <div class="col col-xs-12 col-lg-4 col-sm-12 col-md-4 js-mobile-to-carousel-list">
+            <div class="story-card">
+                <div class="image">
+                    <a href="@item.Url()">
+                        @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail, item)
+                    </a>
+                </div>
+                <div class="title">
+                    <h4 class="yellow-text">
+                        @repo.GetCategoryArticle(item.TemplateID, item)
+                    </h4>
+                    <h2><a href="@item.Url()">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Title, item)</a></h2>
+                </div><a class="card-link" href=""></a>
+            </div>
+        </div>
+    }
+}
+else
+{
+    @*<div class="col col-xs-12 col-lg-4 col-sm-12 col-md-4 js-mobile-to-carousel-list">
+        <div class="story-card">            
+            <div class="title">
+                Empty Data
+            </div>
+        </div>
+    </div>*@    
+        @Html.Partial("~/Views/ErrorPage/EmptyData.cshtml")    
+}
+
+

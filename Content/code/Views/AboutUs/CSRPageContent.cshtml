@@ -1,0 +1,24 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@model RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.FreeTextAndLink.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.FreeTextAndLink.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+<div class="row">
+    <div class="col-xs-12 col-md-5">
+        <div class="heading full">
+            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading, Model.Item)
+
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-7">
+        <div class="p-group">
+            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent, Model.Item)
+        </div>
+    </div>
+</div>

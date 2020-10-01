@@ -1,0 +1,21 @@
+﻿---
+ID: "5d4885ec-52a6-43a3-a6b6-e5707df5eac9"
+Parent: "4341512b-357e-43b4-aa8b-86c28a5ccbff"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Feature/Content/Contact Us Tab Group/Group/Group members
+DB: master
+SharedFields:
+- ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
+  Hint: Source
+  Value: "query:/sitecore/content/Maybank/Corporate/Data/Content/Contact Us/General Contact Us/*[@@templateid='{F246F412-D5DD-416B-9CD5-550DF8C27C53}']"
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: Multilist
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180301T090618Z

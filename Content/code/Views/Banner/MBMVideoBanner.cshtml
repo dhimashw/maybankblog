@@ -1,0 +1,39 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@model RenderingModel
+@{
+
+}
+<div class="page-header page-header--border-gold">
+    <div class="r-vc">
+        <iframe width="854" height="480" src="https://www.youtube.com/embed/cVlZ1T_cf4k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        @*<iframe frameborder="0" width="480" height="270" src="https://www.dailymotion.com/embed/video/x7e55ki" allowfullscreen allow="autoplay"></iframe>*@
+
+        @*<video id="video1" width="420" controls autoplay>
+                <source src="https://www.dailymotion.com/embed/video/x7e55ki" type="video/mp4">
+                <source src="mov_bbb.ogg" type="video/ogg">
+                Your browser does not support HTML5 video.
+            </video>*@
+    </div>
+    @*<div class="banner-carousel">
+            <div class="owl-carousel owl-theme" id="owl-banner-carousel">
+                @for (int i = 1; i <= 3; i++)
+                {
+                    if (!Sitecore.Context.PageMode.IsExperienceEditor)
+                    {
+
+                        @Html.Sitecore().DynamicPlaceholder("mbm-home-banner-content")
+
+                    }
+                    else
+                    {
+                        <div class="item">
+                            @Html.Sitecore().DynamicPlaceholder("mbm-home-banner-content")
+                        </div>
+                    }
+
+                }
+            </div>
+            <div class="slide js-slide-progress-bar"></div>
+        </div>*@
+</div>

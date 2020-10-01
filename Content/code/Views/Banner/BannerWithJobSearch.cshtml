@@ -1,0 +1,34 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+
+@model RenderingModel
+@{
+
+}
+
+<div class="page-banner--as-bg overflow" style="background-image:url(../assets/img/career/career-banner.jpg)">
+    <div class="container">
+        <div class="page-banner-body full">
+            <div class="locate-us-banner">
+                <h1>Do your life’s best work here now. </h1>
+                <form>
+                    <input type="text" placeholder="Job Search" value="" />
+                    <div class="m2u-select js-m2u-select no-title">
+                        <select class="form-control" name="currency" data-label="Location">
+                            <option value="all" selected="selected">All Location</option>
+                            <option value="jkt">Jakarta</option>
+                            <option value="jawa">Pulau Jawa</option>
+                            <option value="sumatra">Sumatra</option>
+                            <option value="kalimantan">Kalimantan</option>
+                        </select>
+                    </div>
+                    <div class="btn btn-tertiary addon" type="submit">
+                        Search<img src="../assets/img/icons/arrow-right/arrow-right-363@2x.png" />
+                        <input type="submit" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

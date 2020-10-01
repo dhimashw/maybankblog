@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Migration>
+  <ColumnMapping tableName="REKSADANA" ResultType="update-table">
+    <Column source="IDREKSADANA" destination="IDREKSADANA" type="int"/>
+    <Column source="NAME" destination="NAME" type="string"/>
+    <Column source="TYPE" destination="TYPE" type="string"/>
+    <Column source="NAMA" destination="NAMA" type="string"/>
+    <Column source="JENIS" destination="JENIS" type="string"/>
+    <Column source="TGL_NAB" destination="TGL_NAB" type="string"/>
+    <Column source="NAB" destination="NAB" type="float"/>
+    <Column source="INVESTASI_30HARI" destination="INVESTASI_30HARI" type="float"/>
+    <Column source="INVESTASI_1TAHUN" destination="INVESTASI_1TAHUN" type="float"/>
+    <Column source="INVESTASI_RIIL_1TAHUN" destination="INVESTASI_RIIL_1TAHUN" type="float"/>
+    <Column source="PUBLISH" destination="PUBLISH" type="int"/>
+  </ColumnMapping>
+</Migration>

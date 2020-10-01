@@ -1,0 +1,36 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Content
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+
+}
+
+
+@if (Model.Item != null && Model.Item.TemplateID == Sitecore.Feature.Content.Templates.Banner.ID)
+{
+    string url = "#";
+    string imageUrl = string.Format("style=\"background-image:url({0});\"", Variables._defaultImageBanner);
+
+    if (Model.Item.LinkFieldUrl(Sitecore.Feature.Content.Templates.Banner.Fields.Url) != null)
+    {
+        url = Model.Item.LinkFieldUrl(Sitecore.Feature.Content.Templates.Banner.Fields.Url);
+    }
+
+    if (Model.Item.ImageUrl(Sitecore.Feature.Content.Templates.Banner.Fields.Image) != null)
+    {
+        imageUrl = string.Format("style=\"background-image:url({0});\"", Model.Item.ImageUrl(Sitecore.Feature.Content.Templates.Banner.Fields.Image));
+    }
+
+    <div class="page-banner--as-bg simpanan" @imageUrl>
+        <div class="container">
+            <div class="page-banner-body">
+                <h1>@Html.Sitecore().Field(Sitecore.Feature.Content.Templates.Banner.Fields.stringBannerTitle, Model.Item)</h1>
+                <p>@Html.Sitecore().Field(Sitecore.Feature.Content.Templates.Banner.Fields.stringBannerDescription, Model.Item)</p>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,14 @@
+﻿---
+ID: "2aa19baf-619f-4757-b280-355815bbba05"
+Parent: "7a7e283c-63fe-41b3-a60e-447118a4b759"
+Template: "7a7e283c-63fe-41b3-a60e-447118a4b759"
+Path: /sitecore/templates/Feature/Content/Image Position and Description/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180905T074323Z

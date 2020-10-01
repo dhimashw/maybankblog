@@ -1,0 +1,69 @@
+
+´Sitecore.Feature.Content.Indexing.BlogIndexingProvider.FormatResult(Sitecore.ContentSearch.SearchTypes.SearchResultItem, Sitecore.Foundation.Indexing.Models.ISearchResult)S
+IC:\Review Code\Maybank Blog\Content\code\Indexing\BlogIndexingProvider.cs ( "0*Ö
+0Å˛
+S
+IC:\Review Code\Maybank Blog\Content\code\Indexing\BlogIndexingProvider.cs (,
+%0Sitecore.Data.Items.Item"=Sitecore.ContentSearch.SearchTypes.SearchResultItem.GetItem()*=
+;
+item3Sitecore.ContentSearch.SearchTypes.SearchResultItem2	GetItem()©
+¶
+S
+IC:\Review Code\Maybank Blog\Content\code\Indexing\BlogIndexingProvider.cs (,'
+contentItemSitecore.Data.Items.Item"__id* 
+
+%0Sitecore.Data.Items.Item«
+ƒ
+S
+IC:\Review Code\Maybank Blog\Content\code\Indexing\BlogIndexingProvider.cs (#
+
+%1bool""object.operator ==(object, object)*
+"
+object*)
+'
+contentItemSitecore.Data.Items.Item*
+""*
+1
+2*b
+1"]
+S
+IC:\Review Code\Maybank Blog\Content\code\Indexing\BlogIndexingProvider.cs (
+""*±
+2Ã
+…
+S
+IC:\Review Code\Maybank Blog\Content\code\Indexing\BlogIndexingProvider.cs"F "(f
+%2Sitecore.Data.ID"__id*T*R5
+3Sitecore.Feature.Library.Templates.BaseField.Fields"
+TitleSitecore.Data.ID©¶
+S
+IC:\Review Code\Maybank Blog\Content\code\Indexing\BlogIndexingProvider.cs"F "(q
+%3string"Sitecore.Data.ID.ToString()*
+
+%2Sitecore.Data.ID2
+ToString()§
+°
+S
+IC:\Review Code\Maybank Blog\Content\code\Indexing\BlogIndexingProvider.cs"$ "(r
+%4string"RSitecore.Web.UI.WebControls.FieldRenderer.Render(Sitecore.Data.Items.Item, string)*-"+
+)Sitecore.Web.UI.WebControls.FieldRenderer*)
+'
+contentItemSitecore.Data.Items.Item*
+
+%3stringÑÅ
+S
+IC:\Review Code\Maybank Blog\Content\code\Indexing\BlogIndexingProvider.cs" "(r
+
+%5void";Sitecore.Foundation.Indexing.Models.ISearchResult.Title.set*F
+D
+formattedResult1Sitecore.Foundation.Indexing.Models.ISearchResult*
+
+%4string2	Title.set*
+3*o
+3"j
+S
+IC:\Review Code\Maybank Blog\Content\code\Indexing\BlogIndexingProvider.cs# #(	
+implicit return:;
+item3Sitecore.ContentSearch.SearchTypes.SearchResultItem:D
+formattedResult1Sitecore.Foundation.Indexing.Models.ISearchResultB:8
+6Sitecore.Feature.Content.Indexing.BlogIndexingProvider

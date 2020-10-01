@@ -1,0 +1,18 @@
+﻿---
+ID: "9e7548fa-ef8f-495e-b4ea-acca20c0ae8e"
+Parent: "915eb6cb-6403-40ed-bd8d-45dcffed4e2d"
+Template: "99f8905d-4a87-4eb8-9f8b-a9bebfb3add6"
+Path: /sitecore/layout/Renderings/Feature/Content/Education Card Item
+DB: master
+SharedFields:
+- ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
+  Hint: Path
+  Value: /Views/AboutUs/EducationCardItem.cshtml
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180723T095914Z

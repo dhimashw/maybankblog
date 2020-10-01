@@ -1,0 +1,104 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using Sitecore.Feature.Content.Controller
+@model PagedData<Sitecore.Data.Items.Item>
+@{
+    var idDiv = Guid.NewGuid();
+    string _title = RenderingContext.Current.Rendering.Parameters["Title"] != null ? RenderingContext.Current.Rendering.Parameters["Title"].ToString() : string.Empty;
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+    $('body').on('click', '.pagination-list a', function () {
+
+                    var page = parseInt($(this).html());
+
+        $.ajax({
+                        //url: '@Url.Action("ImageStashListPaging")',
+                            url: '/api/sitecore/MaybankPatch/ImageStashListPaging',
+            data:
+                {
+                            "page": page,
+                "PageSize": @Model.PageSize,
+                "id": "@Model.DataSourceID",
+                "_Year" : "@RenderingContext.Current.Rendering.GetIntegerParameter("Year", DateTime.Now.Year).ToString()"
+            },
+            success: function (data) {
+                $("#news-pages-@idDiv").html(data);
+                setTimeout(function () {
+                    if ($('.card.js-demo-skeleton-content').hasClass('hide')) {
+                        $('.card.js-demo-skeleton-content').removeClass('hide')
+                        $('.skeleton.js-demo-skeleton').addClass('hide')
+                    }
+                }, 5000)
+                        }
+                    });
+                });
+
+    $('body').on('click', '.previous.enabled a', function () {
+                    var page = parseInt($(this).data("curpage") - 1);
+
+        $.ajax({
+                       //url: '@Url.Action("ImageStashListPaging")',
+                            url: '/api/sitecore/MaybankPatch/ImageStashListPaging',
+            data: {
+                            "page": page,
+                "PageSize": @Model.PageSize,
+                "id": "@Model.DataSourceID",
+                "_Year" : "@RenderingContext.Current.Rendering.GetIntegerParameter("Year", DateTime.Now.Year).ToString()"
+            },
+            success: function (data) {
+                $("#news-pages-@idDiv").html(data);
+                setTimeout(function () {
+                    if ($('.card.js-demo-skeleton-content').hasClass('hide')) {
+                        $('.card.js-demo-skeleton-content').removeClass('hide')
+                        $('.skeleton.js-demo-skeleton').addClass('hide')
+                    }
+                }, 5000)
+                        }
+                    });
+                });
+
+    $('body').on('click', '.next.enabled a', function () {
+                    var page = parseInt($(this).data("curpage") ) + 1;
+
+        $.ajax({
+                       //url: '@Url.Action("ImageStashListPaging")',
+                            url: '/api/sitecore/MaybankPatch/ImageStashListPaging',
+            data: {
+                            "page": page,
+                "PageSize": @Model.PageSize,
+                "id": "@Model.DataSourceID",
+                "_Year" : "@RenderingContext.Current.Rendering.GetIntegerParameter("Year", DateTime.Now.Year).ToString()"
+            },
+            success: function (data) {
+                $("#news-pages-@idDiv").html(data);
+                setTimeout(function () {
+                    if ($('.card.js-demo-skeleton-content').hasClass('hide')) {
+                        $('.card.js-demo-skeleton-content').removeClass('hide')
+                        $('.skeleton.js-demo-skeleton').addClass('hide')
+                    }
+                }, 5000)
+                        }
+                    });
+                });
+            });
+</script>
+
+
+<div class="valign mb-4">
+    <div class="valign__item">
+        <h1 class="m-0">@_title</h1>
+    </div>
+</div>
+
+<div id="news-pages-@idDiv">
+    @Html.Partial("~/Views/MBM/ImageStashItem.cshtml")
+</div>

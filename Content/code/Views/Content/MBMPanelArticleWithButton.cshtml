@@ -1,0 +1,85 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using template = Sitecore.Feature.Library.Templates.MBMRichTextAndTwoButton
+@model RenderingModel
+@{
+    string addedClass = "col-sm-6";
+    int maxItem = RenderingContext.Current.Rendering.GetIntegerParameter("Max Item", 2);
+    if (maxItem > 0)
+    {
+        if (maxItem > 3)
+        {
+            maxItem = 3;
+        }
+        addedClass = "col-sm-" + (12 / maxItem);
+    }
+}
+
+<div class="container">
+    <div class="article-wysiwyg">
+        <div class="row">
+            @for (int i = 0; i < maxItem; i++)
+            {
+                <div class="col-xs-12 @addedClass py-3">
+                    @Html.Sitecore().DynamicPlaceholder("mbm-content")
+                </div>
+            }
+            
+        </div>
+    </div>
+
+    @*<div class="modal" tabindex="-1" role="dialog" modal-name="event-rundown-@rng2">
+        <div class="modal-center">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content white-text">
+                    <div class="modal-header"><a class="close js-modal-trigger-close" data-dismiss="modal" type="button" aria-label="Close"></a></div>
+                    <div class="modal-body">
+                        <div class="modal-body-scroll py-4">
+                            <h2>Event Run Down 2</h2>
+                            <div class="table-responsive">
+                                <table class="table-custom stock-table">
+                                    <tr>
+                                        <th>Local time GMT +8</th>
+                                        <th>Description</th>
+                                        <th>Venue</th>
+                                    </tr>
+                                    <tr>
+                                        <td>02:00 AM</td>
+                                        <td>Lorem ipsum dolor</td>
+                                        <td>Race Central</td>
+                                    </tr>
+                                    <tr>
+                                        <td>02:00 AM</td>
+                                        <td>Lorem ipsum dolor</td>
+                                        <td>Race Central</td>
+                                    </tr>
+                                    <tr>
+                                        <td>02:00 AM</td>
+                                        <td>Lorem ipsum dolor</td>
+                                        <td>Race Central</td>
+                                    </tr>
+                                    <tr>
+                                        <td>02:00 AM</td>
+                                        <td>Lorem ipsum dolor</td>
+                                        <td>Race Central</td>
+                                    </tr>
+                                    <tr>
+                                        <td>02:00 AM</td>
+                                        <td>Lorem ipsum dolor</td>
+                                        <td>Race Central</td>
+                                    </tr>
+                                    <tr>
+                                        <td>02:00 AM</td>
+                                        <td>Lorem ipsum dolor</td>
+                                        <td>Race Central</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+</div>

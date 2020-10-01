@@ -1,0 +1,38 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.LoginTo.ID) ?? true)
+    {
+        @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.LoginTo.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+        return;
+    }
+
+    Sitecore.Data.Fields.LinkField _link = Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Link];
+    string redirectItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+}
+
+<div class="l-form-box c-login-box fadein-right">
+    <div class="l-form-box__header">
+        <div class="l-form-box__wrapper">
+            <div class="l-form-box__wrapper">
+               @Html.Sitecore().Dictionary("/Feature/LoginTo/Login","Login To") <span class="color-primary">&nbsp;@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, Model)</span>
+            </div>
+        </div>
+    </div>
+    <div class="l-form-box__body">
+        <div class="l-form-box__wrapper">
+            <div class="l-form-box__wrapper">
+                <form id="business-login" action="@redirectItemUrl" @Html.Raw(_link.Target.Length > 0 ? "target=" + _link.Target + "" : string.Empty)>
+                    <div class="form-group form-submission"><a class="btn btn-secondary btn-block" href="@redirectItemUrl">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, Model)</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

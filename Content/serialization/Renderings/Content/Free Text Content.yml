@@ -1,0 +1,31 @@
+﻿---
+ID: "e3a47dac-4fe6-4615-b4e5-e7f52ad71831"
+Parent: "915eb6cb-6403-40ed-bd8d-45dcffed4e2d"
+Template: "99f8905d-4a87-4eb8-9f8b-a9bebfb3add6"
+Path: /sitecore/layout/Renderings/Feature/Content/Free Text Content
+DB: master
+SharedFields:
+- ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
+  Hint: Path
+  Value: /Views/Content/FreeTextContent.cshtml
+- ID: "7d24e54f-5c16-4314-90c9-6051aa1a7da1"
+  Hint: Parameters Template
+  Value: 
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: "{22054674-9591-497E-A0DA-50424B74F55E}"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediapath="" alt="2-column-rich-text-content" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{EEF423C6-0EA6-4C32-A03C-800724A20B83}" />
+- ID: "ef7c5528-7307-4e19-863b-da19eed6a9ed"
+  Hint: Open Properties after Add
+  Value: 0
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180629T032030Z

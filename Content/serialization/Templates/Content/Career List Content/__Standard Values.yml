@@ -1,0 +1,18 @@
+﻿---
+ID: "6904cbe4-a187-4bba-8c67-df4e1408da8e"
+Parent: "7c6f6ab2-a59f-481c-9162-6b136b5e8932"
+Template: "7c6f6ab2-a59f-481c-9162-6b136b5e8932"
+Path: /sitecore/templates/Feature/Content/Career List Content/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180723T083844Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

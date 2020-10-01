@@ -1,0 +1,35 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Data.Items
+@model RenderingModel
+@{    
+}
+
+@if (Sitecore.Context.PageMode.IsExperienceEditor)
+{
+    <style>
+        .modal-dialog.modal-dialog--centered .modal-content {
+            margin-top: 10%;
+        }
+    </style>
+}
+<h1 class="mb-4">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading, Model.Item)</h1>
+<div class="row js-gallery-group">
+    @foreach (Item childItem in Model.Item.Children)
+    {
+        <div class="col-xs-12 col-sm-3 my-3">
+            <div class="gallery">
+                <div class="gallery__thumbnail" style="background-image: url(@childItem.ImageUrl(Sitecore.Feature.Library.Templates.ImageLink.Fields.Image))"></div>
+                <div class="gallery__detail" data-trigger="gallery">
+                    <div class="gallery__action"> <i class="icon icon-cursor-move"></i></div>
+                    <div class="gallery__caption">
+                        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.ImageLink.Fields.TitleImageLink, childItem)
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

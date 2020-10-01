@@ -1,0 +1,53 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    var cssHide = Sitecore.Context.PageMode.IsExperienceEditor == true ? "" : "hide";
+}
+
+@if (Model.Item != null)
+{
+    <div class="m-cards-giro-card display-cards long-card js-compared-item js-demo-skeleton-content @cssHide">
+        <div class="image" data-id="@Model.Item.ID" data-url="@Model.Item.Url()">
+            @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.Page.Fields.Thumbnail, Model.Item)
+            <span class="product-label">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Page.Fields.stringTitle)</span>
+            <div class="card">
+                @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.ProductCreditCardPage.Fields.Card, Model.Item)
+            </div>
+        </div>
+        <div class="desc">
+            <span class="pdesc">
+                @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Page.Fields.stringSummary)
+            </span>
+            <div class="cta">
+                <a class="see-more" href="@Model.Item.Url()">@Html.Sitecore().Dictionary("/Feature/Content/Banner", "Edit This Content On Dictionary(/Feature/Content/Banner)")</a>
+                @if (!string.IsNullOrWhiteSpace(Model.Item.Fields[Sitecore.Feature.Library.Templates.TopNav.Fields.UrlApplyNow].Value))
+                {
+                    <a class="btn btn-tertiary addon" href="@Sitecore.Feature.Library.Helper.Core.getGeneralLink((Sitecore.Data.Fields.LinkField)Model.Item.Fields[Sitecore.Feature.Library.Templates.TopNav.Fields.UrlApplyNow])">
+                        @Html.Sitecore().Dictionary("/Feature/Content/List Offer", "Edit This Content On Dictionary(/Feature/Content/List Offer)")
+                        <img src="../assets/img/icons/arrow-right/arrow-right-363@2x.png" alt="" />
+                    </a>
+                }
+                else
+                {
+                    <a class="btn btn-tertiary addon" disabled>
+                        @Html.Sitecore().Dictionary("/Feature/Content/List Offer", "Edit This Content On Dictionary(/Feature/Content/List Offer)")
+                        <img src="../assets/img/icons/arrow-right/arrow-right-363@2x.png" alt="" />
+                    </a>
+                }
+                <a class="btn btn-outline-primary addon js-add-compare">
+                    @Html.Sitecore().Dictionary("/Feature/Content/Add To Compare", "Edit This Content On Dictionary(/Feature/Content/Add To Compare)")
+                    <div class="symbol">+</div>
+                </a>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+
+}

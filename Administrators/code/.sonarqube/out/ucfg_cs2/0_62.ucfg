@@ -1,0 +1,138 @@
+
+qSitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask.BtnSearchByDate_Click(object, System.EventArgs)e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csƒ ƒ(,"0*Õ
+0ø
+º
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs∆ ∆(
+
+%0bool"(System.Web.UI.UserControl.IsPostBack.get*
+System.Web.UI.UserControl*
+1
+2*Ü&
+1ê
+ç
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs» »(&'
+%1!System.Web.UI.WebControls.TextBox"__id*u*sC
+ASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask",
+Keyword!System.Web.UI.WebControls.TextBoxŸ÷
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs» »(+
+%2string"*System.Web.UI.WebControls.TextBox.Text.get*)
+'
+%1!System.Web.UI.WebControls.TextBox2Text.getü
+ú
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs»- »(9,
+%3&System.Web.UI.WebControls.DropDownList"__id**}C
+ASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask"6
+CategoryList&System.Web.UI.WebControls.DropDownList‚ﬂ
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs»- »(>
+%4string".System.Web.UI.WebControls.ListControl.Text.get*.
+,
+%3&System.Web.UI.WebControls.DropDownList2Text.getò
+ï
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs»@ »(O'
+%5!System.Web.UI.WebControls.TextBox"__id*}*{C
+ASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask"4
+DatePickerStart!System.Web.UI.WebControls.TextBoxŸ÷
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs»@ »(T
+%6string"*System.Web.UI.WebControls.TextBox.Text.get*)
+'
+%5!System.Web.UI.WebControls.TextBox2Text.getñ
+ì
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs»V »(c'
+%7!System.Web.UI.WebControls.TextBox"__id*{*yC
+ASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask"2
+DatePickerEnd!System.Web.UI.WebControls.TextBoxŸ÷
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs»V »(h
+%8string"*System.Web.UI.WebControls.TextBox.Text.get*)
+'
+%7!System.Web.UI.WebControls.TextBox2Text.get˝
+˙
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs» »(o
+
+%9void"vSitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask.DisplayComment(string, string, string, string, bool)*EC
+ASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask*
+
+%2string*
+
+%4string*
+
+%6string*
+
+%8string*
+""ˆÛ
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs…* …(3
+%10System.Web.UI.Page"System.Web.UI.Control.Page.get*EC
+ASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask2Page.get˘ˆ
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs…* …(T
+%11System.Web.UI.Control"&System.Web.UI.Page.FindControl(string)*
+
+%10System.Web.UI.Page*
+ApprovedCommentUC2FindControl(string)Æ
+´
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs…* …(g
+%12System.Web.UI.Control"__id*
+
+%11System.Web.UI.ControlÁ
+‰
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs…  …(gU
+otherUCJSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment"__id*
+
+%12System.Web.UI.Controlº
+π
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs   (0
+%13void"bSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment.DisplayAllComment(bool)*W
+U
+otherUCJSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment*
+""ˆÛ
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csÀ* À(3
+%14System.Web.UI.Page"System.Web.UI.Control.Page.get*EC
+ASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask2Page.get¯ı
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csÀ* À(S
+%15System.Web.UI.Control"&System.Web.UI.Page.FindControl(string)*
+
+%14System.Web.UI.Page*
+DeletedCommentUC2FindControl(string)Æ
+´
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csÀ* À(e
+%16System.Web.UI.Control"__id*
+
+%15System.Web.UI.ControlÁ
+‰
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csÀ À(eU
+otherUC2ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment"__id*
+
+%16System.Web.UI.Controlª
+∏
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csÃ Ã(1
+%17void"aSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.DisplayAllComment(bool)*W
+U
+otherUC2ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment*
+""*
+2*Å
+2"|
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csŒ Œ(	
+implicit return:
+senderobject:
+eSystem.EventArgsBEC
+ASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask

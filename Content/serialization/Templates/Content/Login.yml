@@ -1,0 +1,31 @@
+﻿---
+ID: "a5b6dde8-ef77-4cf8-9384-26d579657b1c"
+Parent: "314d3298-ca98-41f1-9cc3-9a459709ade2"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/Content/Login
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: ApplicationsV2/32x32/ok.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Type: tree list
+  Value: |
+    {1930BBEB-7805-471A-A3BE-4858AC7CF696}
+    {0BCCC333-2E65-4366-BA35-200E211A64A5}
+    {19824B5E-92C0-406C-88D2-32DC96F9EBC1}
+    {6B0F3732-D0DC-4421-901C-9534C387CFC8}
+    {1814EB7B-1839-4238-9E8A-4C7DF3AEB2CA}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180706T043539Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

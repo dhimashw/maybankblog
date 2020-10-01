@@ -1,0 +1,9 @@
+ø
+KSitecore.Feature.Administrators.Sitecore.Admin.UserControl.TestDashboardAllSystem.Web.UI.UserControlSystem.Web.UI.TemplateControlSystem.Web.UI.Controlobject–
+#Page_Load(object, System.EventArgs)oSitecore.Feature.Administrators.Sitecore.Admin.UserControl.TestDashboardAll.Page_Load(object, System.EventArgs)€
+DisplayApprovedComment()dSitecore.Feature.Administrators.Sitecore.Admin.UserControl.TestDashboardAll.DisplayApprovedComment()„
+DisplayUnapprovedComment()fSitecore.Feature.Administrators.Sitecore.Admin.UserControl.TestDashboardAll.DisplayUnapprovedComment()€
+ApproveComment(string[])dSitecore.Feature.Administrators.Sitecore.Admin.UserControl.TestDashboardAll.ApproveComment(string[])†
+DisapproveComment(string[])gSitecore.Feature.Administrators.Sitecore.Admin.UserControl.TestDashboardAll.DisapproveComment(string[])ª
+-BtnDisapprove_Click(object, System.EventArgs)ySitecore.Feature.Administrators.Sitecore.Admin.UserControl.TestDashboardAll.BtnDisapprove_Click(object, System.EventArgs)t
+TestDashboardAll()^Sitecore.Feature.Administrators.Sitecore.Admin.UserControl.TestDashboardAll.TestDashboardAll()

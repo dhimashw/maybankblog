@@ -1,0 +1,18 @@
+﻿---
+ID: "cf0445c1-8159-4ad7-9566-92ba13c81064"
+Parent: "0461d91c-eee4-406d-8bbf-3b214f7ba64c"
+Template: "fe5dd826-48c6-436d-b87a-7c4210c7413b"
+Path: /sitecore/media library/Feature/Content/Banner/Image Banner and Card/Saving/Page Banner
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181017T091336Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

@@ -1,0 +1,61 @@
+
+RSitecore.Feature.Content.Repositories.BlogRepository.GetAllCommentByBlogId(string)S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csÎ( Î(="0*˜
+0‚
+ÿ
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csÐ3 Ð(B(
+%0"System.Collections.Generic.List<T>"DSitecore.Feature.Content.Repositories.BlogRepository.GetAllComment()*86
+4Sitecore.Feature.Content.Repositories.BlogRepositoryÎ
+Ë
+T
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csÐ3 Ð(‹/
+%1)System.Collections.Generic.IEnumerable<T>"rSystem.Linq.Enumerable.Where<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, bool>)*"
+System.Linq.Enumerable**
+(
+%0"System.Collections.Generic.List<T>*
+""Ì
+É
+T
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csÐ% Ð(‹8
+listcomment)System.Collections.Generic.IEnumerable<T>"__id*1
+/
+%1)System.Collections.Generic.IEnumerable<T>Ý
+Ú
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csÑ Ñ(f/
+%2)System.Collections.Generic.IEnumerable<T>"rSystem.Linq.Enumerable.Where<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, bool>)*"
+System.Linq.Enumerable*:
+8
+listcomment)System.Collections.Generic.IEnumerable<T>*
+""Ë
+È
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csÑ Ñ(f8
+listcomment)System.Collections.Generic.IEnumerable<T>"__id*1
+/
+%2)System.Collections.Generic.IEnumerable<T>Ý
+Ú
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csÒ Ò(g/
+%3)System.Collections.Generic.IEnumerable<T>"rSystem.Linq.Enumerable.Where<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, bool>)*"
+System.Linq.Enumerable*:
+8
+listcomment)System.Collections.Generic.IEnumerable<T>*
+""Ë
+È
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csÒ Ò(g8
+listcomment)System.Collections.Generic.IEnumerable<T>"__id*1
+/
+%3)System.Collections.Generic.IEnumerable<T>"‘
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csÓ Ó(:
+8
+listcomment)System.Collections.Generic.IEnumerable<T>*o
+1"j
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csÔ Ô(	
+implicit return:
+blogIdstringB86
+4Sitecore.Feature.Content.Repositories.BlogRepository

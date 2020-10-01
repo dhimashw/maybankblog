@@ -1,0 +1,18 @@
+﻿---
+ID: "4688d567-8360-406b-8a97-ed7a1ed9f831"
+Parent: "25614704-9baf-446d-bfa5-ad18db3f243d"
+Template: "fe5dd826-48c6-436d-b87a-7c4210c7413b"
+Path: /sitecore/media library/Feature/Content/eBanking/Business/icon
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180302T105220Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

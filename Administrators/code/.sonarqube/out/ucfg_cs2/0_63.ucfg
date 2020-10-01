@@ -1,0 +1,138 @@
+
+tSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.BtnShowAll_Click(object, System.EventArgs)m
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csñ ñ('"0*Õ
+0Ç
+Ä
+m
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csó ó(
+
+%0bool"(System.Web.UI.UserControl.IsPostBack.get*
+System.Web.UI.UserControl*
+1
+2*”
+1¸
+µ
+m
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs÷ ÷(+
+
+%1void"aSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.DisplayAllComment(bool)*MK
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment*
+""…‚
+m
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csø% ø(.
+%2System.Web.UI.Page"System.Web.UI.Control.Page.get*MK
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment2Page.getöó
+m
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csø% ø(F
+%3System.Web.UI.Control"&System.Web.UI.Page.FindControl(string)*
+
+%2System.Web.UI.Page*
+
+MyTaskUC2FindControl(string)´
+±
+m
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csø% ø(P
+%4System.Web.UI.Control"__id*
+
+%3System.Web.UI.Controlå
+â
+m
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csø ø(PL
+otherUCASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask"__id*
+
+%4System.Web.UI.Control±
+®
+m
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csù ù(4
+
+%5void"YSitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask.DisplayAllComment(bool)*N
+L
+otherUCASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask*
+""…‚
+m
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csú/ ú(8
+%6System.Web.UI.Page"System.Web.UI.Control.Page.get*MK
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment2Page.getÿü
+m
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csú/ ú(Y
+%7System.Web.UI.Control"&System.Web.UI.Page.FindControl(string)*
+
+%6System.Web.UI.Page*
+ApprovedCommentUC2FindControl(string)´
+±
+m
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csú/ ú(l
+%8System.Web.UI.Control"__id*
+
+%7System.Web.UI.Controlï
+ì
+m
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csú$ ú(lV
+otherUC2JSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment"__id*
+
+%8System.Web.UI.ControlÄ
+Á
+m
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csû û(5
+
+%9void"bSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment.DisplayAllComment(bool)*X
+V
+otherUC2JSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment*
+""*
+3
+2*‡
+3ÒÏ
+m
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csÿ ÿ(
+%10System.Web.UI.Page"System.Web.UI.Control.Page.get*
+System.Web.UI.Control2Page.getÞ
+Û
+m
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csÿ ÿ(%(
+%11!System.Web.UI.ClientScriptManager"#System.Web.UI.Page.ClientScript.get*
+
+%10System.Web.UI.Pageç
+ä
+m
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csÿ< ÿ(J
+%12System.Type"object.GetType()*MK
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedCommentÈÅ
+o
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csÿ‡ ÿ(‘
+%13string"System.Exception.Message.get*
+
+exSystem.Exception2Message.get¥
+¢
+n
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csÿT ÿ(š
+%14string"__concat*
+""*
+
+%13string¥
+¢
+n
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csÿT ÿ(š
+%15string"__concat*
+
+%14string*
+""Á
+¾
+n
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csÿ ÿ(¡
+%16void"ZSystem.Web.UI.ClientScriptManager.RegisterStartupScript(System.Type, string, string, bool)**
+(
+%11!System.Web.UI.ClientScriptManager*
+
+%12System.Type*
+load*
+
+%15string*
+""*
+2*Š
+2"„
+m
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs‚ ‚(	
+implicit return:
+senderobject:
+eSystem.EventArgsBMK
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment

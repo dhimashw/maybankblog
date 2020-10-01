@@ -1,0 +1,12 @@
+á
+JSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedCommentSystem.Web.UI.UserControlSystem.Web.UI.TemplateControlSystem.Web.UI.Controlobject•
+#Page_Load(object, System.EventArgs)nSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment.Page_Load(object, System.EventArgs)}
+DisplayAllComment(bool)bSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment.DisplayAllComment(bool)·
+4DisplayComment(string, string, string, string, bool)Sitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment.DisplayComment(string, string, string, string, bool)µ
+3SearchComment(bool, string, string, string, string)~Sitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment.SearchComment(bool, string, string, string, string)—
+$ChangeCommentApproval(string[], int)oSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment.ChangeCommentApproval(string[], int)©
+-ValidateInput(string, string, string, string)xSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment.ValidateInput(string, string, string, string)¡
+)BtnDelete_Click(object, System.EventArgs)tSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment.BtnDelete_Click(object, System.EventArgs)­
+/BtnSearchByDate_Click(object, System.EventArgs)zSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment.BtnSearchByDate_Click(object, System.EventArgs)£
+*BtnShowAll_Click(object, System.EventArgs)uSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment.BtnShowAll_Click(object, System.EventArgs)q
+ApprovedComment()\Sitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment.ApprovedComment()

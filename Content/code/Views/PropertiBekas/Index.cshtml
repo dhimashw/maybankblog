@@ -1,0 +1,366 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using Sitecore.Feature.Content.Controller
+@model PagedData<Sitecore.Data.Items.Item>
+@{
+    var idDiv = Guid.NewGuid();
+    Sitecore.Data.Items.Item dataSourceItem = RenderingContext.Current.Rendering.Item;
+    Sitecore.Data.Items.Item typeBangunan = dataSourceItem.Parent.Children.Where(x => x.DisplayName.ToLower() == "type bangunan").FirstOrDefault();
+    Sitecore.Data.Items.Item lokasi = dataSourceItem.Parent.Children.Where(x => x.DisplayName.ToLower() == "lokasi").FirstOrDefault();
+    string _typeBangunan = Request.QueryString["typebangunan"] != null ? Request.QueryString["typeBangunan"].ToLower() : string.Empty;
+    string _lokasi = Request.QueryString["lokasi"] != null ? Request.QueryString["lokasi"].ToLower() : string.Empty;
+    int MaxSubmit = RenderingContext.Current.Rendering.GetIntegerParameter("Max Submit", 3);
+}
+
+<script type="text/javascript">
+    function getUrlVars() {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+    $(document).ready(function () {
+        $('body').on('click', '.pagination-list a', function () {
+            var page = parseInt($(this).html());
+            $.ajax({
+                url: '@Url.Action("PropertiBekasListPaging")',
+                data:
+                {
+                    "page": page,
+                    "PageSize": @Model.PageSize,
+                    "Bucket": "@dataSourceItem.ID",
+                    "TypeBangunan": "@Request.QueryString["typebangunan"]",
+                    "Lokasi": "@Request.QueryString["lokasi"]",
+                },
+                success: function (data) {
+                    $("#news-pages-@idDiv").html(data);
+                    setTimeout(function () {
+                        if ($('.m-cards-giro-card.product-cards.long-card.js-demo-skeleton-content').hasClass('hide')) {
+                            $('.m-cards-giro-card.product-cards.long-card.js-demo-skeleton-content').removeClass('hide')
+                            $('.skeleton.v-m.js-demo-skeleton.m-cards').addClass('hide')
+                            centerImage.initEvent('.m-cards-giro-card:not(.display-cards)', '.image', '', true)
+                        }
+                    }, 5000)
+                }
+            });
+        });
+
+        $('body').on('click', '.previous.enabled a', function () {
+            var page = parseInt($(this).data("curpage") - 1);
+            $.ajax({
+                url: '@Url.Action("PropertiBekasListPaging")',
+                data:
+                {
+                    "page": page,
+                    "PageSize": @Model.PageSize,
+                    "Bucket": "@dataSourceItem.ID",
+                    "TypeBangunan": "@Request.QueryString["typebangunan"]",
+                    "Lokasi": "@Request.QueryString["lokasi"]",
+                },
+                success: function (data) {
+                    $("#news-pages-@idDiv").html(data);
+                    setTimeout(function () {
+                        if ($('.m-cards-giro-card.product-cards.long-card.js-demo-skeleton-content').hasClass('hide')) {
+                            $('.m-cards-giro-card.product-cards.long-card.js-demo-skeleton-content').removeClass('hide')
+                            $('.skeleton.v-m.js-demo-skeleton.m-cards').addClass('hide')
+                            centerImage.initEvent('.m-cards-giro-card:not(.display-cards)', '.image', '', true)
+                        }
+                    }, 5000)
+                }
+            });
+        });
+
+        $('body').on('click', '.next.enabled a', function () {
+            var page = parseInt($(this).data("curpage")) + 1;
+            $.ajax({
+                url: '@Url.Action("PropertiBekasListPaging")',
+                data:
+                {
+                    "page": page,
+                    "PageSize": @Model.PageSize,
+                    "Bucket": "@dataSourceItem.ID",
+                    "TypeBangunan": "@Request.QueryString["typebangunan"]",
+                    "Lokasi": "@Request.QueryString["lokasi"]",
+                },
+                success: function (data) {
+                    $("#news-pages-@idDiv").html(data);
+                    setTimeout(function () {
+                        if ($('.m-cards-giro-card.product-cards.long-card.js-demo-skeleton-content').hasClass('hide')) {
+                            $('.m-cards-giro-card.product-cards.long-card.js-demo-skeleton-content').removeClass('hide')
+                            $('.skeleton.v-m.js-demo-skeleton.m-cards').addClass('hide')
+                            centerImage.initEvent('.m-cards-giro-card:not(.display-cards)', '.image', '', true)
+                        }
+                    }, 5000)
+                }
+            });
+        });
+
+        $('body').on('click', '.modalHubungiKami', function () {
+            var modalName = $(this).attr('modal');
+            $.ajax({
+                url: '@Url.Action("ModalHubungiKami")',
+                data:
+                {
+                    "ItemSelected": $(this).data('item-id'),
+                },
+                success: function (data) {
+                    var CHANNEL_SOURCE = getUrlVars()['utm_source']
+                    var CAMPAIGN_NAME = getUrlVars()['utm_campaign']
+                    $("#hubungi-kami-@idDiv").html(data);
+                    if (CHANNEL_SOURCE != undefined && CHANNEL_SOURCE != '') {
+                        $('#CHANNEL_SOURCE', $("#hubungi-kami-@idDiv")).val(CHANNEL_SOURCE);
+                    }
+                    if (CAMPAIGN_NAME != undefined && CAMPAIGN_NAME != '') {
+                        $('#CAMPAIGN_NAME', $("#hubungi-kami-@idDiv")).val(CAMPAIGN_NAME);
+                    }
+                    $('#MaxSubmit', $("#hubungi-kami-@idDiv")).val('@MaxSubmit');
+                    window.form.initEvent();
+                    $('.combodate').each(function () {
+                        var currentYear = new Date().getFullYear();
+                        var maxyear = currentYear + 0;
+                        var minyear = currentYear - 65;
+                        var smartDays = true;
+                        var firstitem = 'template';
+                        var customclass = 'form-control control-select inline';
+                        if ($(this).attr('data-minyear') != '0') minyear = currentYear - parseInt($(this).attr('data-minyear'));
+                        if ($(this).attr('data-maxyear') != '0') maxyear = currentYear + parseInt($(this).attr('data-maxyear'));
+                        if ($(this).attr('data-firstitem') != '') firstitem = $(this).attr('data-firstitem');
+                        if ($(this).attr('data-smartDays') != '') smartDays = ($(this).attr('data-smartDays') === 'true');
+                        if ($(this).attr('data-customClass') != '') customclass = $(this).attr('data-customClass');
+                        $(this).combodate({
+                            firstItem: firstitem,
+                            minYear: minyear,
+                            maxYear: maxyear,
+                            customClass: customclass,
+                            smartDays: smartDays
+                        });
+                    })
+
+                    $('.modal[modal-name="' + modalName + '"]').fadeIn('fast').toggleClass('out in');
+                    $('input[tabindex="1"]').focus(); // once open, focus on the first tab index
+                    $('body').addClass('modal-open');
+
+                    this.ua = navigator.userAgent;
+                    this.iOS = /iPad|iPhone|iPod/.test(this.ua), this.iOS11 = /OS 11_0|OS 11_1|OS 11_2/.test(this.ua);
+
+                    // ios 11 bug caret position
+                    if (this.iOS && this.iOS11) {
+
+                        //if ( $(e.target).hasClass('inputModal') ) {
+                        // Get scroll position before moving top
+                        this.scrollTopPosition = $(document).scrollTop();
+
+                        // Add CSS to body "position: fixed"
+                        $("body").addClass("ios11fixedInputBugFix");
+                        //}
+                    }
+
+                    $('.js-modal-trigger-close').click(function () {
+                        $(this).closest('.modal').fadeOut('fast').toggleClass('in out');
+                        $('body').removeClass('modal-open');
+
+                        this.ua = navigator.userAgent;
+                        this.iOS = /iPad|iPhone|iPod/.test(this.ua), this.iOS11 = /OS 11_0|OS 11_1|OS 11_2/.test(this.ua);
+
+                        // ios 11 bug caret position
+                        if (this.iOS && this.iOS11) {
+
+                            //if ( $(e.target).hasClass('inputModal') ) {
+                            // Remove CSS to body "position: fixed"
+                            $("body").removeClass("ios11fixedInputBugFix");
+
+                            //Go back to initial position in document
+                            $(document).scrollTop(this.scrollTopPosition);
+                            //}
+                        }
+                    })
+                }
+            });
+        })
+
+        $('body').on('click', '.modalLihatLebih', function () {
+            //alert($(this).data('item-id'));
+            var modalName = $(this).attr('modal');
+            $.ajax({
+                    url: '@Url.Action("ModalLebihLanjut")',
+                    data:
+                    {
+                        "ItemSelected": $(this).data('item-id'),
+                    },
+                    success: function (data) {
+                        $("#lihat-lebih-@idDiv").html(data);
+
+                        $('.modal[modal-name="' + modalName + '"]').fadeIn('fast').toggleClass('out in');
+                        $('input[tabindex="1"]').focus(); // once open, focus on the first tab index
+                        $('body').addClass('modal-open');
+
+                        this.ua = navigator.userAgent;
+                        this.iOS = /iPad|iPhone|iPod/.test(this.ua), this.iOS11 = /OS 11_0|OS 11_1|OS 11_2/.test(this.ua);
+
+                        // ios 11 bug caret position
+                        if (this.iOS && this.iOS11) {
+
+                            //if ( $(e.target).hasClass('inputModal') ) {
+                            // Get scroll position before moving top
+                            this.scrollTopPosition = $(document).scrollTop();
+
+                            // Add CSS to body "position: fixed"
+                            $("body").addClass("ios11fixedInputBugFix");
+                            //}
+                        }
+
+                        $('.js-modal-trigger-close').click(function () {
+                            $(this).closest('.modal').fadeOut('fast').toggleClass('in out');
+                            $('body').removeClass('modal-open');
+
+                            this.ua = navigator.userAgent;
+                            this.iOS = /iPad|iPhone|iPod/.test(this.ua), this.iOS11 = /OS 11_0|OS 11_1|OS 11_2/.test(this.ua);
+
+                            // ios 11 bug caret position
+                            if (this.iOS && this.iOS11) {
+
+                                //if ( $(e.target).hasClass('inputModal') ) {
+                                // Remove CSS to body "position: fixed"
+                                $("body").removeClass("ios11fixedInputBugFix");
+
+                                //Go back to initial position in document
+                                $(document).scrollTop(this.scrollTopPosition);
+                                //}
+                            }
+                        })
+                    }
+                });
+        });
+
+        $('body').on('click', '#submitPropertiBekas', function () {
+            var _this = this;
+            var d = new Date();
+            var isValid = true;
+            var errMesg = "";
+
+            if ($("[name='full-name']").val().length <= 0) {
+                errMesg = errMesg + '> Full name is required. \n';
+                isValid = false;
+            }
+
+            if (!validatePhone($("[name='mobile-number']").val()) || $("[name='mobile-number']").val().trim().length > 16) {
+                errMesg = errMesg + '> Invalid mobile phone number. \n';
+                isValid = false;
+            }
+
+            if (!ValidateEmail($("[name='email']").val())) {
+                errMesg = errMesg + '> Invalid email address. \n';
+                isValid = false;
+            }
+
+            if (isValid) {
+                //js-modal-trigger-close
+                
+                $.ajax({
+                url: '@Url.Action("SubmitPropertiBekas")',
+                data:
+                JSON.stringify({
+                    PropertiBekas: {
+                        NAMA: $('input[name="full-name"]').val(),
+                        MOBILENUMBER: $('input[name="mobile-number"]').val() ,
+                        EMAIL: $('input[name="email"]').val(),
+                        PIC: $('input[name="PIC"]').val(),
+                        PICHP: $('input[name="PICHP"]').val() ,
+                        PICEMAIL: $('input[name="PICEMAIL"]').val(),
+                        NAMAPROPERTI: $('input[name="NAMAPROPERTI"]').val(),
+                    }, MaxSubmit:'@MaxSubmit'
+                }),
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    $(_this).closest('.modal').fadeOut('fast').toggleClass('in out');
+                    $('body').removeClass('modal-open');
+
+                    _this.ua = navigator.userAgent;
+                    _this.iOS = /iPad|iPhone|iPod/.test(_this.ua), _this.iOS11 = /OS 11_0|OS 11_1|OS 11_2/.test(_this.ua);
+
+                    // ios 11 bug caret position
+                    if (_this.iOS && _this.iOS11) {
+
+                        //if ( $(e.target).hasClass('inputModal') ) {
+                        // Remove CSS to body "position: fixed"
+                        $("body").removeClass("ios11fixedInputBugFix");
+
+                        //Go back to initial position in document
+                        $(document).scrollTop(_this.scrollTopPosition);
+                        //}
+                    }
+                }
+            });
+            } else {
+                alert(errMesg);
+            }
+
+        });
+    });
+</script>
+
+<div class="section m-cards-giro">
+    <div class="container">
+        <div class="row second-property-filter">
+            <form>
+                <div class="col-xs-12 col-md-6">
+                    <h1>Properti Pilihan</h1><br />
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 selectTypeBangunan">
+                    <div class="form-group">
+                        <div class="m2u-select js-m2u-select full">
+                            <select class="form-control" required="required" name="type" data-label="Jenis Bangunan">
+                                <option class="placeholder" value="All" @Html.Raw(_typeBangunan == string.Empty ?"selected=\"selected\"":string.Empty) >Semua Bangunan</option>
+                                @if (typeBangunan != null)
+                                {
+                                    foreach (Sitecore.Data.Items.Item typeBangunanItem in typeBangunan.Children)
+                                    {
+                                        <option value="@typeBangunanItem.ID" @Html.Raw(_typeBangunan == typeBangunanItem.ID.ToString().ToLower() ?"selected=\"selected\"":string.Empty)>@typeBangunanItem.DisplayName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 selectLokasi">
+                    <div class="form-group">
+                        <div class="m2u-select js-m2u-select full">
+                            <select class="form-control" required="required" name="type" data-label="Lokasi">
+                                <option class="placeholder" value="All" @Html.Raw(_lokasi == string.Empty ?"selected=\"selected\"":string.Empty)>Semua Lokasi</option>
+                                @if (lokasi != null)
+                                {
+                                    foreach (Sitecore.Data.Items.Item lokasiItem in lokasi.Children)
+                                    {
+                                        <option value="@lokasiItem.ID" @Html.Raw(_lokasi == lokasiItem.ID.ToString().ToLower() ?"selected=\"selected\"":string.Empty)>@lokasiItem.DisplayName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="news-pages-@idDiv">
+        @Html.Partial("PropertiBekasListItem")
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" modal-name="ayda-detail" id="lihat-lebih-@idDiv">
+    @Html.Partial("ModalLihatLebih")
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" modal-name="ayda-contact" id="hubungi-kami-@idDiv">
+    @Html.Partial("ModalHubungiKami")
+</div>

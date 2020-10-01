@@ -1,0 +1,99 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    string PageSize = RenderingContext.Current.Rendering.Parameters["Title"] != null ? RenderingContext.Current.Rendering.Parameters["Title"] : string.Empty;
+
+    bool haveSession = false;
+    Sitecore.Data.Items.Item sessionItem;
+    Sitecore.Data.Fields.MultilistField ProductList = null;
+
+    if (Session[Sitecore.Feature.Library.Helper.Variables._sessionSolutionForYouPW] != null)
+    {
+        haveSession = true;
+        //Sessionnya di convert jadi ID dulu ya lan
+        sessionItem = Sitecore.Context.Database.GetItem(Session[Sitecore.Feature.Library.Helper.Variables._sessionSolutionForYouPW].ToString());
+        ProductList = sessionItem.Fields[Sitecore.Feature.Library.Templates.PackageProductPremierWealth.Fields.ProductList];
+    }
+
+    if (haveSession == false)
+    {
+        @Html.PageEditorInfo("Please visit Finding Solution page")
+    }
+}
+
+@if (haveSession)
+{
+    <div class="section story-list gray">
+        <div class="container">
+            <div class="heading">
+                <h1>@PageSize</h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="clearfix">
+                <div class="row">
+                    @if (ProductList != null)
+                    {
+                        foreach (Sitecore.Data.Items.Item ProductItem in ProductList.GetItems())
+                        {
+                            Sitecore.Data.Fields.LinkField _linkProductItem = ProductItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Link];
+                            string redirectItemUrlProductItem = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_linkProductItem);
+                            <div class="col-xs-6 col-sm-4 col-md-3 v-m">
+                                <div class="skeleton v-m js-demo-skeleton">
+                                    <div class="skeleton__img"></div>
+                                    <div class="skeleton__body">
+                                        <div class="skeleton__line"></div>
+                                        <div class="skeleton__line half"></div>
+                                    </div>
+                                </div>
+                                <div class="js-demo-skeleton-content hide">
+                                    <div class="skeleton js-demo-skeleton">
+                                        <div class="skeleton__img"></div>
+                                        <div class="skeleton__body">
+                                            <div class="skeleton__line"></div>
+                                            <div class="skeleton__line half"></div>
+                                        </div>
+                                        <div class="skeleton__footer">
+                                            <div class="skeleton__line tall"></div>
+                                        </div>
+                                    </div>
+                                    <div class="card js-demo-skeleton-content hide">
+                                        <div class="card-header">
+                                            <div class="card-header-tag">
+                                                @ProductItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]
+                                            </div><a href="">
+                                                <div class="img-as-bg" style="background-image:url(@ProductItem.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail))"></div>
+                                            </a>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="card-title border-bottom-none">
+                                                <h3 class="js-truncate" data-truncate="38"></h3>
+                                            </div>
+                                            <div class="card-desc">
+                                                <p class="js-truncate" data-truncate="70">
+                                                    @ProductItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Summary]
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="card-action">
+                                                <a class="btn-outline-primary btn addon" href="@redirectItemUrlProductItem" @Html.Raw(_linkProductItem.Target.Length > 0 ? "target=" + _linkProductItem.Target + "" : string.Empty)>@ProductItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel]<img src="/assets/img/icons/arrow-right/arrow-right-363-big-black@2x.png" /></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}

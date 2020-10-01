@@ -1,0 +1,70 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Data.Items
+@using Sitecore.Data.Fields
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+@{
+    string urlFile = string.Empty;
+    string targetWindow = string.Empty;
+
+}
+
+
+<div class="row">
+    @if (Model.Data != null)
+    {
+        foreach (Item item in Model.Data)
+        {
+            MultilistField ListValue = null;
+            string CategoryValue = string.Empty;
+            ListValue = item.Fields[Sitecore.Feature.Library.Templates.BusinessArticleItem.Fields.Category];
+            if (ListValue != null)
+            {
+                Item[] items = ListValue.GetItems();
+                CategoryValue = items.Select(x => x.Fields[Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title].Value).First();
+            }
+
+            if (item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields._File].Value != string.Empty)
+            {
+                Sitecore.Data.Fields.FileField field = (Sitecore.Data.Fields.FileField)item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields._File];
+                if (field.MediaItem != null)
+                {
+                    urlFile = Sitecore.Resources.Media.MediaManager.GetMediaUrl(field.MediaItem);
+                    targetWindow = "_blank";
+                }
+            }
+            else
+            {
+                urlFile = item.Url();
+            }
+
+            <div class="col col-xs-12 col-lg-4 col-sm-12 col-md-4 v-m js-mobile-to-carousel-list">
+                <div class="skeleton js-demo-skeleton">
+                    <div class="skeleton__img"></div>
+                    <div class="skeleton__body">
+                        <div class="skeleton__line"></div>
+                        <div class="skeleton__line half"></div>
+                    </div>
+                </div>
+                <div class="story-card js-demo-skeleton-content hide">
+                    <div class="image">
+                        <a href="@urlFile" target="@targetWindow" >
+                            @*@Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Image, item, cssClass: "img-responsive")*@
+                            @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail, item, cssClass: "img-responsive")
+                        </a>
+                    </div>
+                    <div class="title">
+                        <h4 class="yellow-text">@CategoryValue</h4>
+                        <h2><a href="@urlFile" target="@targetWindow" >@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Title, item)</a></h2>
+                    </div>
+                </div>
+            </div>
+
+        }
+    }
+</div>
+<!-- PAGINATION COMPONENT -->
+@Html.Partial("~/Views/Pagination/_Pagination.cshtml", Model)

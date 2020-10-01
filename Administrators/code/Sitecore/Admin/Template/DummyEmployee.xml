@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Migration>
+  <ColumnMapping tableName="TempEmployee" ResultType="update-table">
+    <Column source="ID" destination="Id" type="int" Required="true"/>
+    <Column source="NAME" destination="Name" type="string"/>
+    <Column source="AGE" destination="Age" type="int"/>
+    <Column source="JOB" destination="Job" type="string"/>
+    <!--<Column source="PROPINSI" destination="Province" type="int" relatedTable="Province:ID#Name"/>-->
+    <!-- <Colomn source="SND REGION" destination="Region" type="string" Required="true"/> -->
+    <!--<Column source="TYPE" destination="Type" type="int" relatedTable="Ref_ATMType:ID#Name"/>-->
+    <!-- <Colomn source="ROM" destination="ROM" type="string" Default="hellodanamon@danamon.co.id"/> -->
+    <!-- <Colomn source="Email" destination="MachineType" type="string" Default="hellodanamon@danamon.co.id"/> -->
+    <!-- <Colomn source="STATUS" destination="Status" type="int"/> -->
+    <!-- <Colomn source="Email" destination="Denominasi" type="string" Default="hellodanamon@danamon.co.id"/> -->
+    <!--<Column source="LONGITUDE" destination="Longitude" type="float"/>-->
+    <!--<Column source="LATITUDE" destination="Latitude" type="float"/>-->
+  </ColumnMapping>
+</Migration>

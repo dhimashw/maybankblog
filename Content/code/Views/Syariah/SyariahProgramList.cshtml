@@ -1,0 +1,60 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Feature.Content
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Data.Items
+@using Sitecore.Feature.Content.Repositories
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Indexing.Repositories;
+@model Sitecore.Feature.Library.Helper.PagedData<Item>
+
+@{
+
+    var idDiv = Guid.NewGuid();    
+
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+    $('body').on('click', '.pagination-list a', function () {
+
+        var page = parseInt($(this).html());
+
+        $.ajax({
+            url: '@Url.Action("SyariahProgramListPaging")',
+            data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID" },
+            success: function (data) {
+                $("#news-pages-@idDiv").html(data);
+            }
+        });
+    });
+
+    $('body').on('click', '.previous.enabled a', function () {
+        var page = parseInt($(this).data("curpage") - 1);
+
+        $.ajax({
+            url: '@Url.Action("SyariahProgramListPaging")',
+            data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID" },
+            success: function (data) {
+                $("#news-pages-@idDiv").html(data);
+            }
+        });
+    });
+
+    $('body').on('click', '.next.enabled a', function () {
+        var page = parseInt($(this).data("curpage") ) + 1;
+
+        $.ajax({
+            url: '@Url.Action("SyariahProgramListPaging")',
+            data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID" },
+            success: function (data) {
+                $("#news-pages-@idDiv").html(data);
+            }
+        });
+    });
+});
+</script>
+<div id="news-pages-@idDiv">
+    @Html.Partial("~/Views/Syariah/_SyariahProgramItem.cshtml")
+</div>

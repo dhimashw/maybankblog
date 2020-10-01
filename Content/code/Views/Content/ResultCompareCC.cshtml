@@ -1,0 +1,143 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helper
+@model RenderingModel
+@{
+    bool haveSession = false;
+    string sessionItemsIdCreditCard = string.Empty;
+    string urlCreditCard = string.Empty;
+    List<Sitecore.Data.Items.Item> myCreditCardList = new List<Sitecore.Data.Items.Item>();
+    if (Session[Sitecore.Feature.Library.Helper.Variables._sessionItemsIdCreditCard] != null)
+    {
+        haveSession = true;
+        sessionItemsIdCreditCard = Session[Sitecore.Feature.Library.Helper.Variables._sessionItemsIdCreditCard].ToString();
+        string[] split = sessionItemsIdCreditCard.Split(',');
+        foreach (string IDCc in split)
+        {
+            myCreditCardList.Add(Sitecore.Context.Database.GetItem(new Sitecore.Data.ID(IDCc)));
+        }
+
+    }
+    if (!String.IsNullOrEmpty(RenderingContext.Current.Rendering.Parameters["Url"]))
+    {
+        urlCreditCard = RenderingContext.Current.Rendering.Parameters["Url"];
+    }
+
+    if (Sitecore.Context.PageMode.IsExperienceEditor)
+    {
+        haveSession = true;
+    }
+}
+
+<script>
+    if ("@haveSession" == "False")
+    {
+        window.location.href = "@urlCreditCard";
+    }
+</script>
+
+<div class="section no-pad-top no-pad-bot gray cc-compare">
+    <div class="compare-table">
+        <table>
+            <tr>
+                <th>@Html.Sitecore().Dictionary("/Feature/Content/Credit Card", "Edit This Content On Dictionary(/Feature/Content/Credit Card)")</th>
+                @foreach (Sitecore.Data.Items.Item itemCreditCard in myCreditCardList)
+                {
+                <th>
+                    @{ 
+                        string imgUrl = Sitecore.Feature.Library.Helper.Core.getUrlImageFromItem(itemCreditCard, Sitecore.Feature.Library.Templates.ProductCreditCardPage.Fields.Card);
+                        if (string.IsNullOrEmpty(imgUrl))
+                        {
+                            imgUrl = Sitecore.Feature.Library.Helper.Variables._defaultImageCreditCard;
+                        }
+                    }
+
+                    <img src="@imgUrl">
+                <h3>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Page.Fields.stringTitle, itemCreditCard)</h3>
+                </th>
+                }
+                <th class="last-col">&nbsp;</th>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                @foreach (Sitecore.Data.Items.Item itemCreditCard in myCreditCardList)
+                {
+                <td>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Page.Fields.stringSummary, itemCreditCard)</td>
+
+                }
+                <td class="last-col">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                @foreach (Sitecore.Data.Items.Item itemCreditCard in myCreditCardList)
+                {
+                <td>
+                    <h4>@Html.Sitecore().Dictionary("/Feature/Content/Minimum Annual Income", "Edit This Content On Dictionary(/Feature/Content/Minimum Annual Income)")</h4>
+                    @{ 
+                        string stringMinimumAnnualIncome = string.Empty;
+                        double minimumAnnualIncome = 0;
+                        if (Html.Sitecore().Field(Sitecore.Feature.Library.Templates.ProductCreditCardPage.Fields.stringMinimumAnnualIncome, itemCreditCard) != null)
+                        {
+                            stringMinimumAnnualIncome = Html.Sitecore().Field(Sitecore.Feature.Library.Templates.ProductCreditCardPage.Fields.stringMinimumAnnualIncome, itemCreditCard).ToString();
+                            if (stringMinimumAnnualIncome.IsInt()) {
+                                minimumAnnualIncome = int.Parse(stringMinimumAnnualIncome);
+                                stringMinimumAnnualIncome ="Rp."+(minimumAnnualIncome).ToString("N");
+                            }
+                        }
+                    }
+                    @stringMinimumAnnualIncome
+                </td>
+                }
+                <td class="last-col">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                @foreach (Sitecore.Data.Items.Item itemCreditCard in myCreditCardList)
+                {
+                <td>
+                    <h4>@Html.Sitecore().Dictionary("/Feature/Content/Feature Benefit", "Edit This Content On Dictionary(/Feature/Content/Feature Benefit)")</h4>
+                    @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.ProductCreditCardPage.Fields.stringFeatureBenefit, itemCreditCard)
+                </td>
+                }
+                <td class="last-col">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                @foreach (Sitecore.Data.Items.Item itemCreditCard in myCreditCardList)
+                {
+                <td>
+                    <h4>@Html.Sitecore().Dictionary("/Feature/Content/Eligibility", "Edit This Content On Dictionary(/Feature/Content/Eligibility)")</h4>
+                    @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.ProductCreditCardPage.Fields.stringEligibility, itemCreditCard)
+                </td>
+                }
+                <td class="last-col">&nbsp;</td>
+            </tr>
+            <tr class="last-row">
+                <td>&nbsp;</td>
+                @foreach (Sitecore.Data.Items.Item itemCreditCard in myCreditCardList)
+                {
+                    <td>
+                        <a class="see-more" href="@itemCreditCard.Url()">@Html.Sitecore().Dictionary("/Feature/Content/Banner", "Edit This Content On Dictionary(/Feature/Content/Banner)")</a>
+                        @if (!string.IsNullOrWhiteSpace(itemCreditCard.Fields[Sitecore.Feature.Library.Templates.TopNav.Fields.UrlApplyNow].Value))
+                        {
+                            <a class="btn btn-tertiary addon" href="@Sitecore.Feature.Library.Helper.Core.getGeneralLink((Sitecore.Data.Fields.LinkField)itemCreditCard.Fields[Sitecore.Feature.Library.Templates.TopNav.Fields.UrlApplyNow])">
+                                @Html.Sitecore().Dictionary("/Feature/Content/List Offer", "Edit This Content On Dictionary(/Feature/Content/List Offer)")
+                                <img src="../../assets/img/icons/arrow-right/arrow-right-363@2x.png" alt="" />
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-tertiary addon" disabled>
+                                @Html.Sitecore().Dictionary("/Feature/Content/List Offer", "Edit This Content On Dictionary(/Feature/Content/List Offer)")
+                                <img src="../../assets/img/icons/arrow-right/arrow-right-363@2x.png" alt="" />
+                            </a>
+                        }
+                    </td>
+                }
+                <td class="last-col">&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+</div>

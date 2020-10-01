@@ -1,0 +1,23 @@
+﻿---
+ID: "88ce5280-f22b-4174-9880-c2df0411b738"
+Parent: "34e56d04-88c1-4480-abd7-c1a0b66232d8"
+Template: "34e56d04-88c1-4480-abd7-c1a0b66232d8"
+Path: /sitecore/templates/Feature/Content/Dynamic Latest Offer Group/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{2822B4D8-E00C-4A5F-BF33-BACAE4EC92DB}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180301T090323Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

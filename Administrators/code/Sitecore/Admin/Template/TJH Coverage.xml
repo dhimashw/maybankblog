@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Migration>
+  <ColumnMapping tableName="TJHCOVERAGE" ResultType="update-table">
+    <Column source="ID" destination="ID" type="int" Required="true"/>
+    <Column source="Tenor" destination="Tenor" type="int"/>
+    <Column source="Coverage" destination="Coverage" type="float"/>
+  </ColumnMapping>
+</Migration>

@@ -1,0 +1,157 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Data.Items
+@using Sitecore.Data.Fields
+@using Sitecore.Feature.Library.Helper
+@using template = Sitecore.Feature.Library.Templates.MBMBusPickupPoint
+@model RenderingModel
+@{
+    LinkField link = null;
+    string url = null;
+
+    float x = (float)Model.Item.Children.Count() / 3;
+    int row = (int)Math.Ceiling(x);
+}
+
+<div class="container">
+    <div class="location-id" style="display:none;">
+        <span id="latLoc"></span>
+        <span id="longLoc"></span>       
+    </div>
+    <h1 class="mb-4.5">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.MBMBusPickupPointHolder.Fields.Title, Model.Item)</h1>
+    <div class="row">
+        @for (int i = 0; i < row; i++)
+            {
+            <div class="row remove-margin">
+                @foreach (Item item in Model.Item.Children.Skip(3 * i).Take(3))
+                {
+                    link = item.Fields[template.Fields.LinkUrl];
+                    url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(link);
+                    string googleMap = "https://maps.googleapis.com/maps/api/staticmap?center=" + item.Fields[template.Fields.Latitude] + "," + item.Fields[template.Fields.Longitude] + "&markers=color:red%7C" + item.Fields[template.Fields.Latitude] + "," + item.Fields[template.Fields.Longitude] + "&zoom=15&size=360x160&key=" + item.Fields[template.Fields.Key];
+                    string getDirectionLink = url + "/[current]/" + item.Fields[template.Fields.Latitude] + "," + item.Fields[template.Fields.Longitude];
+                    <div class="col-xs-12 col-md-6 col-lg-4 pb-5">
+                        <div class="card js-demo-skeleton-content">
+                            <div class="card__header">
+                                <div class="card__img card__img--gmap valign">
+                                    <div class="d-table-cell valign__item">
+                                        <div class="img-as-bg" style="background-image: url(@googleMap)"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card__body mt-4">
+                                @Html.Raw(Html.Sitecore().Field(template.Fields.Content, item))
+                            </div>
+                            <div class="card__footer">
+                                <div class="card__action"><a class="btn btn-link py-0" href="@getDirectionLink" @Html.Raw(link.Target.Length > 0 ? "target=" + link.Target : "")><span class="color-g4">@Html.Sitecore().Field(template.Fields.LinkLabel, item)</span><img class="pl-2" src="/Assets/mbm/img/icon/arrow-right-yellow.svg" /></a></div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var x = document.getElementById("latLoc");
+        var y = document.getElementById("longLoc");
+      
+        if (x.innerHTML.length < 1 || x.innerHTML == undefined) {
+            x.innerHTML = '-6.226959'; //deflatLoc.innerHTML  //'-6.226959';
+        }
+        if (y.innerHTML.length < 1 || y.innerHTML == undefined) {
+            y.innerHTML = '106.7985209';  //deflongLoc.innerHTML//'106.7985208';
+        }
+        var formatted_address = document.getElementById("formatted_address");
+        function getAddressComponents(components, type) {
+            if (components[type] != undefined) {
+                return components[type];
+            } else {
+
+                for (var key in components) {
+                    if (components.hasOwnProperty(key)) {
+                        if (type == components[key].types[0]) {
+                            return components[key];
+                        }
+                    }
+                }
+            }
+
+            return '';
+        }
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+                if (navigator.geolocation.getCurrentPosition(showPosition) == undefined) {       
+                    $('.btn.btn-link.py-0').each(function () {
+                        console.log($(this).attr('href').replace('[current]', x.innerHTML + ',' + y.innerHTML));
+                        $(this).attr('href', $(this).attr('href').replace('[current]', x.innerHTML + ',' + y.innerHTML))
+                    });
+                    //$.ajax({
+                    //    url: '/api/sitecore/MapsLocation/GetLocationNearBy',
+                    //    data: { "Latitude": x.innerHTML, "Longitude": y.innerHTML, "Radius": 8 },
+                    //    success: function (result) {
+                    //        $('.atm-branch-location').html(result);
+                    //    }
+                    //});
+                }
+
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            x.innerHTML = position.coords.latitude;
+            y.innerHTML = position.coords.longitude;
+            var geocoder = new google.maps.Geocoder();
+
+            if (x.innerHTML.length < 1 || x.innerHTML == undefined) {
+                x.innerHTML = deflatLoc.innerHTML //'-6.226959';
+            }
+            if (y.innerHTML.length < 1 || y.innerHTML == undefined) {
+                y.innerHTML = deflongLoc.innerHTML //'106.7985208';
+            }
+
+            $('.btn.btn-link.py-0').each(function () {
+                console.log($(this).attr('href').replace('[current]', x.innerHTML + ',' + y.innerHTML));
+                $(this).attr('href', $(this).attr('href').replace('[current]', x.innerHTML + ',' + y.innerHTML))
+            });
+
+            //var latlng = { lat: parseFloat(position.coords.latitude), lng: parseFloat(position.coords.longitude) };
+            //var latlng = { lat: parseFloat(x.innerHTML), lng: parseFloat(y.innerHTML) };
+            //geocoder.geocode({ 'location': latlng }, function (results, status) {
+            //    if (status == google.maps.GeocoderStatus.OK) {
+            //        //the `results` variable will be an array with formatted addresses and location details
+            //        //alert(results[0].name);
+            //        //console.log(results);
+
+            //        if (getAddressComponents(results[0].address_components, 'route').long_name != '' && getAddressComponents(results[0].address_components, 'route').long_name != undefined) {
+            //            formatted_address.innerHTML = getAddressComponents(results[0].address_components, 'route').long_name; //results[0].formatted_address.split(',')[0];
+            //        }
+            //        if (getAddressComponents(results[0].address_components, 'street_number').long_name != '' && getAddressComponents(results[0].address_components, 'street_number').long_name != undefined) {
+            //            formatted_address.innerHTML += ' ' + getAddressComponents(results[0].address_components, 'street_number').long_name;
+            //        }
+            //    }
+            //});
+
+
+            //$.ajax({
+            //    url: '/api/sitecore/MapsLocation/GetLocationNearBy',
+            //    data: { "Latitude": x.innerHTML, "Longitude": y.innerHTML, "Radius": 8 },
+            //    success: function (result) {
+            //        $('.atm-branch-location').html(result);
+            //    }
+            //});
+        }
+
+        getLocation();
+
+    });
+</script>

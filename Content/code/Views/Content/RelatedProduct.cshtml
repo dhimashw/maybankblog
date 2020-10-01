@@ -1,0 +1,90 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    int MaxItem = RenderingContext.Current.Rendering.GetIntegerParameter("Max Item", 4);
+    List<Sitecore.Data.Items.Item> relatedItem = new List<Sitecore.Data.Items.Item>();
+    bool isFolderWithTitle = false;
+    Sitecore.Data.Items.Item currentPage = RenderingContext.Current.PageContext.Item;
+    if (currentPage.Parent.TemplateID == Sitecore.Feature.Library.Templates.FolderWithTitle.ID)
+    {
+        isFolderWithTitle = true;
+        relatedItem = currentPage.Parent.Children.Where(x => x.TemplateID == currentPage.TemplateID && x.ID != currentPage.ID).ToList();
+    }
+    Random r = new Random();
+    List<int> randomList = new List<int>();
+
+    while (randomList.Count < relatedItem.Count && randomList.Count < MaxItem)
+    {
+        int MyNumber = r.Next(0, relatedItem.Count);
+        if (!randomList.Contains(MyNumber))
+        {
+            randomList.Add(MyNumber);
+        }
+    }
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            @{ 
+                if (isFolderWithTitle)
+                {
+                    <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, currentPage.Parent)</h1>
+                }
+                else
+                {
+                    <h1>Please use correct format template on parent product item {Folder : Folder With Title}</h1>
+                }
+            }
+            <br />
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        @foreach (int num in randomList)
+        {
+            Sitecore.Data.Fields.LinkField _link = relatedItem[num].Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Link];
+            string redirectItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+            <div class="col-xs-6 col-md-3">
+                <div class="skeleton v-m js-demo-skeleton m-cards">
+                    <div class="skeleton__img skeleton__img--shorter"></div>
+                    <div class="skeleton__body">
+                        <div class="skeleton__line"></div>
+                        <div class="skeleton__line half"></div>
+                    </div>
+                </div>
+                <div class="m-cards-giro-card js-demo-skeleton-content hide">
+                    <div class="image">
+                        @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail, relatedItem[num], cssClass: "RemoveDefaultImageField")
+                        <span class="product-label">
+                            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, relatedItem[num])
+                        </span>
+                    </div>
+                    <div class="desc">
+                        <span class="pdesc">
+                            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Summary, relatedItem[num])
+                        </span>
+                        <div class="cta">
+                            <a class="see-more" href="@relatedItem[num].Url()">@Html.Sitecore().Dictionary("/Feature/Content/Banner", "Edit This Content On Dictionary(/Feature/Content/Banner)")</a>
+                            <a class="btn btn-tertiary addon" href="@redirectItemUrl" @Html.Raw(_link.Target.Length > 0 ? "target=" + _link.Target + "" : string.Empty)>
+                                @Html.Sitecore().Dictionary("/Feature/Content/List Offer", "Edit This Content On Dictionary(/Feature/Content/List Offer)")
+                                <img src="/assets/img/icons/arrow-right/arrow-right-363@2x.png" alt="apply now" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

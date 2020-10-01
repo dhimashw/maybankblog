@@ -1,0 +1,59 @@
+﻿@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Data.Items;
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@model RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.FolderProperties.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.FolderProperties.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{
+    var items = Sitecore.Context.Database.GetItem(Model.Item.ID);
+
+    int itemColumn = System.Convert.ToInt32(RenderingContext.Current.Rendering.Parameters["Max Item"]) != 0 ? System.Convert.ToInt32(RenderingContext.Current.Rendering.Parameters["Item Column"].ToString()) : 3;
+}
+
+@if (itemColumn == 3)
+{
+
+    <div class="feature section">
+        <div class="container">
+            <div class="feature-wrapper clearfix">
+                <div class="feature-header col-xs-12 col-md-5">
+                    <div class="feature-header-wrapper">
+                        <h1>@items.Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading)</h1>
+                        <p>@items.Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent)</p>
+                    </div>
+                </div>
+                <div class="feature-body col-xs-12 col-md-7">
+                    <div class="box-list align-right@md">
+                        <div class="horizontal-scroll-container">
+                            <div class="horizontal-scroll@xs js-hidescroll-xs">
+                                @foreach (Item item in items.Children)
+                                {
+                                    Sitecore.Data.Fields.LinkField _link = item.Fields[Sitecore.Feature.Library.Templates.ImageLink.Fields.UrlImageLink];
+                                    string url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+                                    <div class="horizontal-item d-inline-block p-2">
+                                        <div class="icon-box">
+                                            <div class="icon-box__inner">
+                                                @*<a href="@item.LinkFieldUrl(Sitecore.Feature.Library.Templates.ImageLink.Fields.UrlImageLink)">*@
+                                                    <a href="@url">
+                                                        <div class="icon-box__img"><img class="img-responsive center-block" src="@item.ImageUrl(Sitecore.Feature.Library.Templates.ImageLink.Fields.Image)" /></div>
+                                                        <div class="icon-box__caption text-center pt-2">@item.Field(Sitecore.Feature.Library.Templates.ImageLink.Fields.TitleImageLink)</div>
+                                                    </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

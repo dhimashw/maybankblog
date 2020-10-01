@@ -1,0 +1,32 @@
+
+gSitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUploadKPR.Page_Load(object, System.EventArgs)e
+[C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUploadKPR.aspx.cs ( "0*Ó
+0È
+Ê
+e
+[C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUploadKPR.aspx.cs (N
+%0HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"__id*¶*£E
+CSitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUploadKPR"Z
+BulkUploadAllsHSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAllß§
+e
+[C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUploadKPR.aspx.cs (2
+%1System.Web.UI.Control")System.Web.UI.Control.FindControl(string)*P
+N
+%0HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll*
+
+panelKPR2FindControl(string)Õ 
+e
+[C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUploadKPR.aspx.cs (A
+
+%2void"!System.Web.UI.Control.Visible.set*
+
+%1System.Web.UI.Control*
+""2Visible.set*
+1*Å
+1"|
+e
+[C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUploadKPR.aspx.cs (	
+implicit return:
+senderobject:
+eSystem.EventArgsBGE
+CSitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUploadKPR

@@ -1,0 +1,133 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using Sitecore.Feature.Content.Models
+@model Sitecore.Mvc.Presentation.RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.GeneralUrl.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.GeneralUrl.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{
+    string isSyariah = RenderingContext.Current.Rendering.Parameters["isSyariah"] != null ? RenderingContext.Current.Rendering.Parameters["isSyariah"].ToString() : string.Empty;
+
+    System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo(Sitecore.Context.Language.Name);
+    var item = Model.Item;
+    Sitecore.Data.Fields.LinkField _link = item.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url];
+    string url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+    //var url = @item.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url).ToString() != null ? @item.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url).ToString() : "#";
+    var targetType = @item.LinkFieldOptions(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url, LinkFieldOption.Target);
+
+    LoanDetails ld = new LoanDetails();
+
+    LoanDetails loanDetails = ld; //(LoanDetails)Session[Sitecore.Feature.Library.Helper.Variables._sessionLoanKPR];
+
+}
+@if (Session[Sitecore.Feature.Library.Helper.Variables._sessionLoanKPR] == null)
+{
+    //LoanDetails ld = new LoanDetails();
+    ld.TotalLoan = 0;
+    ld.TermLoans = 0;
+    ld.LoanInterest = 0;
+    ld.MonthlyInstallment = 0;
+    Session[Sitecore.Feature.Library.Helper.Variables._sessionLoanKPR] = ld;
+}
+@if (Session[Sitecore.Feature.Library.Helper.Variables._sessionLoanKPR] != null)
+{
+    if (Session[Sitecore.Feature.Library.Helper.Variables._sessionLoanKPR].GetType() == typeof(String))
+    {
+        Session[Sitecore.Feature.Library.Helper.Variables._sessionLoanKPR] = ld;
+    }
+    loanDetails = (LoanDetails)Session[Sitecore.Feature.Library.Helper.Variables._sessionLoanKPR];
+}
+@if (loanDetails.IsCalculate)
+{
+    <div class="m-calc-calculator">
+        <div class="container">
+            <div class="row">
+                <div class="col col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="calc-box">
+                        @if (string.IsNullOrEmpty(isSyariah))
+                        {
+                            <div class="label">@Html.Sitecore().Dictionary("/Feature/Content/Total Loan", "Edit This Content On Dictionary(/Feature/Content/Total Loan)")</div>
+                        }
+                        else
+                        {
+                            <div class="label">@Html.Sitecore().Dictionary("/Feature/Content/Total Financing", "Edit This Content On Dictionary(/Feature/Content/Total Financing)")</div>
+                        }
+                        <div class="lnum">
+                            @Variables._defaultCurrencyName @loanDetails.TotalLoan.ToString(Variables._defaultFormatCurrency, ci)
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-2 col-md-6 col-sm-6 col-xs-6">
+                    <div class="calc-box">
+                        @if (string.IsNullOrEmpty(isSyariah))
+                        {
+                            <div class="label">@Html.Sitecore().Dictionary("/Feature/Content/Term Loans", "Edit This Content On Dictionary(/Feature/Content/Term Loans)")</div>
+                        }
+                        else
+                        {
+                            <div class="label">@Html.Sitecore().Dictionary("/Feature/Content/Financing Term", "Edit This Content On Dictionary(/Feature/Content/Financing Term)")</div>
+                        }
+                        <div class="lnum">@loanDetails.TermLoans.ToString(Variables._defaultFormatCurrency, ci) &nbsp;@Html.Sitecore().Dictionary("/Feature/Content/Year", "Edit This Content On Dictionary(/Feature/Content/Year)")</div>
+                    </div>
+                </div>
+                <div class="col col-lg-2 col-md-6 col-sm-6 col-xs-6">
+                    <div class="calc-box">
+                        @if (string.IsNullOrEmpty(isSyariah))
+                        {
+                            <div class="label">@Html.Sitecore().Dictionary("/Feature/Content/Loan Interest", "Edit This Content On Dictionary(/Feature/Content/Loan Interest)")</div>
+                        }
+                        else
+                        {
+                            <div class="label">@Html.Sitecore().Dictionary("/Feature/Content/Pricing", "Edit This Content On Dictionary(/Feature/Content/Pricing)")</div>
+                        }
+                        <div class="lnum">@loanDetails.LoanInterest.ToString(Variables._defaultFormatPersentage, ci)%<span> &nbsp;/@Html.Sitecore().Dictionary(" / Feature/Content/Year", "Edit This Content On Dictionary(/Feature/Content/Year)")</span></div>
+                    </div>
+                </div>
+                <div class="col col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="calc-box no-border">
+                        <div class="label">@Html.Sitecore().Dictionary("/Feature/Content/Monthly Installments", "Edit This Content On Dictionary(/Feature/Content/Monthly Installments)")</div>
+                        <div class="lnum">@Variables._defaultCurrencyName @loanDetails.MonthlyInstallment.ToString(Variables._defaultFormatCurrency, ci)</div>
+                    </div>
+                </div>
+                <div class="col col-xs-12 v-p">
+                    <div class="row">
+                        <div class="valign-center w-auto">
+                            <div class="valign-item c-calculator__refresh">
+                                <a href="@url" target="@targetType">
+                                    <i class="icons icon-refresh"> </i>
+                                    <div class="c-calculator__name inline-block">@Html.Sitecore().Dictionary("/Feature/Content/ReCalculate", "Edit This Content On Dictionary(/Feature/Content/ReCalculate)")</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="m-calc-calculator">
+        <div class="container">
+            <div class="row my-3">
+                <div class="valign-center@sm">
+                    <div class="valign-item hidden-xs">
+                        @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.ImageLink.Fields.Image, item, cssClass: "img-responsive")
+                    </div>
+                    <div class="valign-item">
+                        <h2 class="mb-sm-0">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading, item)</h2>
+                    </div>
+                    @*<div class="valign-item"><a class="btn btn-outline-primary" href="@item.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url)">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, item)</a></div>*@
+                    <div class="valign-item"><a class="btn btn-outline-primary" href="@url">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, item)</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

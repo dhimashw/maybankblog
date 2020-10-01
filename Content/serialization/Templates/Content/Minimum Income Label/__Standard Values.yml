@@ -1,0 +1,18 @@
+﻿---
+ID: "da2b04ab-ff53-45b5-a21f-e0d6e3fcdc0f"
+Parent: "68cc3693-9452-4f96-b044-fe6bfbc6f049"
+Template: "68cc3693-9452-4f96-b044-fe6bfbc6f049"
+Path: /sitecore/templates/Feature/Content/Minimum Income Label/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180518T070409Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

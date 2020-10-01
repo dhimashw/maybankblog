@@ -1,0 +1,24 @@
+﻿---
+ID: "775229a9-2d56-4d4b-9a8d-e43d14493469"
+Parent: "915eb6cb-6403-40ed-bd8d-45dcffed4e2d"
+Template: "99f8905d-4a87-4eb8-9f8b-a9bebfb3add6"
+Path: /sitecore/layout/Renderings/Feature/Content/MBM Event Gallery
+DB: master
+SharedFields:
+- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
+  Hint: Datasource Template
+  Value: /sitecore/templates/Project/Maybank/MBM Gallery/Folder MBM Image Event
+- ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
+  Hint: Path
+  Value: /Views/MBM/MBMEventGallery.cshtml
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: "{D6D5802A-E17F-48FD-86C6-6252ACED9F5C}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190115T035257Z

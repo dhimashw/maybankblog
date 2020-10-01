@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Migration>
+  <ColumnMapping tableName="ALLRISKRATE" ResultType="update-table">
+    <Column source="ID" destination="ID" type="int" Required="true"/>
+    <Column source="AreaCode" destination="AreaCode" type="string"/>
+    <Column source="OTRMinimum" destination="OTRMinimum" type="float"/>
+    <Column source="OTRMaksimum" destination="OTRMaksimum" type="float"/>
+    <Column source="Tenor" destination="Tenor" type="int"/>
+    <Column source="Rate" destination="Rate" type="float"/>
+  </ColumnMapping>
+</Migration>

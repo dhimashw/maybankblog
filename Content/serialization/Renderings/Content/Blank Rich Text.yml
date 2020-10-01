@@ -1,0 +1,28 @@
+﻿---
+ID: "1f4adc5a-7cb8-40a7-af63-7db770dc8bcb"
+Parent: "915eb6cb-6403-40ed-bd8d-45dcffed4e2d"
+Template: "99f8905d-4a87-4eb8-9f8b-a9bebfb3add6"
+Path: /sitecore/layout/Renderings/Feature/Content/Blank Rich Text
+DB: master
+SharedFields:
+- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
+  Hint: Datasource Template
+  Value: /sitecore/templates/Project/Maybank/Content/Content/Blank Rich Text
+- ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
+  Hint: Path
+  Value: /Views/Content/BlankRichText.cshtml
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: "{925AA88A-1F09-4A0B-8574-AD5A7A2BA852}"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediapath="" alt="Blank Rich Text" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{68E3552B-A8F2-4315-B5B9-6EAE99F55D15}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180806T015233Z

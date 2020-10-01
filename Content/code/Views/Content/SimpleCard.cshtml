@@ -1,0 +1,52 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helper
+@using Sitecore.Data.Items
+@model RenderingModel
+@{
+    var itemId = Model.Item.Url();
+}
+@if (Model.Item.Children.Count > 1)
+{
+    <div class="row">
+        @foreach (Item childItem in Model.Item.Children.Where(x => x.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowInMenu].Value == "1"))
+        {<div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="m-cards-giro-card simple-card">
+                <div class="image">
+                    @*<img src="../../../assets/img/premier-wealth/investment/calculator/calculator-card.jpg" />*@
+                    @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.Page.Fields.Thumbnail, childItem)
+                    <span class="product-label">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Page.Fields.Title, childItem)</span>
+                </div>
+                <div class="desc">
+                    <span class="pdesc">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Page.Fields.Summary, childItem)</span>
+                    <div class="cta">
+                        <a class="btn btn-outline-primary addon" href="@childItem.Url()">
+                            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, childItem)
+                            <img src="/-/media/Feature/Content/Icon/Arrow Right/arrowright363bigblack2x.jpg" alt="apply now" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+}
+else
+{
+    <div class="m-cards-giro-card simple-card">
+        <div class="image">
+            @*<img src="../../../assets/img/premier-wealth/investment/calculator/calculator-card.jpg" />*@
+            @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.Page.Fields.Thumbnail, Model.Item)
+            <span class="product-label">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Page.Fields.Title, Model.Item)</span>
+        </div>
+        <div class="desc">
+            <span class="pdesc">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Page.Fields.Summary, Model.Item)</span>
+            <div class="cta">
+                <a class="btn btn-outline-primary addon" href="@itemId">
+                    @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, Model.Item)<img src="/assets/img/icons/arrow-right/arrow-right-363-big-black@2x.png" alt="apply now" />
+                </a>
+            </div>
+        </div>
+    </div>
+}

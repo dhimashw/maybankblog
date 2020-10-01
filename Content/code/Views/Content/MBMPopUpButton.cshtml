@@ -1,0 +1,34 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Data.Fields
+@using template = Sitecore.Feature.Library.Templates.MBMPanelWithMapItem
+@model RenderingModel
+@{
+    Guid eventId = Guid.NewGuid();
+}
+
+<div class="valign py-3">
+    <div class="valign__item"><img class="img-responsive" src="/Assets/mbm/img/icon/ico-map-pin.svg" alt="" /></div>
+    <div class="valign__item px-3">
+        <div class="py-2">
+            <h4 class="mb-0">@Html.Sitecore().Field(template.Fields.ButtonOneHeader, Model.Item)</h4>
+            <a class="btn btn-link py-2 js-modal-trigger" href="" modal="event-@eventId"> <span>@Html.Sitecore().Field(template.Fields.ButtonOneLabel, Model.Item)</span><img class="pl-2" src="/Assets/mbm/img/icon/arrow-right-yellow.svg" alt="" /></a>
+        </div>
+    </div>
+</div>
+<div class="modal" tabindex="-1" role="dialog" modal-name="event-@eventId">
+    <div class="modal-center">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content white-text">
+                <div class="modal-header"><a class="close js-modal-trigger-close" data-dismiss="modal" type="button" aria-label="Close"></a></div>
+                <div class="modal-body">
+                    <div class="modal-body-scroll py-4">
+                        <div class="image-frame"><img class="img-responsive js-gallery-image" src="@Model.Item.ImageUrl(template.Fields.MapImage)" alt="" /></div>
+                        <div class="image-desc"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

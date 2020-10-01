@@ -1,0 +1,49 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helpers
+
+@model RenderingModel
+@{
+    var elements = LibraryHelpers.GetDynamicMultiList(Model.Item);
+}
+
+<div class="section py-0 split-side">
+    <div class="split-frame">
+        <div class="side white">
+            <div class="inner-frame">
+                <div class="content-tabs standard-text compact" data-targetClass="topic-subs">
+                    @foreach (var item in elements)
+                    {
+                        <div class="tab-handle" data-targetID="@item.ID.ToShortID()">
+                            <p>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, item)</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="main partial">
+            <div class="inner-frame">
+                @foreach (var itemParent in elements)
+                {
+                    <div class="content-tabs-target topic-subs" id="@itemParent.ID.ToShortID()">
+                        <div class="faq-header">
+                            <h1>@itemParent.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</h1>
+                        </div>
+                        <div class="faq-list">
+                            @foreach (Sitecore.Data.Items.Item itemChildren in itemParent.Children)
+                            {
+                                <div class="faq-item">
+                                    <div class="frame">
+                                        <h3>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, itemChildren)</h3>
+                                        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields._SummaryRichText, itemChildren)
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

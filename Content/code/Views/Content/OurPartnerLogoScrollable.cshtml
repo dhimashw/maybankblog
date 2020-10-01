@@ -1,0 +1,29 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+
+@model RenderingModel
+@{
+
+}
+
+<div class="section">
+    <div class="container">
+        <header>
+            <h1 class="text-center">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title)</h1>
+        </header>
+        <div class="partner js-partner">
+            @foreach (Sitecore.Data.Items.Item item in Model.Item.Children)
+            {
+                Sitecore.Data.Fields.LinkField _link = item.Fields[Sitecore.Feature.Library.Templates.Link.Fields.Link];
+                string url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+                <div class="partner__item">
+                    @*<a href="@item.LinkFieldUrl(Sitecore.Feature.Library.Templates.Link.Fields.Link)">*@
+                    <a href="@url">
+                        @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail, item, cssClass: "img-responsive")
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

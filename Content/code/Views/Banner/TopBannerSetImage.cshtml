@@ -1,0 +1,36 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+
+@{
+    Sitecore.Data.Fields.LinkField _link = Model.Item.Fields[Sitecore.Feature.Library.Templates.Link.Fields.Link];
+    string url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+    //string url = string.IsNullOrEmpty(Model.Item.LinkFieldUrl(Sitecore.Feature.Library.Templates.Link.Fields.Link).ToString()) ? "#" : Model.Item.LinkFieldUrl(Sitecore.Feature.Library.Templates.Link.Fields.Link);
+    string imageUrl = string.IsNullOrEmpty(string.Format("style=background-image:url({0});", Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.BannerSet.Fields.Image))) ? "" : string.Format("style=background-image:url({0});", Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.BannerSet.Fields.Image));
+    var ButtonColor = string.IsNullOrEmpty(Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonColor].Value) ? "btn btn-tertiary addon" : Sitecore.Context.Database.GetItem(Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonColor].Value).Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.stringTitle].ToString();
+    var whiteText = Model.Item.Fields[Sitecore.Feature.Library.Templates.BannerSet.Fields.WhiteText].Value == "1" ? "dark" : "";
+}
+
+<div class="page-banner--as-bg @whiteText" @imageUrl>
+    <div class="container">
+        <div class="page-banner-body">
+            <div class="fadein-left">
+                <h1 class="banner-title">@Html.Raw(@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BannerSet.Fields.BannerTitle, Model.Item))</h1>
+                @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BannerSet.Fields.BannerDescription, Model.Item)
+                @if (Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowCTA].Value == "1")
+                {
+                    <a class="@ButtonColor" href="@url">
+                        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, Model.Item)
+                        <img src="/assets/img/icons/arrow-right/arrow-right-363@2x.png" />
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

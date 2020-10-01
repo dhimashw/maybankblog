@@ -1,0 +1,56 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Data.Items
+@using Sitecore.Data.Fields
+@using template = Sitecore.Feature.Library.Templates.Sponsor
+@model RenderingModel
+@{
+    LinkField link = null;
+    string url = null;
+    int maxItem = RenderingContext.Current.Rendering.GetIntegerParameter("Max Item", 7);
+    int counter = 1;
+}
+<div>
+    <div class="page-subheader bg-color-g7">
+        <div class="horizontal-scroll js-hidescroll">
+            <div class="brand-logo">
+                <ul class="brand-logo__list">
+
+                    @foreach (Item item in Model.Item.Children)
+                    {
+                        if(counter > maxItem)
+                        {
+                            break;
+                        }
+                        if (item.Fields[template.Fields.ShowInSubheader].Value == "1")
+                        {
+                            <li class="brand-logo__item">
+                                @if (item.Fields[template.Fields.ClickableInSubheader].Value == "1")
+                                {
+                                    link = item.Fields[template.Fields.ExternalUrl];
+                                    url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(link);
+                                    <a href="@url" @Html.Raw(link.Target.Length > 0 ? "target=" + link.Target + "" : string.Empty)>
+                                        <div class="valign">
+                                            <div class="img-wrapper valign__item"><img class="filter-greyscale" src="@item.ImageUrl(template.Fields.TransparentLogo)" alt="" /></div>
+                                        </div>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a href="javascript:void(0)">
+                                        <div class="valign">
+                                            <div class="img-wrapper valign__item"><img class="filter-greyscale" src="@item.ImageUrl(template.Fields.TransparentLogo)" alt="" /></div>
+                                        </div>
+                                    </a>
+                                }
+                            </li>
+                        }
+                        counter++;
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

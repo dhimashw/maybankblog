@@ -1,0 +1,294 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helpers
+@using Sitecore.Links
+@using Sitecore.Feature.Content.Models
+
+@*@model FAQModel<Sitecore.Data.Items.Item>*@
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+@{
+    //var item = Sitecore.Context.Database.GetItem(Model.DataSourceID);
+    //var contextItem = Sitecore.Context.Database.GetItem(Sitecore.Feature.Library.Helper.Variables.FAQBucket);
+    //var categoryMultilist = Model.FAQCategoryList;
+    //var categoryMultilist = LibraryHelpers.GetDynamicMultiList(contextItem);
+    //string keyword = Request.QueryString["keyword"].ToLower();
+    //var idDiv = Guid.NewGuid();
+    string keyword = Request.QueryString["keyword"] != null ? Request.QueryString["keyword"].ToLower() : string.Empty;
+    string categoryId = Request.QueryString[Sitecore.Feature.Library.Helper.Variables._categoryId] != null ? Request.QueryString[Sitecore.Feature.Library.Helper.Variables._categoryId] : string.Empty;
+    string isMBM = RenderingContext.Current.Rendering.Parameters["isMBM"] == "1" ? RenderingContext.Current.Rendering.Parameters["isMBM"] : "0";
+
+    var idDiv = Guid.NewGuid();
+}
+
+@Html.Partial("~/Views/FAQ/_FAQBannerWithSearch.cshtml")
+
+<script type="text/javascript">
+    
+    function getUrlVars() {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+
+    $(document).ready(function () {
+
+        var targetKeyword = getUrlVars()['keyword'] == undefined ? '' : getUrlVars()['keyword'];
+
+        $('body').on('click', '.pagination-list a', function () {
+
+            var page = parseInt($(this).html());
+            var cTabsClass = $('#tab-faq').attr('data-targetClass');
+            var selOptTemp;
+            var cTabsID;
+            var cTabsText;
+            $.ajax({
+                url: '@Url.Action("FAQListPaging")',
+                data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID", "keyword": targetKeyword, "categoryId": '@categoryId', "isMBM": @isMBM },
+                success: function (data) {
+                    $("#news-pages-@idDiv").html(data);                  
+                    $('#tab-faq').append('<i class="icon-arrow-down"></i>');
+                    selOptTemp = '<select data-targetClass="' + cTabsClass + '">';
+                    $('#tab-faq').find('.tab-handle').each(function () {
+                        cTabsID = $(this).attr('data-targetID');
+                        cTabsText = $(this).find('p, span').text();
+                        
+                        // check counter
+                        if ($(this).find('.counter').length) {
+                            cTabsText += ' (' + $(this).find('.counter').text() + ')';
+                        }
+                        //alert(cTabsID + '-' + cTabsText)
+                        if ($(this).hasClass('active')) {
+                            selOptTemp += '<option value="' + cTabsID + '" selected="selected">' + cTabsText + '</option>';
+                        } else {
+                            selOptTemp += '<option value="' + cTabsID + '">' + cTabsText + '</option>';
+                        }                        
+                    });
+                    selOptTemp += '</select>';
+                    //console.log(selOptTemp);
+                    $('#tab-faq').append(selOptTemp);
+                }
+            });
+        });
+
+        $('body').on('click', '.previous.enabled a', function () {
+            var page = parseInt($(this).data("curpage") - 1);
+            var cTabsClass = $('#tab-faq').attr('data-targetClass');
+            var selOptTemp;
+            var cTabsID;
+            var cTabsText;
+            $.ajax({
+                url: '@Url.Action("FAQListPaging")',
+                data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID", "keyword": targetKeyword, "categoryId": '@categoryId', "isMBM": @isMBM },
+                success: function (data) {
+                    $("#news-pages-@idDiv").html(data);
+                    $('#tab-faq').append('<i class="icon-arrow-down"></i>');
+                    selOptTemp = '<select data-targetClass="' + cTabsClass + '">';
+                    $('#tab-faq').find('.tab-handle').each(function () {
+                        cTabsID = $(this).attr('data-targetID');
+                        cTabsText = $(this).find('p, span').text();
+
+                        // check counter
+                        if ($(this).find('.counter').length) {
+                            cTabsText += ' (' + $(this).find('.counter').text() + ')';
+                        }
+                        //alert(cTabsID + '-' + cTabsText)
+                        if ($(this).hasClass('active')) {
+                            selOptTemp += '<option value="' + cTabsID + '" selected="selected">' + cTabsText + '</option>';
+                        } else {
+                            selOptTemp += '<option value="' + cTabsID + '">' + cTabsText + '</option>';
+                        }
+                    });
+                    selOptTemp += '</select>';
+                    //console.log(selOptTemp);
+                    $('#tab-faq').append(selOptTemp);
+                }
+            });
+        });
+
+        $('body').on('click', '.next.enabled a', function () {
+            var page = parseInt($(this).data("curpage") ) + 1;
+            var cTabsClass = $('#tab-faq').attr('data-targetClass');
+            var selOptTemp;
+            var cTabsID;
+            var cTabsText;
+            $.ajax({
+                url: '@Url.Action("FAQListPaging")',
+                data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID", "keyword": targetKeyword, "categoryId": '@categoryId', "isMBM": @isMBM },
+                success: function (data) {
+                    $("#news-pages-@idDiv").html(data);
+                    $('#tab-faq').append('<i class="icon-arrow-down"></i>');
+                    selOptTemp = '<select data-targetClass="' + cTabsClass + '">';
+                    $('#tab-faq').find('.tab-handle').each(function () {
+                        cTabsID = $(this).attr('data-targetID');
+                        cTabsText = $(this).find('p, span').text();
+
+                        // check counter
+                        if ($(this).find('.counter').length) {
+                            cTabsText += ' (' + $(this).find('.counter').text() + ')';
+                        }
+                        //alert(cTabsID + '-' + cTabsText)
+                        if ($(this).hasClass('active')) {
+                            selOptTemp += '<option value="' + cTabsID + '" selected="selected">' + cTabsText + '</option>';
+                        } else {
+                            selOptTemp += '<option value="' + cTabsID + '">' + cTabsText + '</option>';
+                        }
+                    });
+                    selOptTemp += '</select>';
+                    //console.log(selOptTemp);
+                    $('#tab-faq').append(selOptTemp);
+                }
+            });
+        });
+    });
+</script>
+
+<div id="isMBM" style="display:none;">
+    @isMBM
+</div>
+<div id="news-pages-@idDiv">
+    @Html.Partial("_FAQListPaging")
+</div>
+
+
+@*<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        var targetKeyword = getUrlVars()['keyword'] == undefined ? '' : getUrlVars()['keyword'];
+
+        $('body').on('click', '.pagination-list a', function () {
+
+            var page = parseInt($(this).html());
+
+            $.ajax({
+                url: '@Url.Action("FAQListPaging")',
+                data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID", "keyword": targetKeyword },
+                success: function (data) {
+                    $("#news-pages-@idDiv").html(data);
+                }
+            });
+        });
+
+        $('body').on('click', '.previous.enabled a', function () {
+            var page = parseInt($(this).data("curpage") - 1);
+
+            $.ajax({
+                url: '@Url.Action("FAQListPaging")',
+                data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID", "keyword": targetKeyword },
+                success: function (data) {
+                    $("#news-pages-@idDiv").html(data);
+                }
+            });
+        });
+
+        $('body').on('click', '.next.enabled a', function () {
+            var page = parseInt($(this).data("curpage") ) + 1;
+
+            $.ajax({
+                url: '@Url.Action("FAQListPaging")',
+                data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID", "keyword": targetKeyword },
+                success: function (data) {
+                    $("#news-pages-@idDiv").html(data);
+                }
+            });
+        });
+    });
+</script>*@
+
+@*<div id="news-pages-@idDiv">
+    <div class="section py-0 split-side">
+        <div class="split-frame">
+        <div class="side white">
+                <div class="inner-frame">
+                    <div class="content-tabs standard-text compact" data-targetClass="topic-subs">
+                        <div class="tab-handle" data-targetID="all">
+                            <p>All Result</p>
+                            <div class="counter">
+                                @Model.Data.Count()
+                            </div>
+                        </div>
+                        @foreach (Sitecore.Data.Items.Item itemCategory in categoryMultilist)
+                        {
+                            <div class="tab-handle" data-targetID="@itemCategory.ID.ToShortID()">
+                                <p>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, itemCategory)</p>
+                                <div class="counter">
+                                    @Model.Data.Where(c => Sitecore.Context.Database.GetItem(c.Fields["Category"].Source).ID == itemCategory.ID).Where(k => k.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title].Value.ToLower().Contains(keyword)
+                                                                           || k.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Content].Value.ToLower().Contains(keyword)).Count()
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>*@
+@*<div class="main partial">
+                        <div class="inner-frame">
+                            @*<div class="content-tabs-target topic-subs" id="all">
+                                <div class="faq-header">
+                                    <p>Frequently Asked Question</p>
+                                    <h1>All Result</h1>
+                                </div>
+                                <div class="faq-list">
+                                    @foreach (Sitecore.Data.Items.Item itemContent in Model.Data)
+                                    {
+                                        <div class="faq-item">
+                                            <div class="frame">
+                                                <h3>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, itemContent)</h3>
+                                                <h4 style="color:grey">@Sitecore.Context.Database.GetItem(itemContent.Fields["Category"].Value).DisplayName</h4>
+                                                @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content, itemContent)
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+
+                            @Html.Partial("~/Views/FAQ/_FAQListPaging.cshtml")
+
+                            @foreach (var itemCategory in categoryMultilist)
+                                {
+                                    <div class="content-tabs-target topic-subs" id="@itemCategory.ID.ToShortID()">
+                                        <div class="faq-header">
+                                            <p>Frequently Asked Question</p>
+                                            <h1>@itemCategory.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</h1>
+                                        </div>
+                                        <div class="faq-list">
+                                            @Html.Partial("~/Views/FAQ/_FAQListPaging.cshtml")
+                                            @foreach (Sitecore.Data.Items.Item itemContent in Model.Data
+                                .Where(c => Sitecore.Context.Database.GetItem(c.Fields["Category"].Source).ID == itemCategory.ID)
+                                .Where(k => k.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title].Value.ToLower().Contains(keyword)
+                                        || k.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Content].Value.ToLower().Contains(keyword)))
+                                            {
+                                                <div class="faq-item">
+                                                    <div class="frame">
+                                                        <h3>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, itemContent)</h3>
+                                                        <h4>@Sitecore.Context.Database.GetItem(itemContent.Fields["Category"].Value).DisplayName</h4>
+                                                        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content, itemContent)
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                }
+                            @Html.Partial("~/Views/Pagination/_Pagination.cshtml", Model)
+                        </div>
+                    </div>
+                    @Html.Partial("~/Views/FAQ/_FAQListPaging.cshtml")
+                </div>
+            @Html.Partial("~/Views/FAQ/_FAQListPaging.cshtml")
+
+        </div>
+    </div>*@
+@*@Html.Partial("~/Views/FAQ/_FAQListPaging.cshtml")*@
+
+
+
+<style>
+    .page-header .page-banner--as-bg {
+        display: none;
+    }
+</style>

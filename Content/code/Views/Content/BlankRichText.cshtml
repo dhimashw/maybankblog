@@ -1,0 +1,23 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.BlankRichText.ID) ?? true)
+    {
+        @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.BlankRichText.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+        return;
+    }
+}
+
+@if (Sitecore.Context.PageMode.IsExperienceEditor && Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields._css].Value == "1")
+{
+    <h1>@Model.Item.DisplayName</h1>
+}
+
+@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content,Model)

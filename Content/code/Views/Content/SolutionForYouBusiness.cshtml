@@ -1,0 +1,110 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    int counter = 0;
+    bool haveSession = false;
+    Sitecore.Data.Items.Item sessionItem;
+    Sitecore.Data.Fields.MultilistField ProductList = null;
+
+
+    if (Session[Sitecore.Feature.Library.Helper.Variables._sessionSolutionForYouBusiness] != null)
+    {
+        haveSession = true;
+        //Sessionnya di convert jadi ID dulu ya lan
+        sessionItem = Sitecore.Context.Database.GetItem(Session[Sitecore.Feature.Library.Helper.Variables._sessionSolutionForYouBusiness].ToString());
+        ProductList = sessionItem.Fields[Sitecore.Feature.Library.Templates.PackageProduct.Fields.ProductList];
+    }
+
+
+    if (haveSession == false)
+    {
+        @Html.PageEditorInfo("Please visit find-out page")
+    }
+}
+@if (ProductList != null)
+{
+    foreach (Sitecore.Data.Items.Item myHeaderItem in ProductList.GetItems())
+    {
+        counter++;
+        Sitecore.Data.Fields.LinkField _linkMyHeaderItem = myHeaderItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Link];
+        string redirectItemUrlMyHeaderItem = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_linkMyHeaderItem);
+        <div class="section feature @Html.Raw(counter%2 == 0 ? "bg-gray" :string.Empty) py-0">
+            <div class="container">
+                <div class="row">
+                    <div class="feature-wrapper clearfix">
+                        <div class="feature-header col-sm-4 col-lg-3">
+                            <div class="feature-header-wrapper">
+                                <div class="feature-picture">
+                                    <img src="@myHeaderItem.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.IconImage)" alt="" />
+                                </div>
+                                <div class="feature-name">
+                                    <h2>@myHeaderItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</h2>
+                                </div>
+                                <p>@myHeaderItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Summary]</p>
+                                <div class="feature-action">
+                                    <a class="btn btn-outline-primary addon" href="@redirectItemUrlMyHeaderItem" @Html.Raw(_linkMyHeaderItem.Target.Length > 0 ? "target=" + _linkMyHeaderItem.Target + "" : string.Empty)>
+                                        @myHeaderItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel]
+                                        <img class="img-responsive" src="/assets/img/icons/arrow-right/arrow-right-363-big-black@2x.png" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                            
+                            <div class="feature-body card-box-feature-body col-sm-8 col-lg-9">
+                                <div class="horizontal-scroll-container">
+                                    <div class="horizontal-scroll js-hidescroll">
+                                        @foreach (Sitecore.Data.Items.Item ProductItem in myHeaderItem.Children.Take(3))
+                                        {
+                                            Sitecore.Data.Fields.LinkField _linkProductItem = ProductItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Link];
+                                            string redirectItemUrlProductItem = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_linkProductItem);
+                                            <div class="col-xs-10 col-xs-6@landscape col-sm-4">
+                                                <div class="skeleton js-demo-skeleton">
+                                                    <div class="skeleton__header">
+                                                        <div class="skeleton__img"></div>
+                                                    </div>
+                                                    <div class="skeleton__body">
+                                                        <div class="skeleton__wrapper">
+                                                            <div class="col-xs-12">
+                                                                <div class="skeleton__line"></div>
+                                                            </div>
+                                                            <div class="col-xs-10">
+                                                                <div class="skeleton__line"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="skeleton__footer">
+                                                        <div class="skeleton__line tall"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="m-cards-giro-card product-cards js-demo-skeleton-content hide mb-0 horizontal-item">
+                                                    <div class="image">
+                                                        <img class="card-bg" src="@ProductItem.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail)" />
+                                                        <span class="product-label">@ProductItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</span>
+                                                    </div>
+                                                    <div class="desc">
+                                                        <span class="pdesc gray-text">@ProductItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Summary]</span>
+                                                        <div class="cta">
+                                                            <a class="see-more" href="@redirectItemUrlProductItem" @Html.Raw(_linkProductItem.Target.Length > 0 ? "target=" + _linkProductItem.Target + "" : string.Empty)>@ProductItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel]</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}

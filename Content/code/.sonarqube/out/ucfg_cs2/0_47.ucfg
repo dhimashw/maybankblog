@@ -1,0 +1,263 @@
+
+DSitecore.Feature.Content.Controller.BlogController.IsReCaptchValid()Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÂ Â($"0*®
+0æ
+ª
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÁ Á( 
+%0System.Web.HttpRequestBase"%System.Web.Mvc.Controller.Request.get*
+System.Web.Mvc.Controller„‡
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÁ Á(8
+%12System.Collections.Specialized.NameValueCollection"#System.Web.HttpRequestBase.Form.get*"
+ 
+%0System.Web.HttpRequestBase2Form.get∆
+√
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÁ Á(4
+%2string"
+__arrayGet*:
+8
+%12System.Collections.Specialized.NameValueCollection*
+g-recaptcha-response™
+ß
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÁ Á(<
+
+%3bool""string.operator ==(string, string)*
+"
+string*
+
+%2string*
+""*
+1
+2*`
+1"[
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÈ È(
+""*π
+2s
+q
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÏ Ï(
+resultbool"__id*
+""æ
+ª
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÌ" Ì() 
+%4System.Web.HttpRequestBase"%System.Web.Mvc.Controller.Request.get*
+System.Web.Mvc.Controller„‡
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÌ" Ì(.8
+%52System.Collections.Specialized.NameValueCollection"#System.Web.HttpRequestBase.Form.get*"
+ 
+%4System.Web.HttpRequestBase2Form.get∆
+√
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÌ" Ì(F
+%6string"
+__arrayGet*:
+8
+%52System.Collections.Specialized.NameValueCollection*
+g-recaptcha-responseá
+Ñ
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÌ Ì(F
+captchaResponsestring"__id*
+
+%6string¨©
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÓ Ó((,
+%7&Sitecore.Feature.Library.Helper.Config"&Sitecore.Feature.Library.Helper.Config√
+¿
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÓ  Ó(&
+
+%8void"/Sitecore.Feature.Library.Helper.Config.Config()*.
+,
+%7&Sitecore.Feature.Library.Helper.Configæ
+ª
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÓ Ó((0
+config&Sitecore.Feature.Library.Helper.Config"__id*.
+,
+%7&Sitecore.Feature.Library.Helper.Configµ
+≤
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÔ Ô(,
+%9string"__id*I*G
+0
+config&Sitecore.Feature.Library.Helper.Config"
+	SecretKeystringÄ
+~
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÔ Ô(,
+	secretKeystring"__id*
+
+%9stringÜ
+É
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs (?>
+%107System.Configuration.ConnectionStringSettingsCollection"?System.Configuration.ConfigurationManager.ConnectionStrings.get*-"+
+)System.Configuration.ConfigurationManagerÙ
+Ò
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs (W4
+%11-System.Configuration.ConnectionStringSettings"
+__arrayGet*@
+>
+%107System.Configuration.ConnectionStringSettingsCollection*
+CaptchaValidationURL◊
+‘
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs (b
+%12string"8System.Configuration.ConnectionStringSettings.ToString()*6
+4
+%11-System.Configuration.ConnectionStringSettings~
+|
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs (b
+apiUrlstring"__id*
+
+%12string†
+ù
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÒ Ò(7
+%13string"__concat*
+
+apiUrlstring*
+secret={0}&response={1}~
+|
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÒ Ò(7
+apiUrlstring"__id*
+
+%13string‡
+›
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÚ Ú(N
+%14string"%string.Format(string, object, object)*
+"
+string*
+
+apiUrlstring*
+
+	secretKeystring*
+
+captchaResponsestringÉ
+Ä
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÚ Ú(N
+
+requestUristring"__id*
+
+%14stringÕ
+ 
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÛ1 Û(N
+%15System.Net.WebRequest"$System.Net.WebRequest.Create(string)*"
+System.Net.WebRequest*
+
+
+requestUristringÉ
+Ä
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÛ! Û(N
+%16"__id*
+
+%15System.Net.WebRequestí
+è
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÛ Û(N+
+httpWebRequestSystem.Net.HttpWebRequest"__id*
+
+%16*
+3*ã
+3‹Ÿ
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs˜. ˜(J
+%17System.Net.WebResponse"'System.Net.HttpWebRequest.GetResponse()*-
++
+httpWebRequestSystem.Net.HttpWebRequest2GetResponse()°
+û
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs˜# ˜(J"
+responseSystem.Net.WebResponse"__id*
+
+%17System.Net.WebResponse*
+4*Ï
+4÷”
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs˘B ˘(^
+%18System.IO.Stream"*System.Net.WebResponse.GetResponseStream()*$
+"
+responseSystem.Net.WebResponse2GetResponseStream()çä
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs˘1 ˘(_
+%19System.IO.StreamReader"System.IO.StreamReader÷
+”
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs˘5 ˘(A
+%20void"5System.IO.StreamReader.StreamReader(System.IO.Stream)*
+
+%19System.IO.StreamReader*
+
+%18System.IO.Streamü
+ú
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs˘( ˘(_ 
+streamSystem.IO.StreamReader"__id*
+
+%19System.IO.StreamReader*
+5*Ø
+5∫∑
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs˚: ˚(L
+%21string""System.IO.StreamReader.ReadToEnd()*"
+ 
+streamSystem.IO.StreamReader2ReadToEnd()⁄
+◊
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs˚, ˚(M#
+%22Newtonsoft.Json.Linq.JObject"*Newtonsoft.Json.Linq.JObject.Parse(string)* "
+Newtonsoft.Json.Linq.JObject*
+
+%21stringÆ
+´
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs˚  ˚(M)
+	jResponseNewtonsoft.Json.Linq.JObject"__id*%
+#
+%22Newtonsoft.Json.Linq.JObject›⁄
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs¸! ¸(A
+%23bool",Newtonsoft.Json.Linq.JToken.Value<T>(object)*+
+)
+	jResponseNewtonsoft.Json.Linq.JObject*	
+success2Value<T>(object)z
+x
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs¸ ¸(A
+resultbool"__id*
+
+%23bool*
+6*
+6*
+7*
+7*
+8
+9*`
+8"[
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÉ É(
+""*j
+9"e
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÖ Ö(
+
+resultbool*n
+10"h
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÜ Ü(	
+implicit returnB64
+2Sitecore.Feature.Content.Controller.BlogController

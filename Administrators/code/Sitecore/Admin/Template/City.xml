@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Migration>
+  <ColumnMapping tableName="CITY" ResultType="update-table">
+    <Column source="NOMOR" destination="NOMOR" type="int" Required="true"/>
+    <Column source="KOTA" destination="KOTA" type="string"/>
+    <Column source="PROVINSI" destination="PROVINSI" type="string"/>
+  </ColumnMapping>
+</Migration>

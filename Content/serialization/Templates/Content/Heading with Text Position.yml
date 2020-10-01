@@ -1,0 +1,29 @@
+﻿---
+ID: "726f8461-3995-4eef-ab43-34a69e3cc292"
+Parent: "314d3298-ca98-41f1-9cc3-9a459709ade2"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/Content/Heading with Text Position
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: ApplicationsV2/16x16/text.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Type: tree list
+  Value: |
+    {DAA77E2D-A5D6-4CFD-9485-4F8D573D0B99}
+    {F0BB44E7-8AE4-4A48-907D-BAC5DDE2832F}
+    {1930BBEB-7805-471A-A3BE-4858AC7CF696}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180322T081150Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

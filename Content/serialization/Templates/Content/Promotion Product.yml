@@ -1,0 +1,31 @@
+﻿---
+ID: "eec0d87f-9c6b-427e-8c12-46f74e39746a"
+Parent: "314d3298-ca98-41f1-9cc3-9a459709ade2"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/Content/Promotion Product
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: ApplicationsV2/32x32/form_red_plain.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Type: tree list
+  Value: |
+    {1930BBEB-7805-471A-A3BE-4858AC7CF696}
+    {12435C08-ACCC-4101-B11B-A4443B9119AF}
+    {FB920F36-17F0-4313-A567-8F285344A1C2}
+    {EDDD263F-61E2-4A83-B448-1437AB161853}
+    {1DE9A9B9-EE2C-43F4-93F9-09298D108BAD}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180523T082253Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

@@ -1,0 +1,89 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+@{
+    var idDiv = Guid.NewGuid();
+}
+<script type="text/javascript">
+
+    function getUrlVars() {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+
+        $(document).ready(function () {
+
+        $('body').on('click', '.pagination-list a', function () {
+            var categoryId = getUrlVars()['categoryId'] == undefined ? '' : getUrlVars()['categoryId'];
+            var page = parseInt($(this).html());
+
+            $.ajax({
+                url: '@Url.Action("ArticlesPWHighlightListPaging")',
+                data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID", "categoryId": categoryId },
+                success: function (data) {
+                    $("#news-pages-@idDiv").html(data);
+                    setTimeout(function () {
+                        if ($('.story-card.js-demo-skeleton-content').hasClass('hide')) {
+                            $('.story-card.js-demo-skeleton-content').removeClass('hide')
+                            $('.skeleton.js-demo-skeleton').addClass('hide')
+                        }
+                    }, 5000)
+                }
+            });
+        });
+
+        $('body').on('click', '.previous.enabled a', function () {
+            var page = parseInt($(this).data("curpage") - 1);
+            var categoryId = getUrlVars()['categoryId'] == undefined ? '' : getUrlVars()['categoryId'];
+            $.ajax({
+                url: '@Url.Action("ArticlesPWHighlightListPaging")',
+                data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID", "categoryId": categoryId },
+                success: function (data) {
+                    $("#news-pages-@idDiv").html(data);
+                    setTimeout(function () {
+                        if ($('.story-card.js-demo-skeleton-content').hasClass('hide')) {
+                            $('.story-card.js-demo-skeleton-content').removeClass('hide')
+                            $('.skeleton.js-demo-skeleton').addClass('hide')
+                        }
+                    }, 5000)
+                }
+            });
+        });
+
+        $('body').on('click', '.next.enabled a', function () {
+            var page = parseInt($(this).data("curpage") ) + 1;
+            var categoryId = getUrlVars()['categoryId'] == undefined ? '' : getUrlVars()['categoryId'];
+            $.ajax({
+                url: '@Url.Action("ArticlesPWHighlightListPaging")',
+                data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID", "categoryId": categoryId },
+                success: function (data) {
+                    $("#news-pages-@idDiv").html(data);
+                    setTimeout(function () {
+                        if ($('.story-card.js-demo-skeleton-content').hasClass('hide')) {
+                            $('.story-card.js-demo-skeleton-content').removeClass('hide')
+                            $('.skeleton.js-demo-skeleton').addClass('hide')
+                        }
+                    }, 5000)
+                }
+            });
+        });
+    });
+</script>
+
+
+<div class="section story-list">
+    @Html.Sitecore().Placeholder("article-heading")
+    <div class="container">
+        <div id="news-pages-@idDiv">
+            @Html.Partial("_ArticleHighlightsItem")
+        </div>
+        <!-- PAGINATION COMPONENT -->
+       @* @Html.Partial("~/Views/Pagination/_Pagination.cshtml", Model)*@
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    var itemId = Model.Item.ID.ToString().Replace("{", "").Replace("}", "");
+    string jsModalTrigger = "js-modal-trigger";
+    string url = "#";
+    string targetType = string.Empty;
+    bool isInternal = false;
+}
+
+@if (Model.Item != null && Model.Item.TemplateID == Sitecore.Feature.Library.Templates.CardInfo.ID)
+{
+    if (Model.Item.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url).ToString() != string.Empty)
+    {
+        Sitecore.Data.Fields.LinkField _link = Model.Item.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url];
+        isInternal = _link.IsInternal;
+        url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+        //targetType = Model.Item.LinkFieldOptions(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url, LinkFieldOption.Target);
+        targetType = _link.Target;
+        jsModalTrigger = "";
+
+    }
+    <a class="m-cards-info-card @jsModalTrigger @Html.Raw(isInternal == false ? "js-modal-trigger js-modal-leave-site" : string.Empty)" href="@url" @Html.Raw(string.IsNullOrEmpty(targetType) ? string.Empty : "target="+targetType) @Html.Raw(isInternal == false ? "modal=modal-leave-site" : "modal="+itemId)>
+        <span>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralValue.Fields.stringTitle, Model.Item)</span>
+    </a>
+    if (!Sitecore.Context.PageMode.IsExperienceEditor)
+    {
+        @Html.Hidden("ModalHeader", null, new { data_modal_header = Model.Item.Field(Sitecore.Feature.Library.Templates.CardInfo.Fields.ModalHeader) })
+        @Html.Hidden("ModalBody", null, new { data_modal_body = Model.Item.Field(Sitecore.Feature.Library.Templates.CardInfo.Fields.ModalBody).ToString().Replace("<br/>", "") })
+    }
+}

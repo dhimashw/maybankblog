@@ -1,0 +1,80 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    string TitleListOffer = RenderingContext.Current.Rendering.Parameters["Title"];
+    //string myInterest = (string)(Session[Variables._sessionNameListOffer]);
+    //string[] splitString = myInterest.Split(';');
+    //bool haveInterest = false;
+    //if ((!string.IsNullOrEmpty(myInterest)) && splitString.Length > 0)
+    //{
+    //    haveInterest = true;
+    //}
+    var cssHide = Sitecore.Context.PageMode.IsExperienceEditor == true ? "" : "hide";
+}
+
+
+    @*<div class="heading">
+        <h1>@TitleListOffer</h1>
+    </div>*@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>@TitleListOffer</h1><br />
+            </div>
+        </div>
+    </div>
+
+
+@if (Model.Item != null && Model.Item.Children.Where(x => x.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowInMenu] != null && x.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowInMenu].Value == "1").Count() > 0)
+{
+    Sitecore.Data.Items.Item[] OfferItems = Model.Item.Children.ToArray();
+    //if (haveInterest == true)
+    //{
+    //    OfferItems = Sitecore.Feature.Library.Helper.Core.ShortItemBaseInterest(Model.Item.Children.ToArray(), splitString);
+    //}
+    <div class="container">
+        <div class="row">
+        @foreach (Sitecore.Data.Items.Item OfferItem in OfferItems.Where(x => x.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowInMenu] != null && x.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowInMenu].Value == "1"))
+        {
+            Sitecore.Data.Fields.LinkField _link = OfferItem.Fields[Sitecore.Feature.Library.Templates.TopNav.Fields.UrlApplyNow];
+            string url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+            //string imageUrl = Variables._defaultImageOffer;
+
+            //if (OfferItem.LinkFieldUrl(Sitecore.Feature.Library.Templates.Offer.Fields.Url) != null)
+            //{
+            //    url = OfferItem.LinkFieldUrl(Sitecore.Feature.Library.Templates.Offer.Fields.Url);
+            //}
+
+            //if (OfferItem.ImageUrl(Sitecore.Feature.Library.Templates.Offer.Fields.Image) != null)
+            //{
+            //    imageUrl = OfferItem.ImageUrl(Sitecore.Feature.Library.Templates.Offer.Fields.Image);
+            //}
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="m-cards-giro-card">
+                <div class="image">
+                  @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.Page.Fields.Thumbnail, OfferItem, cssClass: "removestyle img-responsive")
+                  <span class="product-label">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Page.Fields.Title, OfferItem)</span>
+                </div>
+                <div class="desc"> <span class="pdesc">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Page.Fields.Summary, OfferItem)</span>
+                  <div class="cta">
+                        <a class="see-more" href="@OfferItem.Url()">@Html.Sitecore().Dictionary("/Feature/Content/Banner", "Edit This Content On Dictionary(/Feature/Content/Banner)")</a>
+                        <a class="btn btn-tertiary addon" href="@url">
+                            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.TopNav.Fields.LabelApplyNow, OfferItem)
+                            @*@Html.Sitecore().Dictionary("/Feature/Content/List Offer", "Edit This Content On Dictionary(/Feature/Content/List Offer)")*@
+                            <img src="/assets/img/icons/arrow-right/arrow-right-363@2x.png" alt="" />
+                        </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        }
+        </div>
+    </div>
+}
+

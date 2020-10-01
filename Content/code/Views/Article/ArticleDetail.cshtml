@@ -1,0 +1,36 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Data.Items;
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Feature.Library.Helper
+@using Sitecore.Feature.Library.Helpers
+@model Sitecore.Mvc.Presentation.RenderingModel
+@{
+    var elements = LibraryHelpers.GetDynamicMultiList(Model.Item);
+    var tabName = string.Empty;
+
+    Sitecore.Data.Fields.LinkField _link = Model.Item.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url];
+    string redirectItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link)+"?"+Sitecore.Feature.Library.Helper.Variables._categoryId +"=";
+}
+<div class="section career-program">
+    <div class="container">
+        <div class="career-program-content">
+            <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Title)</h1>
+            <p class="date">@Html.Sitecore().RenderDate(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Date, Model.Item, Sitecore.Feature.Library.Helper.Variables.globalFormatDateTime)</p>            
+            @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Image, Model.Item, cssClass: "img-responsive")            
+            <p class="gray-text">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Body)</p>
+            <div class="row">
+                <ul class="filter-tag-wrapper static-view">
+                    @foreach (Item item in Model.Item.GetMultiListValueItems(Sitecore.Feature.Library.Templates.ArticleItem.Fields.TaggingCategory))
+                    {
+                        tabName = item.ID.ToString().Replace("{", "").Replace("}", "");
+                        <li class="filter-tag-list article-tabs"><a href="@redirectItemUrl@tabName" data-targetID="@tabName"><span>@item.DisplayName</span></a></li>
+                    }                 
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

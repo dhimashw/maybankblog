@@ -1,0 +1,31 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Data.Items
+@using template = Sitecore.Feature.Library.Templates.MBMImageItem
+@model RenderingModel
+@{
+
+}
+
+<div class="container">
+    @Html.Raw(Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields._TitleRichText, Model.Item))
+    <div class="row js-gallery-group">
+
+        @foreach(Item item in Model.Item.Children)
+        {
+            <div class="col-xs-12 col-sm-3 mb-3">
+                <div class="gallery">
+                    <div class="gallery__thumbnail" style="background-image: url(@item.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.FileMBMImage))"></div>
+                    <div class="gallery__detail" data-trigger="gallery">
+                        <div class="gallery__action"> <i class="icon icon-cursor-move"></i></div>
+                        <div class="gallery__caption">
+                            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, item)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        
+    </div>
+</div>

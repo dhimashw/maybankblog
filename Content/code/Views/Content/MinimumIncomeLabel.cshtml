@@ -1,0 +1,31 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Data.Items
+@using Sitecore.Feature.Library.Helpers
+
+@model RenderingModel
+@{
+    int counter = Model.Item.GetChildren().Count;
+
+    var childList = new List<Item>();
+    LibraryHelpers.AppendItems(childList, Model.Item);
+}
+
+<div class="section narrow-top narrow-bot gray m-calc-calculator alt">
+    <div class="container">
+        <div class="row">
+            @for (int i = 1; i <= counter; i++)
+            {
+                var noBorder = i == counter ? "no-border" : "";
+
+                <div class="col col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="calc-box @noBorder">
+                        <div class="label">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, childList.ElementAt(i - 1))</div>
+                        <div class="lnum">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content, childList.ElementAt(i - 1))</div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

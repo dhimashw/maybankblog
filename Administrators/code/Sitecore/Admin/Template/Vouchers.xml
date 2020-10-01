@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Migration>
+  <ColumnMapping tableName="VOUCHERS" ResultType="update-table">
+    <Column source="VoucherID" destination="VoucherID" type="int" Required="true"/>
+    <Column source="VoucherCode" destination="VoucherCode" type="string"/>
+    <Column source="VoucherDescription" destination="VoucherDescription" type="string"/>
+    <Column source="VoucherDescriptionEN" destination="VoucherDescriptionEN" type="string"/>
+  </ColumnMapping>
+</Migration>

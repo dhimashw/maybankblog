@@ -1,0 +1,19 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@model RenderingModel
+@{
+
+}
+<div class="feature">
+    <div class="article">
+        <div class="container">
+            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content, Model.Item)
+        </div>
+    </div>
+</div>
+

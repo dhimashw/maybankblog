@@ -1,0 +1,24 @@
+﻿---
+ID: "6c4901d4-6206-46b9-99ef-fe14677bc535"
+Parent: "82fb0f1b-fe46-432f-9f16-ba1dbd8aa959"
+Template: "2a3e91a0-7987-44b5-ab34-35c2d9de83b9"
+Path: /sitecore/layout/Renderings/Feature/Article/Latest News Corporate
+DB: master
+SharedFields:
+- ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
+  Hint: Path
+  Value: /Views/NewsAnnouncement/LatestNewsCorporate.cshtml
+- ID: "ded9e431-3604-4921-a4b3-a6ec7636a5b6"
+  Hint: Controller Action
+  Value: CorporateLatestNews
+- ID: "e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7"
+  Hint: Controller
+  Value: Sitecore.Feature.Content.Controller.NewsAnnouncementController, Sitecore.Feature.Content
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181217T075458Z

@@ -1,0 +1,51 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helper
+@using Sitecore.Data.Items
+@using baseField = Sitecore.Feature.Library.Templates.BaseField
+@model PagedData<Item>
+@{
+    int c = 0;
+    string addedClass = "";
+    string imgClass = "";
+    string style = "";
+}
+
+@foreach (Item item in Model.Data)
+{
+    if (c % 2 == 0)
+    {
+        addedClass = "col-md-pull-6";
+        imgClass = "col-md-push-6";
+        style = "bg-color-white";
+    }
+    else
+    {
+        addedClass = "";
+        imgClass = "";
+        style = "bg-color-g1";
+    }
+    <div class="page-section @style">
+        <div class="container">
+            <div class="article article-wysiwyg">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 @imgClass"><img class="img-responsive center-block" src="@item.ImageUrl(baseField.Fields._Image)" alt="" /><br /></div>
+                    <div class="col-xs-12 col-md-6 @addedClass">
+                        <div><h1>@Html.Raw(Html.Sitecore().Field(baseField.Fields._TitleRichText, item))</h1></div>
+
+                        <p>@Html.Raw(Html.Sitecore().Field(baseField.Fields._SummaryRichText, item))</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    c++;
+}
+
+<div class="page-section bg-color-white">
+    <div class="container">
+        @Html.Partial("~/Views/Pagination/_Pagination.cshtml", Model)
+    </div>
+</div>

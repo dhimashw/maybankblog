@@ -1,0 +1,4 @@
+ô
+ESitecore.Feature.Content.Helper.ValidateAntiForgeryTokenPostAttribute!System.Web.Mvc.AuthorizeAttributeSystem.Web.Mvc.FilterAttributeSystem.Attributeobject²
+4OnAuthorization(System.Web.Mvc.AuthorizationContext)zSitecore.Feature.Content.Helper.ValidateAntiForgeryTokenPostAttribute.OnAuthorization(System.Web.Mvc.AuthorizationContext)˜
+'ValidateAntiForgeryTokenPostAttribute()mSitecore.Feature.Content.Helper.ValidateAntiForgeryTokenPostAttribute.ValidateAntiForgeryTokenPostAttribute()

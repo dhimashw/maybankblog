@@ -1,0 +1,52 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Data.Items
+@using Sitecore.Data.Fields
+@using template = Sitecore.Feature.Library.Templates.MBMMobileAppItem
+@model RenderingModel
+@{
+    if (!Model?.Item?.IsDerived(template.ID) ?? true)
+    {
+        @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(template.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+        return;
+    }
+
+    LinkField link = null;
+    string url = null;
+}
+<div class="page-banner--as-bg" style="background-image:url(@Model.Item.ImageUrl(template.Fields.BackgroundImage))" alt="">
+    <div class="container">
+        <div class="page-banner-body">
+            <h1>@Html.Sitecore().Field(template.Fields.Title)</h1>
+            <p class="t-paragraph--light">@Html.Sitecore().Field(template.Fields.Content)</p>
+            <br />
+            <div class="row">
+                <div class="col-xs-5 col-sm-4">
+                    @if (!string.IsNullOrEmpty(Model.Item.ImageUrl(template.Fields.ImageOne)))
+                    {
+                        link = Model.Item.Fields[template.Fields.ImageOneLink];
+                        url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(link);
+                        <a href="@url" @Html.Raw(link.Target.Length > 0 ? "target=" + link.Target + "" : "")>
+                            @Html.Sitecore().ImageField(template.Fields.ImageOne, Model.Item, cssClass: "img-responsive")
+                            @*<img class="img-responsive" src="@Model.Item.ImageUrl(template.Fields.ImageOne)" alt="" />*@
+                        </a>
+                    }
+                </div>
+                <div class="col-xs-5 col-sm-4">
+                    @if (!string.IsNullOrEmpty(Model.Item.ImageUrl(template.Fields.ImageTwo)))
+                    {
+                        link = Model.Item.Fields[template.Fields.ImageTwoLink];
+                        url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(link);
+                        <a href="@url" @Html.Raw(link.Target.Length > 0 ? "target=" + link.Target + "" : "")>
+                            @Html.Sitecore().ImageField(template.Fields.ImageTwo, Model.Item, cssClass: "img-responsive")
+                            @*<img class="img-responsive" src="@Model.Item.ImageUrl(template.Fields.ImageTwo)" alt="" />*@
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

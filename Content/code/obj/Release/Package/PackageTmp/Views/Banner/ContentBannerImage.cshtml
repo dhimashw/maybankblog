@@ -1,0 +1,45 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Content
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+
+}
+
+@if (Model.Item != null && Model.Item.TemplateID == Sitecore.Feature.Content.Templates.Banner.ID)
+{
+    string url = string.Format("href=\"{0}\"", "#");
+    string imageUrl = Variables._defaultImageBanner;
+
+    if (Model.Item.LinkFieldUrl(Sitecore.Feature.Content.Templates.Banner.Fields.Url) != null)
+    {
+        url = string.Format("href=\"{0}\"", Model.Item.LinkFieldUrl(Sitecore.Feature.Content.Templates.Banner.Fields.Url)); 
+    }
+
+    if (Model.Item.ImageUrl(Sitecore.Feature.Content.Templates.Banner.Fields.Image) != null)
+    {
+        imageUrl = Model.Item.ImageUrl(Sitecore.Feature.Content.Templates.Banner.Fields.Image);
+    }
+
+    <div class="banner banner-size-small banner-desc-right owl-carousel owl-theme">
+        <div>
+            <div class="banner-img"><img src="@imageUrl" alt="" /></div>
+            <div class="section transparent">
+                <div class="container banner-desc">
+                    <div class="row align-items-center">
+                        <div class="col-10 col-sm-8 col-md-6 col-lg-5">
+                            <h1>@Html.Sitecore().Field(Sitecore.Feature.Content.Templates.Banner.Fields.stringBannerTitle, Model.Item)</h1>
+                            <p>@Html.Sitecore().Field(Sitecore.Feature.Content.Templates.Banner.Fields.stringBannerDescription, Model.Item)</p>
+                            <div class="cta white-text"><a class="btn wide btn-tertiary" @url>@Html.Sitecore().Dictionary("/Feature/Content/Banner", "Edit This Content On Dictionary")</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

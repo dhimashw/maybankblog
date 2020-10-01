@@ -1,0 +1,10 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@model RenderingModel
+@{
+    var title = RenderingContext.Current.Rendering.Parameters["Title"] == null ? "Please edit on component properties." : RenderingContext.Current.Rendering.Parameters["Title"];
+}
+
+<div class="heading centered">
+    <h1>@title</h1>
+</div>

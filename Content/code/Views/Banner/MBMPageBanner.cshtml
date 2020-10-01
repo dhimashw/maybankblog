@@ -1,0 +1,25 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using template = Sitecore.Feature.Library.Templates.MBMPageBanner
+@model RenderingModel
+@if (!Model?.Item?.IsDerived(template.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(template.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{ 
+    bool textBlack = RenderingContext.Current.Rendering.Parameters["Text Black"] == "1" ? true : false;
+}
+
+<div class="page-banner--as-bg @(textBlack ? "text-black" : "page-banner--as-bg--taller")" style="background-image:url(@Model.Item.ImageUrl(template.Fields.Image))">
+    <div class="container">
+        <div class="page-banner-body @(textBlack ? "text-black" : "")">
+            <div class="@(textBlack ? "fadein-left" : "py-3")">
+                @Html.Raw(Html.Sitecore().Field(template.Fields.Summary, Model.Item))
+            </div>
+        </div>
+    </div>
+</div>

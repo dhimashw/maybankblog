@@ -1,0 +1,53 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Data.Items;
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@model RenderingModel
+@{ 
+    var items = Sitecore.Context.Database.GetItem(Model.Item.ID);
+    var iconBorder = RenderingContext.Current.Rendering.Parameters["IsIconBorder"] == null ? "0" : RenderingContext.Current.Rendering.Parameters["IsIconBorder"];
+}
+<div class="heading">
+    <h1>@items.Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading)</h1>
+    <p>
+        @items.Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent)
+    </p>
+</div>
+<div class="row pb-5">
+    @foreach (Item itemChild in items.Children)
+    {
+        <div class="card-ico borderless autoheight col-12 col-lg-4 col-md-6 col-sm-6">
+            <div class="card-ico-wrapper">
+                <div class="card-ico-box">
+                    <div class="card-ico-box-wrapper text-center">
+                        @if (iconBorder == "1")
+                        {
+                            <div class="table-cell">
+                                <div class="card-image table full-height">
+                                    <div class="table-cell va-bottom">
+                                        <img src="@itemChild.ImageUrl(Sitecore.Feature.Library.Templates.ImageLink.Fields.Image)" />
+                                    </div>                                                                       
+                                </div>
+                                <div class="card-ico-caption">@itemChild.Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading)</div>
+                                <div class="card-ico-p">@itemChild.Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent)</div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="table full-height">
+                                <div class="table-cell">
+                                    <div class="card-ico-image"><img src="@itemChild.ImageUrl(Sitecore.Feature.Library.Templates.ImageLink.Fields.Image)" /></div>
+                                    <div class="card-ico-caption">@itemChild.Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading)</div>
+                                    <div class="card-ico-p">@itemChild.Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent)</div>
+                                </div>
+                            </div>
+                        }                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    }     
+</div>

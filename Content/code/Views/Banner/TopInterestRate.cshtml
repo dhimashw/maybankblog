@@ -1,0 +1,63 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model RenderingModel
+@{
+    string flagActive = "class=active";
+    Sitecore.Data.Items.Item CurrentItemPage = RenderingContext.Current.PageContext.Item;
+    string urlOption = string.Empty;
+    if (Sitecore.Context.PageMode.IsExperienceEditor)
+    {
+        if (CurrentItemPage.Url().Contains("?"))
+        {
+            urlOption = CurrentItemPage.Url() + "&key=";
+        }
+        else
+        {
+            urlOption = CurrentItemPage.Url() + "?key=";
+        }
+    }
+    else
+    {
+        urlOption = CurrentItemPage.Url() + "?key=";
+    }
+    int counterItem = 0;
+}
+
+@if (Model.Item != null && Model.Item.Children.Count > 0)
+{
+    <div class="m-top-nav js-scroll-fixed">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                    <div class="top-nav-link dropdown-mode">
+                        <span class="selected-text outlined"></span>
+                        <div class="links">
+                            @foreach (Sitecore.Data.Items.Item myItem in Model.Item.Children)
+                            {
+                                string urlWithID = urlOption + myItem.ID + "&CategoryTitle=" + myItem.DisplayName;
+                                string textLink = System.Text.RegularExpressions.Regex.Replace(myItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title].Value, @"(<br />|<br/>|</ br>|</br>|<br>)", "");
+
+                                counterItem += 1;
+                                Guid newGuid;
+                                if (Request.QueryString["key"] != null && Guid.TryParse(Request.QueryString["key"], out newGuid) && myItem.ID == new Sitecore.Data.ID(newGuid))
+                                {
+                                    <a @flagActive href="@urlWithID" data-href="@myItem.ID">@textLink</a>
+                                }
+                                else if (counterItem == 1)
+                                {
+                                    <a @flagActive href="@urlWithID" data-href="@myItem.ID">@textLink</a>
+                                }
+                                else
+                                {
+                                    <a href="@urlWithID" data-href="@myItem.ID">@textLink</a>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

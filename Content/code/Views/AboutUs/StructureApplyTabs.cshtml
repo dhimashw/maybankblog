@@ -1,0 +1,70 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Feature.Library.Helpers
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Data.Items
+@model RenderingModel
+@{
+    Item _dataSource = Model.Item;
+    IEnumerable<Item> groupCategory = LibraryHelpers.GetDynamicMultiList(_dataSource);
+    var defaultTabsCategory = groupCategory.Select(x => x.ID).FirstOrDefault().ToString();
+
+    var elementsCount = groupCategory.Count();
+    var param_Category = Request.QueryString[Sitecore.Feature.Library.Helper.Variables._categoryId];
+
+    if (param_Category == null)
+    {
+        param_Category = defaultTabsCategory;
+    }
+    var childItemList = new List<Sitecore.Data.Items.Item>();
+    Sitecore.Data.ID folderID = new Sitecore.Data.ID("{BDF7915F-3261-4488-989F-F5447DE889CA}");
+    LibraryHelpers.AppendItems(childItemList, Sitecore.Context.Database.GetItem(folderID));
+}
+
+@if (!Model?.Item.ChildOf(childItemList) ?? true && elementsCount == 0)
+{
+    @Html.PageEditorError(null, "Please insert the right datasource.", Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+else if (Model?.Item.ChildOf(childItemList) == true && elementsCount == 0)
+{
+    @Html.PageEditorInfo(null, "Please do Edit Related Item.", Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+
+
+<div class="section py-0 m-tabs-apply-tabs">
+    <div class="tab-box">
+        <div class="tab-header left-align gray text-only">
+            <div class="container">
+                <div class="options no-toggle stc-tabs do-not-trigger" data-targetclass="stc-tabs-category">
+                    @foreach (Item item in groupCategory)
+                    {
+                        Sitecore.Data.Fields.LinkField _link = item.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url];
+                        string link = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+                        if (item.ID.ToString() == param_Category)
+                        {
+                            @*<a class="tab-handle active" href="@item.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url)" data-targetID="@item.ID" data-targetTitle="@item.DisplayName">*@
+                                <a class="tab-handle active" href="@link" data-targetID="@item.ID" data-targetTitle="@item.DisplayName">
+                                    <div class="icon">
+                                        <img src="../../../assets/img/icons/ico-savings.png" />
+                                    </div><span>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Title, item)</span>
+                                </a>
+                        }
+                        else
+                        {
+                            @*<a class="tab-handle" href="@item.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url)" data-targetID="@item.ID" data-targetTitle="@item.DisplayName">*@
+                                <a class="tab-handle" href="@link" data-targetID="@item.ID" data-targetTitle="@item.DisplayName">
+                                    <div class="icon">
+                                        <img src="../../../assets/img/icons/ico-savings.png" />
+                                    </div><span>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Title, item)</span>
+                                </a>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

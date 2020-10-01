@@ -1,0 +1,47 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.BODHeaderContent.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.BODHeaderContent.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+
+@if (Sitecore.Context.PageMode.IsExperienceEditor)
+{
+    <style>
+        .section.head-bod .bod-main-col {
+            position: relative !important;
+        }
+    </style>
+
+}
+<div class="section no-pad-bot m-info-box head-bod">
+    <div class="container-frame">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 bod-main-col">
+                    <div class="bod-main-frame">
+                        <div class="bod-main">
+                            <a href="">
+                                <img src="@Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields._Image)" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 col-f-right">
+                    <div class="desktop-copy summary">
+                        <h2>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title, Model.Item)</h2>
+                        <p class="posisi gray-text">@Model.Item.Fields[Sitecore.Feature.Library.Templates.BODHeaderContent.Fields.BODPosition].Value</p>
+                        <p class="gray-text">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content, Model.Item)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

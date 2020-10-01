@@ -1,0 +1,15 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Data.Items
+@model IEnumerable<Item>
+@{
+
+}
+<div>
+    <ul>
+        @foreach (Item item in Model)
+        {
+            <li>@item.DisplayName</li>
+        }
+    </ul>
+</div>

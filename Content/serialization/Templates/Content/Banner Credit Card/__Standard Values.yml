@@ -1,0 +1,48 @@
+﻿---
+ID: "f8b3da44-0074-4de5-a8d8-ee98b7accfd7"
+Parent: "74e0a3ac-7b61-4d56-94aa-5eaeb77193d2"
+Template: "74e0a3ac-7b61-4d56-94aa-5eaeb77193d2"
+Path: /sitecore/templates/Feature/Content/Banner Credit Card/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{A19CEF29-784B-474F-9578-480126DC5FCD}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180424T072559Z
+    - ID: "56bc62bf-106c-40c4-81be-62541236dc4a"
+      Hint: Button Label
+      Value: SEE MORE
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8c16f794-0e02-4c31-a5f6-47ac03bf250f"
+      Hint: Show CTA
+      Type: Checkbox
+      Value: 1
+- Language: id
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180425T070842Z
+    - ID: "56bc62bf-106c-40c4-81be-62541236dc4a"
+      Hint: Button Label
+      Value: LIHAT DETAIL
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8c16f794-0e02-4c31-a5f6-47ac03bf250f"
+      Hint: Show CTA
+      Type: Checkbox
+      Value: 1

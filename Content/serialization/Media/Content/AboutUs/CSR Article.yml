@@ -1,0 +1,18 @@
+﻿---
+ID: "0c98d362-64d8-4024-9530-ea8661aa6100"
+Parent: "fc987122-5fc7-4602-b85a-b407b1fc02f1"
+Template: "fe5dd826-48c6-436d-b87a-7c4210c7413b"
+Path: /sitecore/media library/Feature/Content/AboutUs/CSR Article
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180725T090737Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

@@ -1,0 +1,221 @@
+
+pSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DebugDashboard.DisplayApprovedComment(string, string)k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs (*"0*’
+
+0ÆÃ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs: (F,
+%0&Sitecore.Feature.Library.Helper.Config"&Sitecore.Feature.Library.Helper.ConfigÝ
+Ú
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs> (D
+
+%1void"/Sitecore.Feature.Library.Helper.Config.Config()*.
+,
+%0&Sitecore.Feature.Library.Helper.ConfigÑ
+Î
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs: (V
+%2string"__id*K*I
+,
+%0&Sitecore.Feature.Library.Helper.Config"
+ConectionStringstringÀ½
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs( (W)
+%3#System.Data.SqlClient.SqlConnection"#System.Data.SqlClient.SqlConnectionô
+ñ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs, (9
+
+%4void"9System.Data.SqlClient.SqlConnection.SqlConnection(string)*+
+)
+%3#System.Data.SqlClient.SqlConnection*
+
+%2stringÐ
+Í
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs! (W+
+conn#System.Data.SqlClient.SqlConnection"__id*+
+)
+%3#System.Data.SqlClient.SqlConnection*
+1*Ö/
+1º·
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs !  (W&
+%5 System.Data.SqlClient.SqlCommand" System.Data.SqlClient.SqlCommandÓ
+Ð
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs %  (/
+
+%6void"XSystem.Data.SqlClient.SqlCommand.SqlCommand(string, System.Data.SqlClient.SqlConnection)*(
+&
+%5 System.Data.SqlClient.SqlCommand*" 
+dbo.spGetApprovedCommentByDate*-
++
+conn#System.Data.SqlClient.SqlConnectionÉ
+Æ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs   (W'
+cmd System.Data.SqlClient.SqlCommand"__id*(
+&
+%5 System.Data.SqlClient.SqlCommand„
+
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs!" !(=
+%7"__id*
+""á
+Þ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs! !(=
+
+%8void"0System.Data.SqlClient.SqlCommand.CommandType.set*)
+'
+cmd System.Data.SqlClient.SqlCommand*
+
+%7€
+ý
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs"% "(32
+%9,System.Data.SqlClient.SqlParameterCollection"/System.Data.SqlClient.SqlCommand.Parameters.get*)
+'
+cmd System.Data.SqlClient.SqlCommand«
+¨
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs"K "(^
+%10string"__concat*
+
+startstring*
+	 00:00:00¹
+¶
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs"% "(_)
+%11"System.Data.SqlClient.SqlParameter"ISystem.Data.SqlClient.SqlParameterCollection.AddWithValue(string, object)*4
+2
+%9,System.Data.SqlClient.SqlParameterCollection*
+
+@start*
+
+%10stringÐ
+Í
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs" "(_+
+param"System.Data.SqlClient.SqlParameter"__id*+
+)
+%11"System.Data.SqlClient.SqlParameter
+þ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs#& #(43
+%12,System.Data.SqlClient.SqlParameterCollection"/System.Data.SqlClient.SqlCommand.Parameters.get*)
+'
+cmd System.Data.SqlClient.SqlCommand©
+¦
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs#J #([
+%13string"__concat*
+
+endstring*
+	 23:59:59¸
+µ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs#& #(\)
+%14"System.Data.SqlClient.SqlParameter"ISystem.Data.SqlClient.SqlParameterCollection.AddWithValue(string, object)*5
+3
+%12,System.Data.SqlClient.SqlParameterCollection*
+@end*
+
+%13stringÑ
+Î
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs# #(\,
+param2"System.Data.SqlClient.SqlParameter"__id*+
+)
+%14"System.Data.SqlClient.SqlParameterÃÀ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs$- $(D+
+%15$System.Data.SqlClient.SqlDataAdapter"$System.Data.SqlClient.SqlDataAdapter®
+«
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs$1 $(?
+%16void"USystem.Data.SqlClient.SqlDataAdapter.SqlDataAdapter(System.Data.SqlClient.SqlCommand)*-
++
+%15$System.Data.SqlClient.SqlDataAdapter*)
+'
+cmd System.Data.SqlClient.SqlCommandÚ
+×
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs$ $(D3
+dataAdapter$System.Data.SqlClient.SqlDataAdapter"__id*-
++
+%15$System.Data.SqlClient.SqlDataAdapter¡ž
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs% %(*
+%17System.Data.DataSet"System.Data.DataSetº
+·
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs%! %((
+%18void"System.Data.DataSet.DataSet()*
+
+%17System.Data.DataSet¯
+¬
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs% %(*
+dsSystem.Data.DataSet"__id*
+
+%17System.Data.DataSet
+š
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs& &(+
+
+%19int"BSystem.Data.Common.DbDataAdapter.Fill(System.Data.DataSet, string)*5
+3
+dataAdapter$System.Data.SqlClient.SqlDataAdapter*
+
+dsSystem.Data.DataSet*
+zxc¬
+©
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs' '( )
+%20"System.Web.UI.WebControls.Repeater"__id*ˆ*…K
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DebugDashboard"6
+commentListDebug"System.Web.UI.WebControls.RepeaterÕ
+Ò
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs'. '(7&
+%21System.Data.DataTableCollection"System.Data.DataSet.Tables.get*
+
+dsSystem.Data.DataSetÍ
+Ê
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs'. '(>
+%22System.Data.DataTable"
+__arrayGet*(
+&
+%21System.Data.DataTableCollection*
+zxcŠ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs' '(>
+%23void"1System.Web.UI.WebControls.Repeater.DataSource.set*+
+)
+%20"System.Web.UI.WebControls.Repeater*
+
+%22System.Data.DataTable2DataSource.set¬
+©
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs( (( )
+%24"System.Web.UI.WebControls.Repeater"__id*ˆ*…K
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DebugDashboard"6
+commentListDebug"System.Web.UI.WebControls.Repeateråâ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs( ((+
+%25void"-System.Web.UI.WebControls.Repeater.DataBind()*+
+)
+%24"System.Web.UI.WebControls.Repeater2
+DataBind()*
+2*ˆ
+2"‚
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cs* *(	
+implicit return:
+startstring:
+endstringBMK
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DebugDashboard

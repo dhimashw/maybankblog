@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Migration>
+  <ColumnMapping tableName="KODEPOS" ResultType="update-table">
+    <Column source="NOMOR" destination="NOMOR" type="int" Required="true"/>
+    <Column source="ZIP_CODE" destination="ZIP_CODE" type="string"/>
+    <Column source="SEQ" destination="SEQ" type="string"/>
+	<Column source="ZIP_DESC" destination="ZIP_DESC" type="string"/>
+	<Column source="KELURAHAN" destination="KELURAHAN" type="string"/>
+	<Column source="KECAMATAN" destination="KECAMATAN" type="string"/>
+	<Column source="PROPINSI" destination="PROPINSI" type="string"/>
+	<Column source="KOTA" destination="KOTA" type="string"/>
+	<Column source="DATI_II" destination="DATI_II" type="string"/>
+	<Column source="NEGARA" destination="NEGARA" type="string"/>
+	<Column source="SANDIWILAYAHBI" destination="SANDIWILAYAHBI" type="string"/>
+	<Column source="ACTIVE" destination="ACTIVE" type="int"/>
+	<Column source="DATI_II_CODE" destination="DATI_II_CODE" type="string"/>
+	<Column source="SIKP_CODE" destination="SIKP_CODE" type="string"/>
+	<Column source="LANGUAGE" destination="LANGUAGE" type="string"/>
+  </ColumnMapping>
+</Migration>

@@ -1,0 +1,55 @@
+
+uSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll.btnUploadATM_Click(object, System.EventArgs)l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.cs‚ ‚()"0*Œ
+0Æ
+´
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.cs‰ ‰(&*
+%0$System.Web.UI.WebControls.FileUpload"__id*à*ÖJ
+HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"7
+fuBulkUploadATM$System.Web.UI.WebControls.FileUploadè
+å
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.cs‰ ‰(7
+
+%1void"ÅSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll.UploadFile(System.Web.UI.WebControls.FileUpload, string)*LJ
+HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll*,
+*
+%0$System.Web.UI.WebControls.FileUpload*
+Template ATM¶
+£
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csÂ Â('
+%2!System.Web.UI.WebControls.Literal"__id*É*ÄJ
+HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"2
+LastUploadATM!System.Web.UI.WebControls.Literalø
+º
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csÂ5 Â(R
+%3string"^Sitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll.GetLastUpload(string)*LJ
+HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll*
+Template ATMÆ
+´
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csÂ! Â(R
+%4string"__concat*
+ Last upload : *
+
+%3string‰
+·
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csÂ Â(R
+
+%5void"*System.Web.UI.WebControls.Literal.Text.set*)
+'
+%2!System.Web.UI.WebControls.Literal*
+
+%4string*
+1*â
+1"É
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csÊ Ê(	
+implicit return:
+senderobject:
+eSystem.EventArgsBLJ
+HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll

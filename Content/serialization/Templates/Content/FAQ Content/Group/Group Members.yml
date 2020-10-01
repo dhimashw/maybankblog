@@ -1,0 +1,21 @@
+﻿---
+ID: "a5ea1d60-2368-4f4f-974c-5dc4c18288f8"
+Parent: "57766518-bc8b-423d-865f-09e350db17c0"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Feature/Content/FAQ Content/Group/Group Members
+DB: master
+SharedFields:
+- ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
+  Hint: Source
+  Value: "query:self::/*[@@templateid='{A21B3ACE-ED72-4385-A56E-B26DFC6E1370}']"
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: Multilist
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: "20180802T090653:636687976135713058Z"

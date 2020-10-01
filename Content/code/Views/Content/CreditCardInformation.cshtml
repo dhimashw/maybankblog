@@ -1,0 +1,48 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.ImageDescription.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.ImageDescription.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{
+    var item = Model.Item;
+    Sitecore.Data.Fields.LinkField _link = item.Fields[Sitecore.Feature.Library.Templates.ImageLink.Fields.UrlImageLink];
+    string url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+    //var url = @item.LinkFieldUrl(Sitecore.Feature.Library.Templates.ImageLink.Fields.UrlImageLink).ToString() != null ? @item.LinkFieldUrl(Sitecore.Feature.Library.Templates.ImageLink.Fields.UrlImageLink).ToString() : "#";
+    var targetType = @item.LinkFieldOptions(Sitecore.Feature.Library.Templates.ImageLink.Fields.UrlImageLink, LinkFieldOption.Target);
+    string AncorItemID = RenderingContext.Current.Rendering.Parameters["ID"] != null ? RenderingContext.Current.Rendering.Parameters["ID"].Trim() : "";
+}
+<div class="section m-info-box" id="@AncorItemID">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" style="float:right;">
+                <div class="heading">
+                    <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading)</h1>
+                </div>
+            </div>
+            @if (Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.ImageLink.Fields.Image) != null)
+            {
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <img src="@Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.ImageLink.Fields.Image)" />
+                    <br /><br />
+                </div>
+            }
+
+            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" style="float:right;">
+                @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent)
+            </div>
+            @if (Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowCTA].Value == "1")
+            {
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <p><a class="see-more" href="@url" target="@targetType">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.ImageLink.Fields.TitleImageLink)</a></p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

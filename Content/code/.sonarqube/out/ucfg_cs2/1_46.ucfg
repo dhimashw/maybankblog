@@ -1,0 +1,96 @@
+
+mSitecore.Feature.Content.Repositories.BlogRepository.PostComment(Sitecore.Feature.Content.Models.BlogComment)S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csÕ Õ("0*¾
+0î
+ë
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs× ×(./
+%0)Sitecore.Feature.Content.Helper.DBContext"6Sitecore.Feature.Content.Helper.Factory.DbEntities.get*+")
+'Sitecore.Feature.Content.Helper.FactoryÂ
+¿
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs× ×(./
+db)Sitecore.Feature.Content.Helper.DBContext"__id*1
+/
+%0)Sitecore.Feature.Content.Helper.DBContext*
+1*‹
+1Ü
+Ù
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csÛ. Û(@
+%1string"6Sitecore.Feature.Content.Models.BlogComment.PageID.get*<
+:
+BlogComment+Sitecore.Feature.Content.Models.BlogCommentž
+›
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csÛ Û(A
+
+%2bool"string.IsNullOrEmpty(string)*
+"
+string*
+
+%1string*
+2
+3*ƒ
+2ï
+ì
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csÝ Ý(&'
+%3!System.Data.Entity.DbSet<TEntity>"9Sitecore.Feature.Content.Helper.DBContext.BlogComment.get*1
+/
+db)Sitecore.Feature.Content.Helper.DBContext²¯
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csÝ Ý(71
+%4+Sitecore.Feature.Content.Models.BlogComment".System.Data.Entity.DbSet<TEntity>.Add(TEntity)*)
+'
+%3!System.Data.Entity.DbSet<TEntity>*<
+:
+BlogComment+Sitecore.Feature.Content.Models.BlogComment2Add(TEntity)ÑÎ
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csÞ Þ((	
+%5int"*System.Data.Entity.DbContext.SaveChanges()*1
+/
+db)Sitecore.Feature.Content.Helper.DBContext2SaveChanges()*
+3*
+3*
+4
+5*„
+4”‘
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csã' ã(:
+%6System.Text.StringBuilder"System.Text.StringBuilder²
+¯
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csã+ ã(8
+
+%7void")System.Text.StringBuilder.StringBuilder()*!
+
+%6System.Text.StringBuilder¢
+Ÿ
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csã" ã(:
+sbSystem.Text.StringBuilder"__id*!
+
+%6System.Text.StringBuilder«¨
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csä" ä(,
+%8string"System.Exception.Message.get*
+
+exSystem.Exception2Message.getÚ
+×
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csä ä(-
+%9System.Text.StringBuilder",System.Text.StringBuilder.AppendLine(string)*!
+
+sbSystem.Text.StringBuilder*
+
+%8string*
+5*
+5*
+6*o
+6"j
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csç ç(	
+implicit return::
+BlogComment+Sitecore.Feature.Content.Models.BlogCommentB86
+4Sitecore.Feature.Content.Repositories.BlogRepository

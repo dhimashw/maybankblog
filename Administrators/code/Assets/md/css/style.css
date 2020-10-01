@@ -1,0 +1,67 @@
+table {
+    /*margin: 0 auto;
+    width: 100%;
+    clear: both;
+    border-collapse: collapse;*/
+    table-layout: fixed;
+    word-wrap:break-word;
+}
+
+table .th-sm {
+    text-align: center;
+}
+
+table td.checkbox {
+    text-align: center;
+}
+
+.btn-sm {
+    margin: 0px 0px 0px 0px;
+}
+
+.btn-approve {
+    background-color: #389a6e !important;
+    color: #fff;
+}
+
+.btn-reject {
+    background-color: darkred !important;
+    color: #fff;
+}
+
+.btn-delete {
+    background-color: darkred !important;
+    color: #fff;
+}
+
+.btn-restore {
+    background-color: dodgerblue !important;
+    color: #fff;
+}
+
+.btn-search {
+    background-color: white !important;
+    color: black;
+    border: 1px solid #373737 !important;
+    border-radius: 5px !important;
+}
+
+.btn-search:hover {
+    background-color: gold !important;
+    color: black;
+}
+
+.btn-search-all {
+    background-color: #373737 !important;
+    color: #fff;
+    border: 1px solid #373737 !important;
+}
+
+.btn-search-all:hover {
+    background-color: gold !important;
+    color: #fff;
+}
+
+.no-side-padding {
+    padding-right: 0 !important;
+}

@@ -1,0 +1,70 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@model PagedData<Sitecore.Data.Items.Item>
+@{
+    Sitecore.Data.Items.Item datasourceItem = Sitecore.Context.Database.GetItem(Model.DataSourceID);
+    if (!datasourceItem?.IsDerived(Sitecore.Feature.Library.Templates.LatestPromotion.ID) ?? true)
+    {
+        @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.LatestPromotion.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, datasourceItem?.ID, datasourceItem?.ID)
+        return;
+    }
+
+    Sitecore.Data.Fields.LinkField _link = datasourceItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Link];
+    string redirectItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+}
+
+
+<div class="container">
+    <div class="heading">
+        <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, datasourceItem)</h1>
+        <a href="@redirectItemUrl" class="see-more" @Html.Raw(_link.Target.Length > 0 ? "target=" + _link.Target + "" : string.Empty)>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, datasourceItem)</a>
+    </div>
+</div>
+
+<div class="js-mobile-to-carousel-container container">
+    <div class="list row js-mobile-to-carousel">
+        @foreach (Sitecore.Data.Items.Item itemPromo in Model.Data)
+        {
+            string linkPromo = itemPromo.Url();
+            Sitecore.Data.Fields.LinkField _linkPromo = itemPromo.Fields[Sitecore.Feature.Library.Templates.Link.Fields.Link];
+            if (Sitecore.Feature.Library.Helper.Core.getGeneralLink(_linkPromo) != "#")
+            {
+                linkPromo = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_linkPromo);
+            }
+
+            <div class="col col-xs-12 col-lg-3 col-md-3 col-sm-12 js-mobile-to-carousel-list">
+                <div class="skeleton js-demo-skeleton">
+                    <div class="skeleton__header">
+                        <div class="skeleton__img"></div>
+                    </div>
+                    <div class="skeleton__body">
+                        <div class="skeleton__wrapper">
+                            <div class="col-xs-6">
+                                <div class="skeleton__line"></div><br />
+                            </div>
+                            <div class="col-xs-10">
+                                <div class="skeleton__line"></div>
+                            </div>
+                            <div class="col-xs-10">
+                                <div class="skeleton__line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-card js-demo-skeleton-content hide">
+                    <div class="image"><a href=""><img src="@itemPromo.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail))" alt="" /></a></div>
+                    <div class="title">
+                        <h4 class="yellow-text">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Tag, itemPromo)</h4>
+                        <h2><a href="">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Summary, itemPromo)</a></h2>
+                    </div>
+                    <a class="card-link" @Html.Raw(string.IsNullOrEmpty(_linkPromo.Target) ? "target=\"_self\"" : string.Format("target=\"{0}\"", _linkPromo.Target))  href="@linkPromo"></a>
+                </div>
+            </div>
+        }
+    </div>
+</div>

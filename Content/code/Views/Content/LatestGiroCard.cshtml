@@ -1,0 +1,32 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    int maxItem = RenderingContext.Current.Rendering.GetIntegerParameter("Max Item", 12);
+}
+
+@foreach (Sitecore.Data.Items.Item itemPromo in Model.Item.Children.Where(x => x.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowInMenu].Value == "1" && x.TemplateID == Sitecore.Feature.Library.Templates.ProductSimpananPage.ID).Take(maxItem))
+{
+    <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12 content">
+        <div class="m-cards-giro-card display-cards">
+            <div class="image">
+                @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.Page.Fields.Thumbnail, itemPromo, cssClass: "removestyle card-bg")<span class="product-label">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Page.Fields.Title, itemPromo)</span>
+            </div>
+            <div class="desc">
+                <span class="pdesc">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Page.Fields.Summary, itemPromo)</span>
+                <div class="cta">
+                    <a class="see-more" href="@itemPromo.Url()">@Html.Sitecore().Dictionary("/Feature/Content/See More", "Edit This Content On Dictionary(/Feature/Content/See More)")</a>
+                    <div class="btn btn-tertiary addon" data-id="@Model.Item.ID" data-url="@Sitecore.Feature.Library.Helper.Core.getGeneralLink((Sitecore.Data.Fields.LinkField)Model.Item.Fields[Sitecore.Feature.Library.Templates.TopNav.Fields.UrlApplyNow])">
+                        @Html.Sitecore().Dictionary("/Feature/Content/Apply Now", "Edit This Content On Dictionary(/Feature/Content/Apply Now)")<img src="/assets/img/icons/arrow-right/arrow-right-363@2x.png" alt="apply now" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

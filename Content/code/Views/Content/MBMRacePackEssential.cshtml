@@ -1,0 +1,57 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helper
+@using Sitecore.Data.Items
+@using template = Sitecore.Feature.Library.Templates.MBMTitleContentImage
+@model RenderingModel
+@{
+    string addedClass = "col-sm-4";
+    int maxItem = RenderingContext.Current.Rendering.GetIntegerParameter("Max Item", 3);
+    if(maxItem > 0)
+    {
+        if (maxItem > 4)
+        {
+            maxItem = 3;
+        }
+        addedClass = "col-sm-" + (12 / maxItem);
+    }
+
+    float x = (float)Model.Item.Children.Count() / maxItem;
+    int row = (int)Math.Ceiling(x);
+}
+
+<div class="container">
+    <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.MBMGeneralFolder.Fields.Title)</h1>
+    <div class="row py-3">
+        @for(int i = 0; i < row; i++)
+        {
+            <div class="row remove-margin">
+            @foreach (Item item in Model.Item.Children.Skip(maxItem * i).Take(maxItem))
+            {
+                <div class="col-xs-12 col-xs-6@landscape @addedClass">
+                    <div class="skeleton js-demo-skeleton no-shadow">
+                        <div class="skeleton__img skeleton__img--circle skeleton__img--aligned-left"></div>
+                        <div class="skeleton__body bg-color-none">
+                            <div class="skeleton__line"></div>
+                            <div class="skeleton__line ounce"></div>
+                        </div>
+                    </div>
+                    <div class="card card-ico my-3 js-demo-skeleton-content hide">
+                        <div class="card__img mb-4">
+                            @Html.Sitecore().ImageField(template.Fields.Image, item, cssClass: "img-responsive")
+                        </div>
+                        <div class="card__title">
+                            <h4 class="mb-0">@Html.Sitecore().Field(template.Fields.Title, item)</h4>
+                        </div>
+                        <div class="card__caption">
+                            <p class="t-paragraph mb-0">@Html.Sitecore().Field(template.Fields.Content, item)</p>
+                        </div>
+                    </div>
+                </div>
+            }
+            </div>
+        }
+
+    </div>
+</div>

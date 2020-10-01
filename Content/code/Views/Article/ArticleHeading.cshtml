@@ -1,0 +1,54 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+@{
+    string anchorID = RenderingContext.Current.Rendering.Parameters["ID"] != null ? RenderingContext.Current.Rendering.Parameters["ID"].Trim() : string.Empty;
+    if (!string.IsNullOrEmpty(anchorID))
+    {
+    }
+}
+
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.GeneralUrl.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.GeneralUrl.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{
+    var item = Model.Item;
+    Sitecore.Data.Fields.LinkField _link = Model.Item.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url];
+    string redirectItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+    //var buttonLabel = @item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel].Value;
+    var targetType = @item.LinkFieldOptions(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url, LinkFieldOption.Target);
+    var showCTA = @item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowCTA].Value;
+
+
+}
+@if (!string.IsNullOrEmpty(anchorID) == true)
+{
+    @*<a name="@anchorID"></a>*@
+    <div class="large-pad">
+        <div class="frame">
+            <a class="anchor" name="@anchorID"></a>
+        </div>
+    </div>
+}
+@if (showCTA == "1")
+{
+    <div class="container">
+        <div class="heading">
+            <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Title)</h1><a class="see-more" href="@redirectItemUrl" target="@targetType">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, item)</a>
+        </div>
+    </div>
+}
+else
+{
+    <div class="container">
+        <div class="heading">
+            <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Title)</h1>@*<a class="see-more" href="@url" target="@targetType">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, item)</a>*@
+        </div>
+    </div>
+}

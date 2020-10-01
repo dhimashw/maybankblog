@@ -1,0 +1,9 @@
+Î	
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DebugDashboardSystem.Web.UI.UserControlSystem.Web.UI.TemplateControlSystem.Web.UI.Controlobject”
+#Page_Load(object, System.EventArgs)mSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DebugDashboard.Page_Load(object, System.EventArgs)š
+&DisplayApprovedComment(string, string)pSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DebugDashboard.DisplayApprovedComment(string, string)„
+DisapproveComment(string[])eSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DebugDashboard.DisapproveComment(string[])¨
+-BtnDisapprove_Click(object, System.EventArgs)wSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DebugDashboard.BtnDisapprove_Click(object, System.EventArgs)¬
+/BtnSearchByDate_Click(object, System.EventArgs)ySitecore.Feature.Administrators.Sitecore.Admin.UserControl.DebugDashboard.BtnSearchByDate_Click(object, System.EventArgs)¢
+*BtnShowAll_Click(object, System.EventArgs)tSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DebugDashboard.BtnShowAll_Click(object, System.EventArgs)n
+DebugDashboard()ZSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DebugDashboard.DebugDashboard()

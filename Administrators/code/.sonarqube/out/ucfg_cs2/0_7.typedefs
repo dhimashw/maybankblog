@@ -1,0 +1,15 @@
+Ô
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedCommentSystem.Web.UI.UserControlSystem.Web.UI.TemplateControlSystem.Web.UI.Controlobjectî
+#Page_Load(object, System.EventArgs)mSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.Page_Load(object, System.EventArgs)|
+DisplayAllComment(bool)aSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.DisplayAllComment(bool)∂
+4DisplayComment(string, string, string, string, bool)~Sitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.DisplayComment(string, string, string, string, bool)ú
+'SearchComment(string, string, int, int)qSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.SearchComment(string, string, int, int)¥
+3SearchCommentByPage(string, string, string, string)}Sitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.SearchCommentByPage(string, string, string, string)Ω
+7SearchCommentByUsername(string, string, string, string)ÅSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.SearchCommentByUsername(string, string, string, string)ª
+6SearchCommentByContent(string, string, string, string)ÄSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.SearchCommentByContent(string, string, string, string)í
+"ChangeCommentStatus(string[], int)lSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.ChangeCommentStatus(string[], int)®
+-ValidateInput(string, string, string, string)wSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.ValidateInput(string, string, string, string)¢
+*BtnRestore_Click(object, System.EventArgs)tSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.BtnRestore_Click(object, System.EventArgs)¨
+/BtnSearchByDate_Click(object, System.EventArgs)ySitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.BtnSearchByDate_Click(object, System.EventArgs)¢
+*BtnShowAll_Click(object, System.EventArgs)tSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.BtnShowAll_Click(object, System.EventArgs)n
+DeletedComment()ZSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.DeletedComment()

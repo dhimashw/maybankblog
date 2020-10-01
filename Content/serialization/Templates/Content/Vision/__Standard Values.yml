@@ -1,0 +1,35 @@
+﻿---
+ID: "b75fda07-0aa5-4e43-94ee-9eee8267d74a"
+Parent: "ecb9e77d-1dc8-4e7f-95fc-094f5c604d0d"
+Template: "ecb9e77d-1dc8-4e7f-95fc-094f5c604d0d"
+Path: /sitecore/templates/Feature/Content/Vision/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180425T072542Z
+    - ID: "56bc62bf-106c-40c4-81be-62541236dc4a"
+      Hint: Button Label
+      Value: LEARN MORE
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: id
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180425T072600Z
+    - ID: "56bc62bf-106c-40c4-81be-62541236dc4a"
+      Hint: Button Label
+      Value: PELAJARI LAGI
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

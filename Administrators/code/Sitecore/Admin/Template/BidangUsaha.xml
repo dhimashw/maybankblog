@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Migration>
+  <ColumnMapping tableName="BIDANGUSAHA" ResultType="update-table">
+    <Column source="BT_CODE" destination="BT_CODE" type="string" Required="true"/>
+    <Column source="BT_DESC" destination="BT_DESC" type="string"/>
+	<Column source="CORE_CODE" destination="CORE_CODE" type="string"/>
+	<Column source="ACTIVE" destination="ACTIVE" type="Int16"/>
+	<Column source="Language" destination="Language" type="string"/>
+  </ColumnMapping>
+</Migration>

@@ -1,0 +1,7 @@
+š
+)Sitecore.Feature.Content.Helper.DBContextSystem.Data.Entity.DbContextobjectD
+DBContext()5Sitecore.Feature.Content.Helper.DBContext.DBContext()P
+DBContext(string);Sitecore.Feature.Content.Helper.DBContext.DBContext(string)’
+2OnModelCreating(System.Data.Entity.DbModelBuilder)\Sitecore.Feature.Content.Helper.DBContext.OnModelCreating(System.Data.Entity.DbModelBuilder)L
+BlogComment.get9Sitecore.Feature.Content.Helper.DBContext.BlogComment.getL
+BlogComment.set9Sitecore.Feature.Content.Helper.DBContext.BlogComment.set

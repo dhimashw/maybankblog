@@ -1,0 +1,31 @@
+﻿---
+ID: "0e801a74-57f4-40b4-9dee-edafa0361c23"
+Parent: "915eb6cb-6403-40ed-bd8d-45dcffed4e2d"
+Template: "99f8905d-4a87-4eb8-9f8b-a9bebfb3add6"
+Path: /sitecore/layout/Renderings/Feature/Content/Benefit
+DB: master
+SharedFields:
+- ID: "041110fb-9293-40de-8ae8-7b5f04f425be"
+  Hint: Customize Page
+  Value: |
+    <link text="" linktype="internal" url="" anchor="" title="" class="" querystring="" target="" id="{2C5F5AA1-3A83-405D-A025-E4A49111AFE8}" />
+- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
+  Hint: Datasource Template
+  Value: /sitecore/templates/Feature/Content/Benefit Folder
+- ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
+  Hint: Path
+  Value: /Views/Content/Benefit.cshtml
+- ID: "7d24e54f-5c16-4314-90c9-6051aa1a7da1"
+  Hint: Parameters Template
+  Value: "{2C5F5AA1-3A83-405D-A025-E4A49111AFE8}"
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: "{F7BD3E9E-00CE-4253-B5EE-75A65DB0AB20}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180228T032750Z

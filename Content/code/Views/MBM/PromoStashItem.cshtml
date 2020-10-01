@@ -1,0 +1,63 @@
+﻿@using Sitecore.Feature.Content
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+@using Sitecore.Foundation.Dictionary.Extensions
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+
+    <div class="row row-vertical">
+        @if (Model != null && Model.Data != null)
+        {
+            foreach (Sitecore.Data.Items.Item item in Model.Data)
+            {
+                <div class=" col-xs-12 col-xs-6@landscape col-sm-4 col-md-3 my-3">
+                    <div class="skeleton js-demo-skeleton">
+                        <div class="skeleton__img"></div>
+                        <div class="skeleton__body">
+                            <div class="skeleton__line"></div>
+                            <div class="skeleton__line half"></div>
+                        </div>
+                        <div class="skeleton__footer">
+                            <div class="skeleton__line tall"></div>
+                        </div>
+                    </div>
+                    <div class="card card--rounded card-product js-demo-skeleton-content shadow hide">
+                        <div class="card__header">
+                            <div class="card__header-tag">
+
+                            </div>
+                            <div class="card__img">
+                                <a href="">
+                                    <div class="img-responsive img-as-bg" style="background-image:url(@item.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail))"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card__body">
+                            <div class="card__title">
+                                <h3 class="js-truncate" data-truncate="18">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields._TitleRichText, item)</h3>
+                            </div>
+                            <div class="card__desc">
+                                <p class="js-truncate" data-truncate="70">
+                                    @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Description, item)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card__footer">
+                            <div class="card__action">
+                                <a class="btn btn-link py-0" href="@item.Url()">
+                                    <span>@Html.Sitecore().Dictionary("/Feature/Content/See More", "SEE MORE")</span>
+                                    <img class="pl-2" src="/Assets/mbm/img/icon/arrow-right-yellow.svg" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+    @if (Model != null && Model.Data != null)
+    {
+        <!-- PAGINATION COMPONENT -->
+        @Html.Partial("~/Views/Pagination/_Pagination.cshtml", Model)
+    }

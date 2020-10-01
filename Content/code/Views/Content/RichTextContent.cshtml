@@ -1,0 +1,41 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.ContentPageFreeText.ID) ?? true)
+    {
+        @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.ContentPageFreeText.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+        return;
+    }
+    string InGrayBox = RenderingContext.Current.Rendering.Parameters["In Gray Box"] != null ? RenderingContext.Current.Rendering.Parameters["In Gray Box"] : "0";
+}
+
+
+    @if (InGrayBox == "1")
+    {
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, Model.Item)</h1>
+            </div>
+        </div>
+        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content, Model.Item)
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="heading full">
+                    <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, Model.Item)</h1>
+                </div>
+            </div>
+            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content, Model.Item)
+        </div>
+        
+    }
+

@@ -1,0 +1,43 @@
+
+MSitecore.Feature.Content.Controller.BlogController.GetAllNotApprovedComment()Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÈ È(4"2*¤
+0Ž
+‹
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÊ Ê(';
+%05Sitecore.Feature.Content.Repositories.IBlogRepository"ASitecore.Feature.Content.Controller.BlogController.Repository.get*64
+2Sitecore.Feature.Content.Controller.BlogControllerŸœ
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÊ Ê(B
+%1System.Tuple<T1, T2>"PSitecore.Feature.Content.Repositories.IBlogRepository.GetAllNotApprovedComment()*=
+;
+%05Sitecore.Feature.Content.Repositories.IBlogRepository2GetAllNotApprovedComment()i
+g
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÊD Ê(`
+%2"__id*
+""ˆ
+…
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÊ Ê(a
+%3System.Web.Mvc.JsonResult"JSystem.Web.Mvc.Controller.Json(object, System.Web.Mvc.JsonRequestBehavior)*
+System.Web.Mvc.Controller*
+
+%1System.Tuple<T1, T2>*
+
+%2"v
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÊ Ê(b!
+
+%3System.Web.Mvc.JsonResult*m
+1"h
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csË Ë(	
+implicit return*s
+2i
+g
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÈ È(4
+%4"__entrypoint*
+0B64
+2Sitecore.Feature.Content.Controller.BlogController

@@ -1,0 +1,44 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Data.Items
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library
+@model RenderingModel
+
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.PopUpModal.ID) ?? true)
+{
+    @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.PopUpModal.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+
+<div class="modal" tabindex="-1" role="dialog" modal-name="promotion-pop-up">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content white-text">
+            <div class="modal-header">
+                <button class="close js-modal-trigger-close" type="button" data-dismiss="modal" aria-label="Close"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path id="modal-close-svg" d="M10.437 8.58l6.845-6.845A1.016 1.016 0 1 0 15.845.298L9 7.143 2.156.298A1.016 1.016 0 1 0 .719 1.735L7.563 8.58.298 15.845a1.016 1.016 0 1 0 1.437 1.437L9 10.018l7.265 7.264a1.013 1.013 0 0 0 1.437 0 1.016 1.016 0 0 0 0-1.437L10.437 8.58z" fill="#000" fill-rule="evenodd" /></svg></button>
+            </div>
+            <div class="modal-body m-modals-info-modals">
+                <h1>@Html.Sitecore().CurrentRendering.Item.Fields[Sitecore.Feature.Library.Templates.PopUpModal.Fields.Title]</h1>
+                <div>@Html.Raw(Model.Item.Fields[Sitecore.Feature.Library.Templates.PopUpModal.Fields.Content].Value)</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div class="card-ico borderless col-12 col-lg-3 col-md-6 col-sm-6">
+        <div class="card-ico-wrapper">
+            <div class="card-ico-box">
+                <div class="card-ico-box-wrapper text-center">
+                    <div class="table full-height">
+                        <div class="table-cell">
+                            <div class="card-ico-image"><img src="/Assets/img/time-deposit/ico-temp.svg" /></div>
+                            <div class="card-ico-caption">@Html.Sitecore().CurrentRendering.Item.Fields[Templates.PopUpModal.Fields.Title]</div>
+                            <div class="card-ico-p">Maybank selama masa cicilan KPR berlangsung.&nbsp;<a class="read-more js-modal-trigger" modal="women-one">read more</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@

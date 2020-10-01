@@ -1,0 +1,31 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using template = Sitecore.Feature.Library.Templates.MBMTitleContentImage
+@model RenderingModel
+@{
+    if (!Model?.Item?.IsDerived(template.ID) ?? true)
+    {
+        @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(template.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+        return;
+    }
+}
+
+<div class="container">
+    <div class="article">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 hidden-xs">
+                <div class="row">
+                    <div class="col-xs-9"><img class="img-responsive" src="@Model.Item.ImageUrl(template.Fields.Image)" alt="" /></div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <br />
+                <h1>@Html.Raw(Html.Sitecore().Field(template.Fields.Title, Model.Item))</h1>
+                <p>@Html.Raw(Html.Sitecore().Field(template.Fields.Content, Model.Item))</p>
+            </div>
+        </div>
+    </div>
+</div>

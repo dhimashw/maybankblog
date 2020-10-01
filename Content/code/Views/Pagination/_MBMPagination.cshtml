@@ -1,0 +1,311 @@
+﻿@using Sitecore.Feature.Content
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+
+<!-- PAGINATION COMPONENT -->
+<!-- DO NOT COPY PASTE BOTH as below is just showing different content for mobile and desktop. -->
+<!-- Mobile pagination will only displayed maximum of 2 pages and a dots -->
+@*<div class="row visible-xs">
+        <div class="pagination-wrapper">
+            <ul class="pagination">
+                <li class="previous disabled"><a href="">Previous</a></li>
+                <li class="pagination-list active"><a href="">1</a></li>
+                <li class="pagination-list"><a href="">2</a></li>
+                <li class="dotted"><span>...</span></li>
+                <li class="next"><a href="">Next</a></li>
+            </ul>
+        </div>
+    </div>*@
+
+<!-- Desktop pagination will displayed max 5 page and a dots -->
+@*<div class="row hidden-xs">
+        <div class="pagination-wrapper">
+            <ul class="pagination">
+                @{
+                    var counter = 1;
+                    if (Model.NumberOfPages > 0)
+                    {
+                        if (Model.CurrentPage > 1)
+                        {
+                            <li class="previous enabled"><a href="#" data-curpage="@Model.CurrentPage">Previous</a></li>
+                        }
+                        else
+                        {
+                            <li class="previous disabled"><a href="#" data-curpage="@Model.CurrentPage">Previous</a></li>
+                        }
+                    }
+                }
+                @for (int i = 1; i <= Model.NumberOfPages; i++)
+                {
+
+                    if (Model.CurrentPage < 4)
+                    {
+                        if (i == Model.CurrentPage)
+                        {
+                            <li class="pagination-list active"><a href="#">@i</a></li>
+                            counter++;
+                        }
+                        else if (i == 4)
+                        {
+                            <li class="dotted"><span>...</span></li>
+                        }
+                        else
+                        {
+                            <li class="pagination-list"><a href="#">@i</a></li>
+                            counter++;
+                        }
+
+                        if (counter == 5)
+                        {
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        if (i == 1)
+                        {
+                            <li class="pagination-list"><a href="#">1</a></li>
+                            <li class="dotted"><span>...</span></li>
+                            counter++;
+                        }
+                        else if (i == Model.CurrentPage)
+                        {
+                            <li class="pagination-list active"><a href="#">@i</a></li>
+                            counter++;
+                        }
+                        else if ((i == Model.CurrentPage - 1 || i == Model.CurrentPage + 1) || (i == Model.CurrentPage - 2 && Model.CurrentPage == Model.NumberOfPages))
+                        {
+                            <li class="pagination-list"><a href="#">@i</a></li>
+                            counter++;
+                        }
+                        else if (i == Model.CurrentPage + 3)
+                        {
+                            <li class="dotted"><span>...</span></li>
+                            <li class="pagination-list"><a href="#">@Model.NumberOfPages</a></li>
+                            break;
+                        }
+                        else if (i == Model.CurrentPage + 2 && Model.CurrentPage + 2 == Model.NumberOfPages)
+                        {
+                            <li class="pagination-list"><a href="#">@Model.NumberOfPages</a></li>
+                            break;
+                        }
+
+                        if (counter == 6)
+                        {
+                            break;
+                        }
+                    }
+
+
+                }
+                @{
+                    if (Model.NumberOfPages > 0 && Model.CurrentPage < Model.NumberOfPages)
+                    {
+                        <li class="next enabled"><a href="#" data-curpage="@Model.CurrentPage">Next</a></li>
+                    }
+                    else
+                    {
+                        <li class="next disabled"><a href="#" data-curpage="@Model.CurrentPage">Next</a></li>
+                    }
+                }
+
+            </ul>
+        </div>
+    </div>*@
+
+<div class="visible-xs">
+    <div class="pagination-wrapper">
+        @if (Model.Data.Count() > 0)
+        {
+            <ul class="pagination">
+
+                @{
+                    var c = 1;
+
+                    // previous
+                    if (Model.NumberOfPages > 0)
+                    {
+                        if (Model.CurrentPage > 1)
+                        {
+                            <li class="previous enabled"><a href="javascript:void();" data-curpage="@Model.CurrentPage">Previous</a></li>
+                        }
+                        else
+                        {
+                            <li class="previous disabled"><a href="javascript:void();" data-curpage="@Model.CurrentPage">Previous</a></li>
+                        }
+                    }
+
+                    // step
+                    while (c <= Model.NumberOfPages)
+                    {
+                        if (Model.NumberOfPages > 7)
+                        {
+                            if (Model.CurrentPage > 4)
+                            {
+                                if (c == 2)
+                                {
+                                    <li class="dotted"><span>...</span></li>
+                                    c = (Model.CurrentPage - 1) < (Model.NumberOfPages - 3) ? (Model.CurrentPage - 1) : (Model.NumberOfPages - 3);
+                                }
+
+                                if (c == Model.CurrentPage + 2)
+                                {
+                                    if (Model.NumberOfPages - Model.CurrentPage + 1 > 4)
+                                    {
+                                        <li class="dotted"><span>...</span></li>
+                                        c = Model.NumberOfPages;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (c == 5)
+                                {
+                                    if (Model.CurrentPage < 4)
+                                    {
+                                        <li class="dotted"><span>...</span></li>
+                                        c = Model.NumberOfPages;
+                                    }
+                                }
+
+                                if (c == Model.CurrentPage + 2)
+                                {
+                                    if (Model.CurrentPage > 3)
+                                    {
+                                        <li class="dotted"><span>...</span></li>
+                                        c = Model.NumberOfPages;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (c == Model.CurrentPage)
+                        {
+                            <li class="pagination-list active"><a href="javascript:void();">@c</a></li>
+                        }
+                        else
+                        {
+                            <li class="pagination-list"><a href="javascript:void();">@c</a></li>
+                        }
+
+                        c++;
+                    }
+
+                    // next
+                    if (Model.NumberOfPages > 0 && Model.CurrentPage < Model.NumberOfPages)
+                    {
+                        <li class="next enabled"><a href="javascript:void();" data-curpage="@Model.CurrentPage">Next</a></li>
+                    }
+                    else
+                    {
+                        <li class="next disabled"><a href="javascript:void();" data-curpage="@Model.CurrentPage">Next</a></li>
+                    }
+                }
+            </ul>
+        }
+        else
+        {
+            @Html.Partial("~/Views/ErrorPage/NoResultFound.cshtml")
+        }
+    </div>
+</div>
+
+<div class="hidden-xs">
+    <div class="pagination-wrapper">
+        @if (Model.Data.Count() > 0)
+        {
+            <ul class="pagination">
+
+                @{
+                    var c = 1;
+
+                    // previous
+                    if (Model.NumberOfPages > 0)
+                    {
+                        if (Model.CurrentPage > 1)
+                        {
+                            <li class="previous enabled"><a href="javascript:void();" data-curpage="@Model.CurrentPage">Previous</a></li>
+                        }
+                        else
+                        {
+                            <li class="previous disabled"><a href="javascript:void();" data-curpage="@Model.CurrentPage">Previous</a></li>
+                        }
+                    }
+
+                    // middle
+                    while (c <= Model.NumberOfPages)
+                    {
+                        if (Model.NumberOfPages > 7)
+                        {
+                            if (Model.CurrentPage > 4)
+                            {
+                                if (c == 2)
+                                {
+                                    <li class="dotted"><span>...</span></li>
+                                    c = (Model.CurrentPage - 1) < (Model.NumberOfPages - 3) ? (Model.CurrentPage - 1) : (Model.NumberOfPages - 3);
+                                }
+
+                                if (c == Model.CurrentPage + 2)
+                                {
+                                    if (Model.NumberOfPages - Model.CurrentPage + 1 > 4)
+                                    {
+                                        <li class="dotted"><span>...</span></li>
+                                        c = Model.NumberOfPages;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (c == 5)
+                                {
+                                    if (Model.CurrentPage < 4)
+                                    {
+                                        <li class="dotted"><span>...</span></li>
+                                        c = Model.NumberOfPages;
+                                    }
+                                }
+
+                                if (c == Model.CurrentPage + 2)
+                                {
+                                    if (Model.CurrentPage > 3)
+                                    {
+                                        <li class="dotted"><span>...</span></li>
+                                        c = Model.NumberOfPages;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (c == Model.CurrentPage)
+                        {
+                            <li class="pagination-list active"><a href="javascript:void();">@c</a></li>
+                        }
+                        else
+                        {
+                            <li class="pagination-list"><a href="javascript:void();">@c</a></li>
+                        }
+
+                        c++;
+                    }
+
+                    // next
+                    if (Model.NumberOfPages > 0 && Model.CurrentPage < Model.NumberOfPages)
+                    {
+                        <li class="next enabled"><a href="javascript:void();" data-curpage="@Model.CurrentPage">Next</a></li>
+                    }
+                    else
+                    {
+                        <li class="next disabled"><a href="javascript:void();" data-curpage="@Model.CurrentPage">Next</a></li>
+                    }
+                }
+            </ul>
+        }
+        else
+        {
+            @Html.Partial("~/Views/ErrorPage/NoResultFound.cshtml")
+        }
+    </div>
+</div>

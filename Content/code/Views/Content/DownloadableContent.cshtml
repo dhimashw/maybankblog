@@ -1,0 +1,51 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+
+@model RenderingModel
+@{
+    var isReverse = RenderingContext.Current.Rendering.Parameters["ReverseColumn"];
+    Sitecore.Data.Fields.LinkField _link = Model.Item.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url];
+    string redirectItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+
+}
+
+<div class="row">
+    <div class="col-xs-12 col-sm-5">
+        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields._TitleRichText)
+    </div>
+    <div class="col-xs-12 col-sm-7">
+        <div class="clearfix row">
+            @foreach (Sitecore.Data.Items.Item item in Model.Item.Children)
+            {
+                Sitecore.Data.Fields.LinkField _linkItem = item.Fields[Sitecore.Feature.Library.Templates.Link.Fields.Link];
+                string url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_linkItem);
+
+                <div class="col-xs-12 col-sm-6 v-m">
+                    <div class="m-cards-info-card--normalize">
+                        <a href="@url">
+                            <div class="col-xs-1 no-padding">
+                                <div class="info-card__icon">@Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.IconImage, item, cssClass: "img-responsive")</div>
+                            </div>
+                            <div class="col-xs-11">
+                                <div class="info-card__title bold"> @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, item: item)</div>
+                                <div class="info-card__action inline-block pad-top-1">
+                                    <div class="valign-center">
+                                        <div class="valign-item valign-item--no-h-p"><img class="img-responsive" src="../../../assets/img/icons/ico-download-green.svg" alt="" /></div>
+                                        <div class="valign-item valign-item--no-h-p">@Html.Sitecore().Dictionary("/Feature/Content/Download", "Edit This Content On Dictionary")</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+
+        </div>
+        @if (Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowCTA].Value == "1")
+        {
+            <a class="see-more gray-text" href="@redirectItemUrl">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, Model.Item)</a>
+        }
+    </div>
+</div>

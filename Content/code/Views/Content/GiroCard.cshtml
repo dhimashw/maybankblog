@@ -1,0 +1,49 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helper
+@using Sitecore.Foundation.Dictionary.Extensions
+@model RenderingModel
+@{
+    var itemId = Model.Item.Url();
+    Variables._sessionItemId = itemId;
+    //Session[Variables._sessionItemId] = itemId;
+    var ButtonColor = string.IsNullOrEmpty(Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonColor].Value) ? "btn btn-tertiary addon" : Sitecore.Context.Database.GetItem(Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonColor].Value).Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.stringTitle].ToString() + " addon";
+}
+<div class="m-cards-giro-card display-cards">
+    <div class="image">
+        @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.Page.Fields.Thumbnail, Model.Item, cssClass: "removestyle card-bg")<span class="product-label">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Page.Fields.Title, Model.Item)</span>
+        @if (Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.Card).Length > 0)
+        {
+            <div class="card">@Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Card, Model.Item, cssClass: "removestyle")</div>
+        }
+        @if (Sitecore.Context.PageMode.IsExperienceEditor)
+        {
+            <div class="card">@Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Card, Model.Item, cssClass: "removestyle")</div>
+        }
+    </div>
+    <div class="desc">
+        <span class="pdesc">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Page.Fields.Summary, Model.Item)</span>
+        <div class="cta">
+            <a class="see-more" href="@itemId">@Html.Sitecore().Dictionary("/Feature/Content/See More", "Edit This Content On Dictionary(/Feature/Content/See More)")</a>
+            @*<div class="btn btn-tertiary addon" data-id="@Model.Item.ID" data-url="@Model.Item.LinkFieldUrl(Sitecore.Feature.Library.Templates.Page.Fields.ApplyNow)" href="@Sitecore.Feature.Library.Helper.Core.getGeneralLink((Sitecore.Data.Fields.LinkField)Model.Item.Fields[Sitecore.Feature.Library.Templates.TopNav.Fields.UrlApplyNow])">*@
+            <div class="@ButtonColor" data-id="@Model.Item.ID" data-url="@Sitecore.Feature.Library.Helper.Core.getGeneralLink((Sitecore.Data.Fields.LinkField)Model.Item.Fields[Sitecore.Feature.Library.Templates.TopNav.Fields.UrlApplyNow])">
+                @Html.Sitecore().Dictionary("/Feature/Content/Apply Now", "Edit This Content On Dictionary(/Feature/Content/Apply Now)")<img src="/assets/img/icons/arrow-right/arrow-right-363@2x.png" alt="apply now" />
+            </div>
+        </div>
+    </div>
+</div>
+@*<div class="m-cards-giro-card display-cards">
+        <div class="image">
+            <img src="../assets/img/dummy-cards/bg3.jpg" /><span class="product-label">Maybank Savings</span>
+            <div class="card"><img src="../assets/img/dummy-cards/cards/card1.png" /></div>
+        </div>
+        <div class="desc">
+            <span class="pdesc">Sed viverra arcu enim lorem sit amet quellaram.</span>
+            <div class="cta">
+                <a class="see-more" href="detail">LIHAT LEBIH</a><a class="btn btn-tertiary addon" href="/casa-savings">
+                    APPLY NOW<img src="../assets/img/icons/arrow-right/arrow-right-363@2x.png" alt="apply now" />
+                </a>
+            </div>
+        </div>
+    </div>*@

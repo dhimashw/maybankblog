@@ -1,0 +1,36 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+@{
+
+}
+<div class="col-xs-12 col-xs-6@landscape col-sm-4 col-md-3 py-3">
+    <div class="skeleton js-demo-skeleton">
+        <div class="skeleton__img"></div>
+        <div class="skeleton__body">
+            <div class="skeleton__line"></div>
+            <div class="skeleton__line half"></div>
+        </div>
+        <div class="skeleton__footer">
+            <div class="skeleton__line tall"></div>
+        </div>
+    </div>
+    <div class="card js-demo-skeleton-content hide">
+        <div class="card-header">
+            <a href="">
+                <div class="img-as-bg" style="background-image:url(@Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Image))"></div>                
+            </a>
+        </div>
+        <div class="card-body">
+            <div class="card-title border-bottom-none">
+                <h3 class="js-truncate" data-truncate="38">Maybank Foundation Scholarship Program</h3>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="card-action"><a class="btn-outline-primary btn addon" href="">lihat lebih<img src="../../../assets/img/icons/arrow-right/arrow-right-363-big-black@2x.png" /></a></div>
+        </div>
+    </div>
+</div>

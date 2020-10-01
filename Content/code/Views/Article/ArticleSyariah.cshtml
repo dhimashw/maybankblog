@@ -1,0 +1,67 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.ArticleItem.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.ArticleItem.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{
+    var itemArticle = Model.Item;
+    //string linkurl =  !string.IsNullOrWhiteSpace(@itemArticle.LinkFieldUrl(Sitecore.Feature.Library.Templates.Article.Fields.LinkUrl).ToString()) ? @itemArticle.LinkFieldUrl(Sitecore.Feature.Library.Templates.Article.Fields.LinkUrl).ToString() : "#";
+    // string targetType = !string.IsNullOrWhiteSpace(@itemArticle.LinkFieldOptions(Sitecore.Feature.Library.Templates.Article.Fields.LinkUrl, LinkFieldOption.Target)) ? @itemArticle.LinkFieldOptions(Sitecore.Feature.Library.Templates.Article.Fields.LinkUrl, LinkFieldOption.Target) : "_blank";
+
+    string linkurl = itemArticle.Url();
+    var cssHide = Sitecore.Context.PageMode.IsExperienceEditor == true ? "" : "hide";
+
+}
+
+<div class="skeleton v-m js-demo-skeleton">
+    <div class="skeleton__img"></div>
+    <div class="skeleton__body">
+        <div class="skeleton__line"></div>
+        <div class="skeleton__line half"></div>
+    </div>
+</div>
+<div class="js-demo-skeleton-content hide">
+    <div class="skeleton js-demo-skeleton">
+        <div class="skeleton__img"></div>
+        <div class="skeleton__body">
+            <div class="skeleton__line"></div>
+            <div class="skeleton__line half"></div>
+        </div>
+        <div class="skeleton__footer">
+            <div class="skeleton__line tall"></div>
+        </div>
+    </div>
+    <div class="card js-demo-skeleton-content hide">
+        <div class="card-header">
+            <div class="card-header-tag">
+            </div><a href="@linkurl">
+                @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Image, cssClass: "img-as-bg")
+            </a>
+        </div>
+        <div class="card-body">
+            <div class="card-title">
+                <h3 class="js-truncate" data-truncate="20">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Title)</h3>
+            </div>
+            <div class="card-desc">
+                <p class="js-truncate" data-truncate="70">
+                    @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Summary)
+                </p>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="card-action">
+                <a class="btn-link btn addon" href="@linkurl">
+                    @Html.Sitecore().Dictionary("/Feature/Content/See More")
+                    <img src="../../assets/img/icons/arrow-right/arrow-right-363-yellow@2x.png" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Data.Items;
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@model RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.M2UApp.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.M2UApp.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{
+    Sitecore.Data.Fields.LinkField LinkGooglePlay = Model.Item.Fields[Sitecore.Feature.Library.Templates.M2UApp.Fields.LinkGooglePlay];
+    string _linkGooglePlay = Sitecore.Feature.Library.Helper.Core.getGeneralLink(LinkGooglePlay);
+
+    Sitecore.Data.Fields.LinkField LinkAppleStore = Model.Item.Fields[Sitecore.Feature.Library.Templates.M2UApp.Fields.LinkAppleStore];
+    string _linkAppleStore = Sitecore.Feature.Library.Helper.Core.getGeneralLink(LinkAppleStore);
+
+}
+<div class="section item-highlight">
+    <div class="container">
+        @*@Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.ImageLink.Fields.Image, cssClass: "image")*@
+        <img class="image" src="@Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.ImageLink.Fields.Image)" alt="" />
+        <div class="teaser">
+            <h2>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading)</h2>
+            <p>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent)</p>
+        </div>
+        <div class="links">
+            <a @Html.Raw(LinkGooglePlay.Target.Length > 0 ? "target=" + LinkGooglePlay.Target + "" : string.Empty) href="@_linkGooglePlay">@Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.M2UApp.Fields.ImageGooglePlay)</a>
+            <a @Html.Raw(LinkAppleStore.Target.Length > 0 ? "target=" + LinkAppleStore.Target + "" : string.Empty) href="@_linkAppleStore">@Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.M2UApp.Fields.ImageAppleStore)</a>
+        </div>
+    </div>
+</div>
+
+
+@*<div class="section item-highlight">
+    <div class="container">
+        <img class="image" src="../assets/img/ebanking/ebanking-apps.png" alt="" />
+        <div class="teaser">
+            <h2>Don't have the M2U app?</h2>
+            <p>Do all your banking quickly and securely on the go with your smartphone. Plus, with our 100% Security Guarantee*, you can bank anytime and anywhere without worry.</p>
+        </div>
+        <div class="links">
+            <a href=""><img src="../assets/img/icons/logo-playstore.svg" alt="" /></a>
+            <a href=""><img src="../assets/img/icons/logo-appstore.svg" alt="" /></a>
+        </div>
+    </div>
+</div>*@  

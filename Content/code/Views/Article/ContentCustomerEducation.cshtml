@@ -1,0 +1,12 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@model RenderingModel
+@{
+    Sitecore.Data.Items.Item currentPage = RenderingContext.Current.PageContext.Item;
+}
+
+@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content, currentPage)

@@ -1,0 +1,19 @@
+﻿---
+ID: "da5b396f-9a61-4546-8248-b49c2266555e"
+Parent: "6c782cbd-c201-4549-9726-f8442229748f"
+Template: "6c782cbd-c201-4549-9726-f8442229748f"
+Path: /sitecore/templates/Feature/Content/Deposito with Modal/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{292B8288-3EFA-4C19-8E71-1ADDE51C915C}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180524T080739Z

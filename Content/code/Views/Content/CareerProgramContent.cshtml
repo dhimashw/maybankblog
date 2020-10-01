@@ -1,0 +1,19 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helper
+
+@model RenderingModel
+@{
+
+}
+
+<div class="career-program-content">
+    <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title)</h1>
+    <p class="date">
+        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Date, Model.Item, new { format = "dd MMMM yyyy" })
+    </p>
+    @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail, Model.Item, cssClass: "img-responsive")
+    @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content)
+</div>
+

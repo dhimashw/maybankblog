@@ -1,0 +1,170 @@
+﻿@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Data.Items;
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Mvc
+@model Sitecore.Mvc.Presentation.RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.FolderProperties.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.FolderProperties.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{
+    var items = Sitecore.Context.Database.GetItem(Model.Item.ID);
+
+    int itemColumn = System.Convert.ToInt32(RenderingContext.Current.Rendering.Parameters["Item Per Row"]) != 0 ? System.Convert.ToInt32(RenderingContext.Current.Rendering.Parameters["Item Per Row"].ToString()) : 3;
+    string isGrayBackground = RenderingContext.Current.Rendering.Parameters["IsGrayBackground"] == "1" ? "gray" : string.Empty;
+    string IsDisableFeatureSection = RenderingContext.Current.Rendering.Parameters["IsDisableFeatureSection"] == null || RenderingContext.Current.Rendering.Parameters["IsDisableFeatureSection"] == "0" ? "feature section" : string.Empty;
+    bool IsDisableFeatureSectionStatus = RenderingContext.Current.Rendering.Parameters["IsDisableFeatureSection"] == null || RenderingContext.Current.Rendering.Parameters["IsDisableFeatureSection"] == "0" ? false: true;
+    bool IsVerticalIcon = RenderingContext.Current.Rendering.Parameters["IsVerticalIcon"] == null || RenderingContext.Current.Rendering.Parameters["IsVerticalIcon"] == "0" ? false : true;
+}
+
+@if (itemColumn == 3)
+{
+
+    <div class="@IsDisableFeatureSection @isGrayBackground">
+        <div class="@Html.Raw(IsDisableFeatureSectionStatus == true? string.Empty : "container")">
+            <div class="feature-wrapper clearfix">
+                <div class="feature-header col-xs-12 col-md-5">
+                    <div class="feature-header-wrapper">
+                        <h1>@items.Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading)</h1>
+                        <p>@items.Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent)</p>
+                    </div>
+                </div>
+                <div class="feature-body col-xs-12 col-md-7">
+                    @if (IsVerticalIcon == true)
+                    {
+                        <div class="icon-box-responsive">
+                            @foreach (Item item in items.Children.Where(x => x.Fields[Sitecore.Feature.Library.Templates.ImageLink.Fields.ShowItem].Value == "1"))
+                            {
+                                Sitecore.Data.Fields.LinkField _link = item.Fields[Sitecore.Feature.Library.Templates.ImageLink.Fields.UrlImageLink];
+                                string redirectItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+                                <div class="d-inline-block p-2">
+                                    <a href="@redirectItemUrl" @Html.Raw(_link.IsInternal == true ? string.Empty : "class='js-modal-trigger js-modal-leave-site' modal='modal-leave-site' action-type='button'")>
+                                        <div class="icon-box">
+                                            <div class="icon-box__inner">
+                                                <div class="icon-box__img">
+                                                    @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.ImageLink.Fields.Image, item, cssClass: "img-responsive center-block")
+                                                </div>
+                                                <div class="icon-box__caption text-center pt-2">
+                                                    @item.Field(Sitecore.Feature.Library.Templates.ImageLink.Fields.TitleImageLink)
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="box-list align-right@md">
+                            <div class="horizontal-scroll-container">
+                                <div class="horizontal-scroll@xs js-hidescroll-xs">
+                                    @foreach (Item item in items.Children.Where(x => x.Fields[Sitecore.Feature.Library.Templates.ImageLink.Fields.ShowItem].Value == "1"))
+                                    {
+                                        Sitecore.Data.Fields.LinkField _link = item.Fields[Sitecore.Feature.Library.Templates.ImageLink.Fields.UrlImageLink];
+                                        string redirectItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+                                        <div class="horizontal-item d-inline-block p-2">
+                                            <a href="@redirectItemUrl" @Html.Raw(_link.IsInternal == true ? string.Empty : "class='js-modal-trigger js-modal-leave-site' modal='modal-leave-site' action-type='button'")>
+                                                <div class="icon-box">
+                                                    <div class="icon-box__inner">
+                                                        <div class="icon-box__img">
+                                                            @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.ImageLink.Fields.Image, item, cssClass: "img-responsive center-block")
+                                                        </div>
+                                                        <div class="icon-box__caption text-center pt-2">
+                                                            @item.Field(Sitecore.Feature.Library.Templates.ImageLink.Fields.TitleImageLink)
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+@if (itemColumn == 4)
+{
+
+    <div class="@IsDisableFeatureSection  @isGrayBackground">
+        <div class="@Html.Raw(IsDisableFeatureSectionStatus == true? string.Empty : "container")">
+            <div class="feature-wrapper clearfix no-padding">
+                <div class="feature-header col-xs-12 col-md-4">
+                    <div class="feature-header-wrapper">
+                        <h1>@items.Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading)</h1>
+                        <p>@items.Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent)</p>
+                    </div>
+                </div>
+                <div class="feature-body col-xs-12 col-md-8 p-0">
+                    @if (IsVerticalIcon == true)
+                    {
+                        <div class="icon-box-responsive">
+                            @foreach (Item item in items.Children.Where(x => x.Fields[Sitecore.Feature.Library.Templates.ImageLink.Fields.ShowItem].Value == "1"))
+                            {
+                                Sitecore.Data.Fields.LinkField _link = item.Fields[Sitecore.Feature.Library.Templates.ImageLink.Fields.UrlImageLink];
+                                string redirectItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+                                <div class="d-inline-block p-2">
+                                    <a href="@redirectItemUrl" @Html.Raw(_link.IsInternal == true ? string.Empty : "class='js-modal-trigger js-modal-leave-site' modal='modal-leave-site' action-type='button'")>
+                                        <div class="icon-box">
+                                            <div class="icon-box__inner">
+                                                <div class="icon-box__img">
+                                                    @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.ImageLink.Fields.Image, item, cssClass: "img-responsive center-block")
+                                                </div>
+                                                <div class="icon-box__caption text-center pt-2">
+                                                    @item.Field(Sitecore.Feature.Library.Templates.ImageLink.Fields.TitleImageLink)
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="horizontal-scroll-container">
+                            <div class="horizontal-scroll@xs js-hidescroll-xs">
+                                @foreach (Item item in items.Children.Where(x => x.Fields[Sitecore.Feature.Library.Templates.ImageLink.Fields.ShowItem].Value == "1"))
+                                {
+                                    Sitecore.Data.Fields.LinkField _link = item.Fields[Sitecore.Feature.Library.Templates.ImageLink.Fields.UrlImageLink];
+                                    string redirectItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+                                    <div class="horizontal-item d-inline-block p-2">
+                                        <a href="@redirectItemUrl" @Html.Raw(_link.IsInternal == true ? string.Empty : "class='js-modal-trigger js-modal-leave-site' modal='modal-leave-site' action-type='button'")>
+                                            <div class="icon-box">
+                                                <div class="icon-box__inner">
+
+                                                    <div class="icon-box__img">
+                                                        @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.ImageLink.Fields.Image, item, cssClass: "img-responsive center-block")
+                                                    </div>
+                                                    <div class="icon-box__caption text-center pt-2">
+                                                        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.ImageLink.Fields.TitleImageLink, item)
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+}

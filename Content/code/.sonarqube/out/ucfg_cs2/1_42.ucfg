@@ -1,0 +1,89 @@
+
+ISitecore.Feature.Content.Controller.BlogController.GetIpValue(out string)Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csˆ ˆ("0*±
+0¾
+»
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csŠ Š( 
+%0System.Web.HttpRequestBase"%System.Web.Mvc.Controller.Request.get*
+System.Web.Mvc.Controllerùö
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csŠ Š(+8
+%12System.Collections.Specialized.NameValueCollection".System.Web.HttpRequestBase.ServerVariables.get*"
+ 
+%0System.Web.HttpRequestBase2ServerVariables.getÆ
+Ã
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csŠ Š(C
+%2string"
+__arrayGet*:
+8
+%12System.Collections.Specialized.NameValueCollection*
+HTTP_X_FORWARDED_FOR|
+z
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csŠ Š(C
+ipAddstring"__id*
+
+%2stringŸ
+œ
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csŒ Œ(+
+
+%3bool"string.IsNullOrEmpty(string)*
+"
+string*
+
+ipAddstring*
+1
+2*ƒ
+1¾
+»
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csŽ Ž( 
+%4System.Web.HttpRequestBase"%System.Web.Mvc.Controller.Request.get*
+System.Web.Mvc.Controllerùö
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csŽ Ž(/8
+%52System.Collections.Specialized.NameValueCollection".System.Web.HttpRequestBase.ServerVariables.get*"
+ 
+%4System.Web.HttpRequestBase2ServerVariables.get½
+º
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csŽ Ž(>
+%6string"
+__arrayGet*:
+8
+%52System.Collections.Specialized.NameValueCollection*
+REMOTE_ADDR|
+z
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csŽ Ž(>
+ipAddstring"__id*
+
+%6string*
+3*—
+2¾
+»
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs’ ’( 
+%7System.Web.HttpRequestBase"%System.Web.Mvc.Controller.Request.get*
+System.Web.Mvc.ControllerÍÊ
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs’ ’(/
+%8string".System.Web.HttpRequestBase.UserHostAddress.get*"
+ 
+%7System.Web.HttpRequestBase2UserHostAddress.get|
+z
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs’ ’(/
+ipAddstring"__id*
+
+%8string*
+3*m
+3"h
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs” ”(	
+implicit return:
+ipAddstringB64
+2Sitecore.Feature.Content.Controller.BlogController

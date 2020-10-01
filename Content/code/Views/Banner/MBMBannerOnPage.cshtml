@@ -1,0 +1,97 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@model RenderingModel
+@{
+    bool showDownload = false;
+    bool showCTA = false;
+    string downloadFileUrl = "#";
+    string DownloadOpenNewWindows = string.Empty;
+    string buttonColor = Sitecore.Feature.Library.Helper.Variables._defaultColorButton;
+
+
+    Sitecore.Data.Items.Item currentPage = RenderingContext.Current.PageContext.Item;
+
+    if (currentPage.Fields[Sitecore.Feature.Library.Templates.BannerOnPage.Fields.ShowDownload] != null
+        && currentPage.Fields[Sitecore.Feature.Library.Templates.BannerOnPage.Fields.ShowDownload].ToString() == "1")
+    {
+        showDownload = true;
+    }
+
+    if (currentPage.Fields[Sitecore.Feature.Library.Templates.BannerOnPage.Fields.ShowCTA] != null
+        && currentPage.Fields[Sitecore.Feature.Library.Templates.BannerOnPage.Fields.ShowCTA].ToString() == "1")
+    {
+        showCTA = true;
+    }
+
+    if (currentPage.Fields[Sitecore.Feature.Library.Templates.BannerOnPage.Fields.DownloadOpenNewWindows] != null
+        && currentPage.Fields[Sitecore.Feature.Library.Templates.BannerOnPage.Fields.DownloadOpenNewWindows].ToString() == "1")
+    {
+        DownloadOpenNewWindows = "target=\"_blank\"";
+    }
+
+    if (currentPage.Fields[Sitecore.Feature.Library.Templates.BannerOnPage.Fields.BackgroundCTATransparant] != null
+        && currentPage.Fields[Sitecore.Feature.Library.Templates.BannerOnPage.Fields.BackgroundCTATransparant].ToString() == "1")
+    {
+        buttonColor = Sitecore.Feature.Library.Helper.Variables._transparantColorButton;
+    }
+
+    //string jsModalTrigger = string.Empty;
+    //if (currentPage.Fields[Sitecore.Feature.Library.Templates.BannerOnPage.Fields.openModal] != null
+    //    && currentPage.Fields[Sitecore.Feature.Library.Templates.BannerOnPage.Fields.openModal].ToString() == "1")
+    //{
+    //    jsModalTrigger = "js-modal-trigger";
+    //}
+
+
+    if (currentPage.Fields[Sitecore.Feature.Library.Templates.BannerOnPage.Fields.FileDownload] != null && currentPage.Fields[Sitecore.Feature.Library.Templates.BannerOnPage.Fields.FileDownload].Value != string.Empty)
+    {
+        Sitecore.Data.Fields.FileField field = (Sitecore.Data.Fields.FileField)currentPage.Fields[Sitecore.Feature.Library.Templates.BannerOnPage.Fields.FileDownload];
+        if (field.MediaItem != null)
+        {
+            downloadFileUrl = Sitecore.Resources.Media.MediaManager.GetMediaUrl(field.MediaItem);
+        }
+    }
+
+    Sitecore.Data.Fields.LinkField _linkField= currentPage.Fields[Sitecore.Feature.Library.Templates.BannerOnPage.Fields.UrlCTA];
+    string urlCTA = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_linkField);
+
+}
+
+<div class="page-banner--as-bg" style="background-image:url(@currentPage.ImageUrl(Sitecore.Feature.Library.Templates.BannerOnPage.Fields.BannerImage))">
+    <div class="container">
+        <div class="page-banner-body">
+            <div class="fadein-left">
+                <h1 class="banner-title">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BannerOnPage.Fields.BannerTitle,currentPage)</h1>
+                <p class="t-paragraph--light">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BannerOnPage.Fields.BannerDescription, currentPage)</p>
+                <div>
+                    @if(showDownload)
+                    {
+                        <a href="@downloadFileUrl" @DownloadOpenNewWindows>
+                            <div class="valign">
+                                <div class="valign__item text-center">
+                                    <img src="/Assets/mbm/img/icon/ico-download-green.svg">
+                                </div>
+                                <div class="valign__item">
+                                    <span class="color-white t-size-14">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BannerOnPage.Fields.TitleDownload, currentPage)</span>
+                                </div>
+                            </div>
+                        </a>
+                    }
+                    
+                    @if(showCTA)
+                    {
+                        <a class="btn addon @buttonColor" modal="@currentPage.DisplayName" href="@urlCTA" @Html.Raw(_linkField.Target.Length > 0 ? "target=" + _linkField.Target + "" : string.Empty)>
+                            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BannerOnPage.Fields.TitleCTA, currentPage)
+                            <img src="/Assets/img/icons/arrow-right/arrow-right-363@2x.png" />
+                            <img class="hover" src="/Assets/img/icons/arrow-right/arrow-right-363-big-black@2x.png" />
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

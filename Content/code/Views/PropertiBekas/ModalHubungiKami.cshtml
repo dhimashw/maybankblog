@@ -1,0 +1,515 @@
+﻿@using Sitecore.Feature.Content
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Data.Fields
+@using Sitecore.Feature.Form.Repositories
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+@{
+    var Hplus = Sitecore.Context.Database.GetItem(new Sitecore.Data.ID("{6C474594-A41D-4961-9E9C-39C03958C29B}")).Fields[Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title].Value;
+    Sitecore.Data.Items.Item itemField = Sitecore.Context.Database.GetItem("{23E499E4-E138-43DB-BFF1-6257CA5849F6}");
+    int MaxSubmit = 3;
+
+    var defaultValueChannelandCampaign = Sitecore.Context.Database.GetItem(new Sitecore.Data.ID("{385F6CDA-C0B8-4535-9A44-F978E7030B03}"));
+    string channelSource = defaultValueChannelandCampaign.Fields[Sitecore.Feature.Library.Templates.UTMParameters.UTM.ChannelSource].Value;
+    string campaignName = defaultValueChannelandCampaign.Fields[Sitecore.Feature.Library.Templates.UTMParameters.UTM.CampaignCode].Value;
+    if (Request.QueryString.Count > 0)
+    {
+        if (Request.QueryString.AllKeys.Any(x => x == Sitecore.Feature.Library.Helper.Variables._varChannelSource))
+        {
+            if (!string.IsNullOrWhiteSpace(Request.QueryString[Sitecore.Feature.Library.Helper.Variables._varChannelSource]))
+            {
+                channelSource = Request.QueryString[Sitecore.Feature.Library.Helper.Variables._varChannelSource];
+            }
+        }
+
+        if (Request.QueryString.AllKeys.Any(x => x == Sitecore.Feature.Library.Helper.Variables._varCampaignName))
+        {
+            if (!string.IsNullOrWhiteSpace(Request.QueryString[Sitecore.Feature.Library.Helper.Variables._varCampaignName]))
+            {
+                campaignName = Request.QueryString[Sitecore.Feature.Library.Helper.Variables._varCampaignName];
+            }
+        }
+    }
+}
+@if (Model.DataSourceID != (Sitecore.Data.ID)null)
+{
+    Sitecore.Data.Items.Item hubungiKamiItem = Sitecore.Context.Database.GetItem(Model.DataSourceID);
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content white-text">
+            <div class="modal-header ayda-header">
+                <div class="ayda-image" style="background-image:url('@hubungiKamiItem.ImageUrl(Sitecore.Feature.Library.Templates.PropertiBekas.Fields.Thumbnail)')"></div>
+                <button class="close js-modal-trigger-close" type="button" data-dismiss="modal" aria-label="Close"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path id="modal-close-svg" d="M10.437 8.58l6.845-6.845A1.016 1.016 0 1 0 15.845.298L9 7.143 2.156.298A1.016 1.016 0 1 0 .719 1.735L7.563 8.58.298 15.845a1.016 1.016 0 1 0 1.437 1.437L9 10.018l7.265 7.264a1.013 1.013 0 0 0 1.437 0 1.016 1.016 0 0 0 0-1.437L10.437 8.58z" fill="#000" fill-rule="evenodd" /></svg></button>
+            </div>
+            <div class="modal-body m-modals-info-modals no-max-height">
+                <h1>@Html.Sitecore().Dictionary("/Feature/PropertiBekas/Contact Us", "Hubungi Kami")</h1>
+                <div class="js-form">
+                    <form action="">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="MaxSubmit" id="MaxSubmit" value="@MaxSubmit" />
+                        <input type="hidden" name="CHANNEL_SOURCE" id="CHANNEL_SOURCE" value="@channelSource" />
+                        <input type="hidden" name="CAMPAIGN_NAME" id="CAMPAIGN_NAME" value="@campaignName" />
+                        @foreach (Sitecore.Data.Items.Item items in itemField.Children)
+                        {
+                            string regexvalidation = (!string.IsNullOrWhiteSpace(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexType].Value)) ? "regex-validation" : "";
+                            string minLength = "";
+                            string maxLength = "";
+
+                            if (!string.IsNullOrWhiteSpace(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MinLength].Value))
+                            {
+                                minLength = "minlength=" + items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MinLength].Value;
+                            }
+
+                            if (!string.IsNullOrWhiteSpace(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MaxLength].Value))
+                            {
+                                maxLength = "maxlength=" + items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MaxLength].Value;
+                            }
+
+                            var isRequired = ((CheckboxField)items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.IsRequired]).Checked;
+                            string attrRequired = isRequired ? "required" : "";
+                            string radioRequired = isRequired ? "radio-required" : "";
+                            string canvasRequired = isRequired ? "canvas-required" : "";
+
+                            <div class="form-group col">
+                                @if (items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Type].Value == "text")
+                                {
+                                    <label class="col-title no-animation" for="Nama">@Html.Sitecore().Field(Sitecore.Feature.Form.Templates.ApplyField.Fields.Label, items)</label>
+                                    <input class="js-type-ahead form-control @regexvalidation" type="text" @attrRequired @minLength @maxLength data-minlengthmessage="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MinLengthMessage].Value" data-type="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.DataType].Value"
+                                           data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value" data-regex="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexType].Value" data-regexmessage="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexMessage].Value"
+                                           id="tp-@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" placeholder="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.DefaultValue].Value"
+                                           autocomplete="off" />
+                                }
+                                else if (items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Type].Value == "voucher")
+                                {
+                                    bool isValidData = ((CheckboxField)items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.IsValidData]).Checked;
+                                    <label class="col-title no-animation" for="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value">@Html.Raw(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</label>
+                                    <input class="js-type-ahead form-control js-promo-code @regexvalidation" type="text" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" @attrRequired @minLength @maxLength data-minlengthmessage="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MinLengthMessage].Value" data-type="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.DataType].Value"
+                                           data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value" data-regex="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexType].Value" data-regexmessage="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexMessage].Value"
+                                           isvaliddata="@isValidData.ToString().ToLower()" data-tablename="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.DatabaseSource.TableName].Value"
+                                           data-vouchererrormessage="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.VoucherErrorMessage].Value" autocomplete="off" />
+                                    <div class="form-message d-none"></div>
+                                }
+                                else if (items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Type].Value == "textrange")
+                                {
+                                    <label class="col-title no-animation" for="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value">@Html.Raw(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</label>
+                                    <input class="form-control @regexvalidation" type="text" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" @attrRequired @minLength @maxLength data-minlengthmessage="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MinLengthMessage].Value" data-type="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.DataType].Value"
+                                           data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value" data-regex="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexType].Value" data-regexmessage="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexMessage].Value"
+                                           data-targetfieldname="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.TargetFieldName].Value" autocomplete="off"
+                                           min="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.RangeFields.Min].Value" max="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.RangeFields.Max].Value"
+                                           step="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.RangeFields.Step].Value" />
+                                }
+                                else if (items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Type].Value == "email")
+                                {
+                                    /*Render HTML Input*/
+                                    <label class="col-title no-animation" for="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value">@Html.Raw(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</label>
+                                    <input class="form-control @regexvalidation" type="email" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" @attrRequired @minLength @maxLength data-minlengthmessage="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MinLengthMessage].Value" data-type="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.DataType].Value"
+                                           data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value" data-regex="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexType].Value" data-regexmessage="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexMessage].Value"
+                                           data-targetfieldname="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.TargetFieldName].Value" autocomplete="off" />
+
+                                }
+                                else if (items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Type].Value == "calendar")
+                                {
+                                    bool smartDays = ((CheckboxField)items.Fields[Sitecore.Feature.Form.Templates.ApplyField.ComboDateFields.smartDays]).Checked;
+                                    <label class="col-title no-animation" for="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value">@Html.Raw(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</label>
+                                    <input class="combodate"
+                                           data-format="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.ComboDateFields.dataFormat].Value"
+                                           data-template="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.ComboDateFields.dataTemplate].Value"
+                                           data-minyear="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.ComboDateFields.minYear].Value"
+                                           data-maxyear="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.ComboDateFields.maxYear].Value"
+                                           data-firstitem="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.ComboDateFields.firstItem].Value"
+                                           data-customClass="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.ComboDateFields.customClass].Value"
+                                           data-smartDays="@smartDays.ToString().ToLower()"
+                                           type="text" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" @attrRequired @minLength @maxLength data-minlengthmessage="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MinLengthMessage].Value" data-type="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.DataType].Value"
+                                           data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value" data-regex="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexType].Value" data-regexmessage="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexMessage].Value"
+                                           data-targetfieldname="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.TargetFieldName].Value" autocomplete="off" />
+
+                                }
+                                else if (items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Type].Value == "password")
+                                {
+                                    <label class="col-title no-animation" for="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" style="top: 0px; opacity: 1; font-size: 14px;">@Html.Raw(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</label>
+                                    <input class="form-control @regexvalidation" type="password" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" @attrRequired
+                                           @minLength @maxLength data-minlengthmessage="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MinLengthMessage].Value"
+                                           data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value" data-regex="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexType].Value" data-regexmessage="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexMessage].Value"
+                                           data-targetfieldname="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.TargetFieldName].Value" />
+                                }
+                                else if (items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Type].Value == "range")
+                                {
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="label col-title">@Html.RenderHtml(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</div>
+                                            <div class="input range">
+                                                <input type="range" min="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.RangeFields.Min].Value" max="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.RangeFields.Max].Value"
+                                                       step="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.RangeFields.Step].Value" labels="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.RangeFields.Min].Value, @items.Fields[Sitecore.Feature.Form.Templates.ApplyField.RangeFields.Max].Value"
+                                                       data-labeltext="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.RangeFields.LabelText].Value" data-sourcefield="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.RangeFields.SourceField].Value"
+                                                       data-formula="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.RangeFields.Formula].Value" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" @attrRequired data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                else if (items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Type].Value == "select")
+                                {
+                                    if (!string.IsNullOrWhiteSpace(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.DatabaseSource.TableName].Value) || !string.IsNullOrWhiteSpace(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.DatabaseSource.ChildTableName].Value))
+                                    {
+                                        System.Collections.IList dbTblItems = null;
+                                        if (!string.IsNullOrWhiteSpace(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.DatabaseSource.TableName].Value))
+                                        {
+                                            dbTblItems = FormRepositories.GetList(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.DatabaseSource.TableName].Value);
+                                        }
+                                        string hasChild = string.IsNullOrWhiteSpace(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.DatabaseSource.ApplyChildToFieldName].Value) ? "form-control" : "form-control hasChild";
+
+                                        <div class="m2u-select js-m2u-select">
+                                            <select class="@hasChild" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" data-label="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value" @attrRequired data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value"
+                                                    data-childsourcefieldcode="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.DatabaseSource.ChildSourceFieldCode].Value"
+                                                    data-childsourcefieldname="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.DatabaseSource.ChildSourceFieldName].Value"
+                                                    data-applychildtofieldname="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.DatabaseSource.ApplyChildToFieldName].Value"
+                                                    data-childtablename="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.DatabaseSource.ChildTableName].Value"
+                                                    data-relationship="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.DatabaseSource.Relationship].Value">
+                                                <option class="placeholder" value="" disabled>@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value</option>
+
+                                                @if (dbTblItems != null)
+                                                {
+                                                    foreach (var item in dbTblItems)
+                                                    {
+                                                        object code = FormRepositories.GetPropValue(item, items.Fields[Sitecore.Feature.Form.Templates.ApplyField.DatabaseSource.SourceFieldCode].Value);
+                                                        object value = FormRepositories.GetPropValue(item, items.Fields[Sitecore.Feature.Form.Templates.ApplyField.DatabaseSource.SourceFieldName].Value);
+                                                        <option value="@code">@value</option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        string hasTarget = "form-control";
+
+                                        var childItems = new List<Sitecore.Data.Items.Item>();
+                                        if (!string.IsNullOrWhiteSpace(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.TargetFieldName].Value))
+                                        {
+                                            hasTarget = "form-control hasTarget";
+                                        }
+                                        if (!string.IsNullOrWhiteSpace(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.DataSource].Value))
+                                        {
+                                            hasTarget = ((CheckboxField)items.Fields[Sitecore.Feature.Form.Templates.ApplyField.FilterFields.IsFilter]).Checked ? "form-control filter" : "form-control";
+                                            childItems = FormRepositories.GetChildListByItem(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.DataSource].Value).ToList();
+                                        }
+                                        else
+                                        {
+                                            childItems = FormRepositories.GetChildListByItem(items).ToList();
+                                        }
+
+                                        <div class="m2u-select js-m2u-select">
+                                            <select class="@hasTarget" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" data-label="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value" @attrRequired data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value"
+                                                    data-targetfieldname="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.TargetFieldName].Value">
+                                                <option class="placeholder" value="" disabled>@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value</option>
+
+                                                @if (items.Name == "date")
+                                                {
+                                                    var culture = new System.Globalization.CultureInfo(Sitecore.Context.Language.Name);
+                                                    /* date */
+                                                    for (int i = 0; i < System.Convert.ToInt32(Hplus); i++)
+                                                    {
+                                                        <option value="@DateTime.Now.AddDays(i).ToString("dddd, dd MMMM yyyy", culture)">@DateTime.Now.AddDays(i).ToString("dddd, dd MMMM yyyy", culture)</option>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    foreach (var optItem in childItems)
+                                                    {
+                                                        if (optItem.TemplateID == Sitecore.Feature.Library.Templates.GeneralValue.ID)
+                                                        {
+                                                            /* Render Data Option */
+                                                            <option value="@optItem.Fields[Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title].Value"
+                                                                    data-id="@optItem.ID">
+                                                                @optItem.Fields[Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title].Value
+                                                            </option>
+                                                        }
+                                                        else if (optItem.TemplateID == Sitecore.Feature.Library.Templates.ImageLink.ID)
+                                                        {
+                                                            /* Render Data Option */
+                                                            <option value="@optItem.Fields[Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title].Value"
+                                                                    data-id="@optItem.ID">
+                                                                @optItem.Fields[Sitecore.Feature.Library.Templates.ImageLink.Fields.TitleImageLink].Value
+                                                            </option>
+                                                        }
+                                                        else if (optItem.TemplateID == Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.ID)
+                                                        {
+                                                            /* Render Data Option */
+                                                            <option value="@optItem.Fields[Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading].Value"
+                                                                    data-id="@optItem.ID">
+                                                                @optItem.Fields[Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Subheading].Value
+                                                            </option>
+                                                        }
+                                                        else
+                                                        {
+                                                            /* Render Data Option */
+                                                            <option value="@optItem.ID"
+                                                                    data-id="@optItem.ID">
+                                                                @optItem.Name
+                                                            </option>
+                                                        }
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                    }
+                                }
+                                else if (items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Type].Value == "textarea")
+                                {
+                                    <label class="col-title no-animation" for="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value">@Html.Raw(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</label>
+                                    <textarea class="expanding form-control full @regexvalidation" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" @attrRequired placeholder="max. @items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MaxLength].Value characters" @minLength @maxLength data-minlengthmessage="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MinLengthMessage].Value"
+                                              data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value" data-regex="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexType].Value" data-regexmessage="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexMessage].Value"></textarea>
+                                }
+                                else if (items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Type].Value == "checkbox")
+                                {
+
+                                    var childItems = new List<Sitecore.Data.Items.Item>();
+                                    if (!string.IsNullOrWhiteSpace(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.DataSource].Value))
+                                    {
+                                        childItems = FormRepositories.GetChildListByItem(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.DataSource].Value).ToList();
+                                    }
+                                    else
+                                    {
+                                        childItems = FormRepositories.GetChildListByItem(items).ToList();
+                                    }
+
+                                    if (!items.HasChildren)
+                                    {
+                                        <div class="form-check @radioRequired" data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value">
+                                            <input class="form-check-input" id="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" type="checkbox" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" />
+                                            <label class="form-check-label" for="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value">@Html.Raw(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</label>
+                                        </div>
+                                    }
+
+                                    if (FormRepositories.IsChildHasTemplate(childItems, Sitecore.Feature.Library.Templates.GeneralValue.ID))
+                                    {
+                                        if (childItems.Count == 1)
+                                        {
+
+                                            <div class="form-check @radioRequired" data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value">
+                                                <input class="form-check-input" id="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" type="checkbox" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" />
+                                                <label class="form-check-label" for="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value">@Html.Raw(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</label>
+                                            </div>
+
+                                        }
+                                        else
+                                        {
+                                            <div class="form-group @radioRequired" data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value">
+                                                <h3>@Html.Raw(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</h3>
+                                                <div class="clearfix">
+                                                    @foreach (var dataItem in childItems)
+                                                    {
+                                                        /* Render Data */
+                                                        <div class="form-check col-xs-6 col-sm-3">
+                                                            <input class="form-check-input" type="checkbox" id="@dataItem.Name" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" />
+                                                            <label class="form-check-label" for="@dataItem.Name">@Html.Raw(dataItem.Fields[Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title].Value)</label>
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+
+                                    if (FormRepositories.IsChildHasTemplate(childItems, Sitecore.Feature.Library.Templates.ImageLink.ID))
+                                    {
+                                        <h2>@Html.Raw(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</h2><br />
+
+                                        <div class="form-group form-cards @radioRequired" data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value">
+                                            <div class="horizontal-scroll neg-m js-hidescroll">
+                                                @foreach (var dataItem in childItems)
+                                                {
+                                                    if (((CheckboxField)dataItem.Fields[Sitecore.Feature.Library.Templates.ImageLink.Fields.ShowItem]).Checked)
+                                                    {
+                                                        <div class="card-box horizontal-item mx-3">
+                                                            <input class="form-control d-block" type="checkbox" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" value="@dataItem.Fields[Sitecore.Feature.Library.Templates.ImageLink.Fields.TitleImageLink].Value" />
+                                                            <div class="card-box-wrapper">
+                                                                <a href="#">
+                                                                    <div class="card-box-image"><img class="ico ico--large" src="@dataItem.ImageUrl(Sitecore.Feature.Library.Templates.ImageLink.Fields.Image)" /></div>
+                                                                    <div class="card-box-caption">@Html.Raw(dataItem.Fields[Sitecore.Feature.Library.Templates.ImageLink.Fields.TitleImageLink].Value)</div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                                else if (items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Type].Value == "radio")
+                                {
+                                    string hasFilter = ((CheckboxField)items.Fields[Sitecore.Feature.Form.Templates.ApplyField.FilterFields.IsFilter]).Checked ? "filter" : "";
+
+                                    var childItems = new List<Sitecore.Data.Items.Item>();
+                                    if (!string.IsNullOrWhiteSpace(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.DataSource].Value))
+                                    {
+                                        childItems = FormRepositories.GetChildListByItem(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.DataSource].Value).ToList();
+                                    }
+                                    else
+                                    {
+                                        childItems = FormRepositories.GetChildListByItem(items).ToList();
+                                    }
+
+                                    if (FormRepositories.IsChildHasTemplate(childItems, Sitecore.Feature.Library.Templates.GeneralValue.ID))
+                                    {
+                                        <div>@Html.Raw(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</div>
+                                        <div class="row no-margin-top @radioRequired" data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value">
+                                            @foreach (var dataItem in childItems)
+                                            {
+                                                /* Render Data */
+                                                <div class="form-check form-check-btn">
+                                                    <input class="form-check-input hide-next-label" type="radio" id="@dataItem.Name" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" value="@dataItem.Fields[Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title].Value" />
+                                                    <label class="form-check-label" for="@dataItem.Name">@Html.Raw(dataItem.Fields[Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title].Value)</label>
+                                                </div>
+                                            }
+                                        </div>
+                                    }
+
+                                    if (FormRepositories.IsChildHasTemplate(childItems, Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.ID))
+                                    {
+                                        <div>@Html.Raw(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</div>
+                                        <div class="row no-margin-top @radioRequired" data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value">
+                                            @foreach (var dataItem in childItems)
+                                            {
+                                                /* Render Data */
+                                                <div class="form-check form-check-btn">
+                                                    <input class="form-check-input hide-next-label" type="radio" id="@dataItem.Name" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" value="@dataItem.Fields[Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading].Value" />
+                                                    <label class="form-check-label" for="@dataItem.Name">@Html.Raw(dataItem.Fields[Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Subheading].Value)</label>
+                                                </div>
+                                            }
+                                        </div>
+                                    }
+
+                                    if (FormRepositories.IsChildHasTemplate(childItems, Sitecore.Feature.Library.Templates.GeneralUrl.ID))
+                                    {
+                                        <div class="form-group @radioRequired" data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value">
+                                            <h3>@Html.Raw(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</h3>
+                                            <div class="clearfix">
+                                                @foreach (var dataItem in childItems)
+                                                {
+                                                    Sitecore.Data.Fields.LinkField _linkUrl = dataItem.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url];
+                                                    string url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_linkUrl);
+                                                    /* Render Data */
+                                                    <div class="form-check col-xs-6 col-sm-3">
+                                                        <input class="form-check-input" type="radio" id="@dataItem.Name" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" value="@dataItem.Fields[Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title].Value"
+                                                               @*data-targetlink="@dataItem.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url)" />*@
+                                                               data-targetlink="@url" />
+                                                        <label class="form-check-label" for="@dataItem.Name">@Html.Raw(dataItem.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Title].Value)</label>
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+
+                                    if (FormRepositories.IsChildHasTemplate(childItems, Sitecore.Feature.Library.Templates.ImageLink.ID))
+                                    {
+                                        <h2>@Html.Raw(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</h2>
+
+                                        <div class="form-group @radioRequired" data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value">
+                                            <div class="horizontal-scroll neg-m js-hidescroll">
+                                                @foreach (var dataItem in childItems)
+                                                {
+
+                                                    if (((CheckboxField)dataItem.Fields[Sitecore.Feature.Library.Templates.ImageLink.Fields.ShowItem]).Checked)
+                                                    {
+                                                        Sitecore.Data.Fields.LinkField _linkUrl = dataItem.Fields[Sitecore.Feature.Library.Templates.ImageLink.Fields.UrlImageLink];
+                                                        string url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_linkUrl);
+                                                        /* Render Data */
+                                                        <div class="card-box horizontal-item mx-3">
+                                                            <input class="form-control d-block @hasFilter" type="radio" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" value="@dataItem.Fields[Sitecore.Feature.Library.Templates.ImageLink.Fields.TitleImageLink].Value"
+                                                                   data-jumptostep="@dataItem.Fields[Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title].Value"
+                                                                   data-targetlink="@url"
+                                                                   data-submitapi="@dataItem.Fields[Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading].Value" />
+                                                            <div class="card-box-wrapper">
+                                                                <a href="#">
+                                                                    <div class="card-box-image"><img class="ico ico--large" src="@dataItem.ImageUrl(Sitecore.Feature.Library.Templates.ImageLink.Fields.Image)" /></div>
+                                                                    <div class="card-box-caption">@Html.Raw(dataItem.Fields[Sitecore.Feature.Library.Templates.ImageLink.Fields.TitleImageLink].Value)</div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+
+                                    if (FormRepositories.IsChildHasTemplate(childItems, Sitecore.Feature.Library.Templates.LeftHeroBannerFunnel.ID))
+                                    {
+                                        <h2>@Html.Raw(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</h2>
+
+                                        <div class="form-group @radioRequired" data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value">
+                                            <div class="horizontal-scroll neg-m js-hidescroll">
+                                                @foreach (var dataItem in childItems)
+                                                {
+                                                    /* Render Data */
+                                                    <div class="card-box-credit horizontal-item">
+                                                        <input class="form-control d-block cardtype" type="radio" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value"
+                                                               value="@dataItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.CardType].Value"
+                                                               data-text="@dataItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title].Value" />
+                                                        <div class="card-box-wrapper">
+                                                            <a href="#">
+                                                                <div class="card-box-image"><img class="ico ico--large" src="@dataItem.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.Image)" /></div>
+                                                                <div class="card-box-caption">@Html.Raw(dataItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title].Value)</div>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+                                    else if (items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Type].Value == "map")
+                                    {
+                                        <h2>@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Title].Value</h2>
+                                        <p>@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Description].Value</p>
+                                        <button class="btn btn-primary addon-reverse--small w-auto js-modal-trigger" href="" modal="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.ModalName].Value" type="button"><img class="addon-img ico-pin" src="/assets/img/icons/ico-pin.svg" alt="">use google maps</button>
+                                    }
+                                    else if (items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Type].Value == "file")
+                                    {
+                                        /**/
+                                        <div class="input-file-group">
+                                            <div class="btn btn-outline-primary addon input-file-btn">
+                                                @Html.Raw(items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)
+                                                <div class="symbol">+</div>
+                                                <input type="file" name="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" @attrRequired data-error="@items.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value" value="" />
+                                            </div>
+                                            <div class="btn btn-outline-primary addon input-file-display">
+                                                <span>LoremIpsum.doc</span><img src="/assets/img/icons/ico-doc.svg" />
+                                                <div class="del">@Html.Sitecore().Dictionary("/Feature/Form/Delete", "Hapus")</div>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+
+                        }
+                        @*<div class="form-group col">
+                                <label class="col-title no-animation" for="full-name">Nama Lengkap</label>
+                                <input class="form-control" type="text" required="required" name="full-name" placeholder="Masukkan nama lengkap" />
+                            </div>
+                            <div class="form-group col">
+                                <label class="col-title no-animation" for="mobile-number">Mobile Number</label>
+                                <input class="form-control" type="text" required="required" name="mobile-number" placeholder="62 000 00000" />
+                            </div>
+                            <div class="form-group col">
+                                <label class="col-title no-animation" for="email">Email</label>
+                                <input class="form-control" type="text" required="required" name="email" placeholder="username@gmail.com" />
+                            </div>*@
+                        <input type="hidden" value="@hubungiKamiItem.Fields[Sitecore.Feature.Library.Templates.PropertiBekas.Fields.PIC]" name="PIC" />
+                        <input type="hidden" value="@hubungiKamiItem.Fields[Sitecore.Feature.Library.Templates.PropertiBekas.Fields.HP]" name="PICHP" />
+                        <input type="hidden" value="@hubungiKamiItem.Fields[Sitecore.Feature.Library.Templates.PropertiBekas.Fields.Email]" name="PICEMAIL" />
+                        <input type="hidden" value="@hubungiKamiItem.Fields[Sitecore.Feature.Library.Templates.PropertiBekas.Fields.Title]" name="NAMAPROPERTI" />
+                        <div class="form-group col">
+                            <button class="btn btn-tertiary addon" type="button" id="submitPropertiBekas">@Html.Sitecore().Dictionary("/Feature/Form/Submit", "SUBMIT")<img src="/assets/img/icons/arrow-right/arrow-right-363@2x.png" alt="submit" /></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@{
+    string randomKey = string.Empty;
+    randomKey = "39201988" + DateTime.Now.ToString("MMyyyydd");
+    System.Web.HttpContext.Current.Session[Sitecore.Feature.Library.Helper.Variables._varEncryptedKey] = randomKey;
+}
+<input type="hidden" id="9aagfhasg98onfaofisyfaiur3ribfsg" value="@randomKey" />
+<input type="hidden" id="notifsuccess" value="@Html.Sitecore().Dictionary("/Feature/Validation/Success", "Thank you for your submit")" />

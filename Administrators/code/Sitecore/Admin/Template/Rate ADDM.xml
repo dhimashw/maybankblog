@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Migration>
+  <ColumnMapping tableName="RATEADDM" ResultType="update-table">
+    <Column source="ID" destination="ID" type="int" Required="true"/>
+    <Column source="Category" destination="Category" type="string"/>
+    <Column source="Tenor" destination="Tenor" type="int"/>
+    <Column source="RateADDM" destination="RateADDM" type="float"/>
+  </ColumnMapping>
+</Migration>

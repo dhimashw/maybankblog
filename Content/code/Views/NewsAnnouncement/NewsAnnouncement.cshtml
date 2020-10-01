@@ -1,0 +1,42 @@
+﻿@using Sitecore.Feature.Library
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+@using Sitecore.Feature.Library.Helper
+@model IEnumerable<Sitecore.Data.Items.Item>
+@{
+
+    var source = Sitecore.Context.Database.GetItem(RenderingContext.Current.Rendering.Item.ID);
+    //var AllItemUrl = source.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url) == "" ? "#" : source.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url);
+
+    Sitecore.Data.Fields.LinkField _link = source.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url];
+    var AllItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+
+    //if (AllItemUrl != "#")
+    //{
+    //    AllItemUrl = Sitecore.Context.Database.GetItem(AllItemUrl).Url();
+    //}
+
+    var cssHide = Sitecore.Context.PageMode.IsExperienceEditor == true ? "" : "hide";
+
+}
+<div class="card-item js-demo-skeleton-content hide">
+    <div class="head">
+        <h2>@Html.Sitecore().Dictionary("/Feature/News/News Announcement Title", "Edit This Content On Dictionary")</h2>
+    </div>
+    <div class="body">
+        @foreach (Sitecore.Data.Items.Item item in Model)
+        {
+            <div class="body-row">
+                <h4>
+                    @* @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Date, item, new { format = "MMMM dd, yyyy" })*@
+                    @Html.Sitecore().RenderDate(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Date, item, Sitecore.Feature.Library.Helper.Variables.globalFormatDateTime)
+                </h4>
+                <p><a href="@item.Url()">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Title, item)</a></p>
+            </div>
+        }
+    </div>
+
+    <div class="foot"><a href="@AllItemUrl" class="see-more">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, source)</a></div>
+</div>

@@ -1,0 +1,106 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helper
+@model RenderingModel
+@{
+    bool haveSession = false;
+    string urlFunnelCreditCard = string.Empty;
+    double minimumAnnualIncome = 0;
+    if (Session[Sitecore.Feature.Library.Helper.Variables._sessionMinimumAnnualIncome] != null)
+    {
+        haveSession = true;
+        if (Session[Sitecore.Feature.Library.Helper.Variables._sessionMinimumAnnualIncome] != null && ((FormCollection)Session[Sitecore.Feature.Library.Helper.Variables._sessionMinimumAnnualIncome])[((FormCollection)Session[Sitecore.Feature.Library.Helper.Variables._sessionMinimumAnnualIncome])["varIncome"]].IsInt())
+        {
+            minimumAnnualIncome = double.Parse(((FormCollection)Session[Sitecore.Feature.Library.Helper.Variables._sessionMinimumAnnualIncome])[((FormCollection)Session[Sitecore.Feature.Library.Helper.Variables._sessionMinimumAnnualIncome])["varIncome"]].ToString()) * 12;
+        }
+    }
+
+    if (RenderingContext.Current.Rendering.Parameters["Url"] != null)
+    {
+        urlFunnelCreditCard = RenderingContext.Current.Rendering.Parameters["Url"];
+        if (urlFunnelCreditCard != null && urlFunnelCreditCard.Length > 0 && Sitecore.Context.Database.GetItem(urlFunnelCreditCard) != null)
+        {
+            urlFunnelCreditCard = Sitecore.Context.Database.GetItem(urlFunnelCreditCard).Url();
+        }
+    }
+
+
+    if (Sitecore.Context.PageMode.IsExperienceEditor)
+    {
+        haveSession = true;
+    }
+}
+
+<script>
+    if ("@haveSession" == "False")
+    {
+        window.location.href = "@urlFunnelCreditCard";
+    }
+</script>
+
+<div class="heading centered">
+    <h1>Solusi yang Sesuai Dengan Kebutuhan Anda</h1>
+</div>
+<div class="row inline-centered js-compared-item-group">
+
+    @foreach (Sitecore.Data.Items.Item myItem in Model.Item.Children.Where(x => x.TemplateID == Sitecore.Feature.Library.Templates.ProductCreditCardPage.ID && x.Fields[Sitecore.Feature.Library.Templates.ProductCreditCardPage.Fields.MinimumAnnualIncome].Value != null && double.Parse(x.Fields[Sitecore.Feature.Library.Templates.ProductCreditCardPage.Fields.MinimumAnnualIncome].Value) <= minimumAnnualIncome))
+    {
+        <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="skeleton js-demo-skeleton">
+                <div class="skeleton__header">
+                    <div class="skeleton__img"></div>
+                </div>
+                <div class="skeleton__body">
+                    <div class="skeleton__wrapper">
+                        <div class="col-xs-12">
+                            <div class="skeleton__line"></div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="skeleton__line"></div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="skeleton__line"></div>
+                        </div>
+                        <div class="col-xs-10">
+                            <div class="skeleton__line"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skeleton__footer">
+                    <br />
+                    <div class="skeleton__line tall"></div>
+                    <div class="skeleton__line tall"></div>
+                </div>
+            </div>
+            <div class="m-cards-giro-card display-cards long-card js-compared-item js-demo-skeleton-content hide">
+                <div class="image" data-id="@myItem.ID" data-url="@myItem.Url()">
+                    @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.Page.Fields.Thumbnail, myItem, cssClass:"card-bg");
+                    <span class="product-label">
+                        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Page.Fields.stringTitle, myItem)
+                    </span>
+                    <div class="card">
+                        @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.ProductCreditCardPage.Fields.Card, myItem);
+                    </div>
+                </div>
+                <div class="desc">
+                    <span class="pdesc">
+                        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Page.Fields.stringSummary, myItem)
+                    </span>
+                    <div class="cta">
+                        <a class="see-more" href="@myItem.Url()">@Html.Sitecore().Dictionary("/Feature/Content/Banner", "Edit This Content On Dictionary(/Feature/Content/Banner)")</a>
+                        <a class="btn btn-tertiary addon" href="@Sitecore.Feature.Library.Helper.Core.getGeneralLink((Sitecore.Data.Fields.LinkField)myItem.Fields[Sitecore.Feature.Library.Templates.TopNav.Fields.UrlApplyNow])">
+                           @Html.Sitecore().Dictionary("/Feature/Content/List Offer", "Edit This Content On Dictionary(/Feature/Content/List Offer)")
+                            <img src="../../../assets/img/icons/arrow-right/arrow-right-363@2x.png" alt="" />
+                        </a>
+                        <a class="btn btn-outline-primary addon js-add-compare">
+                            @Html.Sitecore().Dictionary("/Feature/Content/Add To Compare", "Edit This Content On Dictionary(/Feature/Content/Add To Compare)")
+                            <div class="symbol">+</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,61 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@model RenderingModel
+
+@{
+    string TitleCTA = string.IsNullOrEmpty(RenderingContext.Current.Rendering.Parameters["Title"]) == true ? Html.Sitecore().Dictionary("/Feature/Content/Banner", "Edit This Content On Dictionary(/Feature/Content/Banner)") : RenderingContext.Current.Rendering.Parameters["Title"];
+    string imageUrl = string.Format("style=\"background-image:url({0});\"", Variables._defaultImageBanner);    
+
+    Sitecore.Data.Fields.LinkField _link = Model.Item.Fields[Sitecore.Feature.Library.Templates.Link.Fields.Link];
+    string redirectItemUrl = string.Empty;
+    var targetType = Model.Item.LinkFieldOptions(Sitecore.Feature.Library.Templates.Link.Fields.Link, LinkFieldOption.Target);
+
+    if (Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.Image) != null)
+    {
+        imageUrl = string.Format("style=background-image:url({0});", Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.Image));
+    }
+
+    <div class="page-banner--as-bg fixed-height" @imageUrl>
+        <div class="container">
+            <div class="page-banner-body full">
+                <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, Model.Item)</h1>
+                <p>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Banner.Fields.stringBannerDescription, Model.Item)</p>
+                <div class="box-list fixed-size">
+                    <div class="horizontal-scroll-container">
+                        <div class="horizontal-scroll js-hidescroll">
+                            @foreach (Sitecore.Data.Items.Item item in Model.Item.Children)
+                            {
+                                _link = item.Fields[Sitecore.Feature.Library.Templates.Link.Fields.Link];
+                                redirectItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+
+                                <div class="horizontal-item box-item">
+                                    <div class="card-box--white">
+                                        <div class="card-box-wrapper">
+                                            <a href="@redirectItemUrl" target="@targetType">
+                                                <div class="card-box-image">
+                                                    @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.IconImage, item, cssClass: "ico")
+                                                </div>
+                                                <div class="card-box-caption">
+                                                    @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.IconName, item)
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+

@@ -1,0 +1,9 @@
+¥
+/Sitecore.Feature.Content.Models.ReturnErrorDataobjectV
+ReturnErrorData()ASitecore.Feature.Content.Models.ReturnErrorData.ReturnErrorData()T
+responseCode.get@Sitecore.Feature.Content.Models.ReturnErrorData.responseCode.getT
+responseCode.set@Sitecore.Feature.Content.Models.ReturnErrorData.responseCode.setV
+descErrorCode.getASitecore.Feature.Content.Models.ReturnErrorData.descErrorCode.getV
+descErrorCode.setASitecore.Feature.Content.Models.ReturnErrorData.descErrorCode.setZ
+descErrorCodeEN.getCSitecore.Feature.Content.Models.ReturnErrorData.descErrorCodeEN.getZ
+descErrorCodeEN.setCSitecore.Feature.Content.Models.ReturnErrorData.descErrorCodeEN.set

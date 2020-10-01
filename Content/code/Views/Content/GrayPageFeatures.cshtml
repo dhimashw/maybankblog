@@ -1,0 +1,64 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts;
+@using Sitecore.Foundation.Alerts.Extensions;
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Feature.Library.Helper
+@model RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.ImagePositionAndDesc.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.ImagePositionAndDesc.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{
+    string ImgPosition = !string.IsNullOrWhiteSpace(Model.Item.Fields[Sitecore.Feature.Library.Templates.ImagePositionAndDesc.Fields.ImagePosition].Value) ? Model.Item.Fields[Sitecore.Feature.Library.Templates.ImagePositionAndDesc.Fields.ImagePosition].Value.ToLower() : "right";
+    string imageUrl = string.Format("style=\"background-image:url({0});\"", Variables._defaultImageBanner);
+
+    if (Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.Banner.Fields.Image) != null)
+    {
+        imageUrl = string.Format("style=background-image:url({0});", Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.ImageLink.Fields.Image));
+    }
+    Sitecore.Data.Fields.LinkField _link = Model.Item.Fields[Sitecore.Feature.Library.Templates.Link.Fields.Link];
+    string redirectItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+
+    string AncorItemID = RenderingContext.Current.Rendering.Parameters["ID"] != null ? RenderingContext.Current.Rendering.Parameters["ID"].Trim() : "";
+    //var link = Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowCTA].ToString() == "1" ? "<p><a class='see-more' href='" + Model.Item.LinkFieldUrl(Sitecore.Feature.Library.Templates.Link.Fields.Link) + "'>"+ Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, Model.Item) +"</a></p>" : "";
+    var link = Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowCTA].ToString() == "1" ? "<p><a class='see-more' href='" + redirectItemUrl + "'>" + Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, Model.Item) + "</a></p>" : "";
+}
+
+@if (ImgPosition == "right")
+{
+    <div class="m-page-feature bg-gray" id=@AncorItemID>
+        <div class="m-page-feature__wrapper">
+            <a name="special-cards"></a>
+            <div class="m-page-feature__item col-lg-6 col-lg-push-6 no-padding">
+                <div class="m-page-feature__picture" @imageUrl></div>
+            </div>
+            <div class="m-page-feature__item col-lg-6 col-lg-pull-6 no-padding">
+                <div class="m-page-feature__details">
+                    <h1>@Html.Raw(@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading, Model.Item))</h1>
+                    @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent, Model.Item)
+                    @Html.Raw(link)
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="m-page-feature bg-gray" id=@AncorItemID>
+        <div class="m-page-feature__wrapper">
+            <div class="m-page-feature__item col-lg-6 no-padding">
+                <div class="m-page-feature__picture" @imageUrl></div>
+            </div>
+            <div class="m-page-feature__item col-lg-6 no-padding">
+                <div class="m-page-feature__details">
+                    <h1>@Html.Raw(@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading, Model.Item))</h1>
+                    @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent, Model.Item)
+                    @Html.Raw(link)
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

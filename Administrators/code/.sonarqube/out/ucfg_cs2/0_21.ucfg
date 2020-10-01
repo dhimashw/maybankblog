@@ -1,0 +1,233 @@
+
+dSitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUpload.Page_Load(object, System.EventArgs)b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs ( "0*ÞQ
+0ã
+à
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (N
+%0HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"__id*£* B
+@Sitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUpload"Z
+BulkUploadAllsHSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll²¯
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (@
+%1System.Web.UI.Control")System.Web.UI.Control.FindControl(string)*P
+N
+%0HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll*
+panelBranchATMLocation2FindControl(string)ÊÇ
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (O
+
+%2void"!System.Web.UI.Control.Visible.set*
+
+%1System.Web.UI.Control*
+""2Visible.setã
+à
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (N
+%3HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"__id*£* B
+@Sitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUpload"Z
+BulkUploadAllsHSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll©¦
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (7
+%4System.Web.UI.Control")System.Web.UI.Control.FindControl(string)*P
+N
+%3HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll*
+panelBusiness2FindControl(string)ÊÇ
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (F
+
+%5void"!System.Web.UI.Control.Visible.set*
+
+%4System.Web.UI.Control*
+""2Visible.setã
+à
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (N
+%6HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"__id*£* B
+@Sitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUpload"Z
+BulkUploadAllsHSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll¤¡
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (2
+%7System.Web.UI.Control")System.Web.UI.Control.FindControl(string)*P
+N
+%6HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll*
+
+panelKPR2FindControl(string)ÊÇ
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (A
+
+%8void"!System.Web.UI.Control.Visible.set*
+
+%7System.Web.UI.Control*
+""2Visible.setã
+à
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (N
+%9HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"__id*£* B
+@Sitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUpload"Z
+BulkUploadAllsHSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll¥¢
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (2
+%10System.Web.UI.Control")System.Web.UI.Control.FindControl(string)*P
+N
+%9HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll*
+
+panelKPM2FindControl(string)ÌÉ
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (A
+%11void"!System.Web.UI.Control.Visible.set*
+
+%10System.Web.UI.Control*
+""2Visible.setä
+á
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (O
+%12HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"__id*£* B
+@Sitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUpload"Z
+BulkUploadAllsHSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll­ª
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (9
+%13System.Web.UI.Control")System.Web.UI.Control.FindControl(string)*Q
+O
+%12HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll*
+panelCreditCard2FindControl(string)ÌÉ
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (H
+%14void"!System.Web.UI.Control.Visible.set*
+
+%13System.Web.UI.Control*
+""2Visible.setä
+á
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (O
+%15HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"__id*£* B
+@Sitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUpload"Z
+BulkUploadAllsHSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll³°
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (?
+%16System.Web.UI.Control")System.Web.UI.Control.FindControl(string)*Q
+O
+%15HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll*
+panelBusinessVouchers2FindControl(string)ÌÉ
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (N
+%17void"!System.Web.UI.Control.Visible.set*
+
+%16System.Web.UI.Control*
+""2Visible.setä
+á
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (O
+%18HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"__id*£* B
+@Sitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUpload"Z
+BulkUploadAllsHSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAllµ²
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (A
+%19System.Web.UI.Control")System.Web.UI.Control.FindControl(string)*Q
+O
+%18HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll*
+panelCreditCardVouchers2FindControl(string)ÌÉ
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (P
+%20void"!System.Web.UI.Control.Visible.set*
+
+%19System.Web.UI.Control*
+""2Visible.setä
+á
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (O
+%21HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"__id*£* B
+@Sitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUpload"Z
+BulkUploadAllsHSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll¯¬
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (;
+%22System.Web.UI.Control")System.Web.UI.Control.FindControl(string)*Q
+O
+%21HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll*
+panelLoanVouchers2FindControl(string)ÌÉ
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (J
+%23void"!System.Web.UI.Control.Visible.set*
+
+%22System.Web.UI.Control*
+""2Visible.setä
+á
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (O
+%24HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"__id*£* B
+@Sitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUpload"Z
+BulkUploadAllsHSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAllÀ½
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (L
+%25System.Web.UI.Control")System.Web.UI.Control.FindControl(string)*Q
+O
+%24HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll*&$
+"panelMortgageMultifunctionVouchers2FindControl(string)ÌÉ
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs ([
+%26void"!System.Web.UI.Control.Visible.set*
+
+%25System.Web.UI.Control*
+""2Visible.setä
+á
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (O
+%27HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"__id*£* B
+@Sitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUpload"Z
+BulkUploadAllsHSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll±®
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (=
+%28System.Web.UI.Control")System.Web.UI.Control.FindControl(string)*Q
+O
+%27HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll*
+panelSavingVouchers2FindControl(string)ÌÉ
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (L
+%29void"!System.Web.UI.Control.Visible.set*
+
+%28System.Web.UI.Control*
+""2Visible.setä
+á
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (O
+%30HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"__id*£* B
+@Sitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUpload"Z
+BulkUploadAllsHSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll²¯
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (>
+%31System.Web.UI.Control")System.Web.UI.Control.FindControl(string)*Q
+O
+%30HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll*
+panelSyariahVouchers2FindControl(string)ÌÉ
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (M
+%32void"!System.Web.UI.Control.Visible.set*
+
+%31System.Web.UI.Control*
+""2Visible.setä
+á
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (O
+%33HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"__id*£* B
+@Sitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUpload"Z
+BulkUploadAllsHSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll©¦
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (5
+%34System.Web.UI.Control")System.Web.UI.Control.FindControl(string)*Q
+O
+%33HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll*
+panelOthers2FindControl(string)ÌÉ
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (D
+%35void"!System.Web.UI.Control.Visible.set*
+
+%34System.Web.UI.Control*
+""2Visible.set*
+1*~
+1"y
+b
+XC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUpload.aspx.cs (	
+implicit return:
+senderobject:
+eSystem.EventArgsBDB
+@Sitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUpload

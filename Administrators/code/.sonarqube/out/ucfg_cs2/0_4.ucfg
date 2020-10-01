@@ -1,0 +1,31 @@
+
+lSitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUploadBusiness.Page_Load(object, System.EventArgs)j
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUploadBusiness.aspx.cs ( "0*á
+0Û
+
+j
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUploadBusiness.aspx.cs (N
+%0HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"__id*´*®J
+HSitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUploadBusiness"Z
+BulkUploadAllsHSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll±Æ
+j
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUploadBusiness.aspx.cs (7
+%1System.Web.UI.Control")System.Web.UI.Control.FindControl(string)*P
+N
+%0HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll*
+panelBusiness2FindControl(string)“œ
+j
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUploadBusiness.aspx.cs (F
+
+%2void"!System.Web.UI.Control.Visible.set*
+
+%1System.Web.UI.Control*
+""2Visible.set*
+1*á
+1"Å
+j
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUploadBusiness.aspx.cs (	
+implicit return:
+senderobject:
+eSystem.EventArgsBLJ
+HSitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUploadBusiness

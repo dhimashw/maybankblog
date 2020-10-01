@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Migration>
+  <ColumnMapping tableName="BRANCHLOCATIONSYARIAH" ResultType="update-table">
+    <Column source="LocationID" destination="LocationID" type="int" Required="true"/>
+    <Column source="LocationRegion" destination="LocationRegion" type="string"/>
+    <Column source="LocationName" destination="LocationName" type="string"/>
+    <Column source="LocationAddress" destination="LocationAddress" type="string"/>
+    <Column source="LocationPhone" destination="LocationPhone" type="string"/>
+    <Column source="LocationSummary" destination="LocationSummary" type="string"/>
+    <Column source="LocationType" destination="LocationType" type="string"/>
+    <Column source="LocationSubType" destination="LocationSubType" type="string"/>
+    <Column source="LocationLongitude" destination="LocationLongitude" type="float"/>
+    <Column source="LocationLatitude" destination="LocationLatitude" type="float"/>
+    <Column source="LocationOpenHourSummary" destination="LocationOpenHourSummary" type="string"/>
+    <Column source="LocationServiceProvided" destination="LocationServiceProvided" type="string"/>
+  </ColumnMapping>
+</Migration>

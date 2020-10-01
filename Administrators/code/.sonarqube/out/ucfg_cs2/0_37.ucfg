@@ -1,0 +1,232 @@
+
+}Sitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.SearchCommentByPage(string, string, string, string)k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csh h(#"0*¶
+0†ù
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csj j(+
+%0System.Data.DataSet"System.Data.DataSet∏
+µ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csj" j()
+
+%1void"System.Data.DataSet.DataSet()*
+
+%0System.Data.DataSet≥
+∞
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csj j(+
+datasetSystem.Data.DataSet"__id*
+
+%0System.Data.DataSet∆√
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csk: k(F,
+%2&Sitecore.Feature.Library.Helper.Config"&Sitecore.Feature.Library.Helper.Config›
+⁄
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csk> k(D
+
+%3void"/Sitecore.Feature.Library.Helper.Config.Config()*.
+,
+%2&Sitecore.Feature.Library.Helper.Config—
+Œ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csk: k(V
+%4string"__id*K*I
+,
+%2&Sitecore.Feature.Library.Helper.Config"
+ConectionStringstring¿Ω
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csk( k(W)
+%5#System.Data.SqlClient.SqlConnection"#System.Data.SqlClient.SqlConnectionÙ
+Ò
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csk, k(9
+
+%6void"9System.Data.SqlClient.SqlConnection.SqlConnection(string)*+
+)
+%5#System.Data.SqlClient.SqlConnection*
+
+%4string–
+Õ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csk! k(W+
+conn#System.Data.SqlClient.SqlConnection"__id*+
+)
+%5#System.Data.SqlClient.SqlConnection*
+1*Å,
+1∫∑
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csm! m(P&
+%7 System.Data.SqlClient.SqlCommand" System.Data.SqlClient.SqlCommandÃ
+…
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csm% m(/
+
+%8void"XSystem.Data.SqlClient.SqlCommand.SqlCommand(string, System.Data.SqlClient.SqlConnection)*(
+&
+%7 System.Data.SqlClient.SqlCommand*
+dbo.spGetDeletedComment*-
++
+conn#System.Data.SqlClient.SqlConnection…
+∆
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csm m(P'
+cmd System.Data.SqlClient.SqlCommand"__id*(
+&
+%7 System.Data.SqlClient.SqlCommandÑ
+Å
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csn" n(=
+%9"__id*
+""‚
+ﬂ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csn n(=
+%10void"0System.Data.SqlClient.SqlCommand.CommandType.set*)
+'
+cmd System.Data.SqlClient.SqlCommand*
+
+%9Å
+˛
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cso% o(33
+%11,System.Data.SqlClient.SqlParameterCollection"/System.Data.SqlClient.SqlCommand.Parameters.get*)
+'
+cmd System.Data.SqlClient.SqlCommand¿
+Ω
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cso% o(U)
+%12"System.Data.SqlClient.SqlParameter"ISystem.Data.SqlClient.SqlParameterCollection.AddWithValue(string, object)*5
+3
+%11,System.Data.SqlClient.SqlParameterCollection*
+
+@keyword*
+
+keywordstring–
+Õ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cso o(U+
+param"System.Data.SqlClient.SqlParameter"__id*+
+)
+%12"System.Data.SqlClient.SqlParameterÅ
+˛
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csp& p(43
+%13,System.Data.SqlClient.SqlParameterCollection"/System.Data.SqlClient.SqlCommand.Parameters.get*)
+'
+cmd System.Data.SqlClient.SqlCommand¬
+ø
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csp& p(X)
+%14"System.Data.SqlClient.SqlParameter"ISystem.Data.SqlClient.SqlParameterCollection.AddWithValue(string, object)*5
+3
+%13,System.Data.SqlClient.SqlParameterCollection*
+	@category*
+
+categorystring—
+Œ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csp p(X,
+param2"System.Data.SqlClient.SqlParameter"__id*+
+)
+%14"System.Data.SqlClient.SqlParameterÅ
+˛
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csq& q(43
+%15,System.Data.SqlClient.SqlParameterCollection"/System.Data.SqlClient.SqlCommand.Parameters.get*)
+'
+cmd System.Data.SqlClient.SqlCommand´
+®
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csqL q(_
+%16string"__concat*
+
+startstring*
+	 00:00:00∫
+∑
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csq& q(`)
+%17"System.Data.SqlClient.SqlParameter"ISystem.Data.SqlClient.SqlParameterCollection.AddWithValue(string, object)*5
+3
+%15,System.Data.SqlClient.SqlParameterCollection*
+
+@start*
+
+%16string—
+Œ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csq q(`,
+param3"System.Data.SqlClient.SqlParameter"__id*+
+)
+%17"System.Data.SqlClient.SqlParameterÅ
+˛
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csr& r(43
+%18,System.Data.SqlClient.SqlParameterCollection"/System.Data.SqlClient.SqlCommand.Parameters.get*)
+'
+cmd System.Data.SqlClient.SqlCommand©
+¶
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csrJ r([
+%19string"__concat*
+
+endstring*
+	 23:59:59∏
+µ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csr& r(\)
+%20"System.Data.SqlClient.SqlParameter"ISystem.Data.SqlClient.SqlParameterCollection.AddWithValue(string, object)*5
+3
+%18,System.Data.SqlClient.SqlParameterCollection*
+@end*
+
+%19string—
+Œ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csr r(\,
+param4"System.Data.SqlClient.SqlParameter"__id*+
+)
+%20"System.Data.SqlClient.SqlParameter√¿
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.css- s(D+
+%21$System.Data.SqlClient.SqlDataAdapter"$System.Data.SqlClient.SqlDataAdapterÆ
+´
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.css1 s(?
+%22void"USystem.Data.SqlClient.SqlDataAdapter.SqlDataAdapter(System.Data.SqlClient.SqlCommand)*-
++
+%21$System.Data.SqlClient.SqlDataAdapter*)
+'
+cmd System.Data.SqlClient.SqlCommand⁄
+◊
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.css s(D3
+dataAdapter$System.Data.SqlClient.SqlDataAdapter"__id*-
++
+%21$System.Data.SqlClient.SqlDataAdapter•
+¢
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cst t(3
+
+%23int"BSystem.Data.Common.DbDataAdapter.Fill(System.Data.DataSet, string)*5
+3
+dataAdapter$System.Data.SqlClient.SqlDataAdapter* 
+
+datasetSystem.Data.DataSet*
+
+result*
+2*ï
+2"è
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csw w( 
+
+datasetSystem.Data.DataSet*à
+3"Ç
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csx x(	
+implicit return:
+keywordstring:
+categorystring:
+startstring:
+endstringBMK
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment

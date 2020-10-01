@@ -1,0 +1,29 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Feature.Library.Models
+@using System.Collections
+
+@model PromotionsModel
+@{
+    //var maxItem = RenderingContext.Current.Rendering.Parameters["Max Item"] != string.Empty ? RenderingContext.Current.Rendering.Parameters["Max Item"] : "3";
+    //Model.MaxItem = maxItem;
+    //List<SliderModel> slider = new List<SliderModel>();
+    var slider = Model.SliderModel;
+    var counter = Model.Counter;
+
+}
+
+@foreach (var sliderNum in slider)
+{
+    <div class="js-banner-set-item" data-banner="banner-slider-@sliderNum.SliderCounter">
+        <img class="default" src="assets/img/icons/offer-cc.png" alt="" /><img class="active" src="assets/img/icons/offer-cc-yellow.png" alt="" />Credit Cards
+    </div>
+}
+
+
+@*@for (int counter = 0; counter < 5; counter++)
+{
+    <div class="js-banner-set-item" data-banner="banner-slider-@counter">
+        <img class="default" src="assets/img/icons/offer-cc.png" alt="" /><img class="active" src="assets/img/icons/offer-cc-yellow.png" alt="" />Credit Cards
+    </div>
+}*@

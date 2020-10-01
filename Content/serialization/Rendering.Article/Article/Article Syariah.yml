@@ -1,0 +1,24 @@
+﻿---
+ID: "32e3bd8d-0bca-459e-9c0e-a994d04cb51d"
+Parent: "82fb0f1b-fe46-432f-9f16-ba1dbd8aa959"
+Template: "99f8905d-4a87-4eb8-9f8b-a9bebfb3add6"
+Path: /sitecore/layout/Renderings/Feature/Article/Article Syariah
+DB: master
+SharedFields:
+- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
+  Hint: Datasource Template
+  Value: /sitecore/templates/Project/Maybank/News and Article/Page Types/Articles/Article Item
+- ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
+  Hint: Path
+  Value: /Views/Article/ArticleSyariah.cshtml
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: "{0D3ED930-9077-4DA6-96E1-7C7602C1A2A6}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180702T091706Z

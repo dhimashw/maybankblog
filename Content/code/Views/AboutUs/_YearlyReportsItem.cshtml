@@ -1,0 +1,63 @@
+﻿@using Sitecore.Feature.Content
+@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Data.Items
+@using Sitecore.Feature.Content.Repositories
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Indexing.Repositories
+@using Sitecore.Foundation.Dictionary.Extensions
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+
+@{
+
+    string urlFile = string.Empty;
+
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="row mb-4">
+            @if (Model.Data.Count() > 0)
+            {
+                foreach (Item itemReport in Model.Data)
+                {
+                    if (!string.IsNullOrEmpty(itemReport.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields._File].Value))
+                    {
+                        Sitecore.Data.Fields.FileField field = (Sitecore.Data.Fields.FileField)itemReport.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields._File];
+                        if (field.MediaItem != null)
+                        {
+                            urlFile = Sitecore.Resources.Media.MediaManager.GetMediaUrl(field.MediaItem);
+                        }
+
+                    }
+
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="m-cards-info-card--normalize">
+                            <a href="@urlFile" target="_blank">
+                                <div class="col-xs-1 no-padding">
+                                    <div class="info-card__icon">
+                                        <img class="img-responsive" src="/assets/img/icons/ico-files-pdf.svg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-11">
+                                    <div class="info-card__title bold">@itemReport.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title].Value</div>
+                                    <div class="info-card__action inline-block pad-top-1">
+                                        <div class="valign-center">
+                                            <div class="valign-item valign-item--no-h-p">
+                                                <img class="img-responsive" src="/assets/img/icons/ico-download-green.svg" alt="" />
+                                            </div>
+                                            <div class="valign-item valign-item--no-h-p">@Html.Sitecore().Dictionary("/Feature/Content/Download")</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                }
+            }
+        </div>
+    </div>
+</div>
+<!-- PAGINATION COMPONENT -->
+@Html.Partial("~/Views/Pagination/_Pagination.cshtml", Model)

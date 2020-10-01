@@ -1,0 +1,40 @@
+﻿---
+ID: "1e0764e3-a5c9-48e9-a200-3364fa37f83b"
+Parent: "536d60f9-b4fc-406e-a629-36a96232e6ea"
+Template: "536d60f9-b4fc-406e-a629-36a96232e6ea"
+Path: /sitecore/templates/Feature/Content/Header Nilai Perusahaan/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{0B4D1255-9CBD-4F84-903C-49CA23E77644}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180711T073202Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "d3ec40df-2bbd-4fc1-b62e-5eada837e326"
+      Hint: Title
+      Value: $name
+- Language: id
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180711T073234Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "d3ec40df-2bbd-4fc1-b62e-5eada837e326"
+      Hint: Title
+      Value: $name

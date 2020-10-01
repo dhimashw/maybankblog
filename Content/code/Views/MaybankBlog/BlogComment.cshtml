@@ -1,0 +1,297 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Data.Fields
+@using Sitecore.Feature.Form.Repositories
+@model RenderingModel
+@{
+    //  string dtParameter = RenderingContext.Current.Rendering.Parameters["Datasource"];
+    //var thankyou_page_item = Sitecore.Context.Database.GetItem(dtParameter);
+    //var thankyou_page_item = Sitecore.Context.Database.GetItem(new Sitecore.Data.ID("{64074570-1803-4D35-80A7-071571247B40}"));
+    //var thanksurl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(thankyou_page_item.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url]);
+    //var thanksurl = thankyou_page_item.Url();
+    Sitecore.Feature.Library.Helper.Config cfg = new Sitecore.Feature.Library.Helper.Config();
+
+    string pageID = Sitecore.Context.Item.ID.ToString();
+    string pageDisplayName = Sitecore.Context.Item.DisplayName;
+
+    Sitecore.Data.Items.Item bucketBlog = Sitecore.Context.Database.GetItem(Sitecore.Feature.Library.Helper.Variables.BucketMaybankBlog);
+
+    string commentMaxItem = bucketBlog.Fields[Sitecore.Feature.Library.Templates.BucketMaybankBlog.Fields.MaxItem].Value.ToString();
+
+
+    /* Render Apply Form (Step) */
+    Sitecore.Data.Items.Item blogItem = Sitecore.Context.Database.GetItem(Sitecore.Feature.Library.Helper.Variables.MaybankBlogItem);
+    var steps = FormRepositories.GetChildListByItem(blogItem).ToList();
+
+    bool IsUseCaptcha = ((CheckboxField)blogItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.IsUseCaptcha]).Checked;
+    string CaptchaErrMesg = blogItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.CaptchaErrorMessage].Value;
+}
+
+
+
+<div class="step step-1">
+    <div class="section career-program">
+        <div class="container">
+            <div class="blog-comment">
+                <form id="form-blog-comment">
+                    <input type="hidden" name="pageId" value="@pageID" />
+                    <input type="hidden" name="pageName" value="@pageDisplayName" />
+                    <input type="hidden" name="commentMaxItem" value="@commentMaxItem" />
+                    <input type="hidden" name="SubmitErrMsg" value="@Html.Sitecore().Dictionary("/Feature/Maybank Blog/Submit Error Message", "Submit Gagal")" />         
+                    @Html.AntiForgeryToken()
+                    @foreach (var stepItem in steps.Where(x => x.TemplateID == Sitecore.Feature.Form.Templates.ApplyForm.ID))
+                    {
+                        if (stepItem.TemplateID == Sitecore.Feature.Form.Templates.ApplyForm.ID)
+                        {
+                            var fields = FormRepositories.GetChildListByItem(stepItem).ToList();
+                            int startColumn = 0;
+                            int startUpload = 0;
+                            int countUpload = fields.Count(x => ((CheckboxField)x.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Upload]).Checked);
+                            int maxColumn = 0;
+                            var customColumn = string.Empty;
+
+                            if (fields.Any())
+                            {
+                                Sitecore.Data.Items.Item last = fields.Last();
+                                foreach (var fieldItem in fields)
+                                {
+                                    string fullcontrol = ((CheckboxField)fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FullWidth]).Checked ? "full" : "";
+                                    string regexvalidation = (!string.IsNullOrWhiteSpace(fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexType].Value)) ? "regex-validation" : "";
+                                    string minLength = "";
+                                    string maxLength = "";
+
+
+                                    var isRequired = ((CheckboxField)fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.IsRequired]).Checked;
+                                    string attrRequired = isRequired ? "required" : "";
+
+                                    if (!string.IsNullOrWhiteSpace(fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MinLength].Value))
+                                    {
+                                        minLength = "minlength=" + fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MinLength].Value;
+                                    }
+
+                                    if (!string.IsNullOrWhiteSpace(fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MaxLength].Value))
+                                    {
+                                        maxLength = "maxlength=" + fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MaxLength].Value;
+                                    }
+                                    if (fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Type].Value == "hidden")
+                                    {
+                                        <input type="hidden" name="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" value="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.DefaultValue].Value" />
+                                    }
+                                    else
+                                    {
+                                        <div class="form-group @customColumn"
+                                             data-group-parentfieldname="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.DataGroupFields.ParentFieldName].Value"
+                                             data-group-parentfieldvalue="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.DataGroupFields.ParentFieldValue].Value">
+                                            @if (fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Type].Value == "text")
+                                            {
+                                                if (fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.DataType].Value == "date")
+                                                {
+                                                    <label class="no-animation" for="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value">@Html.Raw(fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</label>
+                                                    <input class="@fullcontrol js-datepicker form-control" type="text" name="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" @attrRequired data-error="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value" />
+                                                }
+                                                else
+                                                {
+                                                    if (!string.IsNullOrWhiteSpace(fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.DatabaseSource.TableName].Value))
+                                                    {
+                                                        /*Render HTML Input*/
+                                                        <label for="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value">@Html.Raw(fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</label>
+                                                        <input class="js-type-ahead form-control @fullcontrol @regexvalidation" type="text" name="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" @attrRequired @maxLength data-type="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.DataType].Value"
+                                                               data-error="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value" data-regex="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexType].Value" data-regexmessage="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexMessage].Value" />
+
+                                                        System.Collections.IList dbTblItems = FormRepositories.GetList(fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.DatabaseSource.TableName].Value);
+                                                        if (dbTblItems != null)
+                                                        {
+                                                            <ul class="custom-list" style="display:none;">
+                                                                @foreach (var item in dbTblItems)
+                                                                {
+                                                                    object code = FormRepositories.GetPropValue(item, fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.DatabaseSource.SourceFieldCode].Value);
+                                                                    object value = FormRepositories.GetPropValue(item, fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.DatabaseSource.SourceFieldName].Value);
+                                                                    <li value="@code">@value</li>
+                                                                }
+                                                            </ul>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        if (!string.IsNullOrWhiteSpace(fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.MoneyFields.CurrencyInfo].Value))
+                                                        {
+                                                            /*Render HTML Input*/
+                                                            <label class="push-away" for="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value">@Html.Raw(fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</label>
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon" id="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value">@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.MoneyFields.CurrencyInfo].Value</span>
+                                                                <input class="form-control @fullcontrol @regexvalidation" type="text" name="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" @attrRequired @minLength @maxLength data-minlengthmessage="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MinLengthMessage].Value" data-type="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.DataType].Value"
+                                                                       data-error="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value" data-regex="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexType].Value" data-regexmessage="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexMessage].Value"
+                                                                       data-targetfieldname="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.TargetFieldName].Value" autocomplete="off" />
+                                                            </div>
+                                                        }
+                                                        else
+                                                        {
+                                                            /*Render HTML Input*/
+                                                            <label class="no-animation" for="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value">@Html.Raw(fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</label>
+                                                            <input class="form-control @fullcontrol @regexvalidation" type="text" name="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" @attrRequired @minLength @maxLength data-minlengthmessage="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MinLengthMessage].Value" data-type="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.DataType].Value"
+                                                                   data-error="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value" data-regex="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexType].Value" data-regexmessage="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexMessage].Value"
+                                                                   data-targetfieldname="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.TargetFieldName].Value" autocomplete="off" />
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            else if (fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Type].Value == "email")
+                                            {
+                                                /*Render HTML Input*/
+                                                <label class="no-animation" for="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value"> @Html.Raw(fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value) </label>
+
+
+                                                <input class="form-control @fullcontrol @regexvalidation" type="email" name="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" @attrRequired @minLength @maxLength data-minlengthmessage="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MinLengthMessage].Value" data-type="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.DataType].Value"
+                                                       data-error="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value" data-regex="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexType].Value" data-regexmessage="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexMessage].Value"
+                                                       data-targetfieldname="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.TargetFieldName].Value" autocomplete="off" />
+                                            }
+                                            else if (fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Type].Value == "textarea")
+                                            {
+                                                <label class="no-animation" for="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value">@Html.Raw(fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.Label].Value)</label>
+                                                <textarea class="expanding form-control full @regexvalidation" rows="5" name="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.FieldName].Value" @attrRequired placeholder="max. @fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MaxLength].Value characters" @minLength @maxLength data-minlengthmessage="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.MinLengthMessage].Value"
+                                                          data-error="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RequiredMessage].Value" data-regex="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexType].Value" data-regexmessage="@fieldItem.Fields[Sitecore.Feature.Form.Templates.ApplyField.Fields.RegexMessage].Value"></textarea>
+                                            }
+                                            <!-- End of If Render HTML -->
+                                        </div>
+                                    }
+                                }
+                            }
+                            if (!string.IsNullOrEmpty(stepItem.Fields[Sitecore.Feature.Form.Templates.ApplyForm.Fields.StepDescription].Value))
+                            {
+                                <div class="form-group form-info">
+                                    @Html.Raw(stepItem.Fields[Sitecore.Feature.Form.Templates.ApplyForm.Fields.StepDescription].Value)
+                                </div>
+                            }
+
+                        }
+                    }
+
+                    @if (IsUseCaptcha == true)
+                    {
+                        <div class="form-group">
+                            <div class="g-recaptcha captcha-required" id="gcaptcha" data-callback="onSuccess" data-sitekey="@cfg.SiteKey" data-error="@CaptchaErrMesg"></div>                            
+                            <div class="form-error-message mb-1 hide" id="captcha-error-message" >@CaptchaErrMesg</div>
+                            <script nonce="aBD+32Pubht/VeXb0WMt9A">
+                                var onSuccess = function (response) {                                                 
+                                    $('#captcha-error-message').remove();                                    
+                                };
+                            </script>
+                            <noscript><div style="width: 302px; height: 462px;"><iframe src="/recaptcha/api/fallback?k=@cfg.SiteKey" frameborder="0" scrolling="no"></iframe><div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response"></textarea></div></div><br></noscript>
+                        </div>
+                        
+                    }
+
+
+
+
+                    <div class="form-group form-submission">
+                        <button class="btn btn-tertiary addon" id="submit-g-captcha" data-href="">
+                            @Html.Sitecore().Dictionary("/Feature/Maybank Blog/Submit", "Submit")<img class="img-responsive" src="/assets/img/icons/arrow-right/arrow-right-363@2x.png" alt="" />
+                        </button>
+                    </div>
+
+
+
+                </form>
+
+
+
+                <div class="panel panel-default widget" id="blog-recent-comment">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            @Html.Sitecore().Dictionary("/Feature/Maybank Blog/Recent Comment", "Recent Comment")
+                        </h3>
+                        <span class="label label-info">
+
+                        </span>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group"></ul>
+                        <input type="hidden" name="countLoadComment" value="1" />
+                        <a href="#" class="btn btn-primary btn-sm btn-block yellow" role="button" id="refresh-comment">More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+    /*body {
+        padding-top: 30px;
+    }*/
+
+    .widget .panel-body {
+        padding: 0px;
+    }
+
+    .widget .list-group {
+        margin-bottom: 0;
+    }
+
+    .widget .panel-title {
+        display: inline
+    }
+
+    .widget .label-info {
+        float: right;
+    }
+
+    .widget li.list-group-item {
+        border-radius: 0;
+        border: 0;
+        border-top: 1px solid #ddd;
+    }
+
+    /*.widget li.list-group-item:hover {
+            background-color: rgba(86,61,124,.1);
+        }*/
+    .widget .mic-info {
+        color: #666666;
+        font-size: 11px;
+    }
+
+    .widget .action {
+        margin-top: 5px;
+    }
+
+    .widget .comment-text {
+        font-size: 12px;
+    }
+
+    .widget .btn-block {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+
+    .yellow {
+        background-color: #f5c007;
+        border-color: #f5c007;
+    }
+
+    a.yellow:active {
+        background-color: #f5c007;
+        border-color: #f5c007;
+    }
+
+    a.yellow:focus {
+        background-color: #f5c007;
+        border-color: #f5c007;
+    }
+
+    a.yellow.disabled:focus {
+        background-color: #f5c007;
+        border-color: #f5c007;
+    }
+
+    .yellow:hover {
+        background-color: #f5c007;
+        border-color: #f5c007;
+    }
+</style>

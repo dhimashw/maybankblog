@@ -1,0 +1,56 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Mvc.Presentation
+
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+
+@{
+    var idDiv = Guid.NewGuid();   
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+    $('body').on('click', '.pagination-list a', function () {
+
+        var page = parseInt($(this).html());
+
+        $.ajax({
+            url: '@Url.Action("TreatsPointListPaging")',
+            data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID" },
+            success: function (data) {
+                $("#news-pages-@idDiv").html(data);
+            }
+        });
+    });
+
+    $('body').on('click', '.previous.enabled a', function () {
+        var page = parseInt($(this).data("curpage") - 1);
+
+        $.ajax({
+            url: '@Url.Action("TreatsPointListPaging")',
+            data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID" },
+            success: function (data) {
+                $("#news-pages-@idDiv").html(data);
+            }
+        });
+    });
+
+    $('body').on('click', '.next.enabled a', function () {
+        var page = parseInt($(this).data("curpage") ) + 1;
+
+        $.ajax({
+            url: '@Url.Action("TreatsPointListPaging")',
+            data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID" },
+            success: function (data) {
+                $("#news-pages-@idDiv").html(data);
+            }
+        });
+    });
+});
+</script>
+
+<div id="news-pages-@idDiv">
+    @Html.Partial("_TreatsPointItem")
+</div>

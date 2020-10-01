@@ -1,0 +1,66 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    if ((!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.MaybankBusinessPageBackButton.ID) ?? true) && (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.MaybankBusinessPageDetail.ID) ?? true))
+    {
+        @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.MaybankBusinessPageBackButton.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+        return;
+    }
+}
+
+@if (Model.Item.Children.Where(x => x.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowInMenu] != null && x.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowInMenu].Value == "1").Count() > 0)
+{
+<div class="row">
+    @foreach (Sitecore.Data.Items.Item childItem in Model.Item.Children.Where(x => x.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowInMenu] != null && x.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowInMenu].Value == "1"))
+    {
+        <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="skeleton js-demo-skeleton">
+                <div class="skeleton__header">
+                    <div class="skeleton__img"></div>
+                </div>
+                <div class="skeleton__body">
+                    <div class="skeleton__wrapper">
+                        <div class="col-xs-12">
+                            <div class="skeleton__line"></div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="skeleton__line"></div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="skeleton__line"></div>
+                        </div>
+                        <div class="col-xs-10">
+                            <div class="skeleton__line"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skeleton__footer">
+                    <br />
+                    <div class="skeleton__line tall"></div>
+                </div>
+            </div>
+            <div class="m-cards-giro-card simple-card js-demo-skeleton-content hide">
+                <div class="image">
+                    <img class="card-bg" src="@childItem.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail)" />
+                    <span class="product-label">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, childItem)</span>
+                </div>
+                <div class="desc">
+                    <span class="pdesc gray-text">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Summary,childItem)</span>
+                    <div class="cta">
+                        <a class="btn btn-outline-primary addon" href="@childItem.Url()">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, childItem)
+                            <img src="/assets/img/icons/arrow-right/arrow-right-363-big-black@2x.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+}

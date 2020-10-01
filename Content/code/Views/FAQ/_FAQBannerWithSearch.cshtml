@@ -1,0 +1,43 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helpers
+@using Sitecore.Feature.Content.Models
+@using Sitecore.Links
+@using Sitecore.Foundation.Dictionary.Extensions
+@*@model FAQModel<Sitecore.Data.Items.Item>*@
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+
+
+@{
+    var item = Sitecore.Context.Database.GetItem(Model.DataSourceID);
+    string keyword = string.Empty;
+    keyword = Request.QueryString[Sitecore.Feature.Library.Helper.Variables._locateUsKeyword] == null ? "" : Request.QueryString[Sitecore.Feature.Library.Helper.Variables._locateUsKeyword];
+    //Sitecore.Data.Items.Item searchResultPageUrl = Sitecore.Context.Database.GetItem("{2D0B2986-EA71-4B1C-8D69-00C9774F8735}");
+    //var searchResultPage = LinkManager.GetItemUrl(searchResultPageUrl);
+    //var url = string.Empty;
+
+    string btnColor = "btn btn-tertiary addon";
+    Sitecore.Data.Items.Item sourceItem = RenderingContext.Current.Rendering.Item;
+    if (!string.IsNullOrWhiteSpace(sourceItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonColor].Value))
+    {
+        btnColor = Sitecore.Context.Database.GetItem(sourceItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonColor].Value).Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.stringTitle].ToString();
+    }
+}
+
+<div class="page-banner--as-bg" style="background-image:url(@item.ImageUrl(Sitecore.Feature.Library.Templates.FAQContent.Fields.BannerImage))">
+    <div class="container">
+        <div class="page-banner-body">
+            <div class="fadein-left">
+                <h1 class="banner-title">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.FAQContent.Fields.BannerTitle, item)</h1>
+                <form id="faqSearch">
+                    <input type="text" placeholder="@Html.Sitecore().Dictionary("/Feature/Faq/Search Support", "Search Support")" name="keyword" id="keyword" value="@keyword" />
+                    <div id="btnSearch" class="@btnColor btn-search-width">
+                        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, item)
+                        <img src="/assets/img/icons/arrow-right/arrow-right-363@2x.png" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

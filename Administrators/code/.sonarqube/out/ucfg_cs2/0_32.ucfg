@@ -1,0 +1,273 @@
+
+uSitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask.SearchComment(bool, string, string, string, string)c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csE E("0*ﬁ
+0òï
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csN N(+
+%0System.Data.DataSet"System.Data.DataSet∞
+≠
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csN" N()
+
+%1void"System.Data.DataSet.DataSet()*
+
+%0System.Data.DataSet´
+®
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csN N(+
+datasetSystem.Data.DataSet"__id*
+
+%0System.Data.DataSetæª
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csO: O(F,
+%2&Sitecore.Feature.Library.Helper.Config"&Sitecore.Feature.Library.Helper.Config’
+“
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csO> O(D
+
+%3void"/Sitecore.Feature.Library.Helper.Config.Config()*.
+,
+%2&Sitecore.Feature.Library.Helper.Config…
+∆
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csO: O(V
+%4string"__id*K*I
+,
+%2&Sitecore.Feature.Library.Helper.Config"
+ConectionStringstring∏µ
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csO( O(W)
+%5#System.Data.SqlClient.SqlConnection"#System.Data.SqlClient.SqlConnectionÏ
+È
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csO, O(9
+
+%6void"9System.Data.SqlClient.SqlConnection.SqlConnection(string)*+
+)
+%5#System.Data.SqlClient.SqlConnection*
+
+%4string»
+≈
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csO! O(W+
+conn#System.Data.SqlClient.SqlConnection"__id*+
+)
+%5#System.Data.SqlClient.SqlConnection*
+1*±6
+1≤Ø
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csQ! Q(J&
+%7 System.Data.SqlClient.SqlCommand" System.Data.SqlClient.SqlCommandæ
+ª
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csQ% Q(/
+
+%8void"XSystem.Data.SqlClient.SqlCommand.SqlCommand(string, System.Data.SqlClient.SqlConnection)*(
+&
+%7 System.Data.SqlClient.SqlCommand*
+dbo.spGetComments*-
++
+conn#System.Data.SqlClient.SqlConnection¡
+æ
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csQ Q(J'
+cmd System.Data.SqlClient.SqlCommand"__id*(
+&
+%7 System.Data.SqlClient.SqlCommand{
+y
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csR" R(=
+%9"__id*
+""⁄
+◊
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csR R(=
+%10void"0System.Data.SqlClient.SqlCommand.CommandType.set*)
+'
+cmd System.Data.SqlClient.SqlCommand*
+
+%9˘
+ˆ
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csS% S(33
+%11,System.Data.SqlClient.SqlParameterCollection"/System.Data.SqlClient.SqlCommand.Parameters.get*)
+'
+cmd System.Data.SqlClient.SqlCommand≠
+™
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csS% S(Y)
+%12"System.Data.SqlClient.SqlParameter"ISystem.Data.SqlClient.SqlParameterCollection.AddWithValue(string, object)*5
+3
+%11,System.Data.SqlClient.SqlParameterCollection*
+
+@selectAll*
+""»
+≈
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csS S(Y+
+param"System.Data.SqlClient.SqlParameter"__id*+
+)
+%12"System.Data.SqlClient.SqlParameter˘
+ˆ
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csT& T(43
+%13,System.Data.SqlClient.SqlParameterCollection"/System.Data.SqlClient.SqlCommand.Parameters.get*)
+'
+cmd System.Data.SqlClient.SqlCommand≠
+™
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csT& T(T)
+%14"System.Data.SqlClient.SqlParameter"ISystem.Data.SqlClient.SqlParameterCollection.AddWithValue(string, object)*5
+3
+%13,System.Data.SqlClient.SqlParameterCollection*
+@selectDraft*2…
+∆
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csT T(T,
+param1"System.Data.SqlClient.SqlParameter"__id*+
+)
+%14"System.Data.SqlClient.SqlParameter˘
+ˆ
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csU& U(43
+%15,System.Data.SqlClient.SqlParameterCollection"/System.Data.SqlClient.SqlCommand.Parameters.get*)
+'
+cmd System.Data.SqlClient.SqlCommand∏
+µ
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csU& U(V)
+%16"System.Data.SqlClient.SqlParameter"ISystem.Data.SqlClient.SqlParameterCollection.AddWithValue(string, object)*5
+3
+%15,System.Data.SqlClient.SqlParameterCollection*
+
+@keyword*
+
+keywordstring…
+∆
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csU U(V,
+param2"System.Data.SqlClient.SqlParameter"__id*+
+)
+%16"System.Data.SqlClient.SqlParameter˘
+ˆ
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csV& V(43
+%17,System.Data.SqlClient.SqlParameterCollection"/System.Data.SqlClient.SqlCommand.Parameters.get*)
+'
+cmd System.Data.SqlClient.SqlCommand∫
+∑
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csV& V(X)
+%18"System.Data.SqlClient.SqlParameter"ISystem.Data.SqlClient.SqlParameterCollection.AddWithValue(string, object)*5
+3
+%17,System.Data.SqlClient.SqlParameterCollection*
+	@category*
+
+categorystring…
+∆
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csV V(X,
+param3"System.Data.SqlClient.SqlParameter"__id*+
+)
+%18"System.Data.SqlClient.SqlParameter˘
+ˆ
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csW& W(43
+%19,System.Data.SqlClient.SqlParameterCollection"/System.Data.SqlClient.SqlCommand.Parameters.get*)
+'
+cmd System.Data.SqlClient.SqlCommand£
+†
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csWL W(_
+%20string"__concat*
+
+startstring*
+	 00:00:00≤
+Ø
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csW& W(`)
+%21"System.Data.SqlClient.SqlParameter"ISystem.Data.SqlClient.SqlParameterCollection.AddWithValue(string, object)*5
+3
+%19,System.Data.SqlClient.SqlParameterCollection*
+
+@start*
+
+%20string…
+∆
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csW W(`,
+param4"System.Data.SqlClient.SqlParameter"__id*+
+)
+%21"System.Data.SqlClient.SqlParameter˘
+ˆ
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csX& X(43
+%22,System.Data.SqlClient.SqlParameterCollection"/System.Data.SqlClient.SqlCommand.Parameters.get*)
+'
+cmd System.Data.SqlClient.SqlCommand°
+û
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csXJ X([
+%23string"__concat*
+
+endstring*
+	 23:59:59∞
+≠
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csX& X(\)
+%24"System.Data.SqlClient.SqlParameter"ISystem.Data.SqlClient.SqlParameterCollection.AddWithValue(string, object)*5
+3
+%22,System.Data.SqlClient.SqlParameterCollection*
+@end*
+
+%23string…
+∆
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csX X(\,
+param5"System.Data.SqlClient.SqlParameter"__id*+
+)
+%24"System.Data.SqlClient.SqlParameterª∏
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csY- Y(D+
+%25$System.Data.SqlClient.SqlDataAdapter"$System.Data.SqlClient.SqlDataAdapter¶
+£
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csY1 Y(?
+%26void"USystem.Data.SqlClient.SqlDataAdapter.SqlDataAdapter(System.Data.SqlClient.SqlCommand)*-
++
+%25$System.Data.SqlClient.SqlDataAdapter*)
+'
+cmd System.Data.SqlClient.SqlCommand“
+œ
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csY Y(D3
+dataAdapter$System.Data.SqlClient.SqlDataAdapter"__id*-
++
+%25$System.Data.SqlClient.SqlDataAdapterù
+ö
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csZ Z(3
+
+%27int"BSystem.Data.Common.DbDataAdapter.Fill(System.Data.DataSet, string)*5
+3
+dataAdapter$System.Data.SqlClient.SqlDataAdapter* 
+
+datasetSystem.Data.DataSet*
+
+result*
+2*ç
+2"á
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs] ]( 
+
+datasetSystem.Data.DataSet*
+3"z
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs^ ^(	
+implicit return:
+	selectAllbool:
+keywordstring:
+categorystring:
+startstring:
+endstringBEC
+ASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask

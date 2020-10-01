@@ -1,0 +1,51 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Data.Items
+@model Sitecore.Mvc.Presentation.RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.FolderProperties.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.FolderProperties.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{
+    Item _itemParent = Model.Item;
+}
+
+<div class="row">
+    <div class="col-xs-12 col-md-5">
+        <div class="heading full">
+            @Html.Raw(Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading, _itemParent))
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-6 col-f-right">
+        @foreach (Item items in _itemParent.Children)
+        {
+            Sitecore.Data.Fields.LinkField _link = items.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url];
+            string redirectItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+            <div class="p-group">
+                @if (Sitecore.Context.PageMode.IsExperienceEditor)
+                {
+                    <h2 class="partial">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading, items)</h2>
+                }
+                else if (!Sitecore.Context.PageMode.IsExperienceEditor && items.Fields[Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading].HasValue && items.Fields[Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading].Value.Length > 0)
+                {
+                    <h2 class="partial">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading, items)</h2>
+                }
+                
+                <div class="row">
+                    @Html.Raw(Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent, items))
+                </div>
+                @if (items.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowCTA].Value == "1")
+                {
+                    <p><a class="see-more" href="@redirectItemUrl" target="_blank">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, items)</a></p>
+                }
+
+            </div>
+        }
+    </div>
+</div>

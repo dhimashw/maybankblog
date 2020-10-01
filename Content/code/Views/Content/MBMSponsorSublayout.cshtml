@@ -1,0 +1,56 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions;
+@using Sitecore.Feature.Library.Helper
+@using Sitecore.Data.Items
+@using Sitecore.Data.Fields
+@using Sitecore.Resources.Media
+@using sponsor = Sitecore.Feature.Library.Templates.Sponsor
+@model PagedData<Item>
+@{
+    Guid rng = Guid.NewGuid();
+}
+
+<div class="container" id="sponsor-list-@rng">
+
+    @Html.Partial("~/Views/Content/MBMSponsorPartial.cshtml", Model)
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('body').on('click', '#sponsor-list-@rng .pagination-list:not(.active) a, #sponsor-list-@rng .previous.enabled a, #sponsor-list-@rng .next.enabled a', function (e) {
+            //e.preventDefault();
+            //e.stopImmediatePropagation();
+            var newPage = 1;
+            switch ($(this).html())
+            {
+                case 'Previous': newPage = parseInt($(this).data("curpage") - 1); break;
+                case 'Next': newPage = parseInt($(this).data("curpage") + 1); break;
+                default: newPage = parseInt($(this).html()); break;
+            }
+
+            $.ajax({
+                url: '@Url.Action("GetSponsorMain", "Sponsor")',
+                data: {
+                    page: newPage,
+                    itemPerPage: @Model.PageSize,
+                    id: '@Model.DataSourceID'
+                },
+                success: function (data) {
+                    //alert('ahoy');
+                    $('#sponsor-list-@rng').html(data);
+                    setTimeout(function () {
+                        if ($('.card.js-demo-skeleton-content').hasClass('hide')) {
+                            $('.card.js-demo-skeleton-content').removeClass('hide')
+                            $('.skeleton.js-demo-skeleton').addClass('hide')
+                        }
+                    }, 5000);
+                },
+                error: function () {
+                    alert('paging error: cannot fetch new data');
+                }
+            });
+        });
+    });
+</script>

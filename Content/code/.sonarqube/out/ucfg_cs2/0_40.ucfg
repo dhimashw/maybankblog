@@ -1,0 +1,65 @@
+
+VSitecore.Feature.Content.Controller.BlogController.LoadAllCommentByBlogId(string, int)Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÄ Ä(2"2*Ò
+0Ž
+‹
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÆ Æ(';
+%05Sitecore.Feature.Content.Repositories.IBlogRepository"ASitecore.Feature.Content.Controller.BlogController.Repository.get*64
+2Sitecore.Feature.Content.Controller.BlogControllerÍÊ
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÆ Æ(M
+%1System.Tuple<T1, T2>"YSitecore.Feature.Content.Repositories.IBlogRepository.LoadAllCommentByBlogId(string, int)*=
+;
+%05Sitecore.Feature.Content.Repositories.IBlogRepository*
+
+blogIdstring*
+""2#LoadAllCommentByBlogId(string, int)i
+g
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÆO Æ(k
+%2"__id*
+""ˆ
+…
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÆ Æ(l
+%3System.Web.Mvc.JsonResult"JSystem.Web.Mvc.Controller.Json(object, System.Web.Mvc.JsonRequestBehavior)*
+System.Web.Mvc.Controller*
+
+%1System.Tuple<T1, T2>*
+
+%2"v
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÆ Æ(m!
+
+%3System.Web.Mvc.JsonResult*m
+1"h
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÇ Ç(	
+implicit return*‚
+2†
+ƒ
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÄ Ä(2
+%4"__entrypoint*
+
+blogIdstring*
+""ï
+ì
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÃ	 Ã(E
+%5"
+__annotate*qo
+mSitecore.Feature.Content.Helper.ValidateAntiForgeryTokenPostAttribute.ValidateAntiForgeryTokenPostAttribute()*
+
+blogIdstring}
+{
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÄ3 Ä(@
+blogIdstring"__annotation*
+
+%5*
+0:
+blogIdstring:
+indexintB64
+2Sitecore.Feature.Content.Controller.BlogController

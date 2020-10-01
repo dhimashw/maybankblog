@@ -1,0 +1,58 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@model RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.PageContentSet1.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.PageContentSet1.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{
+
+}
+
+@*<div class="feature">*@
+    <div class="article">
+        <div class="container">
+            <div class="wysiwyg">
+                <div class="clearfix">
+                    <div class="col-xs-12 col-md-6 col-md-push-6">@Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.PageContentSet1.Fields.Image, Model.Item, cssClass: "img-responsive")<br /></div>
+                    <div class="col-xs-12 col-md-6 col-md-pull-6">
+                        <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.PageContentSet1.Fields.Title, Model.Item)</h1>
+                        <p class="bold">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.PageContentSet1.Fields.Description, Model.Item)</p>
+                        <small>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.PageContentSet1.Fields.DateValid, Model.Item)</small><br /><br />
+                        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.PageContentSet1.Fields.Content, Model.Item)
+                        <br />
+                        <address>
+                            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.PageContentSet1.Fields.Location, Model.Item)
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*<div class="article bg-grey">
+        <div class="container">
+            <div class="wysiwyg">
+                <div class="clearfix">
+                    <div class="col-xs-12 col-md-6">@Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.PageContentSet2.Fields.Image, cssClass: "img-responsive")<br /></div>
+                    <div class="col-xs-12 col-md-6">
+                        <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.PageContentSet2.Fields.Title, Model.Item)</h1>
+                        <p class="bold">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.PageContentSet2.Fields.Description, Model.Item)</p>
+                        <small>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.PageContentSet2.Fields.DateValid, Model.Item)</small><br /><br />
+                        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.PageContentSet2.Fields.Content, Model.Item)
+                        <br />
+                        <address>
+                            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.PageContentSet2.Fields.Location, Model.Item)
+                        </address>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>*@
+@*</div>*@

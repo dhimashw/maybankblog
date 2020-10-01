@@ -1,0 +1,70 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Data.Items;
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@model RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.FolderProperties.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.FolderProperties.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{
+    var items = Sitecore.Context.Database.GetItem(Model.Item.ID);
+    Sitecore.Data.Fields.LinkField _link = Model.Item.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url];
+    string linkurl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+    //string linkurl = !string.IsNullOrWhiteSpace(@items.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url).ToString()) ? @items.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url).ToString() : "#";
+    string targetType = !string.IsNullOrWhiteSpace(@items.LinkFieldOptions(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url, LinkFieldOption.Target)) ? @items.LinkFieldOptions(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url, LinkFieldOption.Target) : "_blank";
+    //string AnchorTitle = items.Fields[Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading].Value.ToString().Replace(" ","").ToLower();
+    string AncorItemID = RenderingContext.Current.Rendering.Parameters["ID"] != null ? RenderingContext.Current.Rendering.Parameters["ID"].Trim() : "";
+}
+
+<div class="feature v-p-2" id="@AncorItemID">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4">
+                <div class="wysiwyg">
+                    @items.Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading)                    
+                    <p>@items.Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Subheading)</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-8">
+                <div class="wysiwyg">
+
+                    @if (!items.HasChildren)
+                    {
+                        <p>@items.Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent)</p>
+                        if (items.Fields[Sitecore.Feature.Library.Templates.ShowCTA.Fields.IsShowCTA].Value == "1")
+                        {
+                            @*<div><a href="@linkurl" target="@targetType"> <span class="see-more">@items.Field(Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title)</span></a></div>*@
+                            <div><a href="@linkurl" target="@targetType"> <span class="see-more">@items.LinkFieldOptions(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url, LinkFieldOption.Text)</span></a></div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="neg-m">
+                            <ul class="nodots clearfix">
+                                @foreach (Item itemChild in items.Children)
+                                {
+                                    linkurl = !string.IsNullOrWhiteSpace(@itemChild.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url).ToString()) ? @itemChild.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url).ToString() : "#";
+                                    targetType = !string.IsNullOrWhiteSpace(@itemChild.LinkFieldOptions(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url, LinkFieldOption.Target)) ? @itemChild.LinkFieldOptions(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url, LinkFieldOption.Target) : "_blank";
+
+                                    <li class="col-xs-12 col-md-6 v-p">
+                                        <p class="bold no-m">@itemChild.Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading)</p>
+                                        <p class="no-m">@itemChild.Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent)</p><br />
+                                        @if (itemChild.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowCTA].Value == "1")
+                                        {
+                                            <a href="@linkurl" target="@targetType"><span class="see-more">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, itemChild)</span></a>
+                                        }
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+
+nSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment.Page_Load(object, System.EventArgs)l
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs ( "0*Ô
+0Æ
+Ã
+l
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs (
+
+%0bool"(System.Web.UI.UserControl.IsPostBack.get*
+System.Web.UI.UserControl*
+1
+2*Ç
+1¹
+¶
+l
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs ('
+
+%1void"bSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment.DisplayAllComment(bool)*NL
+JSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment*
+""*
+3
+2*÷
+3ÐÍ
+l
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs (
+%2System.Web.UI.Page"System.Web.UI.Control.Page.get*
+System.Web.UI.Control2Page.getÛ
+Ø
+l
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs (%'
+%3!System.Web.UI.ClientScriptManager"#System.Web.UI.Page.ClientScript.get*
+
+%2System.Web.UI.Pageæ
+ã
+l
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs< (J
+%4System.Type"object.GetType()*NL
+JSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedCommentÆÃ
+n
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.csŠ (”
+%5string"System.Exception.Message.get*
+
+exSystem.Exception2Message.get¢
+Ÿ
+m
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.csW (
+%6string"__concat*
+""*
+
+%5string¢
+Ÿ
+m
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.csW (
+%7string"__concat*
+
+%6string*
+""¿
+¼
+m
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs (¤
+
+%8void"ZSystem.Web.UI.ClientScriptManager.RegisterStartupScript(System.Type, string, string, bool)*)
+'
+%3!System.Web.UI.ClientScriptManager*
+
+%4System.Type*	
+error-1*
+
+%7string*
+""*
+2*‰
+2"ƒ
+l
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs (	
+implicit return:
+senderobject:
+eSystem.EventArgsBNL
+JSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment

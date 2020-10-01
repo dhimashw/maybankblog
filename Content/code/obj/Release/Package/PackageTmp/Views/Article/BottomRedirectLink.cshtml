@@ -1,0 +1,12 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Content;
+@model RenderingModel
+@{
+    var item = Model.Item;
+    var url = @item.LinkFieldUrl(Templates.GeneralUrl.Fields.Url).ToString();
+    var targetType = @item.LinkFieldOptions(Templates.GeneralUrl.Fields.Url, LinkFieldOption.Target);
+}
+
+<div class="foot"><a class="see-more" href="@url" target="@targetType">@Model.Item.LinkFieldOptions(Templates.GeneralUrl.Fields.Url, LinkFieldOption.Text)</a></div>

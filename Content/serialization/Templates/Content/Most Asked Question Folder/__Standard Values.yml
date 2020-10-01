@@ -1,0 +1,23 @@
+﻿---
+ID: "25777d14-a10f-4b24-85c5-21388f6ab8a3"
+Parent: "58eb5c38-31cc-4382-91ab-d0244734e2f7"
+Template: "58eb5c38-31cc-4382-91ab-d0244734e2f7"
+Path: /sitecore/templates/Feature/Content/Most Asked Question Folder/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{34EBCE8D-41FC-4D6F-8139-D72D79700887}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180801T035751Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

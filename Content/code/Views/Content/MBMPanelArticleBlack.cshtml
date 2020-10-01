@@ -1,0 +1,35 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Data.Fields
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using template = Sitecore.Feature.Library.Templates.InfoPanelWithImageAndLink
+@model RenderingModel
+@if (!Model?.Item?.IsDerived(template.ID) ?? true)
+{
+    @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(template.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{ 
+    LinkField link = Model.Item.Fields[template.Fields.LinkUrl];
+    string url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(link);
+}
+
+<div class="container">
+    <div class="article article-wysiwyg--black">
+        <div class="row">
+            <div class="col-xs-12 col-md-7 col-md-push-5"><img class="img-responsive center-block" src="@Model.Item.ImageUrl(template.Fields.Image)" alt="" /><br /></div>
+            <div class="col-xs-12 col-md-5 col-md-pull-7">
+
+                @Html.Raw(Model.Item.Field(template.Fields.Content))
+
+                <br />
+                @if(Model.Item.Fields[template.Fields.ShowButtonLink].Value == "1")
+                {
+                    <a class="btn btn-link" href="@url" @Html.Raw(link.Target.Length > 0 ? "target=" + link.Target + "" : "")><span>@Html.Sitecore().Field(template.Fields.ButtonLabel, Model.Item)</span><img class="pl-2" src="/Assets/mbm/img/icon/arrow-right-yellow.svg" /></a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

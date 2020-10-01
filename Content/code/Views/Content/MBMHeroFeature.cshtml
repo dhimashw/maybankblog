@@ -1,0 +1,25 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model RenderingModel
+@{
+    Sitecore.Data.Fields.LinkField link = Model.Item.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url];
+    string url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(link);
+}
+
+<a href="@url" @Html.Raw(link.Target.Length > 0 ? "target=" + link.Target + "" : string.Empty)>
+    <div class="panel__img">
+        <div class="img-as-bg" style="background-image: url(@Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.ImageBackground.Fields.ImageBackground))"></div>
+    </div>
+    <div class="panel__body">
+        <div class="panel__title">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading)</div>
+        <div class="panel__caption">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent)</div>
+    </div>
+
+    @if (Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowCTA].Value == "1")
+    {
+        //link = Model.Item.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url];
+        //url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(link);
+        <a class="btn btn-link py-2" href="@url" @Html.Raw(link.Target.Length > 0 ? "target=" + link.Target + "" : string.Empty)> <span>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, Model.Item)</span><img class="pl-2" src="/Assets/mbm/img/icon/arrow-right-yellow.svg" alt="" /></a>
+    }
+</a>

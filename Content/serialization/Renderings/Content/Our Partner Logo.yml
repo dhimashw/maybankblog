@@ -1,0 +1,31 @@
+﻿---
+ID: "c10083ee-2322-4fca-88ad-ea317acb4345"
+Parent: "915eb6cb-6403-40ed-bd8d-45dcffed4e2d"
+Template: "99f8905d-4a87-4eb8-9f8b-a9bebfb3add6"
+Path: /sitecore/layout/Renderings/Feature/Content/Our Partner Logo
+DB: master
+SharedFields:
+- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
+  Hint: Datasource Template
+  Value: "{FE0BDA2D-52BE-4FEC-BCCB-7AD803CAB7FB}"
+- ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
+  Hint: Path
+  Value: /Views/Content/OurPartnerLogo.cshtml
+- ID: "7d24e54f-5c16-4314-90c9-6051aa1a7da1"
+  Hint: Parameters Template
+  Value: "{62638B23-36BA-46BA-967F-4674325B6527}"
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: "{CFF358E2-6EFA-4BF8-A49B-2DA57CF016D5}"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediapath="" alt="our-partner-logo" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{6C7F84C0-B2F1-4EF5-8558-79F4F46F4DBD}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180629T081029Z

@@ -1,0 +1,31 @@
+﻿---
+ID: "60015863-590b-4a5e-88f8-680f1e9ec590"
+Parent: "0469911f-5d5d-4805-a6b7-ac89c7c967ee"
+Template: "99f8905d-4a87-4eb8-9f8b-a9bebfb3add6"
+Path: /sitecore/layout/Renderings/Feature/BOD/Banner BOD
+DB: master
+SharedFields:
+- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
+  Hint: Datasource Template
+  Value: /sitecore/templates/Feature/Content/BOD Header Content
+- ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
+  Hint: Path
+  Value: /Views/BOD/BannerBOD.cshtml
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: "{FFD9B1F7-204F-4BEC-A235-C7FE7ADEB33D}"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 700
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediapath="" alt="Banner BOD" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{D0186091-B916-406D-9886-B9310AC5A9B9}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180709T080216Z

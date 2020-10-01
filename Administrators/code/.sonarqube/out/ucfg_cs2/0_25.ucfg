@@ -1,0 +1,82 @@
+
+cSitecore.Feature.Administrators.Sitecore.Admin.Custom.Dashboard.Page_Load(object, System.EventArgs)a
+WC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\Dashboard.aspx.cs ( "0*…
+0™–
+a
+WC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\Dashboard.aspx.cs2 (T
+%0System.Web.UI.Control"&System.Web.UI.Page.FindControl(string)*CA
+?Sitecore.Feature.Administrators.Sitecore.Admin.Custom.Dashboard*
+MainCurrentTab2FindControl(string)‘
+Ž
+a
+WC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\Dashboard.aspx.cs% (T
+%1"__id*
+
+%0System.Web.UI.Control©
+¦
+a
+WC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\Dashboard.aspx.cs (T3
+
+currentTab%System.Web.UI.WebControls.HiddenField"__id*
+
+%1çä
+a
+WC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\Dashboard.aspx.cs* (:
+%2string"/System.Web.UI.WebControls.HiddenField.Value.get*5
+3
+
+currentTab%System.Web.UI.WebControls.HiddenField2	Value.get±
+®
+a
+WC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\Dashboard.aspx.cs (;
+
+%3bool"!string.IsNullOrWhiteSpace(string)*
+"
+string*
+
+%2string*
+1
+2*¸
+1†
+ƒ
+a
+WC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\Dashboard.aspx.cs (a
+scriptstring"__id*
+""ÅÂ
+a
+WC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\Dashboard.aspx.cs (
+%4System.Web.UI.Page"System.Web.UI.Control.Page.get*
+System.Web.UI.Control2Page.getÐ
+Í
+a
+WC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\Dashboard.aspx.cs (!'
+%5!System.Web.UI.ClientScriptManager"#System.Web.UI.Page.ClientScript.get*
+
+%4System.Web.UI.PageÐ
+Í
+a
+WC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\Dashboard.aspx.cs8 (F
+%6System.Type"object.GetType()*CA
+?Sitecore.Feature.Administrators.Sitecore.Admin.Custom.Dashboard¶
+³
+a
+WC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\Dashboard.aspx.cs (_
+
+%7void"ZSystem.Web.UI.ClientScriptManager.RegisterStartupScript(System.Type, string, string, bool)*)
+'
+%5!System.Web.UI.ClientScriptManager*
+
+%6System.Type*
+
+setTab*
+
+scriptstring*
+""*
+2*}
+2"x
+a
+WC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\Dashboard.aspx.cs (	
+implicit return:
+senderobject:
+eSystem.EventArgsBCA
+?Sitecore.Feature.Administrators.Sitecore.Admin.Custom.Dashboard

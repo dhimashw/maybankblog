@@ -1,0 +1,41 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Data.Fields
+@using template = Sitecore.Feature.Library.Templates.RegistrationCard
+@model RenderingModel
+@{
+    if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.RegistrationCard.ID) ?? true)
+    {
+        @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.RegistrationCard.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+        return;
+    }
+
+    LinkField link = Model.Item.Fields[template.Fields.ButtonUrl];
+    string url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(link);
+}
+
+<div class="card-price">
+    <div class="card-price__wrapper" style="background-image:url(@Model.Item.ImageUrl(template.Fields.Image))">
+        @if (!string.IsNullOrEmpty(Model.Item.Fields[template.Fields.Discount].Value))
+        {
+            <div class="card-price__addon">@Html.Sitecore().Field(template.Fields.Discount, Model.Item)</div>
+        }
+        <div class="card-price__body">
+            <h3 class="card-price__title">@Html.Sitecore().Field(template.Fields.MainHeader, Model.Item)</h3>
+            <div class="py-1 t-uppercase color-white">@Html.Sitecore().Field(template.Fields.SubHeader, Model.Item)</div>
+            @if (!string.IsNullOrEmpty(Model.Item.Fields[template.Fields.PriceBefore].Value))
+            {
+                <div class="scratch"> <span class="color-g4">@Html.Sitecore().Field(template.Fields.PriceBefore, Model.Item)</span></div>
+            }
+            <div class="py-1 color-gold t-size-26">@Html.Sitecore().Field(template.Fields.PriceAfter, Model.Item)</div>
+            @if (url != "#")
+            {
+                <br />
+                <a class="btn btn-default btn-default--light" href="@url" @Html.Raw(link.Target.Length > 0 ? "target=" + link.Target : "")>@Model.Item.Fields[template.Fields.ButtonLabel]</a>
+            }
+        </div>
+    </div>
+</div>

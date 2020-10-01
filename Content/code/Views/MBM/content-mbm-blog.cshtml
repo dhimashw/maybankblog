@@ -1,0 +1,21 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helper
+@model RenderingModel
+@{
+    Sitecore.Data.Items.Item currentPage = RenderingContext.Current.PageContext.Item;
+}
+
+<div class="article article-wysiwyg--small">
+    <div class="article-header">
+        <h2 class="article-title">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, currentPage)</h2>
+        <p class="article-date">@Html.Sitecore().RenderDate(Sitecore.Feature.Library.Templates.BaseField.Fields.Date, currentPage, Sitecore.Feature.Library.Helper.Variables.globalFormatDateTime)</p>
+    </div>
+    <div class="article-image">
+        @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields._Image, currentPage, cssClass: "removestyle")
+    </div>
+    <div class="article-body">
+        @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Content, currentPage)
+    </div>
+</div>

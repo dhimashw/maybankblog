@@ -1,0 +1,93 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Data.Fields
+@using template = Sitecore.Feature.Library.Templates.MBMRaceCourseContent
+@model RenderingModel
+@{ 
+    Guid rng1 = Guid.NewGuid();
+    Guid rng2 = Guid.NewGuid();
+}
+
+@Html.Raw(Html.Sitecore().Field(template.Fields.Content, Model.Item))
+
+<div class="py-2">
+    <div class="row">
+        @if (Model.Item.Fields[template.Fields.ShowButton1].Value == "1")
+        {
+            <div class="col-xs-12 col-md-6">
+                <div class="valign py-3">
+                    <div class="valign__item"><img class="img-responsive" src="@Model.Item.ImageUrl(template.Fields.Button1Icon)" alt="" /></div>
+                    <div class="valign__item px-3">
+                        <div class="py-2">
+                            <h4 class="mb-0">@Html.Sitecore().Field(template.Fields.Button1Label, Model.Item)</h4>
+                            <a class="btn btn-link py-2 js-modal-trigger" href="" modal="gallery-@rng1" modal-image="@Model.Item.ImageUrl(template.Fields.Button1Image)" modal-type="gallery"><span>SEE MAP</span><img class="pl-2" src="/Assets/mbm/img/icon/arrow-right-yellow.svg" alt="" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @if (Model.Item.Fields[template.Fields.ShowButton2].Value == "1")
+        {
+            <div class="col-xs-12 col-md-6">
+                <div class="valign py-3">
+                    <div class="valign__item"><img class="img-responsive" src="@Model.Item.ImageUrl(template.Fields.Button2Icon)" alt="" /></div>
+                    <div class="valign__item px-3">
+                        <div class="py-2">
+                            <h4 class="mb-0">@Html.Sitecore().Field(template.Fields.Button2Label, Model.Item)</h4>
+                            <a class="btn btn-link py-2 js-modal-trigger" href="" modal="race-rundown-@rng2"><span>SEE RUNDOWN</span><img class="pl-2" src="/Assets/mbm/img/icon/arrow-right-yellow.svg" alt="" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- gallery modal -->
+    <div class="modal modal-image js-gallery-modal" tabindex="-1" role="dialog" image-name="" modal-name="gallery-@rng1">
+        <div class="modal-dialog modal-dialog--centered" role="document">
+            <div class="modal-content">
+                <a class="close js-gallery-modal-close" href=""></a>
+                <div class="modal-body">
+                    <div class="image-frame"><img class="img-responsive js-gallery-image" src="" alt="" /></div>
+                    <div class="image-desc"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- rich text modal -->
+    <div class="modal" tabindex="-1" role="dialog" modal-name="race-rundown-@rng2">
+        <div class="modal-center">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content white-text">
+                    <div class="modal-header"><a class="close js-modal-trigger-close" data-dismiss="modal" type="button" aria-label="Close"></a></div>
+                    <div class="modal-body">
+                        <div class="modal-body-scroll py-4">
+                            @Html.Raw(Html.Sitecore().Field(template.Fields.Button2Content, Model.Item))
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@if (Model.Item.Fields[template.Fields.ShowVideo].Value == "1")
+{
+    if(!string.IsNullOrEmpty(Model.Item.Fields[template.Fields.VideoUrl].Value))
+    {
+        LinkField videoLink = Model.Item.Fields[template.Fields.VideoUrl];
+        string _videoLink = Sitecore.Feature.Library.Helper.Core.getGeneralLink(videoLink);
+
+        <div class="row">
+            <div class="col-xs-12 col-md-8">
+                <div class="r-vc"><iframe width="854" height="480" src="https://www.youtube.com/embed/cVlZ1T_cf4k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+            </div>
+        </div>
+    }
+}

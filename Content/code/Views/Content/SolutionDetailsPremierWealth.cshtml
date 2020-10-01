@@ -1,0 +1,83 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using Sitecore.Feature.Content.Models
+@model Sitecore.Mvc.Presentation.RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.GeneralUrl.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.GeneralUrl.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{
+    System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo(Sitecore.Context.Language.Name);
+    var item = Model.Item;
+    //var url = @item.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url).ToString() != null ? @item.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url).ToString() : "#";
+    Sitecore.Data.Fields.LinkField _link = Model.Item.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url];
+    string url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+    var targetType = @item.LinkFieldOptions(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url, LinkFieldOption.Target);
+
+    SolutionDetails solution = new SolutionDetails();
+}
+@if (Session[Sitecore.Feature.Library.Helper.Variables._sessionFinancialPlanning] == null)
+{
+    //LoanDetails ld = new LoanDetails();
+    solution.Age = "30";
+    solution.Gender = "Wanita";
+    solution.MaritalStatus = "Menikah";
+    solution.Children = "Lebih dari 2";
+    Session[Sitecore.Feature.Library.Helper.Variables._sessionFinancialPlanning] = solution;
+}
+@if (Session[Sitecore.Feature.Library.Helper.Variables._sessionFinancialPlanning] != null)
+{
+    if (Session[Sitecore.Feature.Library.Helper.Variables._sessionFinancialPlanning].GetType() == typeof(String))
+    {
+        Session[Sitecore.Feature.Library.Helper.Variables._sessionFinancialPlanning] = solution;
+    }
+    solution = (SolutionDetails)Session[Sitecore.Feature.Library.Helper.Variables._sessionFinancialPlanning];
+}
+<div class="m-calc-calculator">
+    <div class="container">
+        <div class="row">
+            <div class="col col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="calc-box">
+                    <div class="label">@Html.Sitecore().Dictionary("/Feature/Content/My Current Age", "Edit This Content On Dictionary(/Feature/Content/My Current Age)")</div>
+                    <div class="lnum">@solution.Age @Html.Sitecore().Dictionary("/Feature/Content/Year", "Edit This Content On Dictionary(/Feature/Content/Year)")</div>
+                </div>
+            </div>
+            <div class="col col-lg-2 col-md-6 col-sm-6 col-xs-6">
+                <div class="calc-box">
+                    <div class="label">@Html.Sitecore().Dictionary("/Feature/Content/Gender", "Edit This Content On Dictionary(/Feature/Content/Gender)")</div>
+                    <div class="lnum">@solution.Gender</div>
+                </div>
+            </div>
+            <div class="col col-lg-2 col-md-6 col-sm-6 col-xs-6">
+                <div class="calc-box">
+                    <div class="label">@Html.Sitecore().Dictionary("/Feature/Content/Marital Status", "Edit This Content On Dictionary(/Feature/Content/Marital Status)")</div>
+                    <div class="lnum">@solution.MaritalStatus</div>
+                </div>
+            </div>
+            <div class="col col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="calc-box no-border">
+                    <div class="label">@Html.Sitecore().Dictionary("/Feature/Content/Number of Children", "Edit This Content On Dictionary(/Feature/Content/Number of Children)")</div>
+                    <div class="lnum">@solution.Children</div>
+                </div>
+            </div>
+            <div class="col col-xs-12 v-p">
+                <div class="row">
+                    <div class="valign-center w-auto">
+                        <div class="valign-item c-calculator__refresh">
+                            <a href="@url" target="@targetType">
+                                <i class="icons icon-refresh"> </i>
+                                <div class="c-calculator__name inline-block">@Html.Sitecore().Dictionary("/Feature/Content/ReCalculate", "Edit This Content On Dictionary(/Feature/Content/ReCalculate)")</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,450 @@
+
+]Sitecore.Feature.Content.Controller.BlogController.PostComment(System.Web.Mvc.FormCollection)Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csö ö('"8*“G
+0©
+¶
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csú0 ú(I
+%0Sitecore.Data.Database"Sitecore.Context.Database.get*"
+Sitecore.Context∑
+¥
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csúR ú(ã
+%1string"__id*J*H+
+)Sitecore.Feature.Library.Helper.Variables"
+MaybankBlogItemstringœ
+Ã
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csú0 ú(å
+%2Sitecore.Data.Items.Item"&Sitecore.Data.Database.GetItem(string)*
+
+%0Sitecore.Data.Database*
+
+%1string•
+¢
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csú% ú(å$
+blogItemSitecore.Data.Items.Item"__id* 
+
+%2Sitecore.Data.Items.Item€ÿ
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csù0 ù(?*
+%3$Sitecore.Collections.FieldCollection"#Sitecore.Data.Items.Item.Fields.get*&
+$
+blogItemSitecore.Data.Items.Item2
+Fields.get“
+œ
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csù@ ù(Ä
+%4Sitecore.Data.ID"__id*[*Y5
+3Sitecore.Feature.Library.Templates.BaseField.Fields" 
+IsUseCaptchaSitecore.Data.IDÕ
+ 
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csù0 ù(Å 
+%5Sitecore.Data.Fields.Field"
+__arrayGet*,
+*
+%3$Sitecore.Collections.FieldCollection*
+
+%4Sitecore.Data.ID´
+®
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csù! ù(Å(
+%6"Sitecore.Data.Fields.CheckboxField"__id*"
+ 
+%5Sitecore.Data.Fields.Fieldø
+º
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csù  ù(ä
+
+%7bool".Sitecore.Data.Fields.CheckboxField.Checked.get**
+(
+%6"Sitecore.Data.Fields.CheckboxFieldÄ
+~
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csù ù(ä
+IsUseCaptchabool"__id*
+
+
+%7boolâ
+Ü
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csü ü()
+%8string"__id**
+string"
+Emptystring~
+|
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csü ü()
+_userIPstring"__id*
+
+%8string˙
+˜
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs† †(#
+
+%9void"ISitecore.Feature.Content.Controller.BlogController.GetIpValue(out string)*64
+2Sitecore.Feature.Content.Controller.BlogController*
+
+_userIPstring∑¥
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs£& ±(2
+%10+Sitecore.Feature.Content.Models.BlogComment"+Sitecore.Feature.Content.Models.BlogComment‘
+—
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs£* £(5
+%11void"9Sitecore.Feature.Content.Models.BlogComment.BlogComment()*4
+2
+%10+Sitecore.Feature.Content.Models.BlogCommentí
+è
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs• •(#
+%12System.Guid"System.Guid.NewGuid()*"
+System.Guid„
+‡
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs• •(#
+%13void"2Sitecore.Feature.Content.Models.BlogComment.ID.set*4
+2
+%10+Sitecore.Feature.Content.Models.BlogComment*
+
+%12System.Guidø
+º
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs¶ ¶( !
+%14System.Web.HttpRequestBase"%System.Web.Mvc.Controller.Request.get*
+System.Web.Mvc.ControllerÂ‚
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs¶ ¶(%9
+%152System.Collections.Specialized.NameValueCollection"#System.Web.HttpRequestBase.Form.get*#
+!
+%14System.Web.HttpRequestBase2Form.get∫
+∑
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs¶ ¶(/
+%16string"
+__arrayGet*;
+9
+%152System.Collections.Specialized.NameValueCollection*
+
+pageId‚
+ﬂ
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs¶ ¶(/
+%17void"6Sitecore.Feature.Content.Models.BlogComment.PageID.set*4
+2
+%10+Sitecore.Feature.Content.Models.BlogComment*
+
+%16stringø
+º
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csß" ß()!
+%18System.Web.HttpRequestBase"%System.Web.Mvc.Controller.Request.get*
+System.Web.Mvc.ControllerÂ‚
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csß" ß(.9
+%192System.Collections.Specialized.NameValueCollection"#System.Web.HttpRequestBase.Form.get*#
+!
+%18System.Web.HttpRequestBase2Form.getº
+π
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csß" ß(:
+%20string"
+__arrayGet*;
+9
+%192System.Collections.Specialized.NameValueCollection*
+
+pageNameÎ
+Ë
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csß ß(:
+%21void"?Sitecore.Feature.Content.Models.BlogComment.PageDisplayName.set*4
+2
+%10+Sitecore.Feature.Content.Models.BlogComment*
+
+%20stringø
+º
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs® ®("!
+%22System.Web.HttpRequestBase"%System.Web.Mvc.Controller.Request.get*
+System.Web.Mvc.ControllerÂ‚
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs® ®('9
+%232System.Collections.Specialized.NameValueCollection"#System.Web.HttpRequestBase.Form.get*#
+!
+%22System.Web.HttpRequestBase2Form.getº
+π
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs® ®(3
+%24string"
+__arrayGet*;
+9
+%232System.Collections.Specialized.NameValueCollection*
+
+username‰
+·
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs® ®(3
+%25void"8Sitecore.Feature.Content.Models.BlogComment.Username.set*4
+2
+%10+Sitecore.Feature.Content.Models.BlogComment*
+
+%24stringø
+º
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs© ©(!
+%26System.Web.HttpRequestBase"%System.Web.Mvc.Controller.Request.get*
+System.Web.Mvc.ControllerÂ‚
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs© ©($9
+%272System.Collections.Specialized.NameValueCollection"#System.Web.HttpRequestBase.Form.get*#
+!
+%26System.Web.HttpRequestBase2Form.getπ
+∂
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs© ©(-
+%28string"
+__arrayGet*;
+9
+%272System.Collections.Specialized.NameValueCollection*	
+email·
+ﬁ
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs© ©(-
+%29void"5Sitecore.Feature.Content.Models.BlogComment.Email.set*4
+2
+%10+Sitecore.Feature.Content.Models.BlogComment*
+
+%28stringø
+º
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs™ ™(!!
+%30System.Web.HttpRequestBase"%System.Web.Mvc.Controller.Request.get*
+System.Web.Mvc.ControllerÂ‚
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs™ ™(&9
+%312System.Collections.Specialized.NameValueCollection"#System.Web.HttpRequestBase.Form.get*#
+!
+%30System.Web.HttpRequestBase2Form.getø
+º
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs™ ™(5
+%32string"
+__arrayGet*;
+9
+%312System.Collections.Specialized.NameValueCollection*
+blogcomment„
+‡
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs™ ™(5
+%33void"7Sitecore.Feature.Content.Models.BlogComment.Comment.set*4
+2
+%10+Sitecore.Feature.Content.Models.BlogComment*
+
+%32stringú
+ô
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs´ ´(*
+%34System.DateTime"System.DateTime.Now.get*"
+System.DateTime
+Ì
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs´ ´(*
+%35void";Sitecore.Feature.Content.Models.BlogComment.CommentDate.set*4
+2
+%10+Sitecore.Feature.Content.Models.BlogComment*
+
+%34System.DateTimeÊ
+„
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs¨ ¨( 
+%36void"6Sitecore.Feature.Content.Models.BlogComment.UserIP.set*4
+2
+%10+Sitecore.Feature.Content.Models.BlogComment*
+
+_userIPstring›
+⁄
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs≠ ≠("
+%37void":Sitecore.Feature.Content.Models.BlogComment.isApproved.set*4
+2
+%10+Sitecore.Feature.Content.Models.BlogComment*
+""ﬂ
+‹
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÆ Æ(#
+%38void"<Sitecore.Feature.Content.Models.BlogComment.ApprovedDate.set*4
+2
+%10+Sitecore.Feature.Content.Models.BlogComment*
+""€
+ÿ
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csØ Ø( 
+%39void"8Sitecore.Feature.Content.Models.BlogComment.isDelete.set*4
+2
+%10+Sitecore.Feature.Content.Models.BlogComment*
+""ﬁ
+€
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs∞ ∞("
+%40void";Sitecore.Feature.Content.Models.BlogComment.DeletedDate.set*4
+2
+%10+Sitecore.Feature.Content.Models.BlogComment*
+""Œ
+À
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs£ ±(:
+blogComment+Sitecore.Feature.Content.Models.BlogComment"__id*4
+2
+%10+Sitecore.Feature.Content.Models.BlogComment*
+1
+2*Ô
+1·
+ﬁ
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs≥! ≥(2
+%41bool"DSitecore.Feature.Content.Controller.BlogController.IsReCaptchValid()*64
+2Sitecore.Feature.Content.Controller.BlogController*
+3
+2*∆
+3˘
+ˆ
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csµE µ(S*
+%42#Sitecore.Mvc.Helpers.SitecoreHelper"__id*o*m4
+2Sitecore.Feature.Content.Controller.BlogController"5
+sitecoreHelper#Sitecore.Mvc.Helpers.SitecoreHelperµ
+≤
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csµ' µ(±
+%43string"|Sitecore.Foundation.Dictionary.Extensions.SitecoreExtensions.Dictionary(Sitecore.Mvc.Helpers.SitecoreHelper, string, string)*@">
+<Sitecore.Foundation.Dictionary.Extensions.SitecoreExtensions*,
+*
+%42#Sitecore.Mvc.Helpers.SitecoreHelper*75
+3/Feature/Maybank Blog/Invalid Captcha Error Message*&$
+"Google reCaptcha validation failedê
+ç
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csµ µ(≤"
+%44System.Web.Mvc.ActionResult"JSitecore.Feature.Content.Controller.BlogController.ErrorWebservice(string)*64
+2Sitecore.Feature.Content.Controller.BlogController*
+
+%43string"z
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csµ µ(≥$
+"
+%44System.Web.Mvc.ActionResult*Ü
+2¯
+ı
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs∏ ∏(%
+%45bool"FSitecore.Feature.Content.Controller.BlogController.isDelayPost(string)*64
+2Sitecore.Feature.Content.Controller.BlogController*
+
+_userIPstring*
+4
+5*®
+4è
+å
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs∫ ∫(<
+%465Sitecore.Feature.Content.Repositories.IBlogRepository"ASitecore.Feature.Content.Controller.BlogController.Repository.get*64
+2Sitecore.Feature.Content.Controller.BlogControllerãà
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs∫ ∫(8
+%47void"nSitecore.Feature.Content.Repositories.IBlogRepository.PostComment(Sitecore.Feature.Content.Models.BlogComment)*>
+<
+%465Sitecore.Feature.Content.Repositories.IBlogRepository*<
+:
+blogComment+Sitecore.Feature.Content.Models.BlogComment28PostComment(Sitecore.Feature.Content.Models.BlogComment)*
+6*ª
+5˘
+ˆ
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csæE æ(S*
+%48#Sitecore.Mvc.Helpers.SitecoreHelper"__id*o*m4
+2Sitecore.Feature.Content.Controller.BlogController"5
+sitecoreHelper#Sitecore.Mvc.Helpers.SitecoreHelper™
+ß
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csæ' æ(¶
+%49string"|Sitecore.Foundation.Dictionary.Extensions.SitecoreExtensions.Dictionary(Sitecore.Mvc.Helpers.SitecoreHelper, string, string)*@">
+<Sitecore.Foundation.Dictionary.Extensions.SitecoreExtensions*,
+*
+%48#Sitecore.Mvc.Helpers.SitecoreHelper*+)
+'/Feature/Maybank Blog/Excessive Request*'%
+#Excessive Request Attempts Detectedê
+ç
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csæ æ(ß"
+%50System.Web.Mvc.ActionResult"JSitecore.Feature.Content.Controller.BlogController.ErrorWebservice(string)*64
+2Sitecore.Feature.Content.Controller.BlogController*
+
+%49string"z
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csæ æ(®$
+"
+%50System.Web.Mvc.ActionResult*¯
+6¯
+ı
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs¿ ¿()"
+%51System.Web.Mvc.ActionResult"DSitecore.Feature.Content.Controller.BlogController.SuccessResponse()*64
+2Sitecore.Feature.Content.Controller.BlogControllerj
+h
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs¿+ ¿(G
+%52"__id*
+""í
+è
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs¿ ¿(H 
+%53System.Web.Mvc.JsonResult"JSystem.Web.Mvc.Controller.Json(object, System.Web.Mvc.JsonRequestBehavior)*
+System.Web.Mvc.Controller*$
+"
+%51System.Web.Mvc.ActionResult*
+
+%52"w
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs¿ ¿(I"
+ 
+%53System.Web.Mvc.JsonResult*m
+7"h
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs¬ ¬(	
+implicit return*Ω
+8ò
+ï
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csö ö('
+%54"__entrypoint*+
+)
+formDataSystem.Web.Mvc.FormCollectionâ
+Ü
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csò	 ò(E
+%55"
+__annotate*qo
+mSitecore.Feature.Content.Helper.ValidateAntiForgeryTokenPostAttribute.ValidateAntiForgeryTokenPostAttribute()*+
+)
+formDataSystem.Web.Mvc.FormCollectionÁ
+‰
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csô	 ô(4
+%56"
+__annotate*OM
+KSitecore.Feature.Content.Helper.PreventSpamAttribute.PreventSpamAttribute()*+
+)
+formDataSystem.Web.Mvc.FormCollection°
+û
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csö( ö(?)
+formDataSystem.Web.Mvc.FormCollection"__annotation*
+
+%55*
+
+%56*
+0:)
+formDataSystem.Web.Mvc.FormCollectionB64
+2Sitecore.Feature.Content.Controller.BlogController

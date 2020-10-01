@@ -1,0 +1,91 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Feature.Content
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Data.Items
+@using Sitecore.Feature.Content.Repositories
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Indexing.Repositories;
+@model Sitecore.Feature.Library.Helper.PagedData<Item>
+
+@{
+
+    var idDiv = Guid.NewGuid();
+
+    ISearchServiceRepository searchServiceRepository = new SearchServiceRepository();
+
+    ReportsRepository rp = new ReportsRepository(searchServiceRepository);
+    string urlFile = string.Empty;
+
+    IEnumerable<string> years = rp.DistinctItemsYear(Model.Data);
+
+    Item _items = Sitecore.Context.Database.GetItem(Model.DataSourceID);
+
+
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+    $('body').on('click', '.pagination-list a', function () {
+
+        var page = parseInt($(this).html());
+
+        $.ajax({
+            url: '@Url.Action("YearlyReportsListPaging")',
+            data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID" },
+            success: function (data) {
+                $("#news-pages-@idDiv").html(data);
+            }
+        });
+    });
+
+    $('body').on('click', '.previous.enabled a', function () {
+        var page = parseInt($(this).data("curpage") - 1);
+
+        $.ajax({
+            url: '@Url.Action("YearlyReportsListPaging")',
+            data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID" },
+            success: function (data) {
+                $("#news-pages-@idDiv").html(data);
+            }
+        });
+    });
+
+    $('body').on('click', '.next.enabled a', function () {
+        var page = parseInt($(this).data("curpage") ) + 1;
+
+        $.ajax({
+            url: '@Url.Action("YearlyReportsListPaging")',
+            data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID" },
+            success: function (data) {
+                $("#news-pages-@idDiv").html(data);
+            }
+        });
+    });
+});
+</script>
+@*<div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h1 class="mb-5">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, _items)</h1>
+        </div>
+    </div>*@
+@if (Sitecore.Context.PageMode.IsExperienceEditor)
+{
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h1 class="mb-5">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, _items)</h1>
+        </div>
+    </div>
+}
+else if (!Sitecore.Context.PageMode.IsExperienceEditor && _items.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title].HasValue && _items.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title].Value.Length > 0)
+{
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h1 class="mb-5">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, _items)</h1>
+        </div>
+    </div>
+}
+<div id="news-pages-@idDiv">
+    @Html.Partial("~/Views/AboutUs/_YearlyReportsItem.cshtml")
+</div>

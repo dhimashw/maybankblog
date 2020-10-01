@@ -1,0 +1,60 @@
+
+tSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DebugDashboard.BtnShowAll_Click(object, System.EventArgs)k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.csg g('"0*Ó
+0Å
+Â
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.csi i(
+
+%0bool"(System.Web.UI.UserControl.IsPostBack.get*
+System.Web.UI.UserControl*
+1
+2*¢
+1Í
+Ê
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.csk k((
+
+%1void"pSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DebugDashboard.DisplayApprovedComment(string, string)*MK
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DebugDashboard*
+""*
+""ƒ€
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.csl! l(*
+%2System.Web.UI.Page"System.Web.UI.Control.Page.get*MK
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DebugDashboard2Page.getôñ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.csl! l(B
+%3System.Web.UI.Control"&System.Web.UI.Page.FindControl(string)*
+
+%2System.Web.UI.Page*
+
+MyTaskUC2FindControl(string)²
+¯
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.csl! l(L
+%4System.Web.UI.Control"__id*
+
+%3System.Web.UI.Controlã
+à
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.csl l(LL
+otherUCASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask"__id*
+
+%4System.Web.UI.Control¯
+¬
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.csm m(0
+
+%5void"YSitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask.DisplayAllComment(bool)*N
+L
+otherUCASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask*
+""*
+2*ˆ
+2"‚
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DebugDashboard.ascx.cso o(	
+implicit return:
+senderobject:
+eSystem.EventArgsBMK
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DebugDashboard

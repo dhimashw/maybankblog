@@ -1,0 +1,48 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helper
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using System.linq
+@model RenderingModel
+@{
+    var ButtonColor = string.IsNullOrEmpty(Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonColor].Value) ? "btn btn-tertiary addon" : Sitecore.Context.Database.GetItem(Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonColor].Value).Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.stringTitle].ToString();
+
+}
+
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.Banner.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.Banner.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+
+@if (Model.Item != null && Model.Item.TemplateID == Sitecore.Feature.Library.Templates.Banner.ID)
+{
+    string url = string.Format("href=\"{0}\"", "#");
+
+    if (Model.Item.LinkFieldUrl(Sitecore.Feature.Library.Templates.Banner.Fields.Url) != null)
+    {
+        Sitecore.Data.Fields.LinkField _link = Model.Item.Fields[Sitecore.Feature.Library.Templates.Banner.Fields.Url];
+        url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+        //url = Model.Item.LinkFieldUrl(Sitecore.Feature.Library.Templates.Banner.Fields.Url);
+    }
+    <div>
+        <div class="page-banner--as-bg" style="background-image:url(@Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.Banner.Fields.Image))">
+            <div class="container">
+                <div class="page-banner-body">
+                    <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Banner.Fields.stringBannerTitle, Model.Item)</h1>
+                    <p>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Banner.Fields.stringBannerDescription, Model.Item)</p>
+                    @if (Model.Item.Fields[Sitecore.Feature.Library.Templates.Banner.Fields.ShowCTA].Value == "1")
+                    {
+                        <a class="@ButtonColor" href="@url">
+                            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, Model.Item)
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

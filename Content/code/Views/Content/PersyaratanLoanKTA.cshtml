@@ -1,0 +1,204 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Data.Items;
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@model RenderingModel
+@*@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.ImagePositionAndDesc.ID) ?? true)
+    {
+        @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.ImagePositionAndDesc.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+        return;
+    }*@
+@{
+    var items = Sitecore.Context.Database.GetItem(Model.Item.ID);
+
+
+    int countOption = 0;
+    int countItem = 0;
+    string AnchorItemID = RenderingContext.Current.Rendering.Parameters["ID"] != null ? RenderingContext.Current.Rendering.Parameters["ID"].Trim() : "";
+
+}
+
+@*@if (items.HasChildren)
+    {
+
+        <div class="row" id="@AnchorItemID">
+            <div class="col-md-6">
+                <div class="content">
+                    <h1>@items.Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading)</h1>
+                    <h3>
+                        @items.Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Subheading)
+                        <form>
+                            <div class="form-group">
+                                <div class="m2u-select js-m2u-select no-title js-content-change" data-target-class="requirement-documents">
+
+                                    <select class="form-control" name="person" data-label="Person">
+                                        @foreach (Item item in items.Children)
+                                        {
+
+                                            if (countOption == 0)
+                                            {
+                                                <option value="@item.Fields[Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading].Value" selected="selected">@item.Fields[Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading].Value</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@item.Fields[Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading].Value">@item.Fields[Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading].Value</option>
+                                            }
+                                            countOption++;
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </h3>
+
+                    @foreach (Item itemChild in items.Children)
+                    {
+                        if (countItem == 0)
+                        {
+                            <div class="js-content-change-target default requirement-documents" id="@itemChild.Fields[Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading].Value">
+                                @itemChild.Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent)
+                                <p class="notes">
+                                    @itemChild.Field(Sitecore.Feature.Library.Templates.FooterText.Fields.FooterText)
+                                </p>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="js-content-change-target requirement-documents" id="@itemChild.Fields[Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading].Value">
+                                @itemChild.Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent)
+                                <p class="notes">
+                                    @itemChild.Field(Sitecore.Feature.Library.Templates.FooterText.Fields.FooterText)
+                                </p>
+                            </div>
+                        }
+
+                        countItem++;
+                    }
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="content side-no-title">
+                    @items.Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent)
+                </div>
+            </div>
+        </div>
+    }
+    else if (Sitecore.Context.PageMode.IsExperienceEditor)
+    {
+        <div class="content">
+            <h1>Please select the correct datasource</h1>
+        </div>
+    }*@
+
+
+
+@if (!string.IsNullOrEmpty(AnchorItemID) == true)
+{
+    @*<a name="@anchorID"></a>*@
+    <div class="large-pad">
+        <div class="frame">
+            <a class="anchor" name="@AnchorItemID"></a>
+        </div>
+    </div>
+}
+<h1>@items.Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading)</h1>
+<br />
+<div class="tab-nav mb-3">
+    <div class="nav-wrapper row">
+
+        @if (items.Children.Count() > 1)
+        {
+            foreach (Item item in items.Children)
+            {
+                <div class="nav-item mx-3">
+                    <a href="#@item.ID.ToShortID()" data-toggle="collapse">
+                        <h4 class="m-0">@Html.Raw(item.Fields[Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading].Value)</h4>
+                    </a>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="nav-item mx-3">
+                <h4 class="m-0">@Html.Raw(items.Children.Select(x => x.Fields[Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading].Value).FirstOrDefault())</h4>
+            </div>
+        }
+
+    </div>
+</div>
+<div class="tab-content pt-3">
+    @if (items.Children.Count() > 1)
+    {
+        foreach (Item itemChild in items.Children)
+        {
+            <div class="collapse" id="@itemChild.ID.ToShortID()">
+                <div class="row">
+                    @if (itemChild.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Position].Value == "Center")
+                    {
+                        <div class="col-xs-12 col-sm-12">
+                            @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Image, itemChild, cssClass: "img-responsive")
+                            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.LeftCenterRightText.Fields.CenterText, itemChild)
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-xs-12 col-sm-6">
+                            @if (itemChild.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Position].Value == "Left")
+                            {
+                                @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Image, itemChild, cssClass: "img-responsive")
+                            }
+                            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.LeftCenterRightText.Fields.LeftText, itemChild)
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            @if (itemChild.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Position].Value == "Right")
+                            {
+                                @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Image, itemChild, cssClass: "img-responsive")
+                            }
+                            
+                            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.LeftCenterRightText.Fields.RightText, itemChild)
+                        </div>
+                    }
+                </div>
+                <p class="notes">
+                    @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.FooterText.Fields.FooterText, itemChild)
+                </p>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="row">
+            @if (items.Children.FirstOrDefault().Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Position].Value == "Center")
+            {
+                <div class="col-xs-12 col-sm-12">
+                    @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Image, items.Children.FirstOrDefault(), cssClass: "img-responsive")
+                    @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.LeftCenterRightText.Fields.CenterText, items.Children.FirstOrDefault())
+                </div>
+            }
+            else
+            {
+                <div class="col-xs-12 col-sm-6">
+                    @if (items.Children.FirstOrDefault().Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Position].Value == "Left")
+                    {
+                        @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Image, items.Children.FirstOrDefault(), cssClass: "img-responsive")
+                    }
+                    @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.LeftCenterRightText.Fields.LeftText, items.Children.FirstOrDefault())
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    @if (items.Children.FirstOrDefault().Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Position].Value == "Right")
+                    {
+                        @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Image, items.Children.FirstOrDefault(), cssClass: "img-responsive")
+                    }
+                    
+                    @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.LeftCenterRightText.Fields.RightText, items.Children.FirstOrDefault())
+                </div>
+            }
+        </div>
+        <p class="notes">
+            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.FooterText.Fields.FooterText, items.Children.FirstOrDefault())
+        </p>
+    }
+</div>

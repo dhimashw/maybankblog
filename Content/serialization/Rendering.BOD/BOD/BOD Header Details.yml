@@ -1,0 +1,28 @@
+﻿---
+ID: "86f9dac6-24fa-44e2-83e7-53fd5eb48055"
+Parent: "0469911f-5d5d-4805-a6b7-ac89c7c967ee"
+Template: "99f8905d-4a87-4eb8-9f8b-a9bebfb3add6"
+Path: /sitecore/layout/Renderings/Feature/BOD/BOD Header Details
+DB: master
+SharedFields:
+- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
+  Hint: Datasource Template
+  Value: /sitecore/templates/Feature/Content/BOD Header Content
+- ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
+  Hint: Path
+  Value: /Views/BOD/BODHeaderDetails.cshtml
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
+  Hint: Datasource Location
+  Value: "{FFD9B1F7-204F-4BEC-A235-C7FE7ADEB33D}"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediapath="" alt="BOD Header Details" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{2388E880-B0D5-41DB-8CE9-3AF2CFCF533C}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180806T045752Z

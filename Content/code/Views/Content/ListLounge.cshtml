@@ -1,0 +1,90 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.ListLoungeFolder.ID) ?? true)
+    {
+        @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.ListLoungeFolder.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+        return;
+    }
+    string ListLounge = Request.QueryString["ListLounge"] != null ? Request.QueryString["ListLounge"].ToLower() : string.Empty;
+    Sitecore.Data.Items.Item defaultItem = Model.Item.Children.Where(x => x.TemplateID == Sitecore.Feature.Library.Templates.ListLounge.ID).FirstOrDefault();
+    int counter = 0;
+}
+
+<div class="m-top-nav js-scroll-fixed">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                <div class="top-nav-link dropdown-mode">
+                    <span class="selected-text outlined"></span>
+                    <div class="links">
+                        @foreach (Sitecore.Data.Items.Item iListLounge in Model.Item.Children.Where(x=> x.TemplateID == Sitecore.Feature.Library.Templates.ListLounge.ID))
+                        {
+                            counter++;
+                            if ((counter == 1 && string.IsNullOrEmpty(ListLounge)) || (!string.IsNullOrEmpty(ListLounge) && ListLounge == iListLounge.ID.ToString().ToLower()))
+                            {
+                                defaultItem = iListLounge;
+                                <a class="active" href="@Html.Raw("?ListLounge=" +iListLounge.ID + "&CategoryTitle=" + iListLounge.DisplayName)" data-href="syariah">@iListLounge.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</a>
+                            }
+                            @*else if (!string.IsNullOrEmpty(ListLounge) && ListLounge == iListLounge.ID.ToString().ToLower())
+                            {
+                                defaultItem = iListLounge;
+                                <a class="active" href="?ListLounge=@iListLounge.ID" data-href="syariah">@iListLounge.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</a>
+                            }*@
+                            else
+                            {
+                                <a href="@Html.Raw("?ListLounge=" + iListLounge.ID + "&CategoryTitle=" + iListLounge.DisplayName)" data-href="syariah">@iListLounge.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</a>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section gray py-0 m-info-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-f-right">
+                <div class="content full">
+                    @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Image, defaultItem, cssClass: "removestyle img-responsive")
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="content">
+                    <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, defaultItem)</h1>
+                    <div class="row lined-row small-pad">
+                        <div class="frame">
+                            <div class="col-xs-6">
+                                <p class="gray-text">@Html.Sitecore().Dictionary("/Feature/Premier Wealth/Airport Lounge/Lounge Name", "Ruang Tunggu")</p>
+                            </div>
+                            <div class="col-xs-6">
+                                <p class="gray-text">@Html.Sitecore().Dictionary("/Feature/Premier Wealth/Airport Lounge/Position", "Posisi")</p>
+                            </div>
+                        </div>
+                    </div>
+                    @foreach (Sitecore.Data.Items.Item itemLounge in defaultItem.Children.Where(x=> x.TemplateID == Sitecore.Feature.Library.Templates.ItemLounge.ID && x.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowInMenu] != null && x.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowInMenu].Value == "1"))
+                    {
+                        <div class="row lined-row">
+                            <div class="frame">
+                                <div class="col-xs-6">
+                                    <h3>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, itemLounge)</h3>
+                                </div>
+                                <div class="col-xs-6">
+                                    <p>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.ItemLounge.Fields.Position, itemLounge)</p>
+                                </div>
+                            </div>
+                        </div>
+                    }                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

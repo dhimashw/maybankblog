@@ -1,0 +1,1522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>http://maybank/</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Config/Include/Feature/Feature.Articles.config">
+      <publishTime>06/25/2018 11:31:11</publishTime>
+    </File>
+    <File Include="App_Config/Include/Feature/Feature.Blog.config">
+      <publishTime>01/10/2019 20:33:21</publishTime>
+    </File>
+    <File Include="App_Config/Include/Feature/Feature.Content.Serialization.config">
+      <publishTime>09/27/2018 15:14:00</publishTime>
+    </File>
+    <File Include="App_Config/Include/Feature/Feature.MBMGallery.config">
+      <publishTime>01/08/2019 18:01:47</publishTime>
+    </File>
+    <File Include="App_Config/Include/Feature/Feature.NewsAnnouncement.config">
+      <publishTime>03/01/2018 19:48:12</publishTime>
+    </File>
+    <File Include="App_Config/Include/Feature/Feature.Promotion.config">
+      <publishTime>05/15/2018 16:26:02</publishTime>
+    </File>
+    <File Include="App_Config/Include/Feature/Feature.PropertiBekas.config">
+      <publishTime>08/28/2018 11:18:10</publishTime>
+    </File>
+    <File Include="App_Config/Include/Feature/Feature.Reports.config">
+      <publishTime>08/15/2018 19:05:28</publishTime>
+    </File>
+    <File Include="App_Config/Include/Feature/Feature.TreatsPoint.config">
+      <publishTime>06/25/2018 11:31:16</publishTime>
+    </File>
+    <File Include="bin/AjaxMin.dll">
+      <publishTime>02/28/2018 16:43:43</publishTime>
+    </File>
+    <File Include="bin/ComponentArt.Web.UI.dll">
+      <publishTime>03/18/2020 14:46:24</publishTime>
+    </File>
+    <File Include="bin/CsvHelper.dll">
+      <publishTime>09/09/2016 14:59:46</publishTime>
+    </File>
+    <File Include="bin/DynamicPlaceholders.dll">
+      <publishTime>02/28/2018 17:06:20</publishTime>
+    </File>
+    <File Include="bin/DynamicPlaceholders.Mvc.dll">
+      <publishTime>02/28/2018 17:06:20</publishTime>
+    </File>
+    <File Include="bin/EcmaScript.NET.dll">
+      <publishTime>05/08/2020 17:12:04</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>10/23/2017 13:15:18</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>10/23/2017 13:15:20</publishTime>
+    </File>
+    <File Include="bin/HtmlAgilityPack.dll">
+      <publishTime>02/20/2018 14:20:48</publishTime>
+    </File>
+    <File Include="bin/HtmlAgilityPack.pdb">
+      <publishTime>02/20/2018 14:20:48</publishTime>
+    </File>
+    <File Include="bin/Iesi.Collections.dll">
+      <publishTime>05/08/2020 17:12:04</publishTime>
+    </File>
+    <File Include="bin/ITHit.WebDAV.Server.dll">
+      <publishTime>02/28/2018 16:35:51</publishTime>
+    </File>
+    <File Include="bin/Lucene.Net.dll">
+      <publishTime>03/18/2020 14:46:24</publishTime>
+    </File>
+    <File Include="bin/Lucene.Net.pdb">
+      <publishTime>03/18/2020 14:46:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>02/20/2018 11:31:15</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.DependencyInjection.Abstractions.dll">
+      <publishTime>02/20/2018 11:31:06</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.DependencyInjection.dll">
+      <publishTime>03/18/2020 14:46:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.OData.Core.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.OData.Edm.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Spatial.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>02/20/2018 11:31:01</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Bson.dll">
+      <publishTime>02/28/2018 16:35:52</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Driver.Core.dll">
+      <publishTime>02/28/2018 16:35:52</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Driver.dll">
+      <publishTime>02/28/2018 16:35:53</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Driver.Legacy.dll">
+      <publishTime>02/28/2018 16:35:53</publishTime>
+    </File>
+    <File Include="bin/Mvp.Xml.dll">
+      <publishTime>02/28/2018 16:35:53</publishTime>
+    </File>
+    <File Include="bin/Netbiscuits.OnPremise.dll">
+      <publishTime>02/28/2018 16:35:53</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>01/28/2016 14:22:24</publishTime>
+    </File>
+    <File Include="bin/RadEditor.Net2.dll">
+      <publishTime>02/28/2018 16:35:53</publishTime>
+    </File>
+    <File Include="bin/RazorGenerator.Mvc.dll">
+      <publishTime>02/28/2018 16:35:53</publishTime>
+    </File>
+    <File Include="bin/Renci.SshNet.dll">
+      <publishTime>08/22/2018 15:06:23</publishTime>
+    </File>
+    <File Include="bin/RestSharp.dll">
+      <publishTime>05/18/2020 11:55:38</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>02/20/2018 11:31:31</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>02/20/2018 11:31:31</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>02/20/2018 11:31:31</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>02/20/2018 11:31:31</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe.config">
+      <publishTime>02/20/2018 11:31:31</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>02/20/2018 11:31:31</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>02/20/2018 11:31:31</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Win32.Primitives.dll">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Console.dll">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.FileVersionInfo.dll">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.Process.dll">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Compression.dll">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.DriveInfo.dll">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Pipes.dll">
+      <publishTime>02/20/2018 11:31:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.AccessControl.dll">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Claims.dll">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Algorithms.dll">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Encoding.dll">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Primitives.dll">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.X509Certificates.dll">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Principal.Windows.dll">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Text.Encoding.CodePages.dll">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Threading.Thread.dll">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.ValueTuple.dll">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.ReaderWriter.dll">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XmlDocument.dll">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.dll">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.XDocument.dll">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>02/20/2018 11:31:33</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Abstractions.dll">
+      <publishTime>02/28/2018 16:35:53</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Analytics.Aggregation.dll">
+      <publishTime>04/23/2019 16:06:50</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Analytics.Core.dll">
+      <publishTime>02/20/2018 11:31:13</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Analytics.DataAccess.dll">
+      <publishTime>04/23/2019 16:06:50</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Analytics.dll">
+      <publishTime>02/20/2018 11:31:13</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Analytics.Model.dll">
+      <publishTime>02/20/2018 11:31:13</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Analytics.MongoDB.dll">
+      <publishTime>02/28/2018 16:35:53</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Analytics.Outcome.dll">
+      <publishTime>02/20/2018 11:19:55</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Analytics.Processing.dll">
+      <publishTime>04/23/2019 16:06:50</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Analytics.Sql.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Buckets.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.CES.DeviceDetection.dll">
+      <publishTime>02/28/2018 16:35:54</publishTime>
+    </File>
+    <File Include="bin/Sitecore.CES.dll">
+      <publishTime>02/28/2018 16:35:54</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Client.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Cloud.Nexus.dll">
+      <publishTime>02/28/2018 16:35:54</publishTime>
+    </File>
+    <File Include="bin/Sitecore.ContentSearch.dll">
+      <publishTime>12/05/2016 12:58:54</publishTime>
+    </File>
+    <File Include="bin/Sitecore.ContentSearch.Linq.dll">
+      <publishTime>02/28/2018 16:35:54</publishTime>
+    </File>
+    <File Include="bin/Sitecore.ContentTesting.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.ContentTesting.Intelligence.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.ContentTesting.Model.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.ExperienceAnalytics.Aggregation.dll">
+      <publishTime>02/28/2018 16:35:55</publishTime>
+    </File>
+    <File Include="bin/Sitecore.ExperienceAnalytics.Core.dll">
+      <publishTime>02/28/2018 16:35:55</publishTime>
+    </File>
+    <File Include="bin/Sitecore.ExperienceEditor.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.ExperienceEditor.Speak.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.ExperienceEditor.Speak.Ribbon.dll">
+      <publishTime>02/28/2018 16:35:55</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Feature.Content.dll">
+      <publishTime>08/28/2020 15:26:57</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Feature.Content.dll.config">
+      <publishTime>08/28/2020 12:57:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Feature.Content.pdb">
+      <publishTime>08/28/2020 15:26:57</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Feature.Form.dll">
+      <publishTime>08/27/2020 09:51:31</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Feature.Form.dll.config">
+      <publishTime>01/10/2019 20:33:21</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Feature.Form.pdb">
+      <publishTime>08/27/2020 09:51:31</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Feature.Library.dll">
+      <publishTime>08/27/2020 12:34:36</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Feature.Library.dll.config">
+      <publishTime>01/10/2019 20:33:21</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Feature.Library.pdb">
+      <publishTime>08/27/2020 12:34:36</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Foundation.Alerts.dll">
+      <publishTime>08/27/2020 09:49:17</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Foundation.Alerts.dll.config">
+      <publishTime>01/10/2019 20:33:22</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Foundation.Alerts.pdb">
+      <publishTime>08/27/2020 09:49:17</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Foundation.DependencyInjection.dll">
+      <publishTime>08/27/2020 09:48:56</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Foundation.DependencyInjection.dll.config">
+      <publishTime>01/10/2019 20:33:22</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Foundation.DependencyInjection.pdb">
+      <publishTime>08/27/2020 09:48:56</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Foundation.Dictionary.dll">
+      <publishTime>08/27/2020 09:49:11</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Foundation.Dictionary.dll.config">
+      <publishTime>01/10/2019 20:33:22</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Foundation.Dictionary.pdb">
+      <publishTime>08/27/2020 09:49:11</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Foundation.Indexing.dll">
+      <publishTime>03/01/2018 09:14:40</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Foundation.Indexing.dll.config">
+      <publishTime>02/28/2018 10:33:50</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Foundation.Indexing.pdb">
+      <publishTime>02/28/2018 13:03:22</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Foundation.SitecoreExtensions.dll">
+      <publishTime>08/27/2020 09:49:03</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Foundation.SitecoreExtensions.dll.config">
+      <publishTime>01/10/2019 20:33:22</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Foundation.SitecoreExtensions.pdb">
+      <publishTime>08/27/2020 09:49:03</publishTime>
+    </File>
+    <File Include="bin/Sitecore.ItemWebApi.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Kernel.dll">
+      <publishTime>02/20/2018 11:31:12</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Logging.Client.dll">
+      <publishTime>02/28/2018 16:35:56</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Logging.dll">
+      <publishTime>02/20/2018 11:31:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Marketing.Core.dll">
+      <publishTime>04/23/2019 16:06:55</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Marketing.dll">
+      <publishTime>02/20/2018 11:31:13</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Marketing.Taxonomy.dll">
+      <publishTime>04/23/2019 16:06:56</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Mvc.Analytics.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Mvc.dll">
+      <publishTime>02/20/2018 11:31:08</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Mvc.ExperienceEditor.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.NVelocity.dll">
+      <publishTime>03/06/2020 20:20:24</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Services.Core.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Services.Infrastructure.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Speak.Applications.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Speak.Client.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Speak.ItemWebApi.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Web.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Feature.Taxonomy.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Foundation.Caching.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Foundation.Common.dll">
+      <publishTime>02/28/2018 16:43:44</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Foundation.Editing.dll">
+      <publishTime>02/28/2018 16:43:44</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Foundation.Geospatial.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Foundation.IoC.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Foundation.LocalDatasources.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Foundation.MarkupDecorator.dll">
+      <publishTime>02/28/2018 16:43:44</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Foundation.MediaRequestHandler.dll">
+      <publishTime>02/28/2018 16:43:44</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Foundation.Multisite.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Foundation.Mvc.dll">
+      <publishTime>02/28/2018 16:43:44</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Foundation.PlaceholderSettings.dll">
+      <publishTime>02/28/2018 16:43:44</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Foundation.Presentation.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Foundation.RenderingVariants.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Foundation.Scaffolding.dll">
+      <publishTime>02/28/2018 16:43:44</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Foundation.Search.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Foundation.SitecoreExtensions.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Foundation.Theming.dll">
+      <publishTime>02/28/2018 16:43:45</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Foundation.TokenResolution.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.XA.Foundation.Variants.Abstractions.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Xdb.Client.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Xdb.Configuration.dll">
+      <publishTime>04/23/2019 16:07:02</publishTime>
+    </File>
+    <File Include="bin/Sitecore.Zip.dll">
+      <publishTime>02/28/2018 16:35:59</publishTime>
+    </File>
+    <File Include="bin/Spatial4n.Core.dll">
+      <publishTime>08/27/2020 09:50:05</publishTime>
+    </File>
+    <File Include="bin/Stimulsoft.Base.dll">
+      <publishTime>03/18/2020 14:46:25</publishTime>
+    </File>
+    <File Include="bin/Stimulsoft.Report.dll">
+      <publishTime>03/18/2020 14:46:25</publishTime>
+    </File>
+    <File Include="bin/Stimulsoft.Report.Web.dll">
+      <publishTime>08/27/2020 09:50:06</publishTime>
+    </File>
+    <File Include="bin/Stimulsoft.Report.WebDesign.dll">
+      <publishTime>08/27/2020 09:50:06</publishTime>
+    </File>
+    <File Include="bin/System.Linq.Dynamic.dll">
+      <publishTime>10/15/2016 20:49:24</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>09/27/2018 14:57:09</publishTime>
+    </File>
+    <File Include="bin/System.Reflection.dll">
+      <publishTime>02/20/2018 11:31:12</publishTime>
+    </File>
+    <File Include="bin/System.Runtime.Extensions.dll">
+      <publishTime>03/18/2020 14:46:25</publishTime>
+    </File>
+    <File Include="bin/System.Web.Cors.dll">
+      <publishTime>09/27/2018 14:57:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>02/20/2018 11:31:01</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Cors.dll">
+      <publishTime>09/27/2018 14:57:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>09/27/2018 14:57:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>08/27/2020 09:50:06</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>02/20/2018 11:31:00</publishTime>
+    </File>
+    <File Include="bin/System.Web.OData.dll">
+      <publishTime>08/27/2020 09:50:06</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>02/20/2018 11:31:01</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>02/20/2018 11:31:01</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>02/20/2018 11:31:01</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>02/20/2018 11:31:01</publishTime>
+    </File>
+    <File Include="bin/Telerik.Web.UI.dll">
+      <publishTime>03/18/2020 14:46:25</publishTime>
+    </File>
+    <File Include="bin/Yahoo.Yui.Compressor.dll">
+      <publishTime>08/27/2020 09:50:06</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>08/28/2018 11:18:10</publishTime>
+    </File>
+    <File Include="Controller/PromotionController.cs">
+      <publishTime>05/23/2018 20:05:12</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>02/28/2018 12:00:07</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>08/28/2020 15:26:28</publishTime>
+    </File>
+    <File Include="Views/AboutUs/AwardsPageContent.cshtml">
+      <publishTime>07/24/2018 11:30:14</publishTime>
+    </File>
+    <File Include="Views/AboutUs/AwardsPaging.cshtml">
+      <publishTime>10/09/2018 16:40:26</publishTime>
+    </File>
+    <File Include="Views/AboutUs/CGTextContent.cshtml">
+      <publishTime>07/24/2018 11:30:56</publishTime>
+    </File>
+    <File Include="Views/AboutUs/CorporateCardItem.cshtml">
+      <publishTime>05/24/2019 14:27:31</publishTime>
+    </File>
+    <File Include="Views/AboutUs/CorporateProgramItem.cshtml">
+      <publishTime>09/28/2018 15:22:07</publishTime>
+    </File>
+    <File Include="Views/AboutUs/CorporateProgramList.cshtml">
+      <publishTime>09/10/2018 18:49:34</publishTime>
+    </File>
+    <File Include="Views/AboutUs/CorpResearchReportsItem.cshtml">
+      <publishTime>12/11/2018 21:56:26</publishTime>
+    </File>
+    <File Include="Views/AboutUs/CorpResearchReportsList.cshtml">
+      <publishTime>12/10/2018 11:55:01</publishTime>
+    </File>
+    <File Include="Views/AboutUs/CSREventArticleHighlight.cshtml">
+      <publishTime>12/05/2018 17:01:31</publishTime>
+    </File>
+    <File Include="Views/AboutUs/CSREventItem.cshtml">
+      <publishTime>12/05/2018 17:00:24</publishTime>
+    </File>
+    <File Include="Views/AboutUs/CSREventList.cshtml">
+      <publishTime>01/14/2019 16:43:19</publishTime>
+    </File>
+    <File Include="Views/AboutUs/CSRPageContent.cshtml">
+      <publishTime>07/23/2018 15:04:08</publishTime>
+    </File>
+    <File Include="Views/AboutUs/CSRProgramDetailContent.cshtml">
+      <publishTime>12/05/2018 18:48:24</publishTime>
+    </File>
+    <File Include="Views/AboutUs/EducationCardItem.cshtml">
+      <publishTime>07/23/2018 17:07:18</publishTime>
+    </File>
+    <File Include="Views/AboutUs/FinancialReportsItem.cshtml">
+      <publishTime>09/25/2018 18:48:32</publishTime>
+    </File>
+    <File Include="Views/AboutUs/FinancialReportsList.cshtml">
+      <publishTime>12/10/2018 11:55:12</publishTime>
+    </File>
+    <File Include="Views/AboutUs/InstitutionProfessionTextContent.cshtml">
+      <publishTime>09/28/2018 15:38:04</publishTime>
+    </File>
+    <File Include="Views/AboutUs/LatestSustainabilityReports.cshtml">
+      <publishTime>10/10/2018 16:35:59</publishTime>
+    </File>
+    <File Include="Views/AboutUs/LiterasiEdukasiProgram.cshtml">
+      <publishTime>09/28/2018 15:13:34</publishTime>
+    </File>
+    <File Include="Views/AboutUs/LiterasiEdukasiProgramList.cshtml">
+      <publishTime>09/15/2018 20:35:57</publishTime>
+    </File>
+    <File Include="Views/AboutUs/MaybankFoundationContent1.cshtml">
+      <publishTime>09/25/2018 12:11:10</publishTime>
+    </File>
+    <File Include="Views/AboutUs/MaybankFoundationContent2.cshtml">
+      <publishTime>09/25/2018 12:11:49</publishTime>
+    </File>
+    <File Include="Views/AboutUs/MaybankIndFoundationProgram.cshtml">
+      <publishTime>10/18/2018 16:34:29</publishTime>
+    </File>
+    <File Include="Views/AboutUs/MaybankIndFoundationProgramList.cshtml">
+      <publishTime>09/16/2018 15:22:08</publishTime>
+    </File>
+    <File Include="Views/AboutUs/MayFoundationContent.cshtml">
+      <publishTime>09/15/2018 20:35:57</publishTime>
+    </File>
+    <File Include="Views/AboutUs/PageContentBody1.cshtml">
+      <publishTime>09/15/2018 20:35:57</publishTime>
+    </File>
+    <File Include="Views/AboutUs/PageContentBody2.cshtml">
+      <publishTime>09/14/2018 00:52:08</publishTime>
+    </File>
+    <File Include="Views/AboutUs/PhotosGallery.cshtml">
+      <publishTime>07/26/2018 17:09:48</publishTime>
+    </File>
+    <File Include="Views/AboutUs/ReporsListItem.cshtml">
+      <publishTime>08/20/2018 11:23:13</publishTime>
+    </File>
+    <File Include="Views/AboutUs/ReportsList.cshtml">
+      <publishTime>09/25/2018 16:32:16</publishTime>
+    </File>
+    <File Include="Views/AboutUs/ReportsListItem.cshtml">
+      <publishTime>11/12/2018 18:25:52</publishTime>
+    </File>
+    <File Include="Views/AboutUs/RUPSItem.cshtml">
+      <publishTime>11/12/2018 18:05:14</publishTime>
+    </File>
+    <File Include="Views/AboutUs/RUPSList.cshtml">
+      <publishTime>09/25/2018 15:31:17</publishTime>
+    </File>
+    <File Include="Views/AboutUs/StructureApplyTabs.cshtml">
+      <publishTime>05/07/2019 14:55:40</publishTime>
+    </File>
+    <File Include="Views/AboutUs/StructurePageContent.cshtml">
+      <publishTime>11/22/2018 11:16:58</publishTime>
+    </File>
+    <File Include="Views/AboutUs/SustainibilityReportList.cshtml">
+      <publishTime>10/02/2018 13:33:12</publishTime>
+    </File>
+    <File Include="Views/AboutUs/YearlyReportsList.cshtml">
+      <publishTime>09/25/2018 19:00:30</publishTime>
+    </File>
+    <File Include="Views/AboutUs/_CorporatePorgramListItem.cshtml">
+      <publishTime>12/04/2019 15:33:25</publishTime>
+    </File>
+    <File Include="Views/AboutUs/_LiterasiEdukasiItem.cshtml">
+      <publishTime>10/18/2018 17:04:54</publishTime>
+    </File>
+    <File Include="Views/AboutUs/_MaybankIndFoundationProgramListItem.cshtml">
+      <publishTime>10/18/2018 15:49:18</publishTime>
+    </File>
+    <File Include="Views/AboutUs/_SustainibilityReportItem.cshtml">
+      <publishTime>10/02/2018 13:37:48</publishTime>
+    </File>
+    <File Include="Views/AboutUs/_YearlyReportsItem.cshtml">
+      <publishTime>10/18/2018 17:05:42</publishTime>
+    </File>
+    <File Include="Views/Article/Article.cshtml">
+      <publishTime>08/06/2018 17:49:50</publishTime>
+    </File>
+    <File Include="Views/Article/ArticleBusinessList.cshtml">
+      <publishTime>08/25/2018 13:35:20</publishTime>
+    </File>
+    <File Include="Views/Article/ArticleDetail.cshtml">
+      <publishTime>08/01/2018 15:56:28</publishTime>
+    </File>
+    <File Include="Views/Article/ArticleHeading.cshtml">
+      <publishTime>11/07/2018 17:24:00</publishTime>
+    </File>
+    <File Include="Views/Article/ArticleHighlightsList.cshtml">
+      <publishTime>12/13/2018 16:07:52</publishTime>
+    </File>
+    <File Include="Views/Article/ArticleList.cshtml">
+      <publishTime>12/13/2018 16:20:02</publishTime>
+    </File>
+    <File Include="Views/Article/ArticleProductDetail.cshtml">
+      <publishTime>03/15/2018 17:21:52</publishTime>
+    </File>
+    <File Include="Views/Article/ArticlePWHighlight/ArticlePWHighlightsList.cshtml">
+      <publishTime>06/29/2018 15:14:32</publishTime>
+    </File>
+    <File Include="Views/Article/ArticlePWHighlight/_ArticlePWHighlightsItem.cshtml">
+      <publishTime>06/29/2018 15:14:25</publishTime>
+    </File>
+    <File Include="Views/Article/ArticleSyariah.cshtml">
+      <publishTime>07/03/2018 18:22:17</publishTime>
+    </File>
+    <File Include="Views/Article/BottomRedirectLink.cshtml">
+      <publishTime>03/02/2018 18:05:14</publishTime>
+    </File>
+    <File Include="Views/Article/ContentCustomerEducation.cshtml">
+      <publishTime>04/23/2018 10:18:38</publishTime>
+    </File>
+    <File Include="Views/Article/DestinationReviewTipsList.cshtml">
+      <publishTime>01/11/2019 18:06:40</publishTime>
+    </File>
+    <File Include="Views/Article/ImageCustomerEducation.cshtml">
+      <publishTime>04/23/2018 10:18:38</publishTime>
+    </File>
+    <File Include="Views/Article/LatestArticle.cshtml">
+      <publishTime>12/17/2018 20:15:09</publishTime>
+    </File>
+    <File Include="Views/Article/PremierWealthLatestArticle.cshtml">
+      <publishTime>08/29/2018 15:34:02</publishTime>
+    </File>
+    <File Include="Views/Article/StickyArticle.cshtml">
+      <publishTime>12/18/2018 09:49:17</publishTime>
+    </File>
+    <File Include="Views/Article/SyariahProgramDetail.cshtml">
+      <publishTime>09/15/2018 20:08:26</publishTime>
+    </File>
+    <File Include="Views/Article/SyariahProgramDetailGray.cshtml">
+      <publishTime>09/15/2018 20:08:26</publishTime>
+    </File>
+    <File Include="Views/Article/Test.cshtml">
+      <publishTime>07/02/2018 11:46:48</publishTime>
+    </File>
+    <File Include="Views/Article/TitleCustomerEducation.cshtml">
+      <publishTime>04/23/2018 10:18:38</publishTime>
+    </File>
+    <File Include="Views/Article/_ArticleBusinessItem.cshtml">
+      <publishTime>05/08/2020 16:35:11</publishTime>
+    </File>
+    <File Include="Views/Article/_ArticleHighlightsItem.cshtml">
+      <publishTime>05/12/2020 17:40:22</publishTime>
+    </File>
+    <File Include="Views/Article/_ArticleItem.cshtml">
+      <publishTime>05/17/2019 15:23:07</publishTime>
+    </File>
+    <File Include="Views/Article/_DestinationReviewItem.cshtml">
+      <publishTime>12/05/2018 16:11:17</publishTime>
+    </File>
+    <File Include="Views/ArticlePW/ArticleHighlightsList.cshtml">
+      <publishTime>07/02/2018 11:46:15</publishTime>
+    </File>
+    <File Include="Views/ArticlePWHighlight/ArticlePWHighlightsList.cshtml">
+      <publishTime>07/02/2018 11:29:02</publishTime>
+    </File>
+    <File Include="Views/ArticlePWHighlight/_ArticlePWHighlightsItem.cshtml">
+      <publishTime>06/29/2018 15:14:25</publishTime>
+    </File>
+    <File Include="Views/Banner/BannerImage.cshtml">
+      <publishTime>02/28/2018 10:14:36</publishTime>
+    </File>
+    <File Include="Views/Banner/BannerWithJobSearch.cshtml">
+      <publishTime>07/19/2018 14:49:48</publishTime>
+    </File>
+    <File Include="Views/Banner/CalculateBannerImage.cshtml">
+      <publishTime>11/21/2018 17:52:30</publishTime>
+    </File>
+    <File Include="Views/Banner/ContentBannerImage-bak.cshtml">
+      <publishTime>07/05/2018 12:38:36</publishTime>
+    </File>
+    <File Include="Views/Banner/ContentBannerImage.cshtml">
+      <publishTime>11/21/2018 17:53:13</publishTime>
+    </File>
+    <File Include="Views/Banner/FooterPageBanner.cshtml">
+      <publishTime>11/21/2018 17:54:00</publishTime>
+    </File>
+    <File Include="Views/Banner/LeftHeroBanner.cshtml">
+      <publishTime>10/05/2018 17:08:47</publishTime>
+    </File>
+    <File Include="Views/Banner/LeftHeroBannerDynamic.cshtml">
+      <publishTime>04/24/2018 15:30:31</publishTime>
+    </File>
+    <File Include="Views/Banner/LoginTo.cshtml">
+      <publishTime>12/04/2019 15:33:25</publishTime>
+    </File>
+    <File Include="Views/Banner/MBMBannerClear.cshtml">
+      <publishTime>01/10/2019 20:33:21</publishTime>
+    </File>
+    <File Include="Views/Banner/MBMBannerOnPage.cshtml">
+      <publishTime>01/14/2019 15:16:41</publishTime>
+    </File>
+    <File Include="Views/Banner/MBMHomeBanner.cshtml">
+      <publishTime>01/10/2019 20:33:21</publishTime>
+    </File>
+    <File Include="Views/Banner/MBMHomeBannerContent.cshtml">
+      <publishTime>02/20/2019 09:58:45</publishTime>
+    </File>
+    <File Include="Views/Banner/MBMHomeBannerSublayout.cshtml">
+      <publishTime>01/21/2019 12:35:02</publishTime>
+    </File>
+    <File Include="Views/Banner/MBMPageBanner.cshtml">
+      <publishTime>02/12/2019 12:39:03</publishTime>
+    </File>
+    <File Include="Views/Banner/MBMPageBannerTextBlack.cshtml">
+      <publishTime>01/10/2019 20:33:21</publishTime>
+    </File>
+    <File Include="Views/Banner/MBMVideoBanner.cshtml">
+      <publishTime>08/07/2019 17:13:51</publishTime>
+    </File>
+    <File Include="Views/Banner/MBMVideoBannerContent.cshtml">
+      <publishTime>08/07/2019 17:13:51</publishTime>
+    </File>
+    <File Include="Views/Banner/PageBanner.cshtml">
+      <publishTime>03/15/2018 11:16:40</publishTime>
+    </File>
+    <File Include="Views/Banner/PageBannerCreditCard.cshtml">
+      <publishTime>11/21/2018 17:54:23</publishTime>
+    </File>
+    <File Include="Views/Banner/PageBodyBannerImage.cshtml">
+      <publishTime>09/16/2018 10:55:30</publishTime>
+    </File>
+    <File Include="Views/Banner/PageBodyBannerWithIcon.cshtml">
+      <publishTime>05/24/2019 15:00:56</publishTime>
+    </File>
+    <File Include="Views/Banner/TopBannerImage.cshtml">
+      <publishTime>09/24/2018 19:44:46</publishTime>
+    </File>
+    <File Include="Views/Banner/TopBannerImageDownloadButton.cshtml">
+      <publishTime>11/21/2018 17:55:58</publishTime>
+    </File>
+    <File Include="Views/Banner/TopBannerImagePremierWealth.cshtml">
+      <publishTime>11/21/2018 17:56:41</publishTime>
+    </File>
+    <File Include="Views/Banner/TopBannerSetImage.cshtml">
+      <publishTime>11/21/2018 18:16:29</publishTime>
+    </File>
+    <File Include="Views/Banner/TopCompareCards.cshtml">
+      <publishTime>04/19/2018 11:54:31</publishTime>
+    </File>
+    <File Include="Views/Banner/TopHeroBanner.cshtml">
+      <publishTime>03/07/2018 17:28:32</publishTime>
+    </File>
+    <File Include="Views/Banner/TopInterestRate.cshtml">
+      <publishTime>10/09/2018 19:42:12</publishTime>
+    </File>
+    <File Include="Views/Banner/TopNavBack.cshtml">
+      <publishTime>09/16/2018 18:30:36</publishTime>
+    </File>
+    <File Include="Views/Banner/TopNavBackBusiness.cshtml">
+      <publishTime>10/07/2018 15:57:44</publishTime>
+    </File>
+    <File Include="Views/Banner/TopNavCardFeature.cshtml">
+      <publishTime>11/22/2018 11:14:07</publishTime>
+    </File>
+    <File Include="Views/Banner/TopSyariah.cshtml">
+      <publishTime>05/08/2020 16:35:11</publishTime>
+    </File>
+    <File Include="Views/BOD/BannerBOD.cshtml">
+      <publishTime>11/21/2018 18:21:03</publishTime>
+    </File>
+    <File Include="Views/BOD/BannerListBOD.cshtml">
+      <publishTime>11/21/2018 18:45:48</publishTime>
+    </File>
+    <File Include="Views/BOD/BODDetails.cshtml">
+      <publishTime>08/06/2018 14:41:58</publishTime>
+    </File>
+    <File Include="Views/BOD/BODHeaderDetails.cshtml">
+      <publishTime>09/02/2018 16:05:15</publishTime>
+    </File>
+    <File Include="Views/Content/2ColumnRichTextContent.cshtml">
+      <publishTime>07/19/2018 10:22:58</publishTime>
+    </File>
+    <File Include="Views/Content/AccordionSection.cshtml">
+      <publishTime>10/31/2018 20:19:15</publishTime>
+    </File>
+    <File Include="Views/Content/AnchorLink.cshtml">
+      <publishTime>10/23/2018 11:53:25</publishTime>
+    </File>
+    <File Include="Views/Content/Benefit.cshtml">
+      <publishTime>11/07/2018 17:24:16</publishTime>
+    </File>
+    <File Include="Views/Content/Benefit3Column.cshtml">
+      <publishTime>11/07/2018 17:24:42</publishTime>
+    </File>
+    <File Include="Views/Content/BenefitBusiness.cshtml">
+      <publishTime>11/07/2018 17:24:52</publishTime>
+    </File>
+    <File Include="Views/Content/BenefitRichText.cshtml">
+      <publishTime>11/07/2018 17:25:01</publishTime>
+    </File>
+    <File Include="Views/Content/BlankRichText.cshtml">
+      <publishTime>09/15/2018 20:08:26</publishTime>
+    </File>
+    <File Include="Views/Content/BlogDetailContent.cshtml">
+      <publishTime>01/10/2019 20:33:21</publishTime>
+    </File>
+    <File Include="Views/Content/Branch Locator.cshtml">
+      <publishTime>08/07/2018 14:17:28</publishTime>
+    </File>
+    <File Include="Views/Content/CardFeatureText.cshtml">
+      <publishTime>11/21/2018 18:41:38</publishTime>
+    </File>
+    <File Include="Views/Content/CardInfo.cshtml">
+      <publishTime>10/24/2018 13:55:56</publishTime>
+    </File>
+    <File Include="Views/Content/CareerProgramContent.cshtml">
+      <publishTime>07/20/2018 18:00:38</publishTime>
+    </File>
+    <File Include="Views/Content/CreditCardInformation.cshtml">
+      <publishTime>11/22/2018 11:11:47</publishTime>
+    </File>
+    <File Include="Views/Content/DescriptionWithNote.cshtml">
+      <publishTime>03/14/2018 12:12:52</publishTime>
+    </File>
+    <File Include="Views/Content/DialogBoxContactUs.cshtml">
+      <publishTime>09/28/2018 17:06:58</publishTime>
+    </File>
+    <File Include="Views/Content/DownloadableContent.cshtml">
+      <publishTime>11/21/2018 18:48:19</publishTime>
+    </File>
+    <File Include="Views/Content/EBankingGeneralFeatures.cshtml">
+      <publishTime>04/27/2018 16:01:48</publishTime>
+    </File>
+    <File Include="Views/Content/ExternalLinkItem.cshtml">
+      <publishTime>11/21/2018 18:49:45</publishTime>
+    </File>
+    <File Include="Views/Content/FeatureRichTextContent.cshtml">
+      <publishTime>10/11/2018 18:49:16</publishTime>
+    </File>
+    <File Include="Views/Content/FeatureStandardContent.cshtml">
+      <publishTime>11/08/2018 12:34:39</publishTime>
+    </File>
+    <File Include="Views/Content/FeatureStandardContent2.cshtml">
+      <publishTime>11/08/2018 12:34:34</publishTime>
+    </File>
+    <File Include="Views/Content/FreeTextContent.cshtml">
+      <publishTime>07/20/2018 18:00:38</publishTime>
+    </File>
+    <File Include="Views/Content/FunFactBoxSyariah.cshtml">
+      <publishTime>06/26/2018 18:14:17</publishTime>
+    </File>
+    <File Include="Views/Content/GeneralFeatures.cshtml">
+      <publishTime>10/19/2018 11:28:37</publishTime>
+    </File>
+    <File Include="Views/Content/GiroCard.cshtml">
+      <publishTime>05/17/2019 14:05:36</publishTime>
+    </File>
+    <File Include="Views/Content/GrayPageFeatures.cshtml">
+      <publishTime>11/21/2018 18:57:32</publishTime>
+    </File>
+    <File Include="Views/Content/HeadingTitle.cshtml">
+      <publishTime>03/15/2018 15:36:34</publishTime>
+    </File>
+    <File Include="Views/Content/HeroFeatures.cshtml">
+      <publishTime>11/21/2018 19:08:29</publishTime>
+    </File>
+    <File Include="Views/Content/HtmlContent.cshtml">
+      <publishTime>05/22/2018 14:45:19</publishTime>
+    </File>
+    <File Include="Views/Content/Image Description.cshtml">
+      <publishTime>03/14/2018 12:13:30</publishTime>
+    </File>
+    <File Include="Views/Content/ImageAndDescription.cshtml">
+      <publishTime>03/06/2018 17:34:03</publishTime>
+    </File>
+    <File Include="Views/Content/ImageDescription.cshtml">
+      <publishTime>03/06/2018 17:37:53</publishTime>
+    </File>
+    <File Include="Views/Content/InfiniteBenefitContent.cshtml">
+      <publishTime>04/11/2018 12:39:05</publishTime>
+    </File>
+    <File Include="Views/Content/Investment.cshtml">
+      <publishTime>11/21/2018 19:09:35</publishTime>
+    </File>
+    <File Include="Views/Content/ItemAddOn.cshtml">
+      <publishTime>03/23/2018 15:05:06</publishTime>
+    </File>
+    <File Include="Views/Content/ItemCreditCardCompare.cshtml">
+      <publishTime>08/27/2020 09:47:29</publishTime>
+    </File>
+    <File Include="Views/Content/LatestGiroCard.cshtml">
+      <publishTime>09/27/2018 14:55:35</publishTime>
+    </File>
+    <File Include="Views/Content/ListCardSummaryItem.cshtml">
+      <publishTime>10/07/2018 15:57:44</publishTime>
+    </File>
+    <File Include="Views/Content/ListCareer.cshtml">
+      <publishTime>08/24/2018 17:03:03</publishTime>
+    </File>
+    <File Include="Views/Content/ListLounge.cshtml">
+      <publishTime>10/07/2018 15:57:44</publishTime>
+    </File>
+    <File Include="Views/Content/ListOffer.cshtml">
+      <publishTime>09/14/2018 17:27:06</publishTime>
+    </File>
+    <File Include="Views/Content/LoanDetailsKPM.cshtml">
+      <publishTime>01/09/2019 10:03:53</publishTime>
+    </File>
+    <File Include="Views/Content/LoanDetailsKPR.cshtml">
+      <publishTime>01/09/2019 10:04:21</publishTime>
+    </File>
+    <File Include="Views/Content/LoanDetailsKTA.cshtml">
+      <publishTime>01/08/2019 11:23:48</publishTime>
+    </File>
+    <File Include="Views/Content/LoanDetailsMultiguna.cshtml">
+      <publishTime>01/09/2019 10:04:28</publishTime>
+    </File>
+    <File Include="Views/Content/M2UApp.cshtml">
+      <publishTime>12/12/2018 13:31:43</publishTime>
+    </File>
+    <File Include="Views/Content/MaybankWhiteCardText.cshtml">
+      <publishTime>11/22/2018 11:03:16</publishTime>
+    </File>
+    <File Include="Views/Content/MBMBusPickUpPoint.cshtml">
+      <publishTime>02/27/2019 18:43:25</publishTime>
+    </File>
+    <File Include="Views/Content/MBMContentGallery.cshtml">
+      <publishTime>01/10/2019 20:33:21</publishTime>
+    </File>
+    <File Include="Views/Content/MBMContentRegistration.cshtml">
+      <publishTime>01/16/2019 10:30:26</publishTime>
+    </File>
+    <File Include="Views/Content/MBMFoodSitePartial.cshtml">
+      <publishTime>02/04/2019 09:07:50</publishTime>
+    </File>
+    <File Include="Views/Content/MBMGalleryDetail.cshtml">
+      <publishTime>01/10/2019 20:33:21</publishTime>
+    </File>
+    <File Include="Views/Content/MBMGalleryDetailPartial.cshtml">
+      <publishTime>01/10/2019 20:33:21</publishTime>
+    </File>
+    <File Include="Views/Content/MBMHeroFeature.cshtml">
+      <publishTime>02/16/2019 09:42:30</publishTime>
+    </File>
+    <File Include="Views/Content/MBMLeftOrRightPartial.cshtml">
+      <publishTime>01/30/2019 14:39:56</publishTime>
+    </File>
+    <File Include="Views/Content/MBMMobileApp.cshtml">
+      <publishTime>02/12/2019 12:39:03</publishTime>
+    </File>
+    <File Include="Views/Content/MBMPanelArticle.cshtml">
+      <publishTime>02/01/2019 19:23:33</publishTime>
+    </File>
+    <File Include="Views/Content/MBMPanelArticleBlack.cshtml">
+      <publishTime>02/12/2019 12:39:03</publishTime>
+    </File>
+    <File Include="Views/Content/MBMPanelArticleLeftImage.cshtml">
+      <publishTime>01/17/2019 10:53:37</publishTime>
+    </File>
+    <File Include="Views/Content/MBMPanelArticleRightImage.cshtml">
+      <publishTime>01/30/2019 14:39:56</publishTime>
+    </File>
+    <File Include="Views/Content/MBMPanelArticleWithButton.cshtml">
+      <publishTime>01/30/2019 14:39:56</publishTime>
+    </File>
+    <File Include="Views/Content/MBMPanelLeftOrRight.cshtml">
+      <publishTime>02/04/2019 09:07:50</publishTime>
+    </File>
+    <File Include="Views/Content/MBMPanelWithMap.cshtml">
+      <publishTime>02/15/2019 20:52:48</publishTime>
+    </File>
+    <File Include="Views/Content/MBMPanelWithStickyButton.cshtml">
+      <publishTime>01/31/2019 17:51:06</publishTime>
+    </File>
+    <File Include="Views/Content/MBMPanelWYSIWYG.cshtml">
+      <publishTime>01/18/2019 09:20:57</publishTime>
+    </File>
+    <File Include="Views/Content/MBMParticipantList.cshtml">
+      <publishTime>01/10/2019 20:33:21</publishTime>
+    </File>
+    <File Include="Views/Content/MBMPopUpButton.cshtml">
+      <publishTime>01/30/2019 14:39:56</publishTime>
+    </File>
+    <File Include="Views/Content/MBMRaceDayVideoContent.cshtml">
+      <publishTime>08/07/2019 17:13:51</publishTime>
+    </File>
+    <File Include="Views/Content/MBMRacePackEssential.cshtml">
+      <publishTime>02/04/2019 09:07:50</publishTime>
+    </File>
+    <File Include="Views/Content/MBMRegistrationCardContent.cshtml">
+      <publishTime>01/30/2019 14:39:56</publishTime>
+    </File>
+    <File Include="Views/Content/MBMRegistrationCardGroup.cshtml">
+      <publishTime>01/18/2019 09:20:57</publishTime>
+    </File>
+    <File Include="Views/Content/MBMRichTextAndPopUp.cshtml">
+      <publishTime>02/01/2019 19:23:33</publishTime>
+    </File>
+    <File Include="Views/Content/MBMSponsorMain.cshtml">
+      <publishTime>01/30/2019 14:39:56</publishTime>
+    </File>
+    <File Include="Views/Content/MBMSponsorPartial.cshtml">
+      <publishTime>02/14/2019 19:51:49</publishTime>
+    </File>
+    <File Include="Views/Content/MBMSponsorSubheader.cshtml">
+      <publishTime>01/30/2019 14:39:56</publishTime>
+    </File>
+    <File Include="Views/Content/MBMSponsorSublayout.cshtml">
+      <publishTime>02/04/2019 09:07:50</publishTime>
+    </File>
+    <File Include="Views/Content/MBMVerticalTabWithImageCard.cshtml">
+      <publishTime>01/10/2019 20:33:21</publishTime>
+    </File>
+    <File Include="Views/Content/MinimumIncomeLabel.cshtml">
+      <publishTime>05/21/2018 17:31:44</publishTime>
+    </File>
+    <File Include="Views/Content/NilaiPerusahaan.cshtml">
+      <publishTime>08/02/2018 11:24:46</publishTime>
+    </File>
+    <File Include="Views/Content/Offer.cshtml">
+      <publishTime>11/22/2018 10:18:30</publishTime>
+    </File>
+    <File Include="Views/Content/OneRowContent.cshtml">
+      <publishTime>07/20/2018 18:00:38</publishTime>
+    </File>
+    <File Include="Views/Content/OtherInformation.cshtml">
+      <publishTime>11/22/2018 10:19:11</publishTime>
+    </File>
+    <File Include="Views/Content/OurPartnerLogo.cshtml">
+      <publishTime>07/19/2018 10:22:58</publishTime>
+    </File>
+    <File Include="Views/Content/OurPartnerLogoScrollable.cshtml">
+      <publishTime>11/22/2018 10:34:51</publishTime>
+    </File>
+    <File Include="Views/Content/PageFeatures.cshtml">
+      <publishTime>07/23/2018 17:37:52</publishTime>
+    </File>
+    <File Include="Views/Content/PaymentMethod.cshtml">
+      <publishTime>11/22/2018 10:55:50</publishTime>
+    </File>
+    <File Include="Views/Content/Persyaratan.cshtml">
+      <publishTime>11/08/2018 10:40:13</publishTime>
+    </File>
+    <File Include="Views/Content/PersyaratanLoanKTA.cshtml">
+      <publishTime>11/08/2018 10:39:30</publishTime>
+    </File>
+    <File Include="Views/Content/PopulateBusinessDetailPage.cshtml">
+      <publishTime>07/23/2018 17:37:52</publishTime>
+    </File>
+    <File Include="Views/Content/PopUpModal.cshtml">
+      <publishTime>11/22/2018 19:48:01</publishTime>
+    </File>
+    <File Include="Views/Content/ProductDetailContent.cshtml">
+      <publishTime>09/18/2018 12:02:33</publishTime>
+    </File>
+    <File Include="Views/Content/ProductDetailSyariah.cshtml">
+      <publishTime>06/26/2018 18:14:17</publishTime>
+    </File>
+    <File Include="Views/Content/PromotionFooterContent.cshtml">
+      <publishTime>11/08/2018 12:25:00</publishTime>
+    </File>
+    <File Include="Views/Content/PromotionsList.cshtml">
+      <publishTime>03/07/2018 16:47:08</publishTime>
+    </File>
+    <File Include="Views/Content/PromotionTopContent.cshtml">
+      <publishTime>11/08/2018 12:08:55</publishTime>
+    </File>
+    <File Include="Views/Content/RelatedProduct.cshtml">
+      <publishTime>10/07/2018 15:57:44</publishTime>
+    </File>
+    <File Include="Views/Content/RepoTest.cshtml">
+      <publishTime>01/10/2019 20:33:21</publishTime>
+    </File>
+    <File Include="Views/Content/ResultCompareCC.cshtml">
+      <publishTime>11/02/2018 18:57:56</publishTime>
+    </File>
+    <File Include="Views/Content/ResultFunnelCC.cshtml">
+      <publishTime>10/19/2018 17:28:30</publishTime>
+    </File>
+    <File Include="Views/Content/RichTextContent.cshtml">
+      <publishTime>08/29/2018 19:30:26</publishTime>
+    </File>
+    <File Include="Views/Content/RichTextTitleWithTable.cshtml">
+      <publishTime>07/23/2018 17:37:52</publishTime>
+    </File>
+    <File Include="Views/Content/SavingSolution.cshtml">
+      <publishTime>09/14/2018 17:27:06</publishTime>
+    </File>
+    <File Include="Views/Content/SBDKContentText.cshtml">
+      <publishTime>06/12/2018 16:16:29</publishTime>
+    </File>
+    <File Include="Views/Content/SideTabsContent.cshtml">
+      <publishTime>03/06/2019 17:45:44</publishTime>
+    </File>
+    <File Include="Views/Content/SimpleCard.cshtml">
+      <publishTime>09/26/2018 19:05:17</publishTime>
+    </File>
+    <File Include="Views/Content/SitemapPageContent.cshtml">
+      <publishTime>11/12/2018 18:30:47</publishTime>
+    </File>
+    <File Include="Views/Content/SolutionDetailsPremierWealth.cshtml">
+      <publishTime>11/22/2018 10:54:27</publishTime>
+    </File>
+    <File Include="Views/Content/SolutionForYouBusiness.cshtml">
+      <publishTime>10/07/2018 15:57:44</publishTime>
+    </File>
+    <File Include="Views/Content/SolutionForYouPremierWealth.cshtml">
+      <publishTime>10/07/2018 15:57:44</publishTime>
+    </File>
+    <File Include="Views/Content/SponsorView.cshtml">
+      <publishTime>01/10/2019 20:33:21</publishTime>
+    </File>
+    <File Include="Views/Content/StickyImage.cshtml">
+      <publishTime>02/16/2019 09:42:30</publishTime>
+    </File>
+    <File Include="Views/Content/TabsOnly.cshtml">
+      <publishTime>03/06/2019 17:18:52</publishTime>
+    </File>
+    <File Include="Views/Content/TravelGeneralFeature.cshtml">
+      <publishTime>11/22/2018 10:57:57</publishTime>
+    </File>
+    <File Include="Views/Content/TreatsPointInfo.cshtml">
+      <publishTime>09/14/2018 11:38:52</publishTime>
+    </File>
+    <File Include="Views/Content/Vision.cshtml">
+      <publishTime>11/22/2018 10:50:08</publishTime>
+    </File>
+    <File Include="Views/Content/_sponsorList.cshtml">
+      <publishTime>01/10/2019 20:33:21</publishTime>
+    </File>
+    <File Include="Views/Content/_TabsOnlyContent.cshtml">
+      <publishTime>08/28/2018 11:18:10</publishTime>
+    </File>
+    <File Include="Views/FAQ/FAQ.cshtml">
+      <publishTime>02/01/2019 17:15:49</publishTime>
+    </File>
+    <File Include="Views/FAQ/FAQDetails.cshtml">
+      <publishTime>03/06/2019 17:04:32</publishTime>
+    </File>
+    <File Include="Views/FAQ/FAQSearchResult.cshtml">
+      <publishTime>01/31/2019 16:09:00</publishTime>
+    </File>
+    <File Include="Views/FAQ/MostAskedQuestion.cshtml">
+      <publishTime>08/05/2018 11:39:44</publishTime>
+    </File>
+    <File Include="Views/FAQ/_FAQBannerWithSearch.cshtml">
+      <publishTime>06/18/2019 09:38:43</publishTime>
+    </File>
+    <File Include="Views/FAQ/_FAQListPaging.cshtml">
+      <publishTime>03/15/2019 17:46:32</publishTime>
+    </File>
+    <File Include="Views/MaybankBlog/BlogComment.cshtml">
+      <publishTime>08/27/2020 09:47:29</publishTime>
+    </File>
+    <File Include="Views/MaybankBlog/MaybankBlogList.cshtml">
+      <publishTime>04/08/2019 12:32:45</publishTime>
+    </File>
+    <File Include="Views/MaybankBlog/_ItemMaybankBlog.cshtml">
+      <publishTime>04/11/2019 16:03:35</publishTime>
+    </File>
+    <File Include="Views/MBM/BlogStash.cshtml">
+      <publishTime>01/14/2019 15:16:41</publishTime>
+    </File>
+    <File Include="Views/MBM/BlogStashItem.cshtml">
+      <publishTime>01/30/2019 14:39:56</publishTime>
+    </File>
+    <File Include="Views/MBM/content-mbm-blog.cshtml">
+      <publishTime>01/15/2019 18:56:57</publishTime>
+    </File>
+    <File Include="Views/MBM/ImageStashItem.cshtml">
+      <publishTime>01/15/2019 18:56:57</publishTime>
+    </File>
+    <File Include="Views/MBM/MBMArticleStash.cshtml">
+      <publishTime>02/01/2019 19:23:33</publishTime>
+    </File>
+    <File Include="Views/MBM/MBMArticleStashItem.cshtml">
+      <publishTime>03/11/2019 17:03:51</publishTime>
+    </File>
+    <File Include="Views/MBM/MBMEventGallery.cshtml">
+      <publishTime>02/04/2019 09:07:50</publishTime>
+    </File>
+    <File Include="Views/MBM/MBMImageStash.cshtml">
+      <publishTime>05/08/2020 16:35:11</publishTime>
+    </File>
+    <File Include="Views/MBM/MBMLatestArticle.cshtml">
+      <publishTime>03/11/2019 17:03:51</publishTime>
+    </File>
+    <File Include="Views/MBM/MBMLatestImagePerYear.cshtml">
+      <publishTime>01/30/2019 14:39:56</publishTime>
+    </File>
+    <File Include="Views/MBM/MBMRaceResultSublayout.cshtml">
+      <publishTime>01/24/2019 13:11:19</publishTime>
+    </File>
+    <File Include="Views/MBM/PromoStash.cshtml">
+      <publishTime>01/30/2019 14:39:56</publishTime>
+    </File>
+    <File Include="Views/MBM/PromoStashItem.cshtml">
+      <publishTime>01/30/2019 14:39:56</publishTime>
+    </File>
+    <File Include="Views/MBMGallery/LatestPhotos.cshtml">
+      <publishTime>01/07/2019 18:07:18</publishTime>
+    </File>
+    <File Include="Views/NewsAnnouncement/ArticleList2.cshtml">
+      <publishTime>06/20/2018 06:21:36</publishTime>
+    </File>
+    <File Include="Views/NewsAnnouncement/CustomerEducationList.cshtml">
+      <publishTime>05/18/2018 18:14:08</publishTime>
+    </File>
+    <File Include="Views/NewsAnnouncement/LatestArticle.cshtml">
+      <publishTime>08/14/2018 11:31:07</publishTime>
+    </File>
+    <File Include="Views/NewsAnnouncement/LatestNewsCorporate.cshtml">
+      <publishTime>12/17/2018 15:16:43</publishTime>
+    </File>
+    <File Include="Views/NewsAnnouncement/NewsAnnouncement.cshtml">
+      <publishTime>11/21/2018 14:04:26</publishTime>
+    </File>
+    <File Include="Views/NewsAnnouncement/NewsDetail.cshtml">
+      <publishTime>08/01/2018 15:09:03</publishTime>
+    </File>
+    <File Include="Views/NewsAnnouncement/NewsList.cshtml">
+      <publishTime>07/11/2018 12:06:50</publishTime>
+    </File>
+    <File Include="Views/NewsAnnouncement/_ArticleItem2.cshtml">
+      <publishTime>06/20/2018 06:23:45</publishTime>
+    </File>
+    <File Include="Views/NewsAnnouncement/_CustomerEducationListItem.cshtml">
+      <publishTime>09/22/2018 22:17:58</publishTime>
+    </File>
+    <File Include="Views/NewsAnnouncement/_NewsListItem.cshtml">
+      <publishTime>10/17/2018 15:13:59</publishTime>
+    </File>
+    <File Include="Views/Pagination/_MBMPagination.cshtml">
+      <publishTime>01/10/2019 20:33:21</publishTime>
+    </File>
+    <File Include="Views/Pagination/_Pagination.cshtml">
+      <publishTime>03/18/2020 13:02:13</publishTime>
+    </File>
+    <File Include="Views/Pagination/_PaginationListString.cshtml">
+      <publishTime>08/16/2018 21:05:51</publishTime>
+    </File>
+    <File Include="Views/Pagination/_SimplePagination.cshtml">
+      <publishTime>01/10/2019 20:33:21</publishTime>
+    </File>
+    <File Include="Views/Popup/e-statement.cshtml">
+      <publishTime>05/08/2020 16:35:11</publishTime>
+    </File>
+    <File Include="Views/Popup/modal-leave-site.cshtml">
+      <publishTime>08/03/2018 17:51:24</publishTime>
+    </File>
+    <File Include="Views/Promotion/360TravelProductList.cshtml">
+      <publishTime>05/08/2020 16:30:45</publishTime>
+    </File>
+    <File Include="Views/Promotion/BeautifulIndonesia.cshtml">
+      <publishTime>05/08/2020 16:35:11</publishTime>
+    </File>
+    <File Include="Views/Promotion/BelanjaOnline.cshtml">
+      <publishTime>10/15/2018 17:52:48</publishTime>
+    </File>
+    <File Include="Views/Promotion/DiningPrivileges.cshtml">
+      <publishTime>05/08/2020 16:35:11</publishTime>
+    </File>
+    <File Include="Views/Promotion/LatestPromotion.cshtml">
+      <publishTime>05/08/2020 16:30:45</publishTime>
+    </File>
+    <File Include="Views/Promotion/Lifestyle.cshtml">
+      <publishTime>05/08/2020 16:35:11</publishTime>
+    </File>
+    <File Include="Views/Promotion/LifestyleListItem.cshtml">
+      <publishTime>05/08/2020 16:35:11</publishTime>
+    </File>
+    <File Include="Views/Promotion/LifestyleProductList.cshtml">
+      <publishTime>06/18/2019 09:38:43</publishTime>
+    </File>
+    <File Include="Views/Promotion/MBMPromotion.cshtml">
+      <publishTime>01/10/2019 20:33:21</publishTime>
+    </File>
+    <File Include="Views/Promotion/ProductList360.cshtml">
+      <publishTime>05/08/2020 16:35:11</publishTime>
+    </File>
+    <File Include="Views/Promotion/PromotionStash.cshtml">
+      <publishTime>07/05/2018 12:38:36</publishTime>
+    </File>
+    <File Include="Views/Promotion/SPG.cshtml">
+      <publishTime>05/08/2020 16:35:11</publishTime>
+    </File>
+    <File Include="Views/Promotion/TourAndTravel.cshtml">
+      <publishTime>07/05/2018 12:38:36</publishTime>
+    </File>
+    <File Include="Views/Promotion/_Promo360ListItem.cshtml">
+      <publishTime>05/08/2020 16:35:11</publishTime>
+    </File>
+    <File Include="Views/PropertiBekas/Index.cshtml">
+      <publishTime>05/08/2020 16:35:11</publishTime>
+    </File>
+    <File Include="Views/PropertiBekas/ModalHubungiKami.cshtml">
+      <publishTime>05/08/2020 16:35:11</publishTime>
+    </File>
+    <File Include="Views/PropertiBekas/ModalLihatLebih.cshtml">
+      <publishTime>08/28/2018 11:18:10</publishTime>
+    </File>
+    <File Include="Views/PropertiBekas/PropertiBekasListItem.cshtml">
+      <publishTime>08/28/2018 11:18:10</publishTime>
+    </File>
+    <File Include="Views/Samples/Sample.cshtml">
+      <publishTime>02/27/2018 15:26:22</publishTime>
+    </File>
+    <File Include="Views/SportNews/Index.cshtml">
+      <publishTime>01/10/2019 20:33:21</publishTime>
+    </File>
+    <File Include="Views/Syariah/LatestChild.cshtml">
+      <publishTime>10/10/2018 12:43:53</publishTime>
+    </File>
+    <File Include="Views/Syariah/LatestProgramHajiUmroh.cshtml">
+      <publishTime>08/27/2018 13:47:41</publishTime>
+    </File>
+    <File Include="Views/Syariah/LatestSyariahProgram.cshtml">
+      <publishTime>10/03/2018 21:05:18</publishTime>
+    </File>
+    <File Include="Views/Syariah/MoreFromSyariahList.cshtml">
+      <publishTime>08/27/2018 20:07:51</publishTime>
+    </File>
+    <File Include="Views/Syariah/SyariahProgramList.cshtml">
+      <publishTime>08/27/2018 15:19:19</publishTime>
+    </File>
+    <File Include="Views/Syariah/_MoreFromSyariahItem.cshtml">
+      <publishTime>12/05/2018 16:12:21</publishTime>
+    </File>
+    <File Include="Views/Syariah/_SyariahProgramItem.cshtml">
+      <publishTime>09/14/2018 16:03:14</publishTime>
+    </File>
+    <File Include="Views/Treats Point/TreatsPointList.cshtml">
+      <publishTime>05/28/2018 15:08:35</publishTime>
+    </File>
+    <File Include="Views/Treats Point/_TreatsPointItem.cshtml">
+      <publishTime>05/25/2018 17:52:13</publishTime>
+    </File>
+    <File Include="Views/TreatsPoint/TreatsPointList.cshtml">
+      <publishTime>09/17/2018 16:58:56</publishTime>
+    </File>
+    <File Include="Views/TreatsPoint/_TreatsPointItem.cshtml">
+      <publishTime>09/19/2018 16:40:08</publishTime>
+    </File>
+    <File Include="Views/TreatsPoint/_TreatsPointItemPopUp.cshtml">
+      <publishTime>05/08/2020 16:35:11</publishTime>
+    </File>
+    <File Include="Views/TreatsPoint/_TreatsPointModal.cshtml">
+      <publishTime>05/30/2018 15:37:28</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>02/27/2018 15:26:22</publishTime>
+    </File>
+    <File Include="Views/Zoom/Zoom.cshtml">
+      <publishTime>08/27/2020 09:47:29</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

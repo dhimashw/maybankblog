@@ -1,0 +1,123 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Data.Items
+@using Sitecore.Feature.Content.Repositories
+@model Sitecore.Mvc.Presentation.RenderingModel
+@{
+    Item _Category = Sitecore.Context.Database.GetItem(Sitecore.Feature.Library.Helper.Variables._itemSitemapCategory);
+
+    float count = 0;
+    string bgGray = string.Empty;
+}
+@foreach (Item ItemCategory in _Category.Children)
+{
+    if (Math.Ceiling(count % 2) > 0)
+    {
+        bgGray = "bg-gray";
+    }
+    else
+    {
+        bgGray = string.Empty;
+    }
+    <div class="section @bgGray narrow-bot m-info-box">
+        <div class="container">
+            <div class="row inline-col">
+                <div class="col-xs-12">
+                    <div class="heading full">
+                        <h1>@ItemCategory.DisplayName</h1>
+                    </div>
+                </div>
+                @{
+                    IEnumerable<Item> itemPageParent = ContentRepository.getSitemapPageByCategory(ItemCategory.ID.ToString());
+                }
+                @foreach (Item itemParent in itemPageParent)
+                {
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+                        @if (itemParent.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowUrl].Value == "1")
+                        {
+                            <h3><a href="@itemParent.Url()">@itemParent.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</a></h3>
+                        }
+                        else
+                        {
+                            <h3><a>@itemParent.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</a></h3>
+                        }
+                        <div class="p-group sitemap-list">
+                            @{
+                                IEnumerable<Item> itemPageChildren = ContentRepository.getChildSitemapPage(itemParent.ID);
+                            }
+                            @foreach (Item itemChild in itemPageChildren)
+                            {
+                                if (itemChild.IsDerived(Sitecore.Feature.Library.Templates.Page.ID))
+                                {
+                                    <p class="gray-text"><a href="@itemChild.Url()">@itemChild.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</a></p>
+                                }
+                                else if (itemChild.IsDerived(Sitecore.Feature.Library.Templates.RedirectItem.ID))
+                                {
+                                    string redirectItemUrl = string.Empty;
+
+                                    Sitecore.Data.Fields.LinkField _link = itemChild.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Link];
+                                    if (_link.IsInternal)
+                                    {
+                                        if (_link.TargetItem != null)
+                                        {
+                                            redirectItemUrl = _link.TargetItem.Url();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        redirectItemUrl = _link.Url;
+                                    }
+                                    <p class="gray-text"><a href="@redirectItemUrl">@itemChild.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</a></p>
+                                }
+                                else if (itemChild.IsDerived(Sitecore.Feature.Library.Templates.RedirectItem.ID))
+                                {
+                                    string redirectItemUrl = string.Empty;
+
+                                    Sitecore.Data.Fields.LinkField _link = itemChild.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Link];
+                                    if (_link.IsInternal)
+                                    {
+                                        if (_link.TargetItem != null)
+                                        {
+                                            redirectItemUrl = _link.TargetItem.Url();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        redirectItemUrl = _link.Url;
+                                    }
+                                    <p class="gray-text"><a href="@redirectItemUrl">@itemChild.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</a></p>
+                                }
+
+                            }
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+    count++;
+}
+                            @*{
+                                if (itemChild.IsDerived(Sitecore.Feature.Library.Templates.Page.ID))
+                                {
+                                    <p class="gray-text"><a href="@itemChild.Url()">@itemChild.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</a></p>
+                                }
+                                else if (itemChild.IsDerived(Sitecore.Feature.Library.Templates.RedirectItem.ID))
+                                {
+                                    string redirectItemUrl = string.Empty;
+
+                                    Sitecore.Data.Fields.LinkField _link = itemChild.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Link];
+                                    if (_link.IsInternal)
+                                    {
+                                        if (_link.TargetItem != null)
+                                        {
+                                            redirectItemUrl = _link.TargetItem.Url();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        redirectItemUrl = _link.Url;
+                                    }
+                                    <p class="gray-text"><a href="@redirectItemUrl" @Html.Raw(_link.Target.Length > 0 ? "target=" + _link.Target + "" : string.Empty)>@itemChild.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</a></p>*@

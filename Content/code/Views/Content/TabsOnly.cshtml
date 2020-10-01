@@ -1,0 +1,33 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+
+@model RenderingModel
+@{
+//var setActive = 
+}
+
+<div class="section story-list py-0 m-tabs-apply-tabs">
+    <div class="tab-box">
+        <div class="tab-header">
+            <div class="container">
+                <div class="options autowidth no-toggle do-not-trigger">
+                    @foreach (Sitecore.Data.Items.Item item in Model.Item.Children.Where(i => i.Fields[Sitecore.Feature.Library.Templates.TopPage.Fields.ShowTab].Value == "1"))
+                    {
+                        <a class="tab-handle" href="@item.Url()">
+                            <div class="icon">@Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.ApplyTabs.Fields.IconImage, item)</div><span>@item.Field(Sitecore.Feature.Library.Templates.ApplyTabs.Fields.IconName)</span>
+                        </a>
+                    }
+                    @*<a class="tab-handle active" href="../../e-banking/how-to-1/index.html">
+                        <div class="icon"><img src="../../assets/img/icons/ico-quota.svg" /></div><span>PASKABAYAR (POSTPAID)</span>
+                    </a><a class="tab-handle " href="../../e-banking/how-to-1/index.html">
+                        <div class="icon"><img src="../../assets/img/icons/ico-account.svg" /></div><span>PRABAYAR (PREPAID)</span>
+                    </a><a class="tab-handle " href="../../e-banking/how-to-1/index.html">
+                        <div class="icon"><img src="../../assets/img/icons/ico-creditcard.png" /></div><span>NON TAGIHAN LISTRIK (NON TAGLIS)</span>
+                    </a>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Partial("~/Views/Content/_TabsOnlyContent.cshtml", Model.Item.Children)

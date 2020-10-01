@@ -1,0 +1,31 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Data.Items
+@using Sitecore.Data.Fields
+@using Sitecore.Resources.Media
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helper
+@using banner = Sitecore.Feature.Library.Templates.Banner
+@model RenderingModel
+@{
+    ImageField img = (ImageField)Model.Item.Fields["Image"];
+    string imgUrl = MediaManager.GetMediaUrl(img.MediaItem);
+}
+
+<div class="page-banner--as-bg text-black" style="background-image:url(@imgUrl)">
+    <div class="container">
+        <div class="page-banner-body text-black">
+            <div class="fadein-left">
+                <h1 class="banner-title">@Html.Raw(@Html.Sitecore().Field(banner.Fields.stringBannerTitle, Model.Item))</h1>
+                <p class="t-paragraph--light">@Html.Raw(Html.Sitecore().Field(banner.Fields.BannerDescription, Model.Item))</p>
+                <div></div>
+
+                @*<h1 class="banner-title">Flight to Bali</h1>
+        <p class="t-paragraph--light">Direct flights to Bali are available mostly from cities in Asia and Pacific countries. Direct flights to Bali are available from most cities in Asia. Singapore, Hong Kong, Bangkok and Kuala Lumpur are among the major cities that offer a direct connection to Bali.</p>
+        <div></div>*@
+            </div>
+        </div>
+    </div>
+</div>

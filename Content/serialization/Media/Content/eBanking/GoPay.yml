@@ -1,0 +1,18 @@
+﻿---
+ID: "bf447734-2c70-4eb4-9537-d65659f7609d"
+Parent: "5c2f96d2-886b-4421-9a70-43157ecf4df6"
+Template: "fe5dd826-48c6-436d-b87a-7c4210c7413b"
+Path: /sitecore/media library/Feature/Content/eBanking/GoPay
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180920T054117Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

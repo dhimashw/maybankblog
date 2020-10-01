@@ -1,0 +1,43 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helper
+@using Sitecore.Data.Items
+@model PagedData<Item>
+
+<div>_sponsor_</div>
+@foreach (var sponsor in Model.Data)
+{
+    <div class="col-xs-12 col-xs-6@landscape col-sm-4 py-3">
+        <div class="skeleton js-demo-skeleton my-3">
+            <div class="skeleton__img"></div>
+            <div class="skeleton__body">
+                <div class="skeleton__line quarter"></div><br />
+                <div class="skeleton__line"></div>
+                <div class="skeleton__line half"></div>
+                <div class="skeleton__line ounce"></div>
+            </div>
+        </div>
+        <div class="card js-demo-skeleton-content hide">
+            <div class="card__header">
+                <div class="card__img valign">
+                    <a href="">
+                        <div class="img-wrapper__logo d-table-cell valign__item"><img class="no-animation img-responsive" src="../img/logo/aqua-logo.png" alt="" /></div>
+                    </a>
+                </div>
+            </div>
+            <div class="card__body mt-4 px-2">
+                <h3 class="card__title mb-2">
+                    Aqua Danone
+                </h3>
+                <p class="t-uppercase t-size-14">
+                    Official Hydration
+                </p><br />
+                <p class="t-paragraph">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non dolor ipsum. Quisque placerat metus sagittis risus lacinia, tempus interdum risus elementum. Suspendisse cursus lorem sem, quis fringilla velit lobortis mollis. Phasellus euismod libero quis dictum viverra. Proin imperdiet ipsum neque, nec tincidunt lectus pellentesque et.
+                </p>
+            </div>
+            <div class="card__footer px-2"><a class="btn btn-link"><span class="t-uppercase t-size-14 color-g4">Visit Aqua</span><img class="pl-2" src="../img/icon/arrow-right-yellow.svg"></a></div>
+        </div>
+    </div>
+}

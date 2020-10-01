@@ -1,0 +1,83 @@
+﻿<Project>
+  <PropertyGroup>
+    <Site Server="maybank" UserName="sitecore\admin" IsRemoteSitecore="True" />
+  </PropertyGroup>
+  <File Include="Views\Content\HeroFeatures.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{13B2C35A-209B-4ED2-944D-2EFFEABD51FE}</Item>
+  </File>
+  <File Include="Views\Promotion\ProductList360.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{002BD8FB-56A3-4F1E-8BB4-6F76E739847D}</Item>
+  </File>
+  <File Include="Views\Banner\CalculateBannerImage.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{CEF207AC-6132-4418-97AB-DDFC213B243D}</Item>
+  </File>
+  <File Include="Views\Content\MaybankWhiteCardText.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{DF94FF8E-36B8-4FD2-AD7F-580F1018319E}</Item>
+  </File>
+  <File Include="Views\ArticlePWHighlight\ArticlePWHighlightsList.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{64B26F59-1B31-486A-AF90-2CB6178CBBBA}</Item>
+  </File>
+  <File Include="Views\ArticlePWHighlight\_ArticlePWHighlightsItem.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{CF2B18A5-EC8E-402B-B550-44E627D7CF7F}</Item>
+  </File>
+  <File Include="Views\Content\BenefitRichText.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{4E6E516F-2D9C-4C2D-9358-86A6249FA6F9}</Item>
+  </File>
+  <File Include="Views\Content\PopulateBusinessDetailPage.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{5E75AAA2-304F-4535-A11E-1F5B26D405D0}</Item>
+  </File>
+  <File Include="Views\Content\OneRowContent.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{7AA44F79-0C7B-46AD-A0EE-07BB1DE0C81D}</Item>
+  </File>
+  <File Include="Views\Content\RichTextContent.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{31E7F8BF-B4D7-401A-A3E9-1A7A0FB1BC2C}</Item>
+  </File>
+  <File Include="Views\AboutUs\CGTextContent.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{CE5384F1-E23A-4479-917D-03C36763C404}</Item>
+  </File>
+  <File Include="Views\AboutUs\CSREventArticleHighlight.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{723C47B2-849E-4152-BA83-79553F8FF183}</Item>
+  </File>
+  <File Include="Views\Content\FeatureRichTextContent.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{F7D04370-9DE1-443C-9529-4216CFC97320}</Item>
+  </File>
+  <File Include="Views\Article\LatestArticle.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{D26F505A-6C4F-4FD8-967B-553D73E4607A}</Item>
+  </File>
+  <File Include="Views\Syariah\SyariahProgramList.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{213E58A7-C203-4376-9ECE-F8B828C2D696}</Item>
+  </File>
+  <File Include="Views\AboutUs\CSRProgramDetailContent.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{A5BABD7E-D1F7-4424-BD90-8F1ECF6DFAA8}</Item>
+  </File>
+  <File Include="Views\AboutUs\PageContentBody1.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{27263A0A-5AD6-4BEA-A7AD-AA4A58718ACC}</Item>
+  </File>
+  <File Include="Views\AboutUs\PageContentBody2.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{F90EEDBA-2DB3-481F-9661-B4E509FAE4C9}</Item>
+  </File>
+  <File Include="Views\AboutUs\LiterasiEdukasiProgram.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{3A1BE316-B538-4520-8AFC-0AC3CD1D4A85}</Item>
+  </File>
+  <File Include="Views\AboutUs\LiterasiEdukasiProgramList.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{0ACC4673-4204-4E73-A233-B3225CEADA0A}</Item>
+  </File>
+  <File Include="Views\AboutUs\MaybankFoundationContent1.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{224EA073-FFC4-4B9A-9249-77BB1273D4C1}</Item>
+  </File>
+  <File Include="Views\AboutUs\MaybankFoundationContent2.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{E180B3F1-1069-42FB-AAD1-781C3419530E}</Item>
+  </File>
+  <File Include="Views\NewsAnnouncement\LatestNewsCorporate.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{6C4901D4-6206-46B9-99EF-FE14677BC535}</Item>
+  </File>
+  <File Include="Views\Banner\MBMPageBanner.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{6C9CE216-E704-4EA9-BE00-C7A6CF27D38A}</Item>
+  </File>
+  <File Include="Views\Content\MBMSponsorPartial.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{C470557D-3216-4386-977B-0FFA054B5F9B}</Item>
+  </File>
+  <File Include="Views\Content\MBMRichTextAndPopUp.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{30282618-C51A-434C-8C1E-D6CD24406CDC}</Item>
+  </File>
+</Project>

@@ -1,0 +1,72 @@
+﻿@using Sitecore.Feature.Content
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+
+@{
+    var idDiv = Guid.NewGuid();
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+    $('body').on('click', '.pagination-list a', function () {
+
+        var page = parseInt($(this).html());
+
+        $.ajax({
+            url: '@Url.Action("ArticlesListPaging")',
+            data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID" },
+            success: function (data) {
+                $("#news-pages-@idDiv").html(data);
+                setTimeout(function () {
+                    if ($('.story-card.js-demo-skeleton-content').hasClass('hide')) {
+                        $('.story-card.js-demo-skeleton-content').removeClass('hide')
+                        $('.skeleton.js-demo-skeleton').addClass('hide')
+                    }
+                }, 5000)
+            }
+        });
+    });
+
+    $('body').on('click', '.previous.enabled a', function () {
+        var page = parseInt($(this).data("curpage") - 1);
+
+        $.ajax({
+            url: '@Url.Action("ArticlesListPaging")',
+            data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID" },
+            success: function (data) {
+                $("#news-pages-@idDiv").html(data);
+                setTimeout(function () {
+                    if ($('.story-card.js-demo-skeleton-content').hasClass('hide')) {
+                        $('.story-card.js-demo-skeleton-content').removeClass('hide')
+                        $('.skeleton.js-demo-skeleton').addClass('hide')
+                    }
+                }, 5000)
+            }
+        });
+    });
+
+    $('body').on('click', '.next.enabled a', function () {
+        var page = parseInt($(this).data("curpage") ) + 1;
+
+        $.ajax({
+            url: '@Url.Action("ArticlesListPaging")',
+            data: { "page": page, "PageSize": @Model.PageSize, "id": "@Model.DataSourceID" },
+            success: function (data) {
+                $("#news-pages-@idDiv").html(data);
+                setTimeout(function () {
+                    if ($('.story-card.js-demo-skeleton-content').hasClass('hide')) {
+                        $('.story-card.js-demo-skeleton-content').removeClass('hide')
+                        $('.skeleton.js-demo-skeleton').addClass('hide')
+                    }
+                }, 5000)
+            }
+        });
+    });
+});
+</script>
+
+<div id="news-pages-@idDiv">
+    @Html.Partial("_ArticleItem")
+</div>

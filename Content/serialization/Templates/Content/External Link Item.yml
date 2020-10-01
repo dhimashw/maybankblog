@@ -1,0 +1,32 @@
+﻿---
+ID: "e0acbdd5-b0bf-44fd-a8c3-b6b812aafbee"
+Parent: "314d3298-ca98-41f1-9cc3-9a459709ade2"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/Content/External Link Item
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Software/16x16/logic_and.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Type: tree list
+  Value: |
+    {1930BBEB-7805-471A-A3BE-4858AC7CF696}
+    {73B1011A-A841-4933-B18A-275E68102A0B}
+    {FB920F36-17F0-4313-A567-8F285344A1C2}
+    {45CD4102-C544-413F-923E-617A60173F31}
+    {1814EB7B-1839-4238-9E8A-4C7DF3AEB2CA}
+    {A94C81B3-EBC3-4F11-8183-78C07D875F1E}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180426T081807Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

@@ -1,0 +1,29 @@
+﻿---
+ID: "d8d98c1d-7216-43b9-90bb-a6e4d3ba8276"
+Parent: "05413551-2e6f-4bc5-906f-3b46a57f0632"
+Template: "05413551-2e6f-4bc5-906f-3b46a57f0632"
+Path: /sitecore/templates/Feature/Content/BOD Content/__Standard Values
+DB: master
+SharedFields:
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r>
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        l="{3FA8B1DB-4DA3-4C0E-B373-BB64D1746CEF}" />
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180712T113812Z
+    - ID: "6bdd027d-a05a-4830-94ea-6b745bc0f44d"
+      Hint: BOD Detail Text
+      Value: |
+        <h3>Text </h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>

@@ -1,0 +1,33 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.ModalLeaveSite.ID) ?? true)
+    {
+        @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.ModalLeaveSite.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+        return;
+    }
+}
+
+
+<div class="modal" tabindex="-1" role="dialog" modal-name="modal-leave-site">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+        <div class="modal-content white-text">
+            <div class="modal-header">
+                <button class="close js-modal-trigger-close" type="button" data-dismiss="modal" aria-label="Close"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path id="modal-close-svg" d="M10.437 8.58l6.845-6.845A1.016 1.016 0 1 0 15.845.298L9 7.143 2.156.298A1.016 1.016 0 1 0 .719 1.735L7.563 8.58.298 15.845a1.016 1.016 0 1 0 1.437 1.437L9 10.018l7.265 7.264a1.013 1.013 0 0 0 1.437 0 1.016 1.016 0 0 0 0-1.437L10.437 8.58z" fill="#000" fill-rule="evenodd" /></svg></button>
+            </div>
+            <div class="modal-body m-modals-info-modals">
+                <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.ModalLeaveSite.Fields.Title, Model.Item)</h1>
+                <p>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.ModalLeaveSite.Fields.Description, Model.Item)</p>
+                <a class="button-cta white-text js-proceed-leave-site" href="" target="_blank">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.ModalLeaveSite.Fields.LabelProceed, Model.Item)</a>
+                <button class="button-cta js-modal-trigger-close" data-dismiss="modal">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.ModalLeaveSite.Fields.LabelCancel, Model.Item)</button>
+            </div>
+        </div>
+    </div>
+</div>

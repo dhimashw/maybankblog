@@ -1,0 +1,55 @@
+﻿@using Sitecore.Feature.Content
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+@using Sitecore.Foundation.Dictionary.Extensions
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+@{ 
+    System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo(Sitecore.Context.Language.Name);
+    System.Globalization.CultureInfo en = new System.Globalization.CultureInfo("en");
+}
+
+<div class="container">
+    <div class="row">
+        @if (Model != null && Model.Data != null)
+        {
+            foreach (Sitecore.Data.Items.Item item in Model.Data)
+            {
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="skeleton v-m js-demo-skeleton m-cards">
+                        <div class="skeleton__img skeleton__img--shorter"></div>
+                        <div class="skeleton__body">
+                            <div class="skeleton__line"></div>
+                            <div class="skeleton__line half"></div>
+                        </div>
+                    </div>
+                    <div class="m-cards-giro-card product-cards long-card js-demo-skeleton-content hide">
+                        <div class="image">
+                            @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.PropertiBekas.Fields.Thumbnail, item, cssClass: "removestyle")
+                        </div>
+                        <div class="desc">
+                            <span class="pdesc">
+                                <h2>
+                                    IDR @*@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.PropertiBekas.Fields.Price, item)*@
+                                    @String.Format("{0:n0}", System.Convert.ToDouble(!string.IsNullOrWhiteSpace(item.Fields[Sitecore.Feature.Library.Templates.PropertiBekas.Fields.Price].Value) ? item.Fields[Sitecore.Feature.Library.Templates.PropertiBekas.Fields.Price].Value : "0", en).ToString(Sitecore.Feature.Library.Helper.Variables._defaultFormatCurrency, ci))
+                                </h2>
+                                @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.PropertiBekas.Fields.Summary, item)
+                            </span>
+                            <div class="cta">
+                                <a class="see-more js-modal-trigger modalLihatLebih" data-item-id="@item.ID" modal="ayda-detail">@Html.Sitecore().Dictionary("/Feature/Content/See More", "Lihat Lebih")</a>
+                                <a class="btn btn-tertiary addon js-modal-trigger modalHubungiKami" data-item-id="@item.ID" modal="ayda-contact">@Html.Sitecore().Dictionary("/Feature/Content/Contact Us", "Hubungi Kami")<img src="/assets/img/icons/arrow-right/arrow-right-363@2x.png" alt="apply now" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+
+    </div>
+
+    @if (Model != null && Model.Data != null)
+    {
+        <!-- PAGINATION COMPONENT -->
+        @Html.Partial("~/Views/Pagination/_Pagination.cshtml", Model)
+    }
+</div>

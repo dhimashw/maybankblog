@@ -1,0 +1,31 @@
+
+uSitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUploadATMBranchLocation.Page_Load(object, System.EventArgs)s
+iC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUploadATMBranchLocation.aspx.cs ( "0*¥
+0Ö
+Ç
+s
+iC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUploadATMBranchLocation.aspx.cs (N
+%0HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"__id*¥*±S
+QSitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUploadATMBranchLocation"Z
+BulkUploadAllsHSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll√¿
+s
+iC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUploadATMBranchLocation.aspx.cs (@
+%1System.Web.UI.Control")System.Web.UI.Control.FindControl(string)*P
+N
+%0HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll*
+panelBranchATMLocation2FindControl(string)€ÿ
+s
+iC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUploadATMBranchLocation.aspx.cs (O
+
+%2void"!System.Web.UI.Control.Visible.set*
+
+%1System.Web.UI.Control*
+""2Visible.set*
+1*ê
+1"ä
+s
+iC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\Custom\BulkUploadATMBranchLocation.aspx.cs (	
+implicit return:
+senderobject:
+eSystem.EventArgsBUS
+QSitecore.Feature.Administrators.Sitecore.Admin.Custom.BulkUploadATMBranchLocation

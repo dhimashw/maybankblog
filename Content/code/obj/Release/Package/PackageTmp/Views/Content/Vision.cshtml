@@ -1,0 +1,43 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Content
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+
+}
+
+@if (Model.Item != null && Model.Item.Children.Count > 0)
+{
+    foreach (Sitecore.Data.Items.Item VisionItem in Model.Item.Children)
+    {
+        string url = "#";
+        string imageUrl = Variables._defaultImageVision;
+
+
+        if (VisionItem.LinkFieldUrl(Sitecore.Feature.Content.Templates.Vision.Fields.Url) != null)
+        {
+            url = VisionItem.LinkFieldUrl(Sitecore.Feature.Content.Templates.Vision.Fields.Url);
+        }
+
+        if (VisionItem.ImageUrl(Sitecore.Feature.Content.Templates.Vision.Fields.Image) != null)
+        {
+            imageUrl = VisionItem.ImageUrl(Sitecore.Feature.Content.Templates.Vision.Fields.Image);
+        }
+
+        <div class="content-panels__wrapper">
+            <div class="col-xs-12 col-lg-4 content-panels__item">
+                <div class="frame">
+                    <a href="@url">
+                        <div class="picture"><img src="@imageUrl" alt="" /></div>
+                        <h2 class="title">@Html.Sitecore().Field(Sitecore.Feature.Content.Templates.Vision.Fields.stringVisionTitle, VisionItem)</h2>
+                        <span class="see-more">@Html.Sitecore().Dictionary("/Feature/Content/Vision", "Edit This Content On Dictionary")</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+}

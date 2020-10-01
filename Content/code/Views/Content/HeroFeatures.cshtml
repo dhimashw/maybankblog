@@ -1,0 +1,91 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.ImageDescription.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.ImageDescription.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@if (Model.Item != null && Model.Item.TemplateID == Sitecore.Feature.Library.Templates.ImageDescription.ID)
+{
+    //string TitleCTA = string.IsNullOrEmpty(RenderingContext.Current.Rendering.Parameters["Title"]) == true ? Html.Sitecore().Dictionary("/Feature/Content/Learn More", "Edit This Content On Dictionary(/Feature/Content/Learn More)") : RenderingContext.Current.Rendering.Parameters["Title"];
+    string url = "#";
+    string imageUrl = "#";
+    string imageResponsiveUrl = "#";
+    string targetType = "_blank";
+    bool targetCustom = false;
+
+    string AncorItemID = RenderingContext.Current.Rendering.Parameters["ID"] != null ? RenderingContext.Current.Rendering.Parameters["ID"].Trim() : "";
+
+    if (Model.Item.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url) != null)
+    {
+        Sitecore.Data.Fields.LinkField _link = Model.Item.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url];
+        if (_link.Target.Contains("|Custom"))
+        {
+            targetCustom = true;
+        }
+        if (AncorItemID != "")
+        {
+            url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link) + "#" + AncorItemID;
+            //url = Model.Item.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url) + "#" + AncorItemID;
+        }
+        else
+        {
+            url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+            //url = Model.Item.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url);
+        }
+
+        targetType = Model.Item.LinkFieldOptions(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url, LinkFieldOption.Target);
+    }
+
+    if (Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.ImageBackground.Fields.ImageBackground) != null)
+    {
+        imageUrl = string.Format("style=background-image:url({0});", Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.ImageBackground.Fields.ImageBackground));
+    }
+    if (Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.ImageBackground.Fields.ImageResponsive) != null)
+    {
+        imageResponsiveUrl = Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.ImageBackground.Fields.ImageResponsive);
+    }
+
+    <div class="addon-item content-panels-3-item">
+        <a @Html.Raw(targetCustom == true ? "action-type='button' class='js-modal-trigger' modal='treats-points'" : "href='" + url + "' target='" + targetType + "'")>
+            <div class="content-panels-3-wrapper" @imageUrl></div>
+            <div class="content-panels-3-body">
+                <div>
+                    @if (!string.IsNullOrWhiteSpace(Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.ImageBackground.Fields.ImageResponsive).ToString()))
+                    {
+                        <div class="content-panels-3-picture">
+                            <img class="img-responsive center-block" src="@imageResponsiveUrl" />
+                        </div>
+                        <div class="content-panels-3-name">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading)</div>
+                    }
+                    else
+                    {
+                        if (Sitecore.Context.PageMode.IsExperienceEditor)
+                        {
+                            <h2>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading)</h2>
+                            <p>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent)</p>
+                        }
+                        else if (!Sitecore.Context.PageMode.IsExperienceEditor && !string.IsNullOrEmpty(Model.Item.Fields[Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading].Value))
+                        {
+                            <h2>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading)</h2>
+                            <p>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent)</p>
+                        }
+                        @*<h2>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading)</h2>
+                            <p>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent)</p>*@
+                    }
+                    @if (Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowCTA].Value == "1")
+                    {
+                        <span class="see-more">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, Model.Item)</span>
+                    }
+                </div>
+            </div>
+        </a>
+    </div>
+
+}   

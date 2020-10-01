@@ -1,0 +1,42 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.CardSummaryFolder.ID) ?? true)
+    {
+        @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.CardSummaryFolder.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+        return;
+    }
+}
+
+<div class="row">
+    @foreach(Sitecore.Data.Items.Item CardSummaryItem in Model.Item.Children.Where(x => x.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowInMenu].Value == "1"))
+    {
+        Sitecore.Data.Fields.LinkField _link = CardSummaryItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Link];
+        string redirectItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="m-cards-giro-card simple-card">
+                <div class="image">
+                    @*<img src="/assets/img/business/loan-and-trade-financing/trade-1.jpg" />*@
+                    @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail, CardSummaryItem, cssClass: "removestyle")
+                    <span class="product-label">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title,CardSummaryItem)</span>
+                </div>
+                <div class="desc">
+                    <span class="pdesc">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields._SummaryRichText, CardSummaryItem)</span>
+                    <div class="cta">
+                        <a class="btn btn-outline-primary addon" href="@redirectItemUrl" @Html.Raw(_link.Target.Length > 0 ? "target=" + _link.Target + "" : string.Empty)>
+                            @Html.Sitecore().Dictionary("/Feature/Content/See More")
+                            <img src="../assets/img/icons/arrow-right/arrow-right-363-big-black@2x.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

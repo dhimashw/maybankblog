@@ -1,0 +1,61 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Feature.Library
+@using System.Web
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Data.Items
+@model Sitecore.Mvc.Presentation.RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.LeftHeroBannerFunnel.ID) ?? true)
+{
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.LeftHeroBannerFunnel.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{
+    //Sitecore.Data.Items.Item currentItem = Model.Item;
+    Item items = Model.Item;
+    string datasourceID = Request.QueryString[Sitecore.Feature.Library.Helper.Variables._profId] != null ? Request.QueryString[Sitecore.Feature.Library.Helper.Variables._profId].ToLower() : string.Empty;
+    datasourceID = System.Web.HttpUtility.UrlDecode(datasourceID);
+    if (datasourceID != string.Empty)
+    {
+        string dtParameter = RenderingContext.Current.Rendering.Parameters["Datasource"];
+        items = Sitecore.Context.Database.GetItem(dtParameter).Children.Where(x => x.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title].Value.ToLower() ==  datasourceID.ToLower()).FirstOrDefault();
+        if (items == null)
+        {
+            items = Sitecore.Context.Database.GetItem(dtParameter).Children.First();
+        }
+    }
+
+    //var HeroBanner = items.Field(Sitecore.Feature.Library.Templates.ProductSimpananPage.Fields.Card);
+
+
+    //bool ShowHeroBanner = false;
+    //if (HeroBanner != null)
+    //{
+    //    ShowHeroBanner = true;
+    //}
+}
+<div class="page-side centered hidden-xs hidden-sm" style="background-image: url('@items.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.Background)');">
+    <div class="page-wrapper">
+        <div class="hero-banner">
+            <div class="hero-banner-picture">
+                @*@if (ShowHeroBanner == true)
+                {*@
+                    <img src="@items.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.Image)" alt="" />
+                @*  }*@
+            </div>     
+            <div class="hero-banner-body">
+                <h2>@items.Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title) </h2>
+                @*@items.Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Summary)*@
+                @Html.Raw(items.Field(Sitecore.Feature.Library.Templates.BaseField.Fields._SummaryRichText))
+            </div>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,33 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@model RenderingModel
+@{
+
+}
+
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.ExternalLinkItem.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.ExternalLinkItem.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{ 
+    Sitecore.Data.Fields.LinkField _link = Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ApplyNow];
+    string redirectItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+}
+
+<div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-12">
+        <div class="p-group">@Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail,Model.Item,cssClass: "head-icon removestyle")</div>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-12">
+        <div class="p-group ext-link">
+            <h2>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title,Model.Item)</h2>
+            <p class="gray-text">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Summary,Model.Item)</p>
+            @*<p><a class="see-more gray-text js-modal-trigger js-modal-leave-site" modal="modal-leave-site" href="@Model.Item.LinkFieldUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.ApplyNow)" target="@Model.Item.LinkFieldTarget(Sitecore.Feature.Library.Templates.BaseField.Fields.ApplyNow)">@Model.Item.LinkFieldOptions(Sitecore.Feature.Library.Templates.BaseField.Fields.ApplyNow, LinkFieldOption.Text)</a></p>*@
+            <p><a class="see-more gray-text js-modal-trigger js-modal-leave-site" modal="modal-leave-site" href="@redirectItemUrl" target="@Model.Item.LinkFieldTarget(Sitecore.Feature.Library.Templates.BaseField.Fields.ApplyNow)">@Model.Item.LinkFieldOptions(Sitecore.Feature.Library.Templates.BaseField.Fields.ApplyNow, LinkFieldOption.Text)</a></p>
+        </div>
+    </div>
+</div>

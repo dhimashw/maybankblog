@@ -1,0 +1,334 @@
+
+zSitecore.Feature.Content.Helper.ValidateAntiForgeryTokenPostAttribute.OnAuthorization(System.Web.Mvc.AuthorizationContext)b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs (,"0*»	
+0ÑÅ
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs (3 
+%0System.Web.HttpContextBase"0System.Web.Mvc.ControllerContext.HttpContext.get*6
+4
+filterContext#System.Web.Mvc.AuthorizationContext2HttpContext.get‚ﬂ
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs (; 
+%1System.Web.HttpRequestBase"&System.Web.HttpContextBase.Request.get*"
+ 
+%0System.Web.HttpContextBase2Request.get∏
+µ
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs (;%
+requestSystem.Web.HttpRequestBase"__id*"
+ 
+%1System.Web.HttpRequestBaseŸ÷
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs ("
+%2string")System.Web.HttpRequestBase.HttpMethod.get*'
+%
+requestSystem.Web.HttpRequestBase2HttpMethod.getz
+x
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs& (A
+%3"__id*
+""ª
+∏
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs (A
+
+%4bool""string.operator ==(string, string)*
+"
+string*
+
+%2string*
+
+%3*
+1
+2*§
+1ñ
+ì
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs (+
+
+%5bool"NSystem.Web.Mvc.AjaxRequestExtensions.IsAjaxRequest(System.Web.HttpRequestBase)*("&
+$System.Web.Mvc.AjaxRequestExtensions*'
+%
+requestSystem.Web.HttpRequestBase*
+3
+4*¥
+3ÏÈ
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs, (;%
+%6System.Web.HttpCookieCollection"&System.Web.HttpRequestBase.Cookies.get*'
+%
+requestSystem.Web.HttpRequestBase2Cookies.get‘
+—
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs< (X
+%7string"3System.Web.Helpers.AntiForgeryConfig.CookieName.get*("&
+$System.Web.Helpers.AntiForgeryConfig…
+∆
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs, (Y
+%8System.Web.HttpCookie"
+__arrayGet*'
+%
+%6System.Web.HttpCookieCollection*
+
+%7string∏
+µ
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs (Y*
+antiForgeryCookieSystem.Web.HttpCookie"__id*
+
+%8System.Web.HttpCookieŸ
+÷
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs& (?
+
+%9bool""object.operator !=(object, object)*
+"
+object*,
+*
+antiForgeryCookieSystem.Web.HttpCookie*
+""*
+5
+6*
+5≈
+¬
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs (1
+%13string"System.Web.HttpCookie.Value.get*,
+*
+antiForgeryCookieSystem.Web.HttpCookieç
+ä
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs (1
+%11string"__id*
+
+%13stringç
+ä
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs (1
+%10string"__id*
+
+%11string*
+7*ç
+6{
+y
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs (
+%12"__id*
+""Ö
+Ç
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs (
+%10string"__id*
+
+%12*
+7*»
+7ï
+í
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs (
+cookieValuestring"__id*
+
+%10stringÄ˝
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs ('9
+%142System.Collections.Specialized.NameValueCollection"&System.Web.HttpRequestBase.Headers.get*'
+%
+requestSystem.Web.HttpRequestBase2Headers.getﬂ
+‹
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs (E
+%15string"
+__arrayGet*;
+9
+%142System.Collections.Specialized.NameValueCollection*
+__RequestVerificationTokenΩ
+∫
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs (M
+%16bool""string.operator !=(string, string)*
+"
+string*
+
+%15string*
+""*
+8
+9*Î
+8Ä˝
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs: (I9
+%172System.Collections.Specialized.NameValueCollection"&System.Web.HttpRequestBase.Headers.get*'
+%
+requestSystem.Web.HttpRequestBase2Headers.getﬂ
+‹
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs: (g
+%18string"
+__arrayGet*;
+9
+%172System.Collections.Specialized.NameValueCollection*
+__RequestVerificationToken˚
+¯
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs (h
+%19void"7System.Web.Helpers.AntiForgery.Validate(string, string)*"" 
+System.Web.Helpers.AntiForgery*
+
+cookieValuestring*
+
+%18string*
+2*‹+
+9ÖÇ
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs! !(1!
+%20System.Web.HttpContextBase"0System.Web.Mvc.ControllerContext.HttpContext.get*6
+4
+filterContext#System.Web.Mvc.AuthorizationContext2HttpContext.getÁ‰
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs! !(:"
+%21System.Web.HttpResponseBase"'System.Web.HttpContextBase.Response.get*#
+!
+%20System.Web.HttpContextBase2Response.get›⁄
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs! !(K
+%22void"*System.Web.HttpResponseBase.StatusCode.set*$
+"
+%21System.Web.HttpResponseBase*2¶2StatusCode.setÖÇ
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs" "(1!
+%23System.Web.HttpContextBase"0System.Web.Mvc.ControllerContext.HttpContext.get*6
+4
+filterContext#System.Web.Mvc.AuthorizationContext2HttpContext.getÁ‰
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs" "(:"
+%24System.Web.HttpResponseBase"'System.Web.HttpContextBase.Response.get*#
+!
+%23System.Web.HttpContextBase2Response.get⁄◊
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs"A "([;
+%254System.Web.Script.Serialization.JavaScriptSerializer"4System.Web.Script.Serialization.JavaScriptSerializerÄ
+˝
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs"E "(Y
+%26void"KSystem.Web.Script.Serialization.JavaScriptSerializer.JavaScriptSerializer()*=
+;
+%254System.Web.Script.Serialization.JavaScriptSerializer–Õ
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs"f '(6
+%27/Sitecore.Feature.Content.Models.ReturnErrorData"/Sitecore.Feature.Content.Models.ReturnErrorDataÒ
+Ó
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs"j "(y
+%28void"ASitecore.Feature.Content.Models.ReturnErrorData.ReturnErrorData()*8
+6
+%27/Sitecore.Feature.Content.Models.ReturnErrorData˘
+ˆ
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs$ $(0
+%29void"@Sitecore.Feature.Content.Models.ReturnErrorData.responseCode.set*8
+6
+%27/Sitecore.Feature.Content.Models.ReturnErrorData*
+401ñ
+ì
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs% %(M
+%30void"ASitecore.Feature.Content.Models.ReturnErrorData.descErrorCode.set*8
+6
+%27/Sitecore.Feature.Content.Models.ReturnErrorData*#!
+Modifying CSRF Token Detected..ò
+ï
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs& &(O
+%31void"CSitecore.Feature.Content.Models.ReturnErrorData.descErrorCodeEN.set*8
+6
+%27/Sitecore.Feature.Content.Models.ReturnErrorData*#!
+Modifying CSRF Token Detected..∑
+¥
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs"A '(
+%32string"FSystem.Web.Script.Serialization.JavaScriptSerializer.Serialize(object)*=
+;
+%254System.Web.Script.Serialization.JavaScriptSerializer*8
+6
+%27/Sitecore.Feature.Content.Models.ReturnErrorDataÂ‚
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs" '(
+%33void")System.Web.HttpResponseBase.Write(string)*$
+"
+%24System.Web.HttpResponseBase*
+
+%32string2Write(string)ÖÇ
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs( ((1!
+%34System.Web.HttpContextBase"0System.Web.Mvc.ControllerContext.HttpContext.get*6
+4
+filterContext#System.Web.Mvc.AuthorizationContext2HttpContext.getÁ‰
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs( ((:"
+%35System.Web.HttpResponseBase"'System.Web.HttpContextBase.Response.get*#
+!
+%34System.Web.HttpContextBase2Response.getˆÛ
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs( ((X
+%36void"6System.Web.HttpResponseBase.TrySkipIisCustomErrors.set*$
+"
+%35System.Web.HttpResponseBase*
+""2TrySkipIisCustomErrors.set¶£
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs)/ )(@!
+%37System.Web.Mvc.EmptyResult"System.Web.Mvc.EmptyResult√
+¿
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs)3 )(>
+%38void"(System.Web.Mvc.EmptyResult.EmptyResult()*#
+!
+%37System.Web.Mvc.EmptyResultÅ
+˛
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs) )(@
+%39void".System.Web.Mvc.AuthorizationContext.Result.set*6
+4
+filterContext#System.Web.Mvc.AuthorizationContext*#
+!
+%37System.Web.Mvc.EmptyResultÖÇ
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs* *(1!
+%40System.Web.HttpContextBase"0System.Web.Mvc.ControllerContext.HttpContext.get*6
+4
+filterContext#System.Web.Mvc.AuthorizationContext2HttpContext.getÁ‰
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs* *(:"
+%41System.Web.HttpResponseBase"'System.Web.HttpContextBase.Response.get*#
+!
+%40System.Web.HttpContextBase2Response.getƒ¡
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs* *(@
+%42void"!System.Web.HttpResponseBase.End()*$
+"
+%41System.Web.HttpResponseBase2End()*
+2*∂
+4“œ
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs/ /(;7
+%430System.Web.Mvc.ValidateAntiForgeryTokenAttribute"0System.Web.Mvc.ValidateAntiForgeryTokenAttributeÖ
+Ç
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs/ /(9
+%44void"TSystem.Web.Mvc.ValidateAntiForgeryTokenAttribute.ValidateAntiForgeryTokenAttribute()*9
+7
+%430System.Web.Mvc.ValidateAntiForgeryTokenAttributeŒ
+À
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs/ 0(7
+%45void"eSystem.Web.Mvc.ValidateAntiForgeryTokenAttribute.OnAuthorization(System.Web.Mvc.AuthorizationContext)*9
+7
+%430System.Web.Mvc.ValidateAntiForgeryTokenAttribute*6
+4
+filterContext#System.Web.Mvc.AuthorizationContext*
+2*~
+2"y
+b
+XC:\Review Code\Maybank Blog\Content\code\Helper\ValidateAntiForgeryTokenPostAttribute.cs3 3(	
+implicit return:4
+filterContext#System.Web.Mvc.AuthorizationContextBIG
+ESitecore.Feature.Content.Helper.ValidateAntiForgeryTokenPostAttribute

@@ -1,0 +1,138 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helpers
+@using Sitecore.Links
+@using Sitecore.Feature.Content.Models
+@using Sitecore.Foundation.Dictionary.Extensions
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+@{
+    var item = Sitecore.Context.Database.GetItem(Model.DataSourceID);
+
+    var categoryMultilist = Model.PureData;
+    Sitecore.Data.Items.Item errorPage = Sitecore.Context.Database.GetItem("{EA8138D1-523F-42E7-B23C-7E1FB83CE196}");
+    var errorPageUrl = LinkManager.GetItemUrl(errorPage);
+    string categoryId = Request.QueryString["categoryFaqId"];
+    string isMBM = RenderingContext.Current.Rendering.Parameters["isMBM"] == "1" ? RenderingContext.Current.Rendering.Parameters["isMBM"] : "0";
+    if (Sitecore.Context.PageMode.IsExperienceEditor)
+    {
+        categoryId = categoryMultilist.ElementAt(0).ID.ToString();
+    }
+    else
+    {
+        if (categoryId != null)
+        {
+            categoryId = Request.QueryString["categoryFaqId"];
+        }
+        else
+        {
+            Response.Redirect(errorPageUrl);
+        }
+    }
+
+}
+
+@Html.Partial("~/Views/FAQ/_FAQBannerWithSearch.cshtml")
+<div id="isMBM" style="display:none;">
+    @isMBM
+</div>
+<div class="m-top-nav js-scroll-fixed search-result-header js-scroll-fixed">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="top-nav-link">
+                    <span class="selected-text"></span>
+                    <div class="links">
+                        @foreach (Sitecore.Data.Items.Item items in categoryMultilist)
+                        {
+                            var param = Sitecore.Context.PageMode.IsExperienceEditor ? "&categoryFaqId=" + @items.ID.ToShortID() : "?categoryFaqId=" + @items.ID.ToShortID();
+                            <!---->
+                            if (items.ID == new Sitecore.Data.ID(categoryId))
+                            {
+                                <a class="active">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, items)</a>
+                            }
+                            else
+                            {
+                                Sitecore.Data.Fields.LinkField _link = items.Fields[Sitecore.Feature.Library.Templates.Link.Fields.Link];
+                                string url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+                                @*<a href="@items.LinkFieldUrl(Sitecore.Feature.Library.Templates.Link.Fields.Link)@param">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, items)</a>*@
+                                <a href="@url@param">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, items)</a>
+
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section py-0 split-side">
+    <div class="split-frame">
+        <div class="side white">
+            <div class="inner-frame">
+                <div class="content-tabs standard-text compact do-not-trigger" id="tab-faq" data-targetClass="topic-subs">
+                    @foreach (var itemCategory in categoryMultilist.Where(x => x.ID == new Sitecore.Data.ID(categoryId)))
+                    {
+                        foreach (Sitecore.Data.Items.Item itemChildren in itemCategory.Children)
+                        {
+                            <div class="tab-handle" data-targetID="@itemChildren.ID.ToShortID()">
+                                <p>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, itemChildren)</p>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="main partial">
+            <div class="inner-frame">
+                @foreach (var itemContent in categoryMultilist.Where(x => x.ID == new Sitecore.Data.ID(categoryId)))
+                {
+                    foreach (Sitecore.Data.Items.Item itemChildren in itemContent.Children)
+                    {
+                        <div class="content-tabs-target topic-subs" id="@itemChildren.ID.ToShortID()">
+                            <div class="faq-header">
+                                <p>@Html.Sitecore().Dictionary("/Feature/faq/FAQ", "Frequently Asked Question")</p>
+                                <h1>@itemChildren.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</h1>
+                            </div>
+                            <div class="faq-list">
+                                
+                                @if (isMBM == "1")
+                                {
+                                    foreach (Sitecore.Data.Items.Item itemGrandChildren in Model.Data.Where(x => x.Fields[Sitecore.Feature.Library.Templates.MBMFAQ.Fields.SubCategory].Value == itemChildren.ID.ToString()))
+                                    {
+                                    <div class="faq-item">
+                                        <div class="frame">
+                                            <h3>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, itemGrandChildren)</h3>
+                                            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content, itemGrandChildren)
+                                        </div>
+                                    </div>
+                                    }
+                                }
+                                else
+                                {
+                                    foreach (Sitecore.Data.Items.Item itemGrandChildren in Model.Data.Where(x => x.Fields["Category"].Value == itemChildren.ID.ToString()))
+                                    {
+                                        <div class="faq-item">
+                                            <div class="frame">
+                                                <h3>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, itemGrandChildren)</h3>
+                                                @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content, itemGrandChildren)
+                                            </div>
+                                        </div>
+                                    }
+                                }
+
+
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .page-header .page-banner--as-bg {
+        display: none;
+    }
+</style>

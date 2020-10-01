@@ -1,0 +1,244 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using Sitecore.Feature.Content.Controller
+@model PagedData<Sitecore.Data.Items.Item>
+@{
+    string _penawaran = string.Empty;
+    string _titlePenawaran = string.Empty;
+    string _category = string.Empty;
+    string _keyword = string.Empty;
+
+    _penawaran = Request.QueryString[Sitecore.Feature.Library.Helper.Variables._penawaran] != null ? Request.QueryString[Sitecore.Feature.Library.Helper.Variables._penawaran].ToLower() : string.Empty;
+    _category = Request.QueryString[Sitecore.Feature.Library.Helper.Variables._category] != null ? Request.QueryString[Sitecore.Feature.Library.Helper.Variables._category].ToLower() : string.Empty;
+    _keyword = Request.QueryString[Sitecore.Feature.Library.Helper.Variables._keyword] != null ? Request.QueryString[Sitecore.Feature.Library.Helper.Variables._keyword] : string.Empty;
+    int counter = 0;
+
+    Sitecore.Data.Items.Item dataSourceItem = Sitecore.Context.Database.GetItem(Model.DataSourceID);
+    Sitecore.Data.Items.Item ItemProductCategory = dataSourceItem.Children.Where(x => x.Template.ID == Sitecore.Feature.Library.Templates.ListCategoryPromotion.ID).FirstOrDefault();
+    Sitecore.Data.Fields.MultilistField oItemProductCategory = ItemProductCategory.Fields[Sitecore.Feature.Library.Templates.ListCategoryPromotion.Fields.Category];
+    Sitecore.Data.Items.Item ItemCountryPromotion = dataSourceItem.Children.Where(x => x.Template.ID == Sitecore.Feature.Library.Templates.CountryPromotion.ID).FirstOrDefault();
+    Sitecore.Data.Fields.MultilistField SelectedCountryPromotion = ItemCountryPromotion.Fields[Sitecore.Feature.Library.Templates.CountryPromotion.Fields.Location];
+    Sitecore.Data.Items.Item ItemLocationPromotion = dataSourceItem.Children.Where(x => x.Template.ID == Sitecore.Feature.Library.Templates.LocationPromotion.ID).FirstOrDefault();
+    Sitecore.Data.Fields.MultilistField SelectedLocationPromo = ItemLocationPromotion.Fields[Sitecore.Feature.Library.Templates.LocationPromotion.Fields.Location];
+
+    var idDiv = Guid.NewGuid();
+
+    Guid idPenawaran = new Guid();
+    _penawaran = Guid.TryParse(_penawaran, out idPenawaran) == true ? _penawaran : string.Empty;
+
+    try
+    {
+        if ( (!String.IsNullOrEmpty(_penawaran)) && Guid.TryParse(_penawaran, out idPenawaran))
+        {
+            _titlePenawaran = Sitecore.Context.Database.GetItem(new Sitecore.Data.ID(_penawaran)).DisplayName.ToLower();
+        }
+    }catch(Exception)
+    {
+        _penawaran = string.Empty;
+        _titlePenawaran = string.Empty;
+    }
+
+    if (_penawaran == dataSourceItem.ID.ToString().ToLower())
+    {
+        _penawaran = string.Empty;
+    }
+
+    string btnColor = "btn btn-tertiary addon";
+    Sitecore.Data.Items.Item sourceItem = RenderingContext.Current.Rendering.Item;
+    if (!string.IsNullOrWhiteSpace(sourceItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonColor].Value))
+    {
+        btnColor = Sitecore.Context.Database.GetItem(sourceItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonColor].Value).Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.stringTitle].ToString();
+    }
+}
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+    $('body').on('click', '.pagination-list a', function () {
+
+                    var page = parseInt($(this).html());
+
+        $.ajax({
+                        url: '@Url.Action("SPGListPaging")',
+            data:
+                        {
+                            "page": page,
+                "PageSize": @Model.PageSize,
+                "id": "@Model.DataSourceID",
+                "Keyword": "@Request.QueryString[Sitecore.Feature.Library.Helper.Variables._keyword]",
+                "Penawaran": "@Request.QueryString[Sitecore.Feature.Library.Helper.Variables._penawaran]",
+                "Category": "@Request.QueryString[Sitecore.Feature.Library.Helper.Variables._category]"
+            },
+            success: function (data) {
+                $("#news-pages-@idDiv").html(data);
+                setTimeout(function () {
+                    if ($('.card.js-demo-skeleton-content').hasClass('hide')) {
+                        $('.card.js-demo-skeleton-content').removeClass('hide')
+                        $('.skeleton.js-demo-skeleton').addClass('hide')
+                    }
+                }, 5000)
+                        }
+                    });
+                });
+
+    $('body').on('click', '.previous.enabled a', function () {
+                    var page = parseInt($(this).data("curpage") - 1);
+
+        $.ajax({
+                        url: '@Url.Action("SPGListPaging")',
+            data: {
+                            "page": page,
+                "PageSize": @Model.PageSize,
+                "id": "@Model.DataSourceID",
+                "Keyword": "@Request.QueryString[Sitecore.Feature.Library.Helper.Variables._keyword]",
+                "Penawaran": "@Request.QueryString[Sitecore.Feature.Library.Helper.Variables._penawaran]",
+                "Category": "@Request.QueryString[Sitecore.Feature.Library.Helper.Variables._category]"
+            },
+            success: function (data) {
+                $("#news-pages-@idDiv").html(data);
+                setTimeout(function () {
+                    if ($('.card.js-demo-skeleton-content').hasClass('hide')) {
+                        $('.card.js-demo-skeleton-content').removeClass('hide')
+                        $('.skeleton.js-demo-skeleton').addClass('hide')
+                    }
+                }, 5000)
+                        }
+                    });
+                });
+
+    $('body').on('click', '.next.enabled a', function () {
+                    var page = parseInt($(this).data("curpage") ) + 1;
+
+        $.ajax({
+                        url: '@Url.Action("SPGListPaging")',
+            data: {
+                            "page": page,
+                "PageSize": @Model.PageSize,
+                "id": "@Model.DataSourceID",
+                "Keyword": "@Request.QueryString[Sitecore.Feature.Library.Helper.Variables._keyword]",
+                "Penawaran": "@Request.QueryString[Sitecore.Feature.Library.Helper.Variables._penawaran]",
+                "Category": "@Request.QueryString[Sitecore.Feature.Library.Helper.Variables._category]"
+            },
+            success: function (data) {
+                $("#news-pages-@idDiv").html(data);
+                setTimeout(function () {
+                    if ($('.card.js-demo-skeleton-content').hasClass('hide')) {
+                        $('.card.js-demo-skeleton-content').removeClass('hide')
+                        $('.skeleton.js-demo-skeleton').addClass('hide')
+                    }
+                }, 5000)
+                        }
+                    });
+                });
+            });
+</script>
+
+@{
+
+}
+
+<div class="page-body">
+    <div class="feature has-search-component">
+        <div class="container">
+            <div class="search-travel">
+                <div class="search-travel-container">
+                    <div class="search-travel-header">
+                        <h2>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Summary, dataSourceItem)</h2>
+                    </div>
+                    <div class="search-travel-body">
+                        <form id="search-travel">
+                            <div class="row">
+                                <div class="form-group col">
+                                    <div class="col-title">@Html.Sitecore().Dictionary("/Feature/Promotion/Category", "Categories and offers")</div>
+                                    <div class="m2u-select js-m2u-select">
+                                        <select class="form-control" name="penawaran" data-label="">
+                                            @if (SelectedCountryPromotion.GetItems().Count() > 0)
+                                            {
+                                                if (string.IsNullOrEmpty(_penawaran))
+                                                {
+                                                    <option selected="selected" value="@dataSourceItem.ID" data-iditemcategory="@dataSourceItem.ID">@Html.Sitecore().Dictionary("/Feature/Promotion/All", "All")</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@dataSourceItem.ID" data-iditemcategory="@dataSourceItem.ID">@Html.Sitecore().Dictionary("/Feature/Promotion/All", "All")</option>
+                                                }
+
+                                                foreach (Sitecore.Data.Items.Item ItemCategory in SelectedCountryPromotion.GetItems())
+                                                {
+                                                    counter++;
+                                                    if (_penawaran == ItemCategory.ID.ToString().ToLower())
+                                                    {
+                                                        <option selected="selected" value="@ItemCategory.ID" data-iditemcategory="@ItemCategory.ID">@ItemCategory.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@ItemCategory.ID" data-iditemcategory="@ItemCategory.ID">@ItemCategory.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</option>
+                                                    }
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                                @if (_titlePenawaran.ToLower() == "indonesia")
+                                {
+                                    <div class="form-group col">
+                                        <label class="col-title no-animation" for="location">@Html.Sitecore().Dictionary("/Feature/Promotion/Location", "Destination Location")</label>
+                                        <input class="js-type-ahead form-control" type="text" name="keyword" autocomplete="off" onfocus="this.value=''" value="@_keyword" />
+                                        <ul class="custom-list">
+                                            @foreach (Sitecore.Data.Items.Item location in SelectedLocationPromo.GetItems())
+                                             {
+                                                <li>@location.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title].Value</li>
+                                             }
+                                        </ul>
+                                    </div>
+                                }
+                                <div class="form-group col">
+                                    <button class="@btnColor">
+                                        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, dataSourceItem)<img src="../../assets/img/icons/arrow-right/arrow-right-363@2x.png" />
+                                    </button>
+                                </div>
+                            </div>
+                            @if (Request.QueryString[Sitecore.Feature.Library.Helper.Variables._category] != null && Request.QueryString[Sitecore.Feature.Library.Helper.Variables._category].Count() > 0)
+                            {
+                                <input type="hidden" name="category" value="@Request.QueryString[Sitecore.Feature.Library.Helper.Variables._category]" />
+                            }
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-wrapper clearfix">
+                <div class="row pb-3">
+                    <div class="col">
+                        <ul class="filter-tag-wrapper">
+                            <li class="filter-tag-list @Html.Raw(string.IsNullOrWhiteSpace(_category)?"active":string.Empty)"><span class="myLifeStyle">show all</span></li>
+                            @{
+                                foreach (Sitecore.Data.Items.Item itemProductCategory in oItemProductCategory.GetItems())
+                                {
+                                    <li class="filter-tag-list @Html.Raw(_category == itemProductCategory.ID.ToString().ToLower()?"active":string.Empty)">
+                                        <span class="myLifeStyle" data-id="@itemProductCategory.ID" data-displayname="@itemProductCategory.DisplayName">
+                                            @itemProductCategory.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]
+                                        </span>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="news-pages-@idDiv">
+                    @Html.Partial("LifestyleListItem")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

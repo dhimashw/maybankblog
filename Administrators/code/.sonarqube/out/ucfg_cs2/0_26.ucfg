@@ -1,0 +1,78 @@
+
+bSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment.DisplayAllComment(bool)l
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs (%"0*€
+0®
+•
+l
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs   ((
+%0"System.Web.UI.WebControls.Repeater"__id*Ñ*ÅL
+JSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment"1
+commentList"System.Web.UI.WebControls.RepeaterÑ
+Å
+l
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs %  (C
+%1System.Data.DataSet"~Sitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment.SearchComment(bool, string, string, string, string)*NL
+JSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment*
+""*
+""*
+""*
+""*
+""âÜ
+l
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs   (C
+
+%2void"1System.Web.UI.WebControls.Repeater.DataSource.set**
+(
+%0"System.Web.UI.WebControls.Repeater*
+
+%1System.Data.DataSet2DataSource.set®
+•
+l
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs! !((
+%3"System.Web.UI.WebControls.Repeater"__id*Ñ*ÅL
+JSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment"1
+commentList"System.Web.UI.WebControls.Repeater‰·
+l
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs! !("
+
+%4void"-System.Web.UI.WebControls.Repeater.DataBind()**
+(
+%3"System.Web.UI.WebControls.Repeater2
+DataBind()*
+1
+2*ﬁ
+1–Õ
+l
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs% %(
+%5System.Web.UI.Page"System.Web.UI.Control.Page.get*
+System.Web.UI.Control2Page.get€
+ÿ
+l
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs% %(!'
+%6!System.Web.UI.ClientScriptManager"#System.Web.UI.Page.ClientScript.get*
+
+%5System.Web.UI.PageÊ
+„
+l
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs%8 %(F
+%7System.Type"object.GetType()*NL
+JSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedCommentπ
+∂
+m
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs% %(¶
+
+%8void"ZSystem.Web.UI.ClientScriptManager.RegisterStartupScript(System.Type, string, string, bool)*)
+'
+%6!System.Web.UI.ClientScriptManager*
+
+%7System.Type*
+	activeTab*
+""*
+""*
+2*â
+2"É
+l
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs' '(	
+implicit return:
+setTabboolBNL
+JSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment

@@ -1,0 +1,34 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+
+@model RenderingModel
+@{
+    var isReverse = RenderingContext.Current.Rendering.Parameters["ReverseColumn"];
+}
+
+<div class="row">
+    @if (isReverse != "1")
+    {
+        <div class="col-xs-12 col-md-5">
+            <div class="heading">
+                <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title)</h1>
+                <p class="gray-text">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Summary)</p>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-7">
+            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content)
+        </div>
+    }
+    else
+    {
+        <div class="col-xs-12 col-md-7">
+            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content)
+        </div> <div class="col-xs-12 col-md-5">
+            <div class="heading">
+                <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title)</h1>
+                <p class="gray-text">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Summary)</p>
+            </div>
+        </div>
+    }
+</div>

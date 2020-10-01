@@ -1,0 +1,39 @@
+﻿---
+ID: "c76b875c-65af-4e60-992b-f3e96199bae5"
+Parent: "0b4d1255-9cbd-4f84-903c-49ca23e77644"
+Template: "0b4d1255-9cbd-4f84-903c-49ca23e77644"
+Path: /sitecore/templates/Feature/Content/Item Nilai Perusahaan/__Standard Values
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Applications/16x16/folder_document.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180711T073355Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "d3ec40df-2bbd-4fc1-b62e-5eada837e326"
+      Hint: Title
+      Value: $name
+- Language: id
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180711T073407Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "d3ec40df-2bbd-4fc1-b62e-5eada837e326"
+      Hint: Title
+      Value: $name

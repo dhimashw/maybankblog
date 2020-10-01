@@ -1,0 +1,33 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Data.Fields
+@using Sitecore.Data
+@using Sitecore.XA.Feature.Taxonomy.Tags
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+
+@model RenderingModel
+@{
+    MultilistField tagList = Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.HashtagItenmList];
+    var imageUrl = Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.Background);
+}
+
+<div class="box" id="syariah-fun-fact" style="background-image:url('@imageUrl')">
+    <div class="box__header">
+        <h2 class="box__title">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title)</h2>
+    </div>
+    <div class="box__body">
+        <p>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Summary)</p>
+    </div>
+    <div class="box__footer">
+        <div class="hastag">
+            <ul class="nodots hastag__wrapper">
+                @foreach (var item in tagList.Items)
+                {
+                    var tagListField = Sitecore.Context.Database.Items.GetItem(new ID(item.ToString()));
+
+                    <li class="hastag__item">#@tagListField.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.stringTitle]</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

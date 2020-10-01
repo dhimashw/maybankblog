@@ -1,0 +1,138 @@
+
+uSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment.BtnShowAll_Click(object, System.EventArgs)n
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs≥ ≥('"0*÷
+0»
+≈
+n
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.csµ µ(
+
+%0bool"(System.Web.UI.UserControl.IsPostBack.get*
+System.Web.UI.UserControl*
+1
+2*ü
+1ª
+∏
+n
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.csπ π(+
+
+%1void"bSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment.DisplayAllComment(bool)*NL
+JSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment*
+""áÑ
+n
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs∫% ∫(.
+%2System.Web.UI.Page"System.Web.UI.Control.Page.get*NL
+JSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment2Page.get˜Ù
+n
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs∫% ∫(F
+%3System.Web.UI.Control"&System.Web.UI.Page.FindControl(string)*
+
+%2System.Web.UI.Page*
+
+MyTaskUC2FindControl(string)µ
+≤
+n
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs∫% ∫(P
+%4System.Web.UI.Control"__id*
+
+%3System.Web.UI.ControlÊ
+„
+n
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs∫ ∫(PL
+otherUCASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask"__id*
+
+%4System.Web.UI.Control≤
+Ø
+n
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.csª ª(4
+
+%5void"YSitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask.DisplayAllComment(bool)*N
+L
+otherUCASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask*
+""áÑ
+n
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.csº. º(7
+%6System.Web.UI.Page"System.Web.UI.Control.Page.get*NL
+JSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment2Page.getˇ¸
+n
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.csº. º(W
+%7System.Web.UI.Control"&System.Web.UI.Page.FindControl(string)*
+
+%6System.Web.UI.Page*
+DeletedCommentUC2FindControl(string)µ
+≤
+n
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.csº. º(i
+%8System.Web.UI.Control"__id*
+
+%7System.Web.UI.ControlÔ
+Ï
+n
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.csº# º(iU
+otherUC2ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment"__id*
+
+%8System.Web.UI.Control√
+¿
+n
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.csΩ Ω(5
+
+%9void"aSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.DisplayAllComment(bool)*W
+U
+otherUC2ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment*
+""*
+3
+2*è
+3”–
+n
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs¡ ¡(
+%10System.Web.UI.Page"System.Web.UI.Control.Page.get*
+System.Web.UI.Control2Page.getﬂ
+‹
+n
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs¡ ¡(%(
+%11!System.Web.UI.ClientScriptManager"#System.Web.UI.Page.ClientScript.get*
+
+%10System.Web.UI.PageÈ
+Ê
+n
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs¡< ¡(J
+%12System.Type"object.GetType()*NL
+JSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment…∆
+p
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs¡á ¡(ë
+%13string"System.Exception.Message.get*
+
+exSystem.Exception2Message.get¶
+£
+o
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs¡T ¡(ö
+%14string"__concat*
+""*
+
+%13string¶
+£
+o
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs¡T ¡(ö
+%15string"__concat*
+
+%14string*
+""¬
+ø
+o
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.cs¡ ¡(°
+%16void"ZSystem.Web.UI.ClientScriptManager.RegisterStartupScript(System.Type, string, string, bool)**
+(
+%11!System.Web.UI.ClientScriptManager*
+
+%12System.Type*
+load*
+
+%15string*
+""*
+2*ã
+2"Ö
+n
+bC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\ApprovedComment.ascx.csƒ ƒ(	
+implicit return:
+senderobject:
+eSystem.EventArgsBNL
+JSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment

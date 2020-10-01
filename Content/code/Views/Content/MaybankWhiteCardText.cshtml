@@ -1,0 +1,39 @@
+﻿@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Data.Items;
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Mvc
+@using Sitecore.Foundation.Alerts.Extensions
+@model RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.FreeTextAndLink.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.FreeTextAndLink.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{ 
+    var items = Sitecore.Context.Database.GetItem(Model.Item.ID);
+    //string linkurl = !string.IsNullOrWhiteSpace(@items.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url).ToString()) ? @items.LinkFieldUrl(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url).ToString() : "#";
+    Sitecore.Data.Fields.LinkField _link = items.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url];
+    string linkurl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+    string targetType = !string.IsNullOrWhiteSpace(@items.LinkFieldOptions(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url, LinkFieldOption.Target)) ? @items.LinkFieldOptions(Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url, LinkFieldOption.Target) : "_blank";
+    //string AnchorTitle = items.Fields[Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading].Value.ToString().Replace(" ","").ToLower();
+    string AncorItemID = RenderingContext.Current.Rendering.Parameters["ID"] != null ? RenderingContext.Current.Rendering.Parameters["ID"].Trim() : "";
+}
+<div class="section m-info-box" id="@AncorItemID">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="heading">
+                    <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading, items)</h1>
+                    <p class="gray-text">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Subheading, items)</p>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <div class="row">
+                    @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent, items)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

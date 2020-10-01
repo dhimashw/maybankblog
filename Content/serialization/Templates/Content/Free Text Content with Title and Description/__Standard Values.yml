@@ -1,0 +1,18 @@
+﻿---
+ID: "6fbf5fa5-fdab-4e3a-96c8-7227b894fd25"
+Parent: "0b48684f-4d01-4cce-989e-daf2134d8f90"
+Template: "0b48684f-4d01-4cce-989e-daf2134d8f90"
+Path: /sitecore/templates/Feature/Content/Free Text Content with Title and Description/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180629T043732Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

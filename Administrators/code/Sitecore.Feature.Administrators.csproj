@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E23FE7A5-D054-4B44-9D9A-B729FAD16AF1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sitecore.Feature.Administrators</RootNamespace>
+    <AssemblyName>Sitecore.Feature.Administrators</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Use64BitIISExpress />
+    <TypeScriptToolsVersion>2.2</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Sitecore.Kernel.NoReferences.8.2.171121\lib\NET452\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Sitecore.Mvc.NoReferences.8.2.171121\lib\NET452\Sitecore.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\custom\jquery-ui-1.12.1\AUTHORS.txt" />
+    <Content Include="Assets\custom\jquery-ui-1.12.1\external\jquery\jquery.js" />
+    <Content Include="Assets\custom\jquery-ui-1.12.1\images\ui-icons_444444_256x240.png" />
+    <Content Include="Assets\custom\jquery-ui-1.12.1\images\ui-icons_555555_256x240.png" />
+    <Content Include="Assets\custom\jquery-ui-1.12.1\images\ui-icons_777620_256x240.png" />
+    <Content Include="Assets\custom\jquery-ui-1.12.1\images\ui-icons_777777_256x240.png" />
+    <Content Include="Assets\custom\jquery-ui-1.12.1\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Assets\custom\jquery-ui-1.12.1\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Assets\custom\jquery-ui-1.12.1\index.html" />
+    <Content Include="Assets\custom\jquery-ui-1.12.1\jquery-ui.css" />
+    <Content Include="Assets\custom\jquery-ui-1.12.1\jquery-ui.js" />
+    <Content Include="Assets\custom\jquery-ui-1.12.1\jquery-ui.min.css" />
+    <Content Include="Assets\custom\jquery-ui-1.12.1\jquery-ui.min.js" />
+    <Content Include="Assets\custom\jquery-ui-1.12.1\jquery-ui.structure.css" />
+    <Content Include="Assets\custom\jquery-ui-1.12.1\jquery-ui.structure.min.css" />
+    <Content Include="Assets\custom\jquery-ui-1.12.1\jquery-ui.theme.css" />
+    <Content Include="Assets\custom\jquery-ui-1.12.1\jquery-ui.theme.min.css" />
+    <Content Include="Assets\custom\jquery-ui-1.12.1\LICENSE.txt" />
+    <Content Include="Assets\font\css\open-iconic-bootstrap.css" />
+    <Content Include="Assets\font\css\open-iconic-bootstrap.min.css" />
+    <Content Include="Assets\font\css\open-iconic-foundation.css" />
+    <Content Include="Assets\font\css\open-iconic-foundation.min.css" />
+    <Content Include="Assets\font\css\open-iconic.css" />
+    <Content Include="Assets\font\css\open-iconic.min.css" />
+    <Content Include="Assets\font\fonts\open-iconic.svg" />
+    <Content Include="Assets\md\css\addons\datatables-select.css" />
+    <Content Include="Assets\md\css\addons\datatables-select.min.css" />
+    <Content Include="Assets\md\css\addons\datatables.css" />
+    <Content Include="Assets\md\css\addons\datatables.min.css" />
+    <Content Include="Assets\md\css\addons\directives.css" />
+    <Content Include="Assets\md\css\addons\directives.min.css" />
+    <Content Include="Assets\md\css\bootstrap.css" />
+    <Content Include="Assets\md\css\bootstrap.min.css" />
+    <Content Include="Assets\md\css\mdb.css" />
+    <Content Include="Assets\md\css\mdb.lite.css" />
+    <Content Include="Assets\md\css\mdb.lite.min.css" />
+    <Content Include="Assets\md\css\mdb.min.css" />
+    <Content Include="Assets\md\css\modules\animations-extended.css" />
+    <Content Include="Assets\md\css\modules\animations-extended.min.css" />
+    <Content Include="Assets\md\css\style.css" />
+    <Content Include="Assets\md\css\style.min.css" />
+    <Content Include="Assets\md\img\lightbox\default-skin.png" />
+    <Content Include="Assets\md\img\lightbox\default-skin.svg" />
+    <Content Include="Assets\md\img\lightbox\preloader.gif" />
+    <Content Include="Assets\md\img\overlays\01.png" />
+    <Content Include="Assets\md\img\overlays\02.png" />
+    <Content Include="Assets\md\img\overlays\03.png" />
+    <Content Include="Assets\md\img\overlays\04.png" />
+    <Content Include="Assets\md\img\overlays\05.png" />
+    <Content Include="Assets\md\img\overlays\06.png" />
+    <Content Include="Assets\md\img\overlays\07.png" />
+    <Content Include="Assets\md\img\overlays\08.png" />
+    <Content Include="Assets\md\img\overlays\09.png" />
+    <Content Include="Assets\md\img\svg\arrow_left.svg" />
+    <Content Include="Assets\md\img\svg\arrow_right.svg" />
+    <Content Include="Assets\md\js\addons\datatables-select.js" />
+    <Content Include="Assets\md\js\addons\datatables-select.min.js" />
+    <Content Include="Assets\md\js\addons\datatables.js" />
+    <Content Include="Assets\md\js\addons\datatables.min.js" />
+    <Content Include="Assets\md\js\addons\rating.js" />
+    <Content Include="Assets\md\js\bootstrap.js" />
+    <Content Include="Assets\md\js\bootstrap.min.js" />
+    <Content Include="Assets\md\js\jquery-3.3.1.min.js" />
+    <Content Include="Assets\md\js\mdb.js" />
+    <Content Include="Assets\md\js\mdb.min.js" />
+    <Content Include="Assets\md\js\modules\chart.js" />
+    <Content Include="Assets\md\js\modules\default-file-input.js" />
+    <Content Include="Assets\md\js\modules\enhanced-modals.js" />
+    <Content Include="Assets\md\js\modules\forms-free.js" />
+    <Content Include="Assets\md\js\modules\jquery.easing.js" />
+    <Content Include="Assets\md\js\modules\scrolling-navbar.js" />
+    <Content Include="Assets\md\js\modules\velocity.js" />
+    <Content Include="Assets\md\js\modules\velocity.min.js" />
+    <Content Include="Assets\md\js\modules\waves.js" />
+    <Content Include="Assets\md\js\modules\wow.js" />
+    <Content Include="Assets\md\js\popper.min.js" />
+    <Content Include="Assets\Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Assets\Styles\bootstrap-grid.css" />
+    <Content Include="Assets\Styles\bootstrap-grid.min.css" />
+    <Content Include="Assets\Styles\bootstrap-reboot.css" />
+    <Content Include="Assets\Styles\bootstrap-reboot.min.css" />
+    <Content Include="Assets\Styles\bootstrap.css" />
+    <Content Include="Assets\Styles\bootstrap.min.css" />
+    <Content Include="Assets\Scripts\bootstrap.bundle.js" />
+    <Content Include="Assets\Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Assets\Scripts\bootstrap.js" />
+    <Content Include="Assets\Scripts\bootstrap.min.js" />
+    <Content Include="Assets\Styles\style.css" />
+    <Content Include="Sitecore\Admin\Custom\Dashboard.aspx" />
+    <Content Include="Sitecore\Admin\Template\All Risk.xml" />
+    <Content Include="Sitecore\Admin\Template\BidangUsaha.xml" />
+    <Content Include="Sitecore\Admin\Template\BusinessVouchers.xml" />
+    <Content Include="Sitecore\Admin\Template\CreditCardVouchers.xml" />
+    <Content Include="Sitecore\Admin\Template\JenisPekerjaan.xml" />
+    <Content Include="Sitecore\Admin\Template\Kodepos.xml" />
+    <Content Include="Sitecore\Admin\Template\LoanVouchers.xml" />
+    <Content Include="Sitecore\Admin\Template\MortgageMultifunctionVouchers.xml" />
+    <Content Include="Sitecore\Admin\Template\Perumahan.xml" />
+    <Content Include="Sitecore\Admin\Template\Rate ADDM.xml" />
+    <Content Include="Sitecore\Admin\Template\SavingVouchers.xml" />
+    <Content Include="Sitecore\Admin\Template\SyariahVouchers.xml" />
+    <Content Include="Sitecore\Admin\Template\TJH Coverage.xml" />
+    <Content Include="Sitecore\Admin\Template\Rate Extention Insurance.xml" />
+    <Content Include="Sitecore\Admin\Template\City.xml" />
+    <Content Include="Sitecore\Admin\Template\Template Branch.xml" />
+    <Content Include="Sitecore\Admin\Template\Template Branch Weekend Banking.xml" />
+    <Content Include="Sitecore\Admin\Template\Template Branch Syariah.xml" />
+    <Content Include="Sitecore\Admin\Template\Template Branch Premier.xml" />
+    <Content Include="Sitecore\Admin\Template\Template ATM.xml" />
+    <Content Include="Sitecore\Admin\Template\Reksadana.xml" />
+    <Content Include="Sitecore\Admin\Template\Cars.xml" />
+    <Content Include="Sitecore\Admin\Template\MotorCycle.xml" />
+    <Content Include="Sitecore\Admin\Template\DummyEmployee.xml" />
+    <Content Include="Sitecore\Admin\Template\Vouchers.xml" />
+    <Content Include="Sitecore\Admin\UserControl\DeletedComment.ascx" />
+    <Content Include="Sitecore\Admin\UserControl\ApprovedComment.ascx" />
+    <Content Include="Sitecore\Admin\UserControl\MyTask.ascx" />
+    <Content Include="Views\Web.config" />
+    <Content Include="App_Config\Include\Feature\Feature.Administrators.Serialization.config" />
+    <Content Include="packages.config" />
+    <Content Include="Assets\Styles\bootstrap.min.css.map" />
+    <Content Include="Assets\Styles\bootstrap.css.map" />
+    <Content Include="Assets\Styles\bootstrap-reboot.min.css.map" />
+    <Content Include="Assets\Styles\bootstrap-reboot.css.map" />
+    <Content Include="Assets\Styles\bootstrap-grid.min.css.map" />
+    <Content Include="Assets\Styles\bootstrap-grid.css.map" />
+    <Content Include="Assets\font\css\open-iconic-bootstrap.less" />
+    <Content Include="Assets\font\css\open-iconic-bootstrap.scss" />
+    <Content Include="Assets\font\css\open-iconic-bootstrap.styl" />
+    <Content Include="Assets\font\css\open-iconic-foundation.less" />
+    <Content Include="Assets\font\css\open-iconic-foundation.scss" />
+    <Content Include="Assets\font\css\open-iconic-foundation.styl" />
+    <Content Include="Assets\font\css\open-iconic.less" />
+    <Content Include="Assets\font\css\open-iconic.scss" />
+    <Content Include="Assets\font\css\open-iconic.styl" />
+    <Content Include="Assets\font\fonts\open-iconic.eot" />
+    <Content Include="Assets\font\fonts\open-iconic.otf" />
+    <Content Include="Assets\font\fonts\open-iconic.ttf" />
+    <Content Include="Assets\font\fonts\open-iconic.woff" />
+    <Content Include="Assets\md\font\roboto\Roboto-Bold.eot" />
+    <Content Include="Assets\md\font\roboto\Roboto-Bold.ttf" />
+    <Content Include="Assets\md\font\roboto\Roboto-Bold.woff" />
+    <Content Include="Assets\md\font\roboto\Roboto-Bold.woff2" />
+    <Content Include="Assets\md\font\roboto\Roboto-Light.eot" />
+    <Content Include="Assets\md\font\roboto\Roboto-Light.ttf" />
+    <Content Include="Assets\md\font\roboto\Roboto-Light.woff" />
+    <Content Include="Assets\md\font\roboto\Roboto-Light.woff2" />
+    <Content Include="Assets\md\font\roboto\Roboto-Medium.eot" />
+    <Content Include="Assets\md\font\roboto\Roboto-Medium.ttf" />
+    <Content Include="Assets\md\font\roboto\Roboto-Medium.woff" />
+    <Content Include="Assets\md\font\roboto\Roboto-Medium.woff2" />
+    <Content Include="Assets\md\font\roboto\Roboto-Regular.eot" />
+    <Content Include="Assets\md\font\roboto\Roboto-Regular.ttf" />
+    <Content Include="Assets\md\font\roboto\Roboto-Regular.woff" />
+    <Content Include="Assets\md\font\roboto\Roboto-Regular.woff2" />
+    <Content Include="Assets\md\font\roboto\Roboto-Thin.eot" />
+    <Content Include="Assets\md\font\roboto\Roboto-Thin.ttf" />
+    <Content Include="Assets\md\font\roboto\Roboto-Thin.woff" />
+    <Content Include="Assets\md\font\roboto\Roboto-Thin.woff2" />
+    <Content Include="Assets\md\scss\addons\_datatables-select.scss" />
+    <Content Include="Assets\md\scss\addons\_datatables.scss" />
+    <Content Include="Assets\md\scss\addons\_directives.scss" />
+    <Content Include="Assets\md\scss\core\bootstrap\_functions.scss" />
+    <Content Include="Assets\md\scss\core\bootstrap\_rfs.scss" />
+    <Content Include="Assets\md\scss\core\bootstrap\_variables.scss" />
+    <Content Include="Assets\md\scss\core\_colors.scss" />
+    <Content Include="Assets\md\scss\core\_global.scss" />
+    <Content Include="Assets\md\scss\core\_helpers.scss" />
+    <Content Include="Assets\md\scss\core\_masks.scss" />
+    <Content Include="Assets\md\scss\core\_mixins.scss" />
+    <Content Include="Assets\md\scss\core\_typography.scss" />
+    <Content Include="Assets\md\scss\core\_variables.scss" />
+    <Content Include="Assets\md\scss\core\_waves.scss" />
+    <Content Include="Assets\md\scss\free\modules\animations-extended\animations-extended.scss" />
+    <Content Include="Assets\md\scss\free\modules\animations-extended\_module.scss" />
+    <Content Include="Assets\md\scss\free\_animations-basic.scss" />
+    <Content Include="Assets\md\scss\free\_badges.scss" />
+    <Content Include="Assets\md\scss\free\_buttons.scss" />
+    <Content Include="Assets\md\scss\free\_cards.scss" />
+    <Content Include="Assets\md\scss\free\_carousels.scss" />
+    <Content Include="Assets\md\scss\free\_depreciated.scss" />
+    <Content Include="Assets\md\scss\free\_dropdowns.scss" />
+    <Content Include="Assets\md\scss\free\_footers.scss" />
+    <Content Include="Assets\md\scss\free\_forms.scss" />
+    <Content Include="Assets\md\scss\free\_input-group.scss" />
+    <Content Include="Assets\md\scss\free\_list-group.scss" />
+    <Content Include="Assets\md\scss\free\_loader.scss" />
+    <Content Include="Assets\md\scss\free\_modals.scss" />
+    <Content Include="Assets\md\scss\free\_msc.scss" />
+    <Content Include="Assets\md\scss\free\_navbars.scss" />
+    <Content Include="Assets\md\scss\free\_pagination.scss" />
+    <Content Include="Assets\md\scss\free\_steppers.scss" />
+    <Content Include="Assets\md\scss\free\_switch.scss" />
+    <Content Include="Assets\md\scss\free\_tables.scss" />
+    <Content Include="Assets\md\scss\free\_treeview.scss" />
+    <Content Include="Assets\md\scss\mdb.lite.scss" />
+    <Content Include="Assets\md\scss\mdb.scss" />
+    <Content Include="Assets\md\scss\_custom-skin.scss" />
+    <Content Include="Assets\md\scss\_custom-styles.scss" />
+    <Content Include="Assets\md\scss\_custom-variables.scss" />
+    <Content Include="Assets\custom\jquery-ui-1.12.1\package.json" />
+    <None Include="Properties\PublishProfiles\Custom.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <Content Include="Assets\Scripts\bootstrap.min.js.map" />
+    <Content Include="Assets\Scripts\bootstrap.js.map" />
+    <Content Include="Assets\Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Assets\Scripts\bootstrap.bundle.js.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sitecore\Admin\Custom\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sitecore\Admin\Custom\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sitecore\Admin\UserControl\DeletedComment.ascx.cs">
+      <DependentUpon>DeletedComment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sitecore\Admin\UserControl\DeletedComment.ascx.designer.cs">
+      <DependentUpon>DeletedComment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Sitecore\Admin\UserControl\ApprovedComment.ascx.cs">
+      <DependentUpon>ApprovedComment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sitecore\Admin\UserControl\ApprovedComment.ascx.designer.cs">
+      <DependentUpon>ApprovedComment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Sitecore\Admin\UserControl\MyTask.ascx.cs">
+      <DependentUpon>MyTask.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sitecore\Admin\UserControl\MyTask.ascx.designer.cs">
+      <DependentUpon>MyTask.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Sitecore.Foundation.Alerts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Sitecore.Foundation.Alerts.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Foundation.Dictionary, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Sitecore.Foundation.Dictionary.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Foundation.SitecoreExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Sitecore.Foundation.SitecoreExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Feature.Library, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Sitecore.Feature.Library.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\" />
+    <Folder Include="Views\Test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59555</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59555/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

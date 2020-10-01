@@ -1,0 +1,78 @@
+
+eSitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask.Page_Load(object, System.EventArgs)c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs ( "0*Ë
+0½
+º
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs (
+
+%0bool"(System.Web.UI.UserControl.IsPostBack.get*
+System.Web.UI.UserControl*
+1
+2*¬
+1ž
+›
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs ('
+
+%1void"YSitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask.DisplayAllComment(bool)*EC
+ASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask*
+""*
+3
+2*¯
+3ÇÄ
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs (
+%2System.Web.UI.Page"System.Web.UI.Control.Page.get*
+System.Web.UI.Control2Page.getÒ
+Ï
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs (%'
+%3!System.Web.UI.ClientScriptManager"#System.Web.UI.Page.ClientScript.get*
+
+%2System.Web.UI.PageÔ
+Ñ
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs< (J
+%4System.Type"object.GetType()*EC
+ASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask½º
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csŠ (”
+%5string"System.Exception.Message.get*
+
+exSystem.Exception2Message.get™
+–
+d
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csW (
+%6string"__concat*
+""*
+
+%5string™
+–
+d
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csW (
+%7string"__concat*
+
+%6string*
+""¶
+³
+d
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs (¤
+
+%8void"ZSystem.Web.UI.ClientScriptManager.RegisterStartupScript(System.Type, string, string, bool)*)
+'
+%3!System.Web.UI.ClientScriptManager*
+
+%4System.Type*	
+error-1*
+
+%7string*
+""*
+2*
+2"z
+c
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs (	
+implicit return:
+senderobject:
+eSystem.EventArgsBEC
+ASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask

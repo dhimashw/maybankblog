@@ -1,0 +1,61 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Data.Items
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model RenderingModel
+@{
+    string speed = RenderingContext.Current.Rendering.Parameters["Speed"] == "" ? "3000" : RenderingContext.Current.Rendering.Parameters["Speed"];
+}
+<div class="page-header page-header--border-gold">
+    <div class="banner-carousel">
+        <div class="owl-carousel owl-theme" id="owl-banner-carousel">
+            @for (int i = 1; i <= 3; i++)
+            {
+                if (!Sitecore.Context.PageMode.IsExperienceEditor)
+                {
+                    
+                        @Html.Sitecore().DynamicPlaceholder("mbm-home-banner-content")
+                    
+                }
+                else
+                {
+                    <div class="item">
+                        @Html.Sitecore().DynamicPlaceholder("mbm-home-banner-content")
+                    </div>
+                }
+
+            }
+        </div>
+        <div class="slide js-slide-progress-bar"></div>
+    </div>
+</div>
+@*<script>
+    $(document).ready(function () {
+        var homeBanner = $('#owl-banner-carousel');
+    });
+</script>*@
+
+@*@if (!Sitecore.Context.PageMode.IsExperienceEditor)
+{
+    <script>
+        console.log('asdas');
+        $(document).ready(function () {
+            window.onload = function () {
+                var homeBanner = $('#owl-banner-carousel');
+                //homeBanner.owlCarousel({ items: 1, loop: true });
+                var suspect = homeBanner.find('.owl-item').not('.cloned');
+                console.dir(suspect);
+                var konter = 0;
+                suspect.each(function (i) {
+                    if ($(this).find('.img-as-bg').length == 0) {
+                        homeBanner.trigger('remove.owl.carousel', i - konter).trigger('refresh.owl.carousel');
+                        konter++;
+                        console.log(i);
+                    }
+                    //homeBanner.trigger('refresh.owl.carousel');
+                });
+                homeBanner.owlCarousel({ items: 1, loop: true });
+            };
+        });
+    </script>
+}*@

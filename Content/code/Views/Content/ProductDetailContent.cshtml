@@ -1,0 +1,57 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Data.Items;
+@using Sitecore.Foundation.Alerts;
+@using Sitecore.Foundation.Alerts.Extensions;
+@using Sitecore.Mvc.Presentation
+@model RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.ImagePositionAndDesc.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.ImagePositionAndDesc.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{
+    string ImgPosition = !string.IsNullOrWhiteSpace(Model.Item.Fields[Sitecore.Feature.Library.Templates.ImagePositionAndDesc.Fields.ImagePosition].Value) ? Model.Item.Fields[Sitecore.Feature.Library.Templates.ImagePositionAndDesc.Fields.ImagePosition].Value.ToLower() : "right";
+}
+
+@if (ImgPosition == "right")
+{
+    <div class="article">
+        <div class="container">
+            <div class="wysiwyg">
+                <div class="clearfix">
+                    <div class="col-xs-12 col-md-6 col-md-push-6"><img class="img-responsive" src="@Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.ImageLink.Fields.Image)" alt="" /><br /></div>
+                    <div class="col-xs-12 col-md-6 col-md-pull-6">
+                        <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading, Model.Item)</h1>
+                        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent, Model.Item)<br />
+                        <address>
+                            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.FooterText.Fields.FooterText, Model.Item)
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+
+    <div class="article bg-grey">
+        <div class="container">
+            <div class="wysiwyg">
+                <div class="clearfix">
+                    <div class="col-xs-12 col-md-6"><img class="img-responsive" src="@Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.ImageLink.Fields.Image)" alt="" /><br /></div>
+                    <div class="col-xs-12 col-md-6">
+                        <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralHeadingAndSubheading.Fields.Heading, Model.Item)</h1>
+                        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent, Model.Item) <br />
+                        <address>
+                            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.FooterText.Fields.FooterText, Model.Item)
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

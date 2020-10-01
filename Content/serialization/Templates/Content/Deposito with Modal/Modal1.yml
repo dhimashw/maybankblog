@@ -1,0 +1,18 @@
+﻿---
+ID: "04cd8596-db3f-4117-bb86-9c8505fac85b"
+Parent: "6c782cbd-c201-4549-9726-f8442229748f"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/Content/Deposito with Modal/Modal1
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180524T080556Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

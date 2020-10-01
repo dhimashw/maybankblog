@@ -1,0 +1,38 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    string idAnchor = RenderingContext.Current.Rendering.Parameters["ID"] != null ? RenderingContext.Current.Rendering.Parameters["ID"].ToString() : string.Empty;
+}
+
+@if (string.IsNullOrEmpty(idAnchor) == true)
+{
+    if (Sitecore.Context.PageMode.IsExperienceEditor)
+    {
+        <div>
+            <p>Click edit component properties to set ID Anchor</p>
+        </div>
+    }
+}
+else
+{
+    if (Sitecore.Context.PageMode.IsExperienceEditor)
+    {
+        <div>
+            <p>Click edit component properties to set ID Anchor</p>
+        </div>
+    }
+    @*<a name="@idAnchor"></a>*@
+
+    <div class="large-pad">
+        <div class="frame">
+            <a class="anchor" name="@idAnchor"></a>
+        </div>
+    </div>
+}

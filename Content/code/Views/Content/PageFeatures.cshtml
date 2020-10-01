@@ -1,0 +1,33 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+
+@model RenderingModel
+@{
+    /**/
+
+    var isReverse = RenderingContext.Current.Rendering.Parameters["ReverseColumn"];
+}
+
+@if (isReverse == "1")
+{
+    <div class="m-page-feature__item col-md-6 no-padding">
+        <div class="m-page-feature__details md">
+            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content, Model.Item)
+        </div>
+    </div>
+    <div class="m-page-feature__item col-md-6 no-padding">
+        <div class="m-page-feature__picture" style="background-image:url(@Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail));"></div>
+    </div>
+}
+else
+{
+    <div class="m-page-feature__item col-md-6 no-padding">
+        <div class="m-page-feature__picture" style="background-image:url(@Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail));"></div>
+    </div>
+    <div class="m-page-feature__item col-md-6 no-padding">
+        <div class="m-page-feature__details md">
+            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content, Model.Item)
+        </div>
+    </div>
+}

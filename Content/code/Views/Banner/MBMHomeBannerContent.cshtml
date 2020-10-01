@@ -1,0 +1,137 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Data.Fields
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
+@using homeBanner = Sitecore.Feature.Library.Templates.MBMHomeBanner;
+@model RenderingModel
+
+@if (!Model?.Item?.IsDerived(homeBanner.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(homeBanner.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+
+@{
+    Guid newid = Guid.NewGuid();
+    LinkField link;
+    string url;
+
+    string cd = Model.Item.Fields[homeBanner.Fields.CountdownTimer].Value;
+    DateTime deadline = Sitecore.DateUtil.IsoDateToDateTime(cd);
+    DateTime current = DateTime.UtcNow;
+    long elapsedTick = deadline.Ticks - current.Ticks;
+    TimeSpan elapsedSpan = new TimeSpan(elapsedTick);
+}
+
+@if (!Sitecore.Context.PageMode.IsExperienceEditor)
+{
+    if (Model.Item.Fields["__Never publish"].Value == "1" || Model.Item == null)
+    {
+        return;
+    }
+
+    <div class="item">
+        <div class="img-as-bg" style="background-image:url(@Model.Item.ImageUrl(homeBanner.Fields.Image))"></div>
+        <div class="item-body">
+            <div class="item-title text-center">
+                <div>@Html.Raw(Html.Sitecore().Field(homeBanner.Fields.Title, Model.Item))</div>
+            </div>
+
+            @if (Model.Item.Fields[homeBanner.Fields.ShowSubtitle].Value == "1")
+            {
+                <div class="item-subtitle">
+                    @Html.Raw(Html.Sitecore().Field(homeBanner.Fields.Subtitle, Model.Item))
+                </div>
+            }
+
+            @if (Model.Item.Fields[homeBanner.Fields.ShowCountdown].Value == "1")
+            {
+                <div class="countdown js-countdown" data-countdown="@elapsedSpan.TotalSeconds">
+                    <div class="countdown__item countdown__weeks">
+                        <div class="countdown__value js-countdown-value" id="week-@newid">00</div>
+                        <div class="countdown__name js-countdown-name">@Html.Sitecore().Dictionary("Feature/Time/Week", "Week")</div>
+                    </div>
+                    <div class="countdown__item countdown__days">
+                        <div class="countdown__value js-countdown-value" id="day-@newid">00</div>
+                        <div class="countdown__name js-countdown-name">@Html.Sitecore().Dictionary("Feature/Time/Day", "Day")</div>
+                    </div>
+                    <div class="countdown__item countdown__hours">
+                        <div class="countdown__value js-countdown-value" id="hour-@newid">00</div>
+                        <div class="countdown__name js-countdown-name">@Html.Sitecore().Dictionary("Feature/Time/Hour", "Hour")</div>
+                    </div>
+                    <div class="countdown__item countdown__minutes">
+                        <div class="countdown__value js-countdown-value" id="minute-@newid">00</div>
+                        <div class="countdown__name js-countdown-name">@Html.Sitecore().Dictionary("Feature/Time/Minute", "Minute")</div>
+                    </div>
+                    <div class="countdown__item countdown__seconds">
+                        <div class="countdown__value js-countdown-value" id="second-@newid">00</div>
+                        <div class="countdown__name js-countdown-name">@Html.Sitecore().Dictionary("Feature/Time/Second", "Second")</div>
+                    </div>
+                </div>
+            }
+
+            @if (Model.Item.Fields[homeBanner.Fields.ShowButton].Value == "1")
+            {
+                link = Model.Item.Fields[homeBanner.Fields.Url];
+                url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(link);
+                <div><a class="btn btn--noradius btn-default btn-default--light" href="@url" @Html.Raw(link.Target.Length > 0 ? "target=" + link.Target + "" : "")>@Html.Sitecore().Field(homeBanner.Fields.ButtonLabel, Model.Item)</a></div>
+            }
+
+        </div>
+    </div>
+}
+else /*if (Sitecore.Context.PageMode.IsExperienceEditor || Sitecore.Context.PageMode.IsExperienceEditorEditing)*/
+{
+    @*<div class="item">*@
+    <div class="img-as-bg" style="background-image:url(@Model.Item.ImageUrl(homeBanner.Fields.Image))"></div>
+    <div class="item-body">
+        <div class="item-title text-center">
+            <div>@Html.Raw(Html.Sitecore().Field(homeBanner.Fields.Title, Model.Item))</div>
+        </div>
+
+        @if (Model.Item.Fields[homeBanner.Fields.ShowSubtitle].Value == "1")
+        {
+            <div class="item-subtitle">
+                @Html.Raw(Html.Sitecore().Field(homeBanner.Fields.Subtitle, Model.Item))
+            </div>
+        }
+
+        @if (Model.Item.Fields[homeBanner.Fields.ShowCountdown].Value == "1")
+        {
+            <div class="countdown js-countdown" data-countdown="@elapsedSpan.TotalSeconds">
+                <div class="countdown__item countdown__weeks">
+                    <div class="countdown__value js-countdown-value" id="week-@newid">00</div>
+                    <div class="countdown__name js-countdown-name">@Html.Sitecore().Dictionary("Feature/Time/Week", "Week")</div>
+                </div>
+                <div class="countdown__item countdown__days">
+                    <div class="countdown__value js-countdown-value" id="day-@newid">00</div>
+                    <div class="countdown__name js-countdown-name">@Html.Sitecore().Dictionary("Feature/Time/Day", "Day")</div>
+                </div>
+                <div class="countdown__item countdown__hours">
+                    <div class="countdown__value js-countdown-value" id="hour-@newid">00</div>
+                    <div class="countdown__name js-countdown-name">@Html.Sitecore().Dictionary("Feature/Time/Hour", "Hour")</div>
+                </div>
+                <div class="countdown__item countdown__minutes">
+                    <div class="countdown__value js-countdown-value" id="minute-@newid">00</div>
+                    <div class="countdown__name js-countdown-name">@Html.Sitecore().Dictionary("Feature/Time/Minute", "Minute")</div>
+                </div>
+                <div class="countdown__item countdown__seconds">
+                    <div class="countdown__value js-countdown-value" id="second-@newid">00</div>
+                    <div class="countdown__name js-countdown-name">@Html.Sitecore().Dictionary("Feature/Time/Second", "Second")</div>
+                </div>
+            </div>
+        }
+
+        @if (Model.Item.Fields[homeBanner.Fields.ShowButton].Value == "1")
+        {
+            link = Model.Item.Fields[homeBanner.Fields.Url];
+            url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(link);
+            <div><a class="btn btn--noradius btn-default btn-default--light" href="@url" @Html.Raw(link.Target.Length > 0 ? "target=" + link.Target + "" : string.Empty)>@Html.Sitecore().Field(homeBanner.Fields.ButtonLabel, Model.Item)</a></div>
+        }
+
+    </div>
+    @*</div>*@
+}

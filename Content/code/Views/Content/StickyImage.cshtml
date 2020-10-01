@@ -1,0 +1,40 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.StickyImage.ID) ?? true)
+    {
+        @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.StickyImage.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+        return;
+    }
+
+    Sitecore.Data.Fields.LinkField _link = Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Link];
+    string redirectItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+}
+
+
+<div class="addon-item content-panels-3-item">
+    <a href="@redirectItemUrl" @Html.Raw(_link.Target.Length > 0 ? "target=" + _link.Target + "" : string.Empty)>
+        <div class="content-panels-3-wrapper" style="background-image:url(@Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.Image))"></div>
+        <div class="content-panels-3-body">
+            <div>
+                
+                @if (Sitecore.Context.PageMode.IsExperienceEditor)
+                {
+                    <h2>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, Model.Item)</h2>
+                }
+                else if (!Sitecore.Context.PageMode.IsExperienceEditor && Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title].HasValue && Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title].Value.Length > 0)
+                {
+                    <h2>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, Model.Item)</h2>
+                }
+                @*<h2>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title,Model.Item)</h2>*@
+            </div>
+        </div>
+    </a>
+</div>

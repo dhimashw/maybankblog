@@ -1,0 +1,75 @@
+﻿@using Sitecore.Feature.Content
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Mvc
+@using Sitecore.Data.Items
+@using Sitecore.Data.Fields;
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+
+@*<div class="section gray story-list quad">*@
+<div class="story-list quad">
+    <div class="container">
+        <div class="list row">
+            @if (Model.Data.Count() > 0)
+            {
+                foreach (Item item in Model.Data)
+                {
+                    MultilistField ListValue = null;
+                    string CategoryValue = string.Empty;
+                    Item _items = Sitecore.Context.Database.GetItem(item.ID);
+                    ListValue = _items.Fields[Sitecore.Feature.Library.Templates.NewsItem.Fields.Category];
+                    if (ListValue != null)
+                    {
+                        Item[] items = ListValue.GetItems();
+                        CategoryValue = items.Select(x => x.Fields[Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title].Value).FirstOrDefault();
+                    }
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="skeleton js-demo-skeleton v-m">
+                            <div class="skeleton__body">
+                                <div class="skeleton__line"></div>
+                                <div class="skeleton__line half"></div>
+                                <div class="skeleton__line"></div>
+                                <div class="skeleton__line ounce"></div>
+                            </div>
+                            <div class="skeleton__footer">
+                                <div class="skeleton__line"></div>
+                            </div>
+                        </div>
+                        <div class="story-card long-story js-demo-skeleton-content hide">
+                            <div class="title">
+                                <div class="outer">
+                                    @*<h4 class="yellow-text tag">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.NewsItem.Fields.Category, item)</h4>*@
+                                    <h4 class="yellow-text tag">@CategoryValue</h4>
+                                    @*<div class="gray-text date">
+                                            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Date.ToString(), item, new
+                                                               {
+                                                                   format = "dd MMMM yyyy"
+                                                               })
+                                        </div>*@
+                                    <h2>
+                                        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Title, item)
+                                        <span class="gray-text date">
+                                            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Date.ToString(), item, new
+                                   {
+                                       format = "dd MMMM yyyy"
+                                   })
+                                        </span>
+
+                                    </h2>
+                                    <p class="gray-text story">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Summary, item)</p>
+                                </div>
+                                <a class="btn btn-outline-primary addon" href="@item.Url()">@Html.Sitecore().Dictionary("/Feature/Content/See More", "edit on dictionary")
+                                <img src="/-/media/Feature/Content/Icon/Arrow Right/arrowright363bigblack2x.png" />
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <!-- PAGINATION COMPONENT -->
+        @Html.Partial("~/Views/Pagination/_Pagination.cshtml", Model)
+    </div>
+</div>
+

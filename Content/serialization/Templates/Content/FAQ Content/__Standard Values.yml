@@ -1,0 +1,28 @@
+﻿---
+ID: "6795b329-0358-4593-b7ff-daa90932cc7f"
+Parent: "8ce9b8c5-f97d-4d6b-9e19-7fba3963fc2a"
+Template: "8ce9b8c5-f97d-4d6b-9e19-7fba3963fc2a"
+Path: /sitecore/templates/Feature/Content/FAQ Content/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: |
+    {58EB5C38-31CC-4382-91AB-D0244734E2F7}
+    {A21B3ACE-ED72-4385-A56E-B26DFC6E1370}
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 300
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180801T031007Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

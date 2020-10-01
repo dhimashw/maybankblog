@@ -1,0 +1,256 @@
+
+YSitecore.Feature.Content.Controller.BlogController.PromoStashListPaging(int, int, string)Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs– –(0"5*Ë
+0∏µ
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs“ “(<2
+%0,Sitecore.Feature.Library.Helper.PagedData<T>",Sitecore.Feature.Library.Helper.PagedData<T>“
+œ
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs“  “(:
+
+%1void"8Sitecore.Feature.Library.Helper.PagedData<T>.PagedData()*4
+2
+%0,Sitecore.Feature.Library.Helper.PagedData<T>Õ
+ 
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs“ “(<9
+	listItems,Sitecore.Feature.Library.Helper.PagedData<T>"__id*4
+2
+%0,Sitecore.Feature.Library.Helper.PagedData<T>*
+1*◊"
+1é
+ã
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs÷5 ÷(D;
+%25Sitecore.Feature.Content.Repositories.IBlogRepository"ASitecore.Feature.Content.Controller.BlogController.Repository.get*64
+2Sitecore.Feature.Content.Controller.BlogController©
+¶
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs÷R ÷(k
+%3Sitecore.Data.Database"Sitecore.Context.Database.get*"
+Sitecore.ContextÄ~
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs÷t ÷(É
+%4Sitecore.Data.ID"Sitecore.Data.ID©
+¶
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs÷x ÷(
+
+%5void"Sitecore.Data.ID.ID(string)*
+
+%4Sitecore.Data.ID*
+
+idstring„
+‡
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs÷R ÷(Ñ
+%6Sitecore.Data.Items.Item"0Sitecore.Data.Database.GetItem(Sitecore.Data.ID)*
+
+%3Sitecore.Data.Database*
+
+%4Sitecore.Data.IDÔÏ
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs÷5 ÷(Ö/
+%7)System.Collections.Generic.IEnumerable<T>"\Sitecore.Feature.Content.Repositories.IBlogRepository.GetPromotion(Sitecore.Data.Items.Item)*=
+;
+%25Sitecore.Feature.Content.Repositories.IBlogRepository* 
+
+%6Sitecore.Data.Items.Item2&GetPromotion(Sitecore.Data.Items.Item)ƒ
+¡
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs÷- ÷(Ö2
+items)System.Collections.Generic.IEnumerable<T>"__id*1
+/
+%7)System.Collections.Generic.IEnumerable<T>Ω
+∫
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÿ! ÿ(B/
+%8)System.Collections.Generic.IEnumerable<T>"ZSystem.Linq.Enumerable.Skip<TSource>(System.Collections.Generic.IEnumerable<TSource>, int)*"
+System.Linq.Enumerable*4
+2
+items)System.Collections.Generic.IEnumerable<T>*
+""∫
+∑
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÿ! ÿ(Q/
+%9)System.Collections.Generic.IEnumerable<T>"ZSystem.Linq.Enumerable.Take<TSource>(System.Collections.Generic.IEnumerable<TSource>, int)*"
+System.Linq.Enumerable*1
+/
+%8)System.Collections.Generic.IEnumerable<T>*
+""ä
+á
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÿ ÿ(Q
+%10void"5Sitecore.Feature.Library.Helper.PagedData<T>.Data.set*;
+9
+	listItems,Sitecore.Feature.Library.Helper.PagedData<T>*1
+/
+%9)System.Collections.Generic.IEnumerable<T>å
+â
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csŸO Ÿ(\
+
+%11int"VSystem.Linq.Enumerable.Count<TSource>(System.Collections.Generic.IEnumerable<TSource>)*"
+System.Linq.Enumerable*4
+2
+items)System.Collections.Generic.IEnumerable<T>p
+n
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csŸG Ÿ(\
+%12"__id*
+
+
+%11intõ
+ò
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csŸ: Ÿ(h
+%13double"System.Math.Ceiling(double)*"
+System.Math*
+""ß
+§
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csŸ* Ÿ(i
+
+%14int"System.Convert.ToInt32(double)*"
+System.Convert*
+
+%13doubleÓ
+Î
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csŸ Ÿ(i
+%15void">Sitecore.Feature.Library.Helper.PagedData<T>.NumberOfPages.set*;
+9
+	listItems,Sitecore.Feature.Library.Helper.PagedData<T>*
+
+
+%14intÊ
+„
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs⁄ ⁄(,
+%16void"<Sitecore.Feature.Library.Helper.PagedData<T>.CurrentPage.set*;
+9
+	listItems,Sitecore.Feature.Library.Helper.PagedData<T>*
+""Ä~
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs€) €(8
+%17Sitecore.Data.ID"Sitecore.Data.ID´
+®
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs€- €(4
+%18void"Sitecore.Data.ID.ID(string)*
+
+%17Sitecore.Data.ID*
+
+idstring˙
+˜
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs€ €(8
+%19void"=Sitecore.Feature.Library.Helper.PagedData<T>.DataSourceID.set*;
+9
+	listItems,Sitecore.Feature.Library.Helper.PagedData<T>*
+
+%17Sitecore.Data.ID„
+‡
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs‹ ‹(-
+%20void"9Sitecore.Feature.Library.Helper.PagedData<T>.PageSize.set*;
+9
+	listItems,Sitecore.Feature.Library.Helper.PagedData<T>*
+""*
+2
+3*¥
+2…∆
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs‡' ‡(A;
+%214System.Web.Script.Serialization.JavaScriptSerializer"4System.Web.Script.Serialization.JavaScriptSerializerÔ
+Ï
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs‡+ ‡(?
+%22void"KSystem.Web.Script.Serialization.JavaScriptSerializer.JavaScriptSerializer()*=
+;
+%214System.Web.Script.Serialization.JavaScriptSerializerøº
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs‡L ‰(6
+%23/Sitecore.Feature.Content.Models.ReturnErrorData"/Sitecore.Feature.Content.Models.ReturnErrorData‡
+›
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs‡P ‡(_
+%24void"ASitecore.Feature.Content.Models.ReturnErrorData.ReturnErrorData()*8
+6
+%23/Sitecore.Feature.Content.Models.ReturnErrorDataË
+Â
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs‚ ‚((
+%25void"@Sitecore.Feature.Content.Models.ReturnErrorData.responseCode.set*8
+6
+%23/Sitecore.Feature.Content.Models.ReturnErrorData*
+550™ß
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs„$ „(.
+%26string"System.Exception.Message.get*
+
+exSystem.Exception2Message.getâ
+Ü
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs„$ „(9
+%27string"string.ToString()*
+
+%26stringÒ
+Ó
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs„ „(9
+%28void"ASitecore.Feature.Content.Models.ReturnErrorData.descErrorCode.set*8
+6
+%23/Sitecore.Feature.Content.Models.ReturnErrorData*
+
+%27string¶
+£
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs‡' ‰(
+%29string"FSystem.Web.Script.Serialization.JavaScriptSerializer.Serialize(object)*=
+;
+%214System.Web.Script.Serialization.JavaScriptSerializer*8
+6
+%23/Sitecore.Feature.Content.Models.ReturnErrorDataè
+å
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs‡ ‰("
+%30System.Web.Mvc.ActionResult"JSitecore.Feature.Content.Controller.BlogController.ErrorWebservice(string)*64
+2Sitecore.Feature.Content.Controller.BlogController*
+
+%29string"y
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs‡ ‰($
+"
+%30System.Web.Mvc.ActionResult*ÿ
+3“œ
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÁ Á(J'
+%31 System.Web.Mvc.PartialViewResult"5System.Web.Mvc.Controller.PartialView(string, object)*
+System.Web.Mvc.Controller*!
+~/Views/MBM/PromoStash.cshtml*;
+9
+	listItems,Sitecore.Feature.Library.Helper.PagedData<T>2PartialView(string, object)"~
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csÁ Á(K)
+'
+%31 System.Web.Mvc.PartialViewResult*m
+4"h
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csË Ë(	
+implicit return*ñ
+5ã
+à
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs– –(0
+%32"__entrypoint*
+""*
+""*
+
+idstring*
+0:
+pageint:
+PageSizeint:
+idstringB64
+2Sitecore.Feature.Content.Controller.BlogController

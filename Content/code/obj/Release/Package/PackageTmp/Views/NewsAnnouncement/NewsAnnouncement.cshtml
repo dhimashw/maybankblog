@@ -1,0 +1,43 @@
+﻿@using Sitecore.Feature.Content
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Mvc.Presentation
+@model IEnumerable<Sitecore.Data.Items.Item>
+
+
+<div class="section card-list gray">
+    <div class="container js-mobile-to-carousel-container">
+        <div class="list row js-mobile-to-carousel">
+            <div class="col col-xs-12 col-lg-4 col-sm-12 col-md-4 js-mobile-to-carousel-list">
+                <div class="card-item">
+
+                </div>
+            </div>
+            <div class="col col-xs-12 col-lg-4 col-sm-12 col-md-4 js-mobile-to-carousel-list">
+                <div class="card-item">
+                    <div class="head">
+                        <h2>News &amp; Announcement</h2>
+                    </div>
+                    <div class="body">
+                        @foreach (var item in Model)
+                        {
+                            <div class="body-row">
+                                <h4>
+                                    @Html.Sitecore().Field(Templates.NewsAnnouncement.Fields.Date, item, new { format = "MMMM dd, yyyy" })
+                                </h4>
+                                <p><a href="">@Html.Sitecore().Field(Templates.NewsAnnouncement.Fields.Title, item)</a></p>
+                            </div>
+                        }
+                    </div>
+                    <div class="foot">@Html.Sitecore().Placeholder("redirect-link")</div>
+                    <div class="foot"><a class="see-more">See All</a></div>
+                </div>
+            </div>
+            <div class="col col-xs-12 col-lg-4 col-sm-12 col-md-4 js-mobile-to-carousel-list">
+                <div class="card-item dark">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

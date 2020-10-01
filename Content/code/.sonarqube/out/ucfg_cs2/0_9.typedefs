@@ -1,0 +1,4 @@
+©
+4Sitecore.Feature.Content.Helper.PreventSpamAttribute$System.Web.Mvc.ActionFilterAttributeSystem.Web.Mvc.FilterAttributeSystem.Attributeobject©
+8OnActionExecuting(System.Web.Mvc.ActionExecutingContext)mSitecore.Feature.Content.Helper.PreventSpamAttribute.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)e
+PreventSpamAttribute()KSitecore.Feature.Content.Helper.PreventSpamAttribute.PreventSpamAttribute()

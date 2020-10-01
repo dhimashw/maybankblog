@@ -1,0 +1,32 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model RenderingModel
+@{
+    string Url = RenderingContext.Current.Rendering.Parameters["Url"];
+    if (Url != null && Url.Length > 0 && Sitecore.Context.Database.GetItem(Url) != null)
+    {
+        Url = Sitecore.Context.Database.GetItem(Url).Url();
+    }
+}
+
+<div class="m-top-nav over-hidden closed js-scroll-fixed">
+    <div class="container-fluid idJsPrimaCompareUrl" data-url="@Url">
+        <div class="row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><a class="btn btn-outline-primary btn-back addon-reverse js-clear-compare"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><path id="arrow-left" fill-rule="evenodd" d="M4.436.146a.5.5 0 0 1 .707.706l-3.218 3.22a.252.252 0 0 0 .177.429h7.39c.276 0 .508.22.508.495v.002a.509.509 0 0 1-.508.501h-7.39a.247.247 0 0 0-.177.422L5.158 9.15a.5.5 0 0 1-.706.704L.292 5.698a.998.998 0 0 1 0-1.412L4.437.146" /></svg><span class="text">Cancel</span></a></div>
+            <div class="col-xs-5 col-sm-6 col-md-7 col-lg-8">
+                <div class="selected-cards">
+                    <div class="item card-counter"><span>0</span>cards selected</div>
+                </div>
+            </div>
+            <div class="col col-xs-5 col-sm-4 col-md-3 col-lg-2">
+                <div class="button-cta apply-now js-apply-compare" href="@Url">
+                    Compare
+                    <div class="card-counter-badge">3</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

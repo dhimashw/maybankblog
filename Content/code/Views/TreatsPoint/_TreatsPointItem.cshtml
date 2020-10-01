@@ -1,0 +1,89 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library
+@using Sitecore.Feature.Content.Models
+@using Sitecore.Data.Items
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Feature.Content.Repositories
+@using Sitecore.Foundation.Indexing.Repositories
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+
+@{
+    var category = Request.QueryString[Sitecore.Feature.Library.Helper.Variables._categoryId] == null || Request.QueryString[Sitecore.Feature.Library.Helper.Variables._categoryId] == "" ? "%7B71D14BC0-AA5E-4005-947D-D17FAA16C353%7D" : Request.QueryString[Sitecore.Feature.Library.Helper.Variables._categoryId];
+    int paramMaxSubmit = RenderingContext.Current.Rendering.GetIntegerParameter("Max Submit", 3);
+
+    ISearchServiceRepository searchServiceRepository = new SearchServiceRepository();
+
+    ArticlesRepository repo = new ArticlesRepository(searchServiceRepository);
+}
+<div class="tab-content container maybank-products" id="@category">
+    <div class="row">       
+        @if (Model.Data != null)
+        {
+            foreach (Item items in Model.Data)
+            {
+                <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12 content">
+                    <div class="m-cards-giro-card display-cards product-cards">
+                        <div class="image">
+                            @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail, items, cssClass: "card-bg")                          
+                        </div>
+                        <div class="desc">
+                            <span class="type">@repo.GetCategoryArticle(items.TemplateID, items)</span>                            
+                            <span class="price">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.TreatsPointItem.Fields.Price, items)</span>
+                            <span class="point-desc">
+                                @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content, items)
+                            </span>
+                            <div class="cta">
+                                <a class="btn btn-tertiary addon js-modal-trigger" href="" modal="treats-points" data-id="@items.ID">
+                                    <span style="display:none;">@paramMaxSubmit</span>
+                                    @Html.Sitecore().Dictionary("/Feature/Content/Reedem Point")                                    
+                                    <img src="/-/media/Feature/Content/Icon/Arrow Right/arrowright3632x.png" alt="apply now" />                                                                        
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+<!-- PAGINATION COMPONENT -->
+@Html.Partial("~/Views/Pagination/_Pagination.cshtml", Model)
+
+<!--Page Pop Up Modal-->
+@if (Sitecore.Context.PageMode.IsExperienceEditor)
+{
+    <style>
+        .modal {
+            padding-top: 30%;
+        }
+        .modal-dialog.modal-dialog-centered {
+            margin-top:10%!important;
+        }
+    </style>
+}
+else
+{
+    <style>
+        .modal-dialog.modal-dialog-centered {
+            margin-top: 10%!important;
+        }
+    </style>
+}
+<div class="modal" tabindex="-1" role="dialog" modal-name="treats-points">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content white-text">          
+            <div class="modal-header">
+                <button class="close js-modal-trigger-close" type="button" data-dismiss="modal" aria-label="Close"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path id="modal-close-svg" d="M10.437 8.58l6.845-6.845A1.016 1.016 0 1 0 15.845.298L9 7.143 2.156.298A1.016 1.016 0 1 0 .719 1.735L7.563 8.58.298 15.845a1.016 1.016 0 1 0 1.437 1.437L9 10.018l7.265 7.264a1.013 1.013 0 0 0 1.437 0 1.016 1.016 0 0 0 0-1.437L10.437 8.58z" fill="#000" fill-rule="evenodd" /></svg></button>
+            </div>             
+            <div class="treat-point-popup-details">
+
+            </div>
+        </div>
+    </div>
+</div>

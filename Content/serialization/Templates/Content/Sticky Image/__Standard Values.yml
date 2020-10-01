@@ -1,0 +1,39 @@
+﻿---
+ID: "fcdfac1b-a777-42fb-b29b-a623f3289550"
+Parent: "4ec481fe-734a-47c1-b2ec-be74e713f4e6"
+Template: "4ec481fe-734a-47c1-b2ec-be74e713f4e6"
+Path: /sitecore/templates/Feature/Content/Sticky Image/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180713T090407Z
+    - ID: "4b2c444c-751d-4d4c-8b2b-1728ad0e35a5"
+      Hint: Image
+      Value: |
+        <image mediapath="" alt="panel-dewan-direksi" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{75627192-E687-4446-BD5A-CF0E9BF7A2AA}" />
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "d3ec40df-2bbd-4fc1-b62e-5eada837e326"
+      Hint: Title
+      Value: $name
+- Language: id
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180713T090426Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "d3ec40df-2bbd-4fc1-b62e-5eada837e326"
+      Hint: Title
+      Value: $name

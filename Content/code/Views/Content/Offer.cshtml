@@ -1,0 +1,57 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    string ValueTypePromo = Variables._defaultValueTypePromo;
+    var cssHide = Sitecore.Context.PageMode.IsExperienceEditor == true ? "" : "hide";
+
+}
+@if (Model.Item != null && Model.Item.TemplateID == Sitecore.Feature.Library.Templates.Offer.ID)
+{
+    string url = "#";
+    //string imageUrl = Variables._defaultImageOffer;
+
+
+    if (Model.Item.LinkFieldUrl(Sitecore.Feature.Library.Templates.Offer.Fields.Url) != null)
+    {
+        Sitecore.Data.Fields.LinkField _link = Model.Item.Fields[Sitecore.Feature.Library.Templates.Offer.Fields.Url];
+        url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+        //url = Model.Item.LinkFieldUrl(Sitecore.Feature.Library.Templates.Offer.Fields.Url);
+    }
+
+    //if (Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.Offer.Fields.Image) != null)
+    //{
+    //    imageUrl = Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.Offer.Fields.Image);
+    //}
+
+    if (Model.Item.Fields[Sitecore.Feature.Library.Templates.Offer.Fields.TypePromo] != null)
+    {
+        if (!string.IsNullOrEmpty(Model.Item.Fields[Sitecore.Feature.Library.Templates.Offer.Fields.TypePromo].Value))
+        {
+            Sitecore.Data.ID idTypePromo = new Sitecore.Data.ID(Model.Item.Fields[Sitecore.Feature.Library.Templates.Offer.Fields.TypePromo].Value);
+
+            Sitecore.Data.Items.Item itemTypePromo = Sitecore.Context.Database.GetItem(idTypePromo);
+
+            if (itemTypePromo != null)
+            {
+                ValueTypePromo = itemTypePromo.Fields[Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title].Value;
+            }
+        }
+    }
+
+    <div class="story-card js-demo-skeleton-content @cssHide">
+        <div class="image">
+            <a href="@url">
+                @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.Offer.Fields.Image, Model.Item)
+                @*<img src="@imageUrl" alt="" />*@
+            </a>
+        </div>
+        <div class="title">
+            <h4 class="yellow-text">@ValueTypePromo</h4>
+            <h2><a href="">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Offer.Fields.stringTitlePromo, Model.Item)</a></h2>
+        </div><a class="card-link" href="@url"></a>
+    </div>
+}

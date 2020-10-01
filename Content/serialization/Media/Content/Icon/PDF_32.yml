@@ -1,0 +1,40 @@
+﻿---
+ID: "ee6add1d-3330-4390-81fb-303a6a3d7e79"
+Parent: "f855af9f-cc8f-4e10-9118-3df059afecab"
+Template: "f1828a2c-7e5d-4bbd-98ca-320474871548"
+Path: /sitecore/media library/Feature/Content/Icon/PDF_32
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: "-/media/EE6ADD1D3330439081FB303A6A3D7E79.ashx?h=16&thn=1&w=16"
+- ID: "22eac599-f13b-4607-a89d-c091763a467d"
+  Hint: Width
+  Value: 32
+- ID: "40e50ed9-ba07-4702-992e-a912738d32dc"
+  Hint: Blob
+  BlobID: "fbbc6e98-9d81-401d-b7b3-efadb3d67ac7"
+  Value: iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsSAAALEgHS3X78AAACtklEQVRYCe2XTWjTYBzGn7RN1wkdu1XWebCXlSKenC2iCLPzUBALfqAg1F0m2PpxELGIIjsUPQhO7cQxpmWHgR+wiwq1lQmCK3oRRomXiqDDHgaajrVdm0Ted1uxJG2TNNsuPlDom7zJ/5fn+b9vCCNJErZSFlltl6MbwAyAg21wfQdwC7n801YT5Q64HLPCvgO/V+4+PCrZuzRXZgo8LBOP/rCJCRbV6nPk8me1AkilF68guj2ai/8rE5eF7XSwiErlWTMIk9LBdouv36M0PdMJlj0Jl6NhFIoARkkNhG4AczqJbbt2otO3m+beSDUIi+UEXA5ZFLoB2KlJkF5hlgoUppkIxMrVG4sAjAPA2o3FPV4wCz9azhWOBHcoLW3dAKKzF+ZPczB9zkAYONxyfqMlrRtACB6H9cIwpB5nW6tGvwNuD80fPN+0CTcMgDRe9cwQJLcH7O0R3QDyd4FKsWP3UL4/TrO1HQvAxgUAexdtSGbhJ4SBQVTOX24Zj2YHyJN3XBym1lumJmEbOrUaBYDyg3EUkx9Q/PgFDM/Dev2KcQ6QwtY7IxD6fXQs7vVB7PfRZhR7emF+l4RtcD+NhIjhsnROKym+jJbnv9UdspKMCzwq125SEGJ/6eVr2dIizUjOkxjEPg+EQ/XLk+ycyOWZumvUAJALy6OPYfqaBTs2ivKT6ZoTWqQEoCoC0u0dl87RNU9A9BRvJFUOGCUlBzb0daxGmgC8Xi/9xePx2tjv9yOdTsvOqZXmjSiVStGi4XCYjhOJBEKhEP2fyWQ21gEinq/f951OJwqF1Y2IOEDc0CLNDpCnjUajtTHHcbDb7RRiUxwgEQSDwdo4EokgFotpLryu/8tQCeC9+e2bZcMLZeeX1j7Z6qQUQbfk2D7H5H/1GUrAsuQrKYBcfrY5wCZra3sAwF8ksiYS0DOdWwAAAABJRU5ErkJggg==
+- ID: "6954b7c7-2487-423f-8600-436cb3b6dc0e"
+  Hint: Size
+  Value: 772
+- ID: "6f47a0a5-9c94-4b48-abeb-42d38def6054"
+  Hint: Mime Type
+  Value: image/png
+- ID: "c06867fe-9a43-4c7d-b739-48780492d06f"
+  Hint: Extension
+  Value: png
+- ID: "cb09946f-3218-4823-87d2-d5007c199a96"
+  Hint: Dimensions
+  Value: 32 x 32
+- ID: "de2ca9e4-c117-4c8a-a139-1ff4b199d15a"
+  Hint: Height
+  Value: 32
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20181001T104545Z

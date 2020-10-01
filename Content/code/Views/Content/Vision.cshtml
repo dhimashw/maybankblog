@@ -1,0 +1,40 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+
+}
+
+@if (Model.Item != null)
+{
+    string url = "#";
+    //string imageUrl = Variables._defaultImageVision;
+
+
+    if (Model.Item.LinkFieldUrl(Sitecore.Feature.Library.Templates.Vision.Fields.Url) != null)
+    {
+        Sitecore.Data.Fields.LinkField _link = Model.Item.Fields[Sitecore.Feature.Library.Templates.Vision.Fields.Url];
+        url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+        //url = Model.Item.LinkFieldUrl(Sitecore.Feature.Library.Templates.Vision.Fields.Url);
+    }
+
+    //if (Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.Vision.Fields.Image) != null)
+    //{
+    //    imageUrl = Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.Vision.Fields.Image);
+    //}
+
+    <div class="frame">
+        <a href="@url">
+            <div class="picture">
+                @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.Vision.Fields.Image, Model.Item)
+                @*<img src="@imageUrl" alt="" />*@
+            </div>
+            <h2 class="title">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Vision.Fields.stringVisionTitle, Model.Item)</h2>
+            <span class="see-more">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, Model.Item)</span>
+        </a>
+    </div>
+}

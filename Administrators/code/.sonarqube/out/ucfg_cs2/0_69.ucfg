@@ -1,0 +1,137 @@
+
+lSitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask.BtnShowAll_Click(object, System.EventArgs)e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs– –('"0*Õ
+0ø
+º
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs“ “(
+
+%0bool"(System.Web.UI.UserControl.IsPostBack.get*
+System.Web.UI.UserControl*
+1
+2*º
+1†
+ù
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs÷ ÷(+
+
+%1void"YSitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask.DisplayAllComment(bool)*EC
+ASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask*
+""ıÚ
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs◊. ◊(7
+%2System.Web.UI.Page"System.Web.UI.Control.Page.get*EC
+ASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask2Page.get˜Ù
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs◊. ◊(X
+%3System.Web.UI.Control"&System.Web.UI.Page.FindControl(string)*
+
+%2System.Web.UI.Page*
+ApprovedCommentUC2FindControl(string)¨
+©
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs◊. ◊(k
+%4System.Web.UI.Control"__id*
+
+%3System.Web.UI.ControlÊ
+„
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs◊$ ◊(kU
+otherUCJSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment"__id*
+
+%4System.Web.UI.Controlª
+∏
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csÿ ÿ(4
+
+%5void"bSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment.DisplayAllComment(bool)*W
+U
+otherUCJSitecore.Feature.Administrators.Sitecore.Admin.UserControl.ApprovedComment*
+""ıÚ
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csŸ. Ÿ(7
+%6System.Web.UI.Page"System.Web.UI.Control.Page.get*EC
+ASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask2Page.getˆÛ
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csŸ. Ÿ(W
+%7System.Web.UI.Control"&System.Web.UI.Page.FindControl(string)*
+
+%6System.Web.UI.Page*
+DeletedCommentUC2FindControl(string)¨
+©
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csŸ. Ÿ(i
+%8System.Web.UI.Control"__id*
+
+%7System.Web.UI.ControlÊ
+„
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csŸ# Ÿ(iU
+otherUC2ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment"__id*
+
+%8System.Web.UI.Control∫
+∑
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs⁄ ⁄(5
+
+%9void"aSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.DisplayAllComment(bool)*W
+U
+otherUC2ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment*
+""*
+3
+2*«
+3 «
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csﬁ ﬁ(
+%10System.Web.UI.Page"System.Web.UI.Control.Page.get*
+System.Web.UI.Control2Page.get÷
+”
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csﬁ ﬁ(%(
+%11!System.Web.UI.ClientScriptManager"#System.Web.UI.Page.ClientScript.get*
+
+%10System.Web.UI.Page◊
+‘
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csﬁ< ﬁ(J
+%12System.Type"object.GetType()*EC
+ASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask¿Ω
+g
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csﬁá ﬁ(ë
+%13string"System.Exception.Message.get*
+
+exSystem.Exception2Message.getù
+ö
+f
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csﬁT ﬁ(ö
+%14string"__concat*
+""*
+
+%13stringù
+ö
+f
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csﬁT ﬁ(ö
+%15string"__concat*
+
+%14string*
+""π
+∂
+f
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.csﬁ ﬁ(°
+%16void"ZSystem.Web.UI.ClientScriptManager.RegisterStartupScript(System.Type, string, string, bool)**
+(
+%11!System.Web.UI.ClientScriptManager*
+
+%12System.Type*
+load*
+
+%15string*
+""*
+2*Å
+2"|
+e
+YC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\MyTask.ascx.cs· ·(	
+implicit return:
+senderobject:
+eSystem.EventArgsBEC
+ASitecore.Feature.Administrators.Sitecore.Admin.UserControl.MyTask

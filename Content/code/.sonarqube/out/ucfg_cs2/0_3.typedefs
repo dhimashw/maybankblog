@@ -1,0 +1,9 @@
+ã
+.Sitecore.Feature.Content.Models.BlogCommentDtoobjectS
+BlogCommentDto()?Sitecore.Feature.Content.Models.BlogCommentDto.BlogCommentDto()K
+Username.get;Sitecore.Feature.Content.Models.BlogCommentDto.Username.getK
+Username.set;Sitecore.Feature.Content.Models.BlogCommentDto.Username.setI
+Comment.get:Sitecore.Feature.Content.Models.BlogCommentDto.Comment.getI
+Comment.set:Sitecore.Feature.Content.Models.BlogCommentDto.Comment.setQ
+CommentDate.get>Sitecore.Feature.Content.Models.BlogCommentDto.CommentDate.getQ
+CommentDate.set>Sitecore.Feature.Content.Models.BlogCommentDto.CommentDate.set

@@ -1,0 +1,31 @@
+﻿---
+ID: "2bdaf4f0-1f64-48d3-93e9-d358d47aa0d1"
+Parent: "34334782-63ca-4af2-aac9-d3e108a80f68"
+Template: "f1828a2c-7e5d-4bbd-98ca-320474871548"
+Path: "/sitecore/media library/Feature/Content/Vision/ico-tabungan-03"
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: "-/media/2BDAF4F01F6448D393E9D358D47AA0D1.ashx?h=16&thn=1&w=16"
+- ID: "40e50ed9-ba07-4702-992e-a912738d32dc"
+  Hint: Blob
+  BlobID: "fb729222-1c99-469c-99b8-723097bf187a"
+  Value: PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3MiIgaGVpZ2h0PSI3MiIgdmlld0JveD0iMCAwIDcyIDcyIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMiI+CiAgICAgICAgPHBhdGggZmlsbD0iI0ZGQzYwMCIgZD0iTTI3IDQ0YTYgNiAwIDAgMS02IDYgNiA2IDAgMCAxLTYtNiA2IDYgMCAwIDEgNi02IDYgNiAwIDAgMSA2IDZ6TTQ2IDI0YTYgNiAwIDAgMS02IDYgNiA2IDAgMCAxLTYtNiA2IDYgMCAwIDEgNi02IDYgNiAwIDAgMSA2IDZ6TTY5IDEyYTYgNiAwIDAgMS02IDYgNiA2IDAgMCAxLTYtNiA2IDYgMCAwIDEgNi02IDYgNiAwIDAgMSA2IDZ6Ii8+CiAgICAgICAgPHBhdGggZD0iTTI2IDM3bDktOU00NyAyMWw5LTZNMjIgNTl2LTJNNDMgNTlWMzhNNjQgNThWMjZNNiAxdjcwTTEgNjZoNzAiLz4KICAgIDwvZz4KPC9zdmc+Cg==
+- ID: "6954b7c7-2487-423f-8600-436cb3b6dc0e"
+  Hint: Size
+  Value: 526
+- ID: "6f47a0a5-9c94-4b48-abeb-42d38def6054"
+  Hint: Mime Type
+  Value: image/svg+xml
+- ID: "c06867fe-9a43-4c7d-b739-48780492d06f"
+  Hint: Extension
+  Value: svg
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180308T082750Z

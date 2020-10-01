@@ -1,0 +1,78 @@
+
+mSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.Page_Load(object, System.EventArgs)k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs ( "0*Ó
+0Å
+Â
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs (
+
+%0bool"(System.Web.UI.UserControl.IsPostBack.get*
+System.Web.UI.UserControl*
+1
+2*Ä
+1¶
+³
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs ('
+
+%1void"aSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.DisplayAllComment(bool)*MK
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment*
+""*
+3
+2*ï
+3ÏÌ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs (
+%2System.Web.UI.Page"System.Web.UI.Control.Page.get*
+System.Web.UI.Control2Page.getÚ
+×
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs (%'
+%3!System.Web.UI.ClientScriptManager"#System.Web.UI.Page.ClientScript.get*
+
+%2System.Web.UI.Pageä
+á
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs< (J
+%4System.Type"object.GetType()*MK
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedCommentÅÂ
+m
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csŠ (”
+%5string"System.Exception.Message.get*
+
+exSystem.Exception2Message.get¡
+ž
+l
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csW (
+%6string"__concat*
+""*
+
+%5string¡
+ž
+l
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.csW (
+%7string"__concat*
+
+%6string*
+""¾
+»
+l
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs (¤
+
+%8void"ZSystem.Web.UI.ClientScriptManager.RegisterStartupScript(System.Type, string, string, bool)*)
+'
+%3!System.Web.UI.ClientScriptManager*
+
+%4System.Type*	
+error-1*
+
+%7string*
+""*
+2*ˆ
+2"‚
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs (	
+implicit return:
+senderobject:
+eSystem.EventArgsBMK
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment

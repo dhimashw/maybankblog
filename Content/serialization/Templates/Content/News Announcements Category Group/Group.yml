@@ -1,0 +1,18 @@
+﻿---
+ID: "7a1fdec7-9da6-4ae3-b469-c93e44d84bad"
+Parent: "7a712a74-a775-42a8-83a0-97c2a2a2023e"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/Content/News Announcements Category Group/Group
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180301T090618Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

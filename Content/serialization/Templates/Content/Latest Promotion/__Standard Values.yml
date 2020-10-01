@@ -1,0 +1,27 @@
+﻿---
+ID: "fb5176c3-23eb-49ac-957c-5a063cd0822d"
+Parent: "40b0d365-9038-40c3-9d7f-183a82015b69"
+Template: "40b0d365-9038-40c3-9d7f-183a82015b69"
+Path: /sitecore/templates/Feature/Content/Latest Promotion/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180730T081834Z
+    - ID: "56bc62bf-106c-40c4-81be-62541236dc4a"
+      Hint: Button Label
+      Value: SEE ALL
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "d3ec40df-2bbd-4fc1-b62e-5eada837e326"
+      Hint: Title
+      Value: 
+    - ID: "ef32a383-7e3c-40eb-9354-150c70d75f4f"
+      Hint: Data Source
+      Value: /sitecore/content/Maybank/Corporate/Home/Bucket/Promotion/Bucket/Savings

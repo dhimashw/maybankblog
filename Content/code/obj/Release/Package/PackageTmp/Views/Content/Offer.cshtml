@@ -1,0 +1,36 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Content
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+
+}
+@if (Model.Item != null && Model.Item.TemplateID == Sitecore.Feature.Content.Templates.Offer.ID)
+{
+    string url = "#";
+    string imageUrl = Variables._defaultImageVision;
+
+
+    if (Model.Item.LinkFieldUrl(Sitecore.Feature.Content.Templates.Offer.Fields.Url) != null)
+    {
+        url = Model.Item.LinkFieldUrl(Sitecore.Feature.Content.Templates.Offer.Fields.Url);
+    }
+
+    if (Model.Item.ImageUrl(Sitecore.Feature.Content.Templates.Offer.Fields.Image) != null)
+    {
+        imageUrl = Model.Item.ImageUrl(Sitecore.Feature.Content.Templates.Offer.Fields.Image);
+    }
+
+
+
+    <div class="story-card">
+        <div class="image"><a href="@url"><img src="@imageUrl" alt="" /></a></div>
+        <div class="title">
+            <h4 class="yellow-text">@Model.Item.Fields[Sitecore.Feature.Content.Templates.Offer.Fields.TypePromo]</h4>
+            <h2><a href="">@Html.Sitecore().Field(Sitecore.Feature.Content.Templates.Offer.Fields.stringTitlePromo, Model.Item)</a></h2>
+        </div><a class="card-link" href="@url"></a>
+    </div>
+}

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Migration>
+  <ColumnMapping tableName="JENISPEKERJAAN" ResultType="update-table">
+	<Column source="OCCPN_CODE" destination="OCCPN_CODE" type="string" Required="true"/>
+    <Column source="OCCPN_DESC" destination="OCCPN_DESC" type="string"/>
+	<Column source="Language" destination="Language" type="string" Required="true"/>
+  </ColumnMapping>
+</Migration>

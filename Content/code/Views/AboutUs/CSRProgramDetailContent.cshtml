@@ -1,0 +1,49 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Data.Items;
+@using Sitecore.Foundation.Alerts;
+@using Sitecore.Foundation.Alerts.Extensions;
+@using Sitecore.Mvc.Presentation
+@model RenderingModel
+@{
+    var backgroundGray = RenderingContext.Current.Rendering.Parameters["IsGrayBackground"] == null ? "" : "gray";
+    IHtmlString media = new HtmlString("");
+    Sitecore.Data.Fields.LinkField linkField;
+    if (!Model.Item.Fields[Sitecore.Feature.Library.Templates.ProgramContentSet1.Fields.ImageOrVideo].HasValue)
+    {
+        media = new HtmlString("<p></p>");
+    }
+    else
+    {
+        linkField = Model.Item.Fields[Sitecore.Feature.Library.Templates.ProgramContentSet1.Fields.ImageOrVideo];
+        if (linkField != null)
+        {
+            media = Sitecore.Feature.Library.Helpers.LibraryHelpers.ImageOrVideoHelper(linkField, Model.Item);
+        }
+        else if(linkField == null)
+        {
+            media = new HtmlString("<p></p>");
+        }
+
+    }
+
+
+
+
+}
+<div class="section @backgroundGray">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <div class="heading">
+                    @Html.Raw(Html.Sitecore().Field(Sitecore.Feature.Library.Templates.ProgramContentSet1.Fields.Text, Model.Item))
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">                
+                @media                
+            <br />
+            </div>
+        </div>
+    </div>
+</div>

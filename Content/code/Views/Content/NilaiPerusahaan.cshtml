@@ -1,0 +1,40 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    int MaxItem = RenderingContext.Current.Rendering.GetIntegerParameter("Max Item", 5);
+    IEnumerable<Sitecore.Data.Items.Item> itemNilaiPerusahaan = Model.Item.Children;
+    if (Model.Item.Children.Count > MaxItem)
+    {
+        itemNilaiPerusahaan = Model.Item.Children.Take(MaxItem);
+    }
+}
+
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.HeaderNilaiPerusahaan.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.HeaderNilaiPerusahaan.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+
+<div class="heading full">
+    <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, Model.Item)</h1>
+</div>
+
+<div class="tiger-box">
+    @foreach (Sitecore.Data.Items.Item myItem in itemNilaiPerusahaan)
+    {
+        <div class="t-box">
+            @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Image, myItem, cssClass: "RemoveDefaultImageField")
+            <div class="text">
+                <h3>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, myItem)</h3>
+                <p class="gray-text">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Description, myItem)</p>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,55 @@
+
+ÜSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll.btnUploadBranchWeekendBanking_Click(object, System.EventArgs)l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.cs‹ ‹(:"0*ñ
+0ø
+º
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csﬁ ﬁ(7*
+%0$System.Web.UI.WebControls.FileUpload"__id*ô*ñJ
+HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"H
+ fuBulkUploadBranchWeekendBanking$System.Web.UI.WebControls.FileUpload¢
+ü
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csﬁ ﬁ([
+
+%1void"ÅSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll.UploadFile(System.Web.UI.WebControls.FileUpload, string)*LJ
+HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll*,
+*
+%0$System.Web.UI.WebControls.FileUpload*#!
+Template Branch Weekend Banking∑
+¥
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csﬂ ﬂ(*'
+%2!System.Web.UI.WebControls.Literal"__id*î*ëJ
+HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"C
+LastUploadBranchWeekendBanking!System.Web.UI.WebControls.Literal“
+œ
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csﬂF ﬂ(v
+%3string"^Sitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll.GetLastUpload(string)*LJ
+HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll*#!
+Template Branch Weekend BankingÆ
+´
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csﬂ2 ﬂ(v
+%4string"__concat*
+ Last upload : *
+
+%3string‰
+·
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csﬂ ﬂ(v
+
+%5void"*System.Web.UI.WebControls.Literal.Text.set*)
+'
+%2!System.Web.UI.WebControls.Literal*
+
+%4string*
+1*â
+1"É
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.cs‡ ‡(	
+implicit return:
+senderobject:
+eSystem.EventArgsBLJ
+HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll

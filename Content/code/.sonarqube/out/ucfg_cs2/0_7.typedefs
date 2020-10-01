@@ -1,0 +1,17 @@
+†
+4Sitecore.Feature.Content.Repositories.BlogRepositoryobjectﬁ
+RBlogRepository(Sitecore.Foundation.Indexing.Repositories.ISearchServiceRepository)áSitecore.Feature.Content.Repositories.BlogRepository.BlogRepository(Sitecore.Foundation.Indexing.Repositories.ISearchServiceRepository)s
+Get(Sitecore.Data.Items.Item)RSitecore.Feature.Content.Repositories.BlogRepository.Get(Sitecore.Data.Items.Item)Å
+$GetArticle(Sitecore.Data.Items.Item)YSitecore.Feature.Content.Repositories.BlogRepository.GetArticle(Sitecore.Data.Items.Item)Å
+$GetGallery(Sitecore.Data.Items.Item)YSitecore.Feature.Content.Repositories.BlogRepository.GetGallery(Sitecore.Data.Items.Item)Ö
+&GetPromotion(Sitecore.Data.Items.Item)[Sitecore.Feature.Content.Repositories.BlogRepository.GetPromotion(Sitecore.Data.Items.Item)É
+%GetFoodSite(Sitecore.Data.Items.Item)ZSitecore.Feature.Content.Repositories.BlogRepository.GetFoodSite(Sitecore.Data.Items.Item)â
+(GetMaybankBlog(Sitecore.Data.Items.Item)]Sitecore.Feature.Content.Repositories.BlogRepository.GetMaybankBlog(Sitecore.Data.Items.Item)‡
+SGetAllMaybankBlog(System.Collections.Generic.IEnumerable<Sitecore.Data.Items.Item>)àSitecore.Feature.Content.Repositories.BlogRepository.GetAllMaybankBlog(System.Collections.Generic.IEnumerable<Sitecore.Data.Items.Item>)˛
+bGetMaybankBlogByCategory(System.Collections.Generic.IEnumerable<Sitecore.Data.Items.Item>, string)óSitecore.Feature.Content.Repositories.BlogRepository.GetMaybankBlogByCategory(System.Collections.Generic.IEnumerable<Sitecore.Data.Items.Item>, string)ô
+0GetMaybankBlogCategory(Sitecore.Data.Items.Item)eSitecore.Feature.Content.Repositories.BlogRepository.GetMaybankBlogCategory(Sitecore.Data.Items.Item)W
+GetAllComment()DSitecore.Feature.Content.Repositories.BlogRepository.GetAllComment()s
+GetAllCommentByBlogId(string)RSitecore.Feature.Content.Repositories.BlogRepository.GetAllCommentByBlogId(string)©
+8PostComment(Sitecore.Feature.Content.Models.BlogComment)mSitecore.Feature.Content.Repositories.BlogRepository.PostComment(Sitecore.Feature.Content.Models.BlogComment)
+#LoadAllCommentByBlogId(string, int)XSitecore.Feature.Content.Repositories.BlogRepository.LoadAllCommentByBlogId(string, int)m
+GetAllNotApprovedComment()OSitecore.Feature.Content.Repositories.BlogRepository.GetAllNotApprovedComment()

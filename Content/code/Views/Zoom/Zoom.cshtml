@@ -1,0 +1,172 @@
+﻿@model Sitecore.Feature.Content.Models.ZoomModel
+
+<link type="text/css" rel="stylesheet" href="https://source.zoom.us/1.7.7/css/bootstrap.css" />
+<link type="text/css" rel="stylesheet" href="https://source.zoom.us/1.7.7/css/react-select.css" />
+
+
+@*<div class="m-top-nav js-scroll-fixed">
+    <div class="container-fluid">
+        <div class="row">            
+            
+            
+            <nav id="nav-tool" class="navbar navbar-inverse navbar-fixed-top" style="position:relative;">
+                <div class="container">
+                    
+                    <div id="navbar">
+                        <form class="navbar-form navbar-right" id="meeting_form">
+                            <div class="form-group">
+                                <input type="text" name="display_name" id="display_name" value="WebSDK1.7.7#CDN" placeholder="Name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="meeting_number" id="meeting_number" value="" placeholder="Meeting Number" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="meeting_pwd" id="meeting_pwd" value="" placeholder="Meeting Password" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                
+                                    <select id="meeting_role" name="role_meeting" class="selectpicker">                                        
+                                        <option value=0 selected>Attendee</option>
+                                        <option value=1>Host</option>
+                                        <option value=5>Assistant</option>
+                                    </select>                                
+                            </div>                            
+
+                            <button type="submit" class="btn btn-primary" style="width:84%;max-width:180px;" id="join_meeting">Join</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+                
+            </div>
+        </div>
+</div>*@
+
+
+<nav id="nav-tool" class="navbar navbar-inverse navbar-fixed-top" style="position:relative;">
+    <div class="container">
+        @*<div class="navbar-header">
+            <a class="navbar-brand" href="#">MyMeetingApp</a>
+        </div>*@
+        <div id="navbar">
+            <form class="navbar-form navbar-right" id="meeting_form">
+                <div class="form-group">
+                    <input type="text" name="display_name" id="display_name" value="WebSDK1.7.7#CDN" placeholder="Name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="meeting_number" id="meeting_number" value="" placeholder="Meeting Number" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="meeting_pwd" id="meeting_pwd" value="" placeholder="Meeting Password" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <select id="meeting_role" class="selectpicker">
+                        <option value=0>Attendee</option>
+                        <option value=1>Host</option>
+                        <option value=5>Assistant</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="join_meeting">Join</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+
+<script src="https://source.zoom.us/1.7.7/lib/vendor/react.min.js"></script>
+<script src="https://source.zoom.us/1.7.7/lib/vendor/react-dom.min.js"></script>
+<script src="https://source.zoom.us/1.7.7/lib/vendor/redux.min.js"></script>
+<script src="https://source.zoom.us/1.7.7/lib/vendor/redux-thunk.min.js"></script>
+<script src="https://source.zoom.us/1.7.7/lib/vendor/jquery.min.js"></script>
+<script src="https://source.zoom.us/1.7.7/lib/vendor/lodash.min.js"></script>
+
+<script src="https://source.zoom.us/zoom-meeting-1.7.7.min.js"></script>
+<script src="/assets/js/tool.js"></script>
+@*<script src="/assets/js/index.js"></script>*@
+
+
+<script type="text/javascript">
+    (function(){
+
+	    console.log('checkSystemRequirements');
+        console.log(JSON.stringify(ZoomMtg.checkSystemRequirements()));
+
+        var API_KEY = 'XZLoLzk2S6G-eAjwmlRjdQ';
+
+        /**
+         * NEVER PUT YOUR ACTUAL API SECRET IN CLIENT SIDE CODE, THIS IS JUST FOR QUICK PROTOTYPING
+         * The below generateSignature should be done server side as not to expose your api secret in public
+         * You can find an eaxmple in here: https://marketplace.zoom.us/docs/sdk/native-sdks/web/essential/signature
+         */
+
+        var API_SECRET = 'JhgWN5YTEJ6NoWANXIMusSOKv6JY2AJOyvod';
+    // it's option if you want to change the WebSDK dependency link resources. setZoomJSLib must be run at first
+    // if (!china) ZoomMtg.setZoomJSLib('https://source.zoom.us/1.7.7/lib', '/av'); // CDN version default
+    // else ZoomMtg.setZoomJSLib('https://jssdk.zoomus.cn/1.7.7/lib', '/av'); // china cdn option
+    // ZoomMtg.setZoomJSLib('http://localhost:9999/node_modules/@@zoomus/websdk/dist/lib', '/av'); // Local version default, Angular Project change to use cdn version
+    ZoomMtg.preLoadWasm();
+    ZoomMtg.prepareJssdk();
+
+    testTool = window.testTool;
+    document.getElementById('display_name').value = "CDN" + ZoomMtg.getJSSDKVersion()[0] + testTool.detectOS() + "#" + testTool.getBrowserInfo();
+
+    document.getElementById('join_meeting').addEventListener('click', function(e){
+        e.preventDefault();
+
+        if(!this.form.checkValidity()){
+            alert("Enter Name and Meeting Number");
+            return false;
+        }
+
+        var meetConfig = {
+            apiKey: API_KEY,            
+            meetingNumber: parseInt('@Model.meetingNumber'),
+            userName: document.getElementById('display_name').value,
+            passWord: document.getElementById('meeting_pwd').value,
+            leaveUrl: "https://zoom.us",
+            role: parseInt(document.getElementById('meeting_role').value, 10)
+        };
+
+
+        var signature = '@Model.signature';
+
+        ZoomMtg.init({
+            leaveUrl: 'http://maybank/',
+            isSupportAV: true,
+            success: function () {
+                ZoomMtg.join(
+                    {
+                        meetingNumber: meetConfig.meetingNumber,
+                        userName: meetConfig.userName,
+                        signature: signature,
+                        apiKey: meetConfig.apiKey,
+                        passWord: meetConfig.passWord,
+                        success: function(res){
+                            $('#nav-tool').hide();
+                            console.log('join meeting success');
+                        },
+                        error: function(res) {
+                            console.log(res);
+                        }
+                    }
+                );
+            },
+            error: function(res) {
+                console.log(res);
+            }
+        });
+
+    });
+
+})();
+
+</script>
+
+<style>
+    form input.form-control{
+        color:white !important;
+    }
+</style>

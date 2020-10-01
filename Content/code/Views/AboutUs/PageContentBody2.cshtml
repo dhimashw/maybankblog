@@ -1,0 +1,20 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Data.Items;
+@using Sitecore.Foundation.Alerts;
+@using Sitecore.Foundation.Alerts.Extensions;
+@using Sitecore.Mvc.Presentation
+@model RenderingModel
+@{
+    var backgroundGray = RenderingContext.Current.Rendering.Parameters["IsGrayBackground"] == null ? "" : "gray";
+}
+<div class="section @backgroundGray">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                @Html.Raw(Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.PageBodyContent2, Model.Item))
+            </div>
+        </div>
+    </div>
+</div>

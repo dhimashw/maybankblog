@@ -1,0 +1,185 @@
+
+FSitecore.Feature.Content.Controller.BlogController.isDelayPost(string)Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csñ ñ( "0*∞
+0t
+r
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csò ò( 
+isDelaybool"__id*
+""Ï
+È
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csô ô(./
+%0)Sitecore.Feature.Library.Helper.DBContext"6Sitecore.Feature.Library.Helper.Factory.DbEntities.get*+")
+'Sitecore.Feature.Library.Helper.Factory¿
+Ω
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csô ô(./
+db)Sitecore.Feature.Library.Helper.DBContext"__id*1
+/
+%0)Sitecore.Feature.Library.Helper.DBContext*
+1*¥"
+1¯
+ı
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csùq ù()
+%1#Sitecore.Mvc.Helpers.SitecoreHelper"__id*o*m4
+2Sitecore.Feature.Content.Controller.BlogController"5
+sitecoreHelper#Sitecore.Mvc.Helpers.SitecoreHelperÄ
+˝
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csùS ù(™
+%2string"|Sitecore.Foundation.Dictionary.Extensions.SitecoreExtensions.Dictionary(Sitecore.Mvc.Helpers.SitecoreHelper, string, string)*@">
+<Sitecore.Foundation.Dictionary.Extensions.SitecoreExtensions*+
+)
+%1#Sitecore.Mvc.Helpers.SitecoreHelper*%#
+!/Feature/Maybank Blog/Max Comment*
+3•¢
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csù3 ù(´(
+%3"System.Data.SqlClient.SqlParameter""System.Data.SqlClient.SqlParameter
+Ì
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csù7 ù(C
+
+%4void"?System.Data.SqlClient.SqlParameter.SqlParameter(string, object)**
+(
+%3"System.Data.SqlClient.SqlParameter*
+@maxcomment*
+
+%2string¿
+Ω
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csù! ù(´5
+paramMaxComment"System.Data.SqlClient.SqlParameter"__id**
+(
+%3"System.Data.SqlClient.SqlParameter¯
+ı
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csûo û(})
+%5#Sitecore.Mvc.Helpers.SitecoreHelper"__id*o*m4
+2Sitecore.Feature.Content.Controller.BlogController"5
+sitecoreHelper#Sitecore.Mvc.Helpers.SitecoreHelperÉ
+Ä
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csûQ û(´
+%6string"|Sitecore.Foundation.Dictionary.Extensions.SitecoreExtensions.Dictionary(Sitecore.Mvc.Helpers.SitecoreHelper, string, string)*@">
+<Sitecore.Foundation.Dictionary.Extensions.SitecoreExtensions*+
+)
+%5#Sitecore.Mvc.Helpers.SitecoreHelper*$"
+ /Feature/Maybank Blog/Delay Time*	
+00:03•¢
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csû2 û(¨(
+%7"System.Data.SqlClient.SqlParameter""System.Data.SqlClient.SqlParameterÔ
+Ï
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csû6 û(B
+
+%8void"?System.Data.SqlClient.SqlParameter.SqlParameter(string, object)**
+(
+%7"System.Data.SqlClient.SqlParameter*
+
+@delayTime*
+
+%6stringø
+º
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csû! û(¨4
+paramDelayTime"System.Data.SqlClient.SqlParameter"__id**
+(
+%7"System.Data.SqlClient.SqlParameter§°
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csü/ ü(R(
+%9"System.Data.SqlClient.SqlParameter""System.Data.SqlClient.SqlParameterÒ
+Ó
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csü3 ü(?
+%10void"?System.Data.SqlClient.SqlParameter.SqlParameter(string, object)**
+(
+%9"System.Data.SqlClient.SqlParameter*	
+@userIP*
+
+userIPstringª
+∏
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.csü! ü(R1
+paramUserIP"System.Data.SqlClient.SqlParameter"__id**
+(
+%9"System.Data.SqlClient.SqlParameterÿ
+’
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs†0 †(;"
+%11System.Data.Entity.Database")System.Data.Entity.DbContext.Database.get*1
+/
+db)Sitecore.Feature.Library.Helper.DBContextÏ
+È
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs†0 †(≥@
+%129System.Data.Entity.Infrastructure.DbRawSqlQuery<TElement>"GSystem.Data.Entity.Database.SqlQuery<TElement>(string, params object[])*$
+"
+%11System.Data.Entity.Database*<:
+8exec sp_DELAY_BLOG_POST @maxcomment, @delayTime, @userIP*7
+5
+paramMaxComment"System.Data.SqlClient.SqlParameter*6
+4
+paramDelayTime"System.Data.SqlClient.SqlParameter*3
+1
+paramUserIP"System.Data.SqlClient.SqlParameter§
+°
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs†0 †(ƒ
+
+%13int"_System.Linq.Enumerable.FirstOrDefault<TSource>(System.Collections.Generic.IEnumerable<TSource>)*"
+System.Linq.Enumerable*B
+@
+%129System.Data.Entity.Infrastructure.DbRawSqlQuery<TElement>•
+¢
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs† †(≈
+%14bool"System.Convert.ToBoolean(int)*"
+System.Convert*
+
+
+%13int|
+z
+R
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs† †(≈
+isDelaybool"__id*
+
+%14bool*
+2
+3*”
+2™ß
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs§$ §(.
+%15string"System.Exception.Message.get*
+
+exSystem.Exception2Message.getâ
+Ü
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs§$ §(9
+%16string"string.ToString()*
+
+%15stringè
+å
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs§ §(:"
+%17System.Web.Mvc.ActionResult"JSitecore.Feature.Content.Controller.BlogController.ErrorWebservice(string)*64
+2Sitecore.Feature.Content.Controller.BlogController*
+
+%16string*
+3*k
+3"f
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs¶ ¶(
+
+isDelaybool*
+4*
+5*m
+5"h
+Q
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs® ®(	
+implicit return:
+userIPstringB64
+2Sitecore.Feature.Content.Controller.BlogController

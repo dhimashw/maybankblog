@@ -1,0 +1,14 @@
+﻿---
+ID: "f6a2dd0f-9614-40c1-b26b-ea7d01da163a"
+Parent: "3817d01d-cadf-45c5-bc70-d86c78e9cece"
+Template: "3817d01d-cadf-45c5-bc70-d86c78e9cece"
+Path: /sitecore/templates/Feature/Content/Card Info/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180420T040050Z

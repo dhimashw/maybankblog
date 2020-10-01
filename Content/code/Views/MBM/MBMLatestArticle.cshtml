@@ -1,0 +1,91 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using Sitecore.Feature.Content.Controller
+@model PagedData<Sitecore.Data.Items.Item>
+@{
+    Sitecore.Data.Items.Item datasourceItem = RenderingContext.Current.Rendering.Item;
+    Sitecore.Data.Fields.LinkField _link = datasourceItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Link];
+    string redirectItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+}
+
+<div class="container">
+    <div class="valign mb-4">
+        <div class="valign__item">
+            <h1 class="m-0">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, datasourceItem)</h1>
+        </div>
+        <div class="valign__item valign__item--bottom text-right">
+            <a class="btn btn-link btn-link--black lh-1 pb-1" href="@redirectItemUrl" @Html.Raw(_link.Target.Length > 0 ? "target=" + _link.Target + "" : string.Empty)>
+                <span class="t-size-14">@Html.Sitecore().Dictionary("/Feature/Content/See All", "SEE ALL")</span>
+                <img class="pl-2" src="/Assets/mbm/img/icon/arrow-right-yellow.svg" alt="" />
+            </a>
+        </div>
+    </div>
+    <div class="horizontal-scroll@max-sm js-hidescroll">
+        <div class="row">
+            @if (Model.Data != null)
+            {
+                foreach (Sitecore.Data.Items.Item item in Model.Data)
+                {
+                    string urlFile, targetWindow = string.Empty;
+                    urlFile = "#";
+                    targetWindow = string.Empty;
+
+                    if (item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.OpenNewBrowser] != null && item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.OpenNewBrowser].ToString() == "1")
+                    {
+                        targetWindow = "target=\"_blank\"";
+                    }
+
+                    if (item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.FileMBM] != null && item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.FileMBM].Value != string.Empty)
+                    {
+                        Sitecore.Data.Fields.FileField field = (Sitecore.Data.Fields.FileField)item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.FileMBM];
+                        if (field.MediaItem != null)
+                        {
+                            urlFile = Sitecore.Resources.Media.MediaManager.GetMediaUrl(field.MediaItem);
+                        }
+                    }
+                    else
+                    {
+                        urlFile = item.Url();
+                    }
+                    string categoryTitle = string.Empty;
+                    if (item.Fields[item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.CategoryArticleMBM].ID] != null && item.Fields[item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.CategoryArticleMBM].ID].ToString().Trim().Length > 37)
+                    {
+                        Sitecore.Data.Items.Item itemCategory = Sitecore.Context.Database.GetItem(item.Fields[item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.CategoryArticleMBM].ID].ToString());
+                        categoryTitle = itemCategory.Fields[Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title].ToString();
+                    }
+
+                    <div class="col-xs-12 col-xs-6@landscape col-sm-4">
+                        <div class="skeleton js-demo-skeleton my-3">
+                            <div class="skeleton__img"></div>
+                            <div class="skeleton__body">
+                                <div class="skeleton__line"></div>
+                                <div class="skeleton__line half"></div>
+                            </div>
+                        </div>
+                        <div class="card js-demo-skeleton-content hide">
+                            <div class="card__header">
+                                <div class="card__img">
+                                    <a href="@urlFile" @targetWindow>
+                                        @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail, item, cssClass: "removestyle img-responsive")
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card__body">
+                                <div class="pt-3 color-gold">@categoryTitle</div>
+                                <a href="@urlFile" @targetWindow class="blackhref">
+                                    <h3 class="card__title js-truncate" data-truncate="48">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, item)</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+    
+        </div>
+    </div>
+</div>

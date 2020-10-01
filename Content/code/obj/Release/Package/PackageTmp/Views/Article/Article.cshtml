@@ -1,0 +1,27 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Content;
+@using Sitecore.Foundation.Alerts;
+@using Sitecore.Foundation.Alerts.Extensions;
+@using Sitecore.Foundation.Dictionary.Repositories;
+@using Sitecore.Mvc.Extensions;
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+@{
+    var itemArticle = Model.Item;
+    var linkurl = @itemArticle.LinkFieldUrl(Templates.Article.Fields.LinkUrl).ToString();
+    var targetType = @itemArticle.LinkFieldOptions(Templates.Article.Fields.LinkUrl, LinkFieldOption.Target);
+}
+
+
+<div class="col col-xs-12 col-lg-4 col-sm-12 col-md-4 js-mobile-to-carousel-list">
+    <div class="story-card">
+        <div class="image"><a href="@Model.Item.LinkFieldUrl(Templates.Article.Fields.LinkUrl)">@Html.Sitecore().ImageField(Templates.Article.Fields.Image)</a></div>
+        <div class="title">
+            <h4 class="yellow-text">@Html.Sitecore().Field(Templates.Article.Fields.Category)</h4>
+            <h2><a href="@linkurl" target="@targetType">@Html.Sitecore().Field(Templates.Article.Fields.Title)</a></h2>
+        </div>
+    </div>
+</div>

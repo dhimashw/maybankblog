@@ -1,0 +1,3429 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Microsoft (R) Visual C# Compiler",
+        "version": "2.10.0.0",
+        "fileVersion": "2.10.0.0 (b9fb1610)",
+        "semanticVersion": "2.10.0",
+        "language": "en-US"
+      },
+      "results": [
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Controller/SamplesController.cs",
+                "region": {
+                  "startLine": 4,
+                  "startColumn": 5,
+                  "endLine": 4,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Controller/SamplesController.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 5,
+                  "endLine": 5,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Controller/SamplesController.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 5,
+                  "endLine": 6,
+                  "endColumn": 49
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Controller/SamplesController.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 5,
+                  "endLine": 7,
+                  "endColumn": 45
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Controller/SamplesController.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 5,
+                  "endLine": 8,
+                  "endColumn": 61
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Controller/SamplesController.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 5,
+                  "endLine": 9,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Models/Comment.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Models/Comment.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Models/Comment.cs",
+                "region": {
+                  "startLine": 4,
+                  "startColumn": 1,
+                  "endLine": 4,
+                  "endColumn": 18
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUpload.aspx.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 13,
+                  "endLine": 19,
+                  "endColumn": 77
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadATMBranchLocation.aspx.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadATMBranchLocation.aspx.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadATMBranchLocation.aspx.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1,
+                  "endLine": 6,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadBusiness.aspx.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadBusiness.aspx.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadBusiness.aspx.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1,
+                  "endLine": 6,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/TestDashboardAll.ascx.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 21,
+                  "endLine": 22,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadBusinessVoucher.aspx.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadBusinessVoucher.aspx.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadBusinessVoucher.aspx.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1,
+                  "endLine": 6,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/TestDashboardAll.ascx.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 9,
+                  "endLine": 20,
+                  "endColumn": 26
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 13,
+                  "endLine": 31,
+                  "endColumn": 48
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 136,
+                  "startColumn": 13,
+                  "endLine": 136,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 146,
+                  "startColumn": 13,
+                  "endLine": 146,
+                  "endColumn": 86
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 172,
+                  "startColumn": 21,
+                  "endLine": 172,
+                  "endColumn": 84
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 278,
+                  "startColumn": 21,
+                  "endLine": 278,
+                  "endColumn": 84
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadCreditCard.aspx.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadCreditCard.aspx.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadCreditCard.aspx.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1,
+                  "endLine": 6,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadCreditCardVoucher.aspx.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadCreditCardVoucher.aspx.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadCreditCardVoucher.aspx.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1,
+                  "endLine": 6,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadKPM.aspx.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadKPM.aspx.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadKPM.aspx.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1,
+                  "endLine": 6,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1144",
+          "level": "warning",
+          "message": "Remove the unused private method 'DisplayApprovedComment'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/TestDashboardAll.ascx.cs",
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 9,
+                  "endLine": 44,
+                  "endColumn": 10
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadKPR.aspx.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadKPR.aspx.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadKPR.aspx.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1,
+                  "endLine": 6,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadLoanVoucher.aspx.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadLoanVoucher.aspx.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadLoanVoucher.aspx.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1,
+                  "endLine": 6,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadMortgageMultifunctionVoucher.aspx.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadMortgageMultifunctionVoucher.aspx.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadMortgageMultifunctionVoucher.aspx.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1,
+                  "endLine": 6,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadSavingVoucher.aspx.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadSavingVoucher.aspx.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadSavingVoucher.aspx.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1,
+                  "endLine": 6,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadSyariahVoucher.aspx.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadSyariahVoucher.aspx.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadSyariahVoucher.aspx.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1,
+                  "endLine": 6,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadVoucher.aspx.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadVoucher.aspx.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUploadVoucher.aspx.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1,
+                  "endLine": 6,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/Dashboard.aspx.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/Dashboard.aspx.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BlogDashboard.aspx.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BlogDashboard.aspx.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BlogDashboard.aspx.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1,
+                  "endLine": 6,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/TestDashboard.aspx.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/TestDashboard.aspx.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/TestDashboard.aspx.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1,
+                  "endLine": 6,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUpload.aspx.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUpload.aspx.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BulkUpload.aspx.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1,
+                  "endLine": 6,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4144",
+          "level": "warning",
+          "message": "Update this method so that its implementation is not identical to 'SearchCommentByPage'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 122,
+                  "startColumn": 17,
+                  "endLine": 122,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 104,
+                  "startColumn": 17,
+                  "endLine": 104,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4144",
+          "level": "warning",
+          "message": "Update this method so that its implementation is not identical to 'SearchCommentByPage'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 140,
+                  "startColumn": 17,
+                  "endLine": 140,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 104,
+                  "startColumn": 17,
+                  "endLine": 104,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 21,
+                  "endLine": 18,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DebugDashboard.ascx.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 17
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4487",
+          "level": "warning",
+          "message": "Remove this unread private field 'ServerMapPath' or refactor the code to use its value.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 23,
+                  "endLine": 17,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DebugDashboard.ascx.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 1,
+                  "endLine": 9,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DebugDashboard.ascx.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 1,
+                  "endLine": 11,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DebugDashboard.ascx.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 1,
+                  "endLine": 12,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DebugDashboard.ascx.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 1,
+                  "endLine": 14,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1186",
+          "level": "warning",
+          "message": "Add a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAllLog.ascx.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 24,
+                  "endLine": 12,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/TestDashboardAll.ascx.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 17
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/TestDashboardAll.ascx.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/TestDashboardAll.ascx.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 1,
+                  "endLine": 9,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/TestDashboardAll.ascx.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 1,
+                  "endLine": 11,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/TestDashboardAll.ascx.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 1,
+                  "endLine": 12,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/TestDashboardAll.ascx.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 1,
+                  "endLine": 14,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1186",
+          "level": "warning",
+          "message": "Add a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/TestDashboard.aspx.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 24,
+                  "endLine": 12,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1186",
+          "level": "warning",
+          "message": "Add a nested comment explaining why this method is empty, throw a 'NotSupportedException' or complete the implementation.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/Custom/BlogDashboard.aspx.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 24,
+                  "endLine": 12,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAllLog.ascx.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAllLog.ascx.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAllLog.ascx.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1,
+                  "endLine": 6,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4784",
+          "level": "warning",
+          "message": "Make sure that using a regular expression is safe here.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/ApprovedComment.ascx.cs",
+                "region": {
+                  "startLine": 58,
+                  "startColumn": 23,
+                  "endLine": 58,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1116",
+          "level": "warning",
+          "message": "Remove this empty statement.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 71,
+                  "startColumn": 22,
+                  "endLine": 71,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1116",
+          "level": "warning",
+          "message": "Remove this empty statement.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 76,
+                  "startColumn": 22,
+                  "endLine": 76,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1116",
+          "level": "warning",
+          "message": "Remove this empty statement.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 81,
+                  "startColumn": 22,
+                  "endLine": 81,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/ApprovedComment.ascx.cs",
+                "region": {
+                  "startLine": 83,
+                  "startColumn": 30,
+                  "endLine": 83,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param1'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/ApprovedComment.ascx.cs",
+                "region": {
+                  "startLine": 84,
+                  "startColumn": 30,
+                  "endLine": 84,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param2'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/ApprovedComment.ascx.cs",
+                "region": {
+                  "startLine": 85,
+                  "startColumn": 30,
+                  "endLine": 85,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param3'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/ApprovedComment.ascx.cs",
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 30,
+                  "endLine": 86,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param4'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/ApprovedComment.ascx.cs",
+                "region": {
+                  "startLine": 87,
+                  "startColumn": 30,
+                  "endLine": 87,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param5'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/ApprovedComment.ascx.cs",
+                "region": {
+                  "startLine": 88,
+                  "startColumn": 30,
+                  "endLine": 88,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1172",
+          "level": "warning",
+          "message": "Remove this unused method parameter 'isApprove'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 87,
+                  "endLine": 86,
+                  "endColumn": 104
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "IsRemovable": "True"
+            }
+          }
+        },
+        {
+          "ruleId": "S1172",
+          "level": "warning",
+          "message": "Remove this unused method parameter 'orderByApproval'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 106,
+                  "endLine": 86,
+                  "endColumn": 129
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "IsRemovable": "True"
+            }
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 93,
+                  "startColumn": 30,
+                  "endLine": 93,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param2'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 94,
+                  "startColumn": 30,
+                  "endLine": 94,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param3'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 95,
+                  "startColumn": 30,
+                  "endLine": 95,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param4'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 96,
+                  "startColumn": 30,
+                  "endLine": 96,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4784",
+          "level": "warning",
+          "message": "Make sure that using a regular expression is safe here.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 58,
+                  "startColumn": 23,
+                  "endLine": 58,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4784",
+          "level": "warning",
+          "message": "Make sure that using a regular expression is safe here.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/MyTask.ascx.cs",
+                "region": {
+                  "startLine": 58,
+                  "startColumn": 23,
+                  "endLine": 58,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/MyTask.ascx.cs",
+                "region": {
+                  "startLine": 83,
+                  "startColumn": 30,
+                  "endLine": 83,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param1'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/MyTask.ascx.cs",
+                "region": {
+                  "startLine": 84,
+                  "startColumn": 30,
+                  "endLine": 84,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param2'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/MyTask.ascx.cs",
+                "region": {
+                  "startLine": 85,
+                  "startColumn": 30,
+                  "endLine": 85,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param3'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/MyTask.ascx.cs",
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 30,
+                  "endLine": 86,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param4'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/MyTask.ascx.cs",
+                "region": {
+                  "startLine": 87,
+                  "startColumn": 30,
+                  "endLine": 87,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param5'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/MyTask.ascx.cs",
+                "region": {
+                  "startLine": 88,
+                  "startColumn": 30,
+                  "endLine": 88,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1075",
+          "level": "warning",
+          "message": "Remove this hardcoded path-delimiter.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 161,
+                  "startColumn": 100,
+                  "endLine": 161,
+                  "endColumn": 103
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1075",
+          "level": "warning",
+          "message": "Remove this hardcoded path-delimiter.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 184,
+                  "startColumn": 93,
+                  "endLine": 184,
+                  "endColumn": 96
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DebugDashboard.ascx.cs",
+                "region": {
+                  "startLine": 34,
+                  "startColumn": 30,
+                  "endLine": 34,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param2'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DebugDashboard.ascx.cs",
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 30,
+                  "endLine": 35,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 111,
+                  "startColumn": 30,
+                  "endLine": 111,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param2'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 112,
+                  "startColumn": 30,
+                  "endLine": 112,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param3'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 113,
+                  "startColumn": 30,
+                  "endLine": 113,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param4'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 114,
+                  "startColumn": 30,
+                  "endLine": 114,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 129,
+                  "startColumn": 30,
+                  "endLine": 129,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param2'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 130,
+                  "startColumn": 30,
+                  "endLine": 130,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param3'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 131,
+                  "startColumn": 30,
+                  "endLine": 131,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param4'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 132,
+                  "startColumn": 30,
+                  "endLine": 132,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 147,
+                  "startColumn": 30,
+                  "endLine": 147,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param2'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 148,
+                  "startColumn": 30,
+                  "endLine": 148,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param3'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 149,
+                  "startColumn": 30,
+                  "endLine": 149,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'param4'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 150,
+                  "startColumn": 30,
+                  "endLine": 150,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1172",
+          "level": "warning",
+          "message": "Remove this unused method parameter 'start'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 185,
+                  "startColumn": 61,
+                  "endLine": 185,
+                  "endColumn": 73
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "IsRemovable": "True"
+            }
+          }
+        },
+        {
+          "ruleId": "S1172",
+          "level": "warning",
+          "message": "Remove this unused method parameter 'end'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/DeletedComment.ascx.cs",
+                "region": {
+                  "startLine": 185,
+                  "startColumn": 75,
+                  "endLine": 185,
+                  "endColumn": 85
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "IsRemovable": "True"
+            }
+          }
+        },
+        {
+          "ruleId": "S112",
+          "level": "warning",
+          "message": "'System.Exception' should not be thrown by user code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 178,
+                  "startColumn": 31,
+                  "endLine": 178,
+                  "endColumn": 108
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2737",
+          "level": "warning",
+          "message": "Add logic to this catch clause or eliminate it and rethrow the exception automatically.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 236,
+                  "startColumn": 17,
+                  "endLine": 240,
+                  "endColumn": 18
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2259",
+          "level": "warning",
+          "message": "'dir' is null on at least one execution path.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 214,
+                  "startColumn": 17,
+                  "endLine": 214,
+                  "endColumn": 20
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1172",
+          "level": "warning",
+          "message": "Remove this unused method parameter 'start'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/ApprovedComment.ascx.cs",
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 61,
+                  "endLine": 123,
+                  "endColumn": 73
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "IsRemovable": "True"
+            }
+          }
+        },
+        {
+          "ruleId": "S1172",
+          "level": "warning",
+          "message": "Remove this unused method parameter 'end'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/ApprovedComment.ascx.cs",
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 75,
+                  "endLine": 123,
+                  "endColumn": 85
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "IsRemovable": "True"
+            }
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'tableName'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 142,
+                  "startColumn": 20,
+                  "endLine": 142,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'dataSet'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 144,
+                  "startColumn": 21,
+                  "endLine": 144,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1172",
+          "level": "warning",
+          "message": "Remove this unused method parameter 'start'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/MyTask.ascx.cs",
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 61,
+                  "endLine": 123,
+                  "endColumn": 73
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "IsRemovable": "True"
+            }
+          }
+        },
+        {
+          "ruleId": "S1172",
+          "level": "warning",
+          "message": "Remove this unused method parameter 'end'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/MyTask.ascx.cs",
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 75,
+                  "endLine": 123,
+                  "endColumn": 85
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "IsRemovable": "True"
+            }
+          }
+        },
+        {
+          "ruleId": "S2696",
+          "level": "warning",
+          "message": "Make the enclosing instance method 'static' or remove this set on the 'static' field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 168,
+                  "startColumn": 21,
+                  "endLine": 168,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 23,
+                  "endLine": 17,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1075",
+          "level": "warning",
+          "message": "Remove this hardcoded path-delimiter.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 267,
+                  "startColumn": 100,
+                  "endLine": 267,
+                  "endColumn": 103
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1075",
+          "level": "warning",
+          "message": "Remove this hardcoded path-delimiter.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 294,
+                  "startColumn": 93,
+                  "endLine": 294,
+                  "endColumn": 96
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S112",
+          "level": "warning",
+          "message": "'System.Exception' should not be thrown by user code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 284,
+                  "startColumn": 31,
+                  "endLine": 284,
+                  "endColumn": 144
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S112",
+          "level": "warning",
+          "message": "'System.Exception' should not be thrown by user code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 288,
+                  "startColumn": 31,
+                  "endLine": 288,
+                  "endColumn": 108
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2259",
+          "level": "warning",
+          "message": "'dir' is null on at least one execution path.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 325,
+                  "startColumn": 17,
+                  "endLine": 325,
+                  "endColumn": 20
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'tableName'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 258,
+                  "startColumn": 20,
+                  "endLine": 258,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'dataSet'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 260,
+                  "startColumn": 21,
+                  "endLine": 260,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2696",
+          "level": "warning",
+          "message": "Make the enclosing instance method 'static' or remove this set on the 'static' field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 274,
+                  "startColumn": 21,
+                  "endLine": 274,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Review%20Code/Maybank%20Blog/Administrators/code/Sitecore/Admin/UserControl/BulkUploadAll.ascx.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 23,
+                  "endLine": 17,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "S1075": {
+          "id": "S1075",
+          "shortDescription": "URIs should not be hardcoded",
+          "fullDescription": "Hardcoding a URI makes it difficult to test a program: path literals are not always portable across operating systems, a given absolute path may not exist on a specific test environment, a specified Internet URL may not be available when executing the tests, production environment filesystems usually differ from the development environment, ...etc. For all those reasons, a URI should never be hardcoded. Instead, it should be replaced by customizable parameter.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1075",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope"
+            ]
+          }
+        },
+        "S1104": {
+          "id": "S1104",
+          "shortDescription": "Fields should not have public accessibility",
+          "fullDescription": "Public fields in public classes do not respect the encapsulation principle and has three main disadvantages:",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1104",
+          "properties": {
+            "category": "Minor Vulnerability",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope"
+            ]
+          }
+        },
+        "S1116": {
+          "id": "S1116",
+          "shortDescription": "Empty statements should be removed",
+          "fullDescription": "Empty statements, i.e. ;, are usually introduced by mistake, for example because:",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1116",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S112": {
+          "id": "S112",
+          "shortDescription": "General exceptions should never be thrown",
+          "fullDescription": "Throwing such general exceptions as Exception, SystemException, ApplicationException, IndexOutOfRangeException, NullReferenceException, OutOfMemoryException and ExecutionEngineException prevents calling methods from handling true, system-generated exceptions differently than application-generated errors. ",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-112",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope"
+            ]
+          }
+        },
+        "S1128": {
+          "id": "S1128",
+          "shortDescription": "Unused \"using\" should be removed",
+          "fullDescription": "Although unnecessary using won't change anything to the produced application, removing them:",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1128",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S1144": {
+          "id": "S1144",
+          "shortDescription": "Unused private types or members should be removed",
+          "fullDescription": "private or internal types or private members that are never executed or referenced are dead code: unnecessary, inoperative code that should be removed. Cleaning out dead code decreases the size of the maintained codebase, making it easier to understand the program and preventing bugs from being introduced.",
+          "defaultLevel": "note",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1144",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope",
+              "Unnecessary"
+            ]
+          }
+        },
+        "S1172": {
+          "id": "S1172",
+          "shortDescription": "Unused method parameters should be removed",
+          "fullDescription": "Unused parameters are misleading. Whatever the values passed to such parameters, the behavior will be the same.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1172",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S1186": {
+          "id": "S1186",
+          "shortDescription": "Methods should not be empty",
+          "fullDescription": "There are several reasons for a method not to have a method body:",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1186",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S125": {
+          "id": "S125",
+          "shortDescription": "Sections of code should not be commented out",
+          "fullDescription": "Programmers should not comment out code as it bloats programs and reduces readability.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-125",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S1481": {
+          "id": "S1481",
+          "shortDescription": "Unused local variables should be removed",
+          "fullDescription": "If a local variable is declared but not used, it is dead code and should be removed. Doing so will improve maintainability because developers will not wonder what the variable is used for.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1481",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S2259": {
+          "id": "S2259",
+          "shortDescription": "Null pointers should not be dereferenced",
+          "fullDescription": "A reference to null should never be dereferenced/accessed. Doing so will cause a NullReferenceException to be thrown. At best, such an exception will cause abrupt program termination. At worst, it could expose debugging information that would be useful to an attacker, or it could allow an attacker to bypass security measures.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2259",
+          "properties": {
+            "category": "Major Bug",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope"
+            ]
+          }
+        },
+        "S2696": {
+          "id": "S2696",
+          "shortDescription": "Instance members should not write to \"static\" fields",
+          "fullDescription": "Correctly updating a static field from a non-static method is tricky to get right and could easily lead to bugs if there are multiple class instances and/or multiple threads in play. ",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2696",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope"
+            ]
+          }
+        },
+        "S2737": {
+          "id": "S2737",
+          "shortDescription": "\"catch\" clauses should do more than rethrow",
+          "fullDescription": "A catch clause that only rethrows the caught exception has the same effect as omitting the catch altogether and letting it bubble up automatically, but with more code and the additional detriment of leaving maintainers scratching their heads. ",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2737",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope"
+            ]
+          }
+        },
+        "S4144": {
+          "id": "S4144",
+          "shortDescription": "Methods should not have identical implementations",
+          "fullDescription": "When two methods have the same implementation, either it was a mistake - something else was intended - or the duplication was intentional, but may be confusing to maintainers. In the latter case, one implementation should invoke the other.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-4144",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope"
+            ]
+          }
+        },
+        "S4487": {
+          "id": "S4487",
+          "shortDescription": "Unread \"private\" fields should be removed",
+          "fullDescription": "Private fields only used to store values without reading them later is a case of dead store. So changing the value of such field is useless and most probably indicates a serious error in the code.",
+          "defaultLevel": "note",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-4487",
+          "properties": {
+            "category": "Critical Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "TestSourceScope",
+              "Unnecessary"
+            ]
+          }
+        },
+        "S4784": {
+          "id": "S4784",
+          "shortDescription": "Using regular expressions is security-sensitive",
+          "fullDescription": "Using regular expressions is security-sensitive. It has led in the past to the following vulnerabilities:",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-4784",
+          "properties": {
+            "category": "Critical Security Hotspot",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "NotConfigurable"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

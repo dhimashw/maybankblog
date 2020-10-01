@@ -1,0 +1,56 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library
+@using Sitecore.Feature.Library.Helper
+@using Sitecore.Data.Items
+@model PagedData<Item>
+
+@if (Model.Data.Count() > 0)
+{
+    <div class="row row-vertical">
+    @foreach (Item item in Model.Data)
+    {
+        <div class=" col-xs-12 col-xs-6@landscape col-sm-4 col-md-3 my-3">
+            <div class="skeleton js-demo-skeleton">
+                <div class="skeleton__img"></div>
+                <div class="skeleton__body">
+                    <div class="skeleton__line"></div>
+                    <div class="skeleton__line half"></div>
+                </div>
+                <div class="skeleton__footer">
+                    <div class="skeleton__line tall"></div>
+                </div>
+            </div>
+            <div class="card card--rounded card-product js-demo-skeleton-content shadow hide">
+                <div class="card__header">
+                    <div class="card__header-tag">
+                        @item.TemplateName
+                    </div>
+                    <div class="card__img">
+                        <a href="">
+                            <div class="img-responsive img-as-bg" style="background-image:url()"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card__body">
+                    <div class="card__title">
+                        <h3 class="js-truncate" data-truncate="18">NIRMALA<br>SUPERMARKET</h3>
+                    </div>
+                    <div class="card__desc">
+                        <p class="js-truncate" data-truncate="70">
+                            Dapatkan 1 liter minyak goreng dengan minimum transaksi Rp 250 Ribu.
+                        </p>
+                    </div>
+                </div>
+                <div class="card__footer">
+                    <div class="card__action"><a class="btn btn-link py-0" href=""><span> LIHAT LEBIH</span><img class="pl-2" src="../img/icon/arrow-right-yellow.svg" /></a></div>
+                </div>
+            </div>
+        </div>
+    }
+    </div>
+
+    @Html.Partial("~/Views/Pagination/_SimplePagination.cshtml", new SimplePageData { CurrentPage = Model.CurrentPage, TotalPage = Model.NumberOfPages })
+
+}

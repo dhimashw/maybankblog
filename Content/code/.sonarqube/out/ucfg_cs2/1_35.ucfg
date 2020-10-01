@@ -1,0 +1,47 @@
+
+DSitecore.Feature.Content.Repositories.BlogRepository.GetAllComment()S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs∆! ∆(."0*æ
+0Ó
+Î
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs» »(./
+%0)Sitecore.Feature.Content.Helper.DBContext"6Sitecore.Feature.Content.Helper.Factory.DbEntities.get*+")
+'Sitecore.Feature.Content.Helper.Factory¬
+ø
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs» »(./
+db)Sitecore.Feature.Content.Helper.DBContext"__id*1
+/
+%0)Sitecore.Feature.Content.Helper.DBContext*
+1*Ÿ
+1Ô
+Ï
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs   (*'
+%1!System.Data.Entity.DbSet<TEntity>"9Sitecore.Feature.Content.Helper.DBContext.BlogComment.get*1
+/
+db)Sitecore.Feature.Content.Helper.DBContextµ
+≤
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs   (**
+items!System.Data.Entity.DbSet<TEntity>"__id*)
+'
+%1!System.Data.Entity.DbSet<TEntity>•
+¢
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csÀ À(%(
+%2"System.Collections.Generic.List<T>"WSystem.Linq.Enumerable.ToList<TSource>(System.Collections.Generic.IEnumerable<TSource>)*"
+System.Linq.Enumerable*,
+*
+items!System.Data.Entity.DbSet<TEntity>"Å
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csÀ À(&*
+(
+%2"System.Collections.Generic.List<T>*
+2*
+3*o
+3"j
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csÕ Õ(	
+implicit returnB86
+4Sitecore.Feature.Content.Repositories.BlogRepository

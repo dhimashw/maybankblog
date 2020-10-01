@@ -1,0 +1,30 @@
+
+\Sitecore.Feature.Content.Helper.DBContext.OnModelCreating(System.Data.Entity.DbModelBuilder)F
+<C:\Review Code\Maybank Blog\Content\code\Helper\DBContext.cs  (/"0*£
+0˜•
+F
+<C:\Review Code\Maybank Blog\Content\code\Helper\DBContext.cs ($R
+%0LSystem.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration"1System.Data.Entity.DbModelBuilder.Conventions.get*3
+1
+modelBuilder!System.Data.Entity.DbModelBuilder2Conventions.get‘
+Ž
+F
+<C:\Review Code\Maybank Blog\Content\code\Helper\DBContext.cs (M
+
+%1void"bSystem.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.Remove<TConvention>()*T
+R
+%0LSystem.Data.Entity.ModelConfiguration.Configuration.ConventionsConfigurationé
+æ
+F
+<C:\Review Code\Maybank Blog\Content\code\Helper\DBContext.cs (4
+
+%2void"gSystem.Data.Entity.Database.SetInitializer<TContext>(System.Data.Entity.IDatabaseInitializer<TContext>)*"
+System.Data.Entity.Database*
+""*
+1*b
+1"]
+F
+<C:\Review Code\Maybank Blog\Content\code\Helper\DBContext.cs (	
+implicit return:1
+modelBuilder!System.Data.Entity.DbModelBuilderB-+
+)Sitecore.Feature.Content.Helper.DBContext

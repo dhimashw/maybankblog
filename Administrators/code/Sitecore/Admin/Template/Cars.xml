@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Migration>
+  <ColumnMapping tableName="CARS" ResultType="update-table">
+    <Column source="ID" destination="ID" type="int" Required="true"/>
+    <Column source="Brand" destination="Brand" type="string"/>
+    <Column source="Model" destination="Model" type="string"/>
+    <Column source="Type" destination="Type" type="string"/>
+    <Column source="Code" destination="Code" type="string"/>
+    <Column source="OTR" destination="OTR" type="float"/>
+  </ColumnMapping>
+</Migration>

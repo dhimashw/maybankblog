@@ -1,0 +1,137 @@
+
+uSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll.btnXMLUpload_Click(object, System.EventArgs)l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csÛ Û()"0*
+0¢
+Ÿ
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csÝ Ý(*
+%0$System.Web.UI.WebControls.FileUpload"__id*}*{J
+HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"-
+fuXML$System.Web.UI.WebControls.FileUploadÝ
+Ú
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csÝ Ý(
+
+%1bool"0System.Web.UI.WebControls.FileUpload.HasFile.get*,
+*
+%0$System.Web.UI.WebControls.FileUpload*
+1
+2*Ì
+1Ú
+×
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csá% á(+"
+%2System.Web.HttpServerUtility"$System.Web.UI.UserControl.Server.get*
+System.Web.UI.UserControlò
+ï
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csá% á(P
+%3string",System.Web.HttpServerUtility.MapPath(string)*$
+"
+%2System.Web.HttpServerUtility*
+~/sitecore/admin/templateš
+—
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csá á(P
+dirPathstring"__id*
+
+%3stringÏ
+Ì
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csâ â(2
+
+%4bool""System.IO.Directory.Exists(string)*"
+System.IO.Directory*
+
+dirPathstring*
+3
+4*ö
+3ë
+è
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csä ä(:
+%5System.IO.DirectoryInfo"+System.IO.Directory.CreateDirectory(string)*"
+System.IO.Directory*
+
+dirPathstring*
+4*ê
+4¢
+Ÿ
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csç9 ç(>*
+%6$System.Web.UI.WebControls.FileUpload"__id*}*{J
+HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"-
+fuXML$System.Web.UI.WebControls.FileUploadà
+Ý
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csç9 ç(G
+%7string"1System.Web.UI.WebControls.FileUpload.FileName.get*,
+*
+%6$System.Web.UI.WebControls.FileUploadà
+Ý
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csç# ç(H
+%8string"&System.IO.Path.Combine(string, string)*"
+System.IO.Path*
+
+dirPathstring*
+
+%7string›
+˜
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csç ç(H
+filePathstring"__id*
+
+%8string¢
+Ÿ
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csé é(*
+%9$System.Web.UI.WebControls.FileUpload"__id*}*{J
+HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll"-
+fuXML$System.Web.UI.WebControls.FileUpload÷
+ô
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csé é(*
+%10void"3System.Web.UI.WebControls.FileUpload.SaveAs(string)*,
+*
+%9$System.Web.UI.WebControls.FileUpload*
+
+filePathstringÑÎ
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csê ê(
+%11System.Web.UI.Page"System.Web.UI.Control.Page.get*
+System.Web.UI.Control2Page.getÝ
+Ú
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csê ê(%(
+%12!System.Web.UI.ClientScriptManager"#System.Web.UI.Page.ClientScript.get*
+
+%11System.Web.UI.Page£
+ 
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csê< ê(E
+%13System.Type"object.GetType()*
+
+objectÚ
+×
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csê ê(~
+%14void"ZSystem.Web.UI.ClientScriptManager.RegisterStartupScript(System.Type, string, string, bool)**
+(
+%12!System.Web.UI.ClientScriptManager*
+
+%13System.Type*
+loadAlertXMLSuccess*
+AlertXMLSuccessBottom()*
+""*
+5
+2*
+5*
+2*‰
+2"ƒ
+l
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.csò ò(	
+implicit return:
+senderobject:
+eSystem.EventArgsBLJ
+HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll

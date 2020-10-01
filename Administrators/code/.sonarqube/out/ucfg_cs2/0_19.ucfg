@@ -1,0 +1,27 @@
+
+oSitecore.Feature.Administrators.Sitecore.Admin.UserControl.TestDashboardAll.Page_Load(object, System.EventArgs)m
+cC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\TestDashboardAll.ascx.cs ( "0*Õ
+0Ç
+Ä
+m
+cC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\TestDashboardAll.ascx.cs (
+
+%0bool"(System.Web.UI.UserControl.IsPostBack.get*
+System.Web.UI.UserControl*
+1
+2*Â
+1·
+´
+m
+cC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\TestDashboardAll.ascx.cs (*
+
+%1void"fSitecore.Feature.Administrators.Sitecore.Admin.UserControl.TestDashboardAll.DisplayUnapprovedComment()*OM
+KSitecore.Feature.Administrators.Sitecore.Admin.UserControl.TestDashboardAll*
+2*Š
+2"„
+m
+cC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\TestDashboardAll.ascx.cs (	
+implicit return:
+senderobject:
+eSystem.EventArgsBOM
+KSitecore.Feature.Administrators.Sitecore.Admin.UserControl.TestDashboardAll

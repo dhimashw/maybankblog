@@ -1,0 +1,190 @@
+
+ESitecore.Feature.Content.Controller.BlogController.SitecoreHelper.getO
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs( (("0*Ì
+0ö
+ó
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs* *(")
+%0#Sitecore.Mvc.Helpers.SitecoreHelper"__id*o*m4
+2Sitecore.Feature.Content.Controller.BlogController"5
+sitecoreHelper#Sitecore.Mvc.Helpers.SitecoreHelperÅ
+Â
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs* *(*
+
+%1bool""object.operator ==(object, object)*
+"
+object*+
+)
+%0#Sitecore.Mvc.Helpers.SitecoreHelper*
+""*
+1
+2*è
+1ä
+á
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs- -(l)
+%2#Sitecore.Mvc.Helpers.SitecoreHelper"<Sitecore.Mvc.Helpers.ThreadHelper.GetThreadData<TDataType>()*%"#
+!Sitecore.Mvc.Helpers.ThreadHelperö
+ó
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs, -(lm4
+2Sitecore.Feature.Content.Controller.BlogController"5
+sitecoreHelper#Sitecore.Mvc.Helpers.SitecoreHelper"__id*+
+)
+%2#Sitecore.Mvc.Helpers.SitecoreHelper*
+2*Ì
+2ö
+ó
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs0 0(")
+%3#Sitecore.Mvc.Helpers.SitecoreHelper"__id*o*m4
+2Sitecore.Feature.Content.Controller.BlogController"5
+sitecoreHelper#Sitecore.Mvc.Helpers.SitecoreHelperÅ
+Â
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs0 0(*
+
+%4bool""object.operator ==(object, object)*
+"
+object*+
+)
+%3#Sitecore.Mvc.Helpers.SitecoreHelper*
+""*
+3
+4*Ï 
+3Ð
+Í
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs2. 2(V(
+%5"Sitecore.Mvc.Common.ContextService"(Sitecore.Mvc.Common.ContextService.Get()*&"$
+"Sitecore.Mvc.Common.ContextServiceçä
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs2. 2(p 
+%6System.Web.Mvc.ViewContext"2Sitecore.Mvc.Common.ContextService.GetCurrent<T>()**
+(
+%5"Sitecore.Mvc.Common.ContextService2GetCurrent<T>()©
+¦
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs2  2(p)
+viewContextSystem.Web.Mvc.ViewContext"__id*"
+ 
+%6System.Web.Mvc.ViewContextö
+ó
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs3 3(U
+
+%7void"5Sitecore.Diagnostics.Assert.IsNotNull(object, string)*"
+Sitecore.Diagnostics.Assert*+
+)
+viewContextSystem.Web.Mvc.ViewContext*
+viewContextáÞ
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs6F 6(Z'
+%8!System.Web.Mvc.ViewDataDictionary"'System.Web.Mvc.ViewContext.ViewData.get*+
+)
+viewContextSystem.Web.Mvc.ViewContext2ViewData.get´±
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs6 6([1
+%9+Sitecore.Mvc.Presentation.ViewDataContainer"+Sitecore.Mvc.Presentation.ViewDataContainer£
+ 
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs6 6(E
+%10void"`Sitecore.Mvc.Presentation.ViewDataContainer.ViewDataContainer(System.Web.Mvc.ViewDataDictionary)*3
+1
+%9+Sitecore.Mvc.Presentation.ViewDataContainer*)
+'
+%8!System.Web.Mvc.ViewDataDictionary‘Ž
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs4, 6(\ 
+%11System.Web.Mvc.HtmlHelper"System.Web.Mvc.HtmlHelperÌ
+É
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs40 4(:
+%12void"cSystem.Web.Mvc.HtmlHelper.HtmlHelper(System.Web.Mvc.ViewContext, System.Web.Mvc.IViewDataContainer)*"
+ 
+%11System.Web.Mvc.HtmlHelper*+
+)
+viewContextSystem.Web.Mvc.ViewContext*3
+1
+%9+Sitecore.Mvc.Presentation.ViewDataContainer§
+¤
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs4 6(\'
+
+htmlHelperSystem.Web.Mvc.HtmlHelper"__id*"
+ 
+%11System.Web.Mvc.HtmlHelperô
+ñ
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs7 7(S
+%13void"5Sitecore.Diagnostics.Assert.IsNotNull(object, string)*"
+Sitecore.Diagnostics.Assert*)
+'
+
+htmlHelperSystem.Web.Mvc.HtmlHelper*
+
+htmlHelper¥¢
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs8% 8(X*
+%14#Sitecore.Mvc.Helpers.SitecoreHelper"#Sitecore.Mvc.Helpers.SitecoreHelper‰
+†
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs8) 8(L
+%15void"MSitecore.Mvc.Helpers.SitecoreHelper.SitecoreHelper(System.Web.Mvc.HtmlHelper)*,
+*
+%14#Sitecore.Mvc.Helpers.SitecoreHelper*)
+'
+
+htmlHelperSystem.Web.Mvc.HtmlHelper÷
+ô
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs8 8(Xm4
+2Sitecore.Feature.Content.Controller.BlogController"5
+sitecoreHelper#Sitecore.Mvc.Helpers.SitecoreHelper"__id*,
+*
+%14#Sitecore.Mvc.Helpers.SitecoreHelper÷
+ô
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs9: 9(H*
+%16#Sitecore.Mvc.Helpers.SitecoreHelper"__id*o*m4
+2Sitecore.Feature.Content.Controller.BlogController"5
+sitecoreHelper#Sitecore.Mvc.Helpers.SitecoreHelperû
+ø
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs9 9([
+%17void"5Sitecore.Diagnostics.Assert.IsNotNull(object, string)*"
+Sitecore.Diagnostics.Assert*,
+*
+%16#Sitecore.Mvc.Helpers.SitecoreHelper*
+sitecoreHelper÷
+ô
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs; ;($*
+%18#Sitecore.Mvc.Helpers.SitecoreHelper"__id*o*m4
+2Sitecore.Feature.Content.Controller.BlogController"5
+sitecoreHelper#Sitecore.Mvc.Helpers.SitecoreHelperý
+ú
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs: ;(%
+%19void"ESitecore.Mvc.Helpers.ThreadHelper.SetThreadData<TDataType>(TDataType)*%"#
+!Sitecore.Mvc.Helpers.ThreadHelper*,
+*
+%18#Sitecore.Mvc.Helpers.SitecoreHelper*
+4*þ
+4÷
+ô
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs> >(%*
+%20#Sitecore.Mvc.Helpers.SitecoreHelper"__id*o*m4
+2Sitecore.Feature.Content.Controller.BlogController"5
+sitecoreHelper#Sitecore.Mvc.Helpers.SitecoreHelper"
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs> >(&,
+*
+%20#Sitecore.Mvc.Helpers.SitecoreHelper*k
+5"f
+O
+EC:\Review Code\Maybank Blog\Content\code\Controller\BlogController.cs? ?(
+implicit returnB6"4
+2Sitecore.Feature.Content.Controller.BlogController

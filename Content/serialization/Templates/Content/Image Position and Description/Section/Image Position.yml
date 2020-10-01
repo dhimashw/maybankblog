@@ -1,0 +1,21 @@
+﻿---
+ID: "91bfb97f-5673-4350-9908-be89c788a147"
+Parent: "9193c838-90b8-4f5a-af8c-dab92b3bae94"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Feature/Content/Image Position and Description/Section/Image Position
+DB: master
+SharedFields:
+- ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
+  Hint: Source
+  Value: /sitecore/system/settings/project/maybank/category/Image Position
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: Droplist
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180315T032936Z

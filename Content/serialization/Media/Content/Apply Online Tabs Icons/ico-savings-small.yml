@@ -1,0 +1,43 @@
+﻿---
+ID: "71082229-6b65-4436-b451-8477552799da"
+Parent: "11ac2b84-78b0-4198-8c09-a3640ac62c89"
+Template: "f1828a2c-7e5d-4bbd-98ca-320474871548"
+Path: "/sitecore/media library/Feature/Content/Apply Online Tabs Icons/ico-savings-small"
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: "-/media/710822296B654436B4518477552799DA.ashx?h=16&thn=1&w=16"
+- ID: "22eac599-f13b-4607-a89d-c091763a467d"
+  Hint: Width
+  Value: 46
+- ID: "40e50ed9-ba07-4702-992e-a912738d32dc"
+  Hint: Blob
+  BlobID: "7f7f6aff-373e-4657-bf84-41aab070026b"
+  Value: iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAYAAABXuSs3AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gMcCiML7tup4QAABP9JREFUaN7NmV9oU1ccxz/NTdMpJTMqobeDLDfYSR/KJJ0omdotg2JfBgWFCrYDHSbDl+LjXmQgCBOGD46BWHxYnywTiTKEssiEVYdWhLInR9pc3dq0JBXEZanN/e3h3luTtOqaJvF+4UeS3/mdc785+f07J028HnuBdmAzjcU/wN/A3fVM8gOXAXGIXLY4laGp4nMU+AUgEokwPDxMd3c3W7Zsaeh2P336lMnJSc6fP8/ExISt/gxIrmUfBURVVTEMQ5wCwzBEVVV796NruYeoqipORQn5Mre5DDhqp9fa+RKfX4FEIhFxOiKRiE0el5XyGB4exuko4bjXZeVpuru7HU+8hGO7yy4ujU551aCE42ZXLRceHx9nYGCAjo4OvF4vXq+Xjo4OBgYGGB8fr/kXOQpINputOmjS6bSEw+GVandgF/JFnykHdr2sguFwWNLpdNXPyWaz9lpHN0w8mUwKIC4XcuYEIvcRmUTkd0smTd2ZE6YNIMlkcsPEmyziP2azWbZu3bqun2p6eppQKITfB38lwO22k9UaaILlZXjvc5hfhFQqhaZp63peLpdj27ZtAINV+7iIEAqFaGmGzE1wK68hjTnmVkzblmYIhUKISNX+XTXx69evA3DzO6BYvrP5AuhzpuQLFa1c0ZpTskZDgzMQCIjPi8hdRCZeysTF1a3pxMVyG7mL+LxIIBCo2ser2vFcLoeu6xzcAxglAwrsi0HrJpj5yZTWTaYOpcTOgIN7QNd1crlc41xlcXHRbJA/KtfHz4IhMDUK76umTI2auvjZclt7rr1WQ4gXCgUAtr9brn+SsXpkX0m/7Csfs2HPtddqCHG79P4xXa4/0W++jiSsRmIzXEqYulh/ua09dyOtRlXBCUiovSLo7iMf7jAD8oOAKWDq5H65bajdHGtocAIcO3aMx/MVQbcED6/AtyfNXN3SbL5/eMUcKw3ix/Nw/Pjxqne76so5NzeHqqp8Gobk9xXFpwlosQNi9Vj0JNx6ALOzs7S1tTW2cra1tRGPx7n1AC5dq4gWAf61RMoj6tI1k3Q8Hl8X6Zp3h52dnQLI10NI4fbqgmQXnMJt0waQzs7Ot98diohEo9GVKvnNl0j6KjL/synpq6bOHo9Go85oa22kUinx+/2iKMqqkq8oivj9fkmlUht6Rilxd61OI5qmkcmYVWZqaop79+4BsHv3brq6ump++nFTB3R1ddWFbE3a2rXw4sULZmZmGnJwrhnxSCSCx+NB0zRaW1uZnZ2tK/GauMqjR4+4c+cO586dY//+/fT09NDX10d/fz+G8bLvdblcnD592jmn/JGREQHk2bNnIiKyc+fOV953j42NOScdPn/+fKWwHDp0SAA5deqULCwsSCaTWZGFhYWapUOAw4Dour6hRUdHR0XTNPH5fDI0NFSXS09d123ihwH2AZJIJBx/W5tIJGzi+wCaAent7XU88d7eXpt4sx2gN9xut+OJW+3EjdLMsgMQTdMcS1rTNHu3d1SmxSOABINBx5EOBoM26SOvyumDgHg8HonFYpLP598a2Xw+L7FYTDwej0168HX/cwIEgF+BIICiKCiKwtLSEm63G5fLVZcSbhgGy8vLeDweisUixeLKvd4M0APobyJuQwU0y6feAX4AfgPGat2cWfdhh4GPga+sQ9+fwDSw4aZHgAt17JsuvOG+t2p8AmyvI/Ht1jP+F/4DeA3dHSYjaLkAAAAASUVORK5CYII=
+- ID: "6954b7c7-2487-423f-8600-436cb3b6dc0e"
+  Hint: Size
+  Value: 1376
+- ID: "6f47a0a5-9c94-4b48-abeb-42d38def6054"
+  Hint: Mime Type
+  Value: image/png
+- ID: "c06867fe-9a43-4c7d-b739-48780492d06f"
+  Hint: Extension
+  Value: png
+- ID: "cb09946f-3218-4823-87d2-d5007c199a96"
+  Hint: Dimensions
+  Value: 46 x 46
+- ID: "de2ca9e4-c117-4c8a-a139-1ff4b199d15a"
+  Hint: Height
+  Value: 46
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180719T130835Z
+    - ID: "65885c44-8fcd-4a7f-94f1-ee63703fe193"
+      Hint: Alt
+      Value: "ico-savings-small"

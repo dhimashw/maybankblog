@@ -1,0 +1,51 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using System.Web;
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.ProductSimpananPage.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.ProductSimpananPage.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{
+    var items = Model.Item;
+
+    //HttpContext.Current.Session["_sessionItemId"] = "{747F3CB3-1B4A-4BB2-B781-4F467BE61696}";
+    Session[Sitecore.Feature.Library.Helper.Variables._sessionItemId] = System.Web.HttpContext.Current.Session[Sitecore.Feature.Library.Helper.Variables._sessionItemId] as String;
+    string sessionItemId = Session[Sitecore.Feature.Library.Helper.Variables._sessionItemId] != null ? Session[Sitecore.Feature.Library.Helper.Variables._sessionItemId].ToString() : "";
+
+    if (sessionItemId != "")
+    {
+        items = Sitecore.Context.Item.Database.GetItem(sessionItemId);
+    }
+
+    var HeroBanner = items.Field(Sitecore.Feature.Library.Templates.ProductSimpananPage.Fields.Card);
+    bool ShowHeroBanner = false;
+    if (HeroBanner != null)
+    {
+        ShowHeroBanner = true;
+    }
+}
+
+<div class="page-side centered hidden-xs hidden-sm" style="background-image: url('@items.ImageUrl(Sitecore.Feature.Library.Templates.Page.Fields.Background)');">
+    <div class="page-wrapper">
+        <div class="hero-banner centered-container">
+
+            @if (ShowHeroBanner == true)
+            {
+                <div class="hero-banner-picture">
+                    <img src="@items.ImageUrl(Sitecore.Feature.Library.Templates.ProductSimpananPage.Fields.Card)" alt="" />
+                </div>
+            }
+
+            <div class="hero-banner-body">
+                <h2>@items.Field(Sitecore.Feature.Library.Templates.Page.Fields.Title) </h2>
+                @items.Fields[Sitecore.Feature.Library.Templates.Page.Fields.Content].Value
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,146 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Data.Fields
+@using Sitecore.Data.Items
+@using Sitecore.Foundation.Indexing.Repositories
+@using Sitecore.Feature.Content.Repositories
+@model Sitecore.Mvc.Presentation.RenderingModel
+@{
+    var itemArticle = Model.Item;
+
+    string urlFile = string.Empty;
+    var cssHide = Sitecore.Context.PageMode.IsExperienceEditor == true ? "" : "hide";
+    ISearchServiceRepository searchServiceRepository = new SearchServiceRepository();
+
+    ArticlesRepository repo = new ArticlesRepository(searchServiceRepository);
+
+
+    //MultilistField ListValue = null;
+
+    string CategoryValue = string.Empty;
+    string targetWindow = string.Empty;
+    CategoryValue = repo.GetCategoryArticle(Model.Item.TemplateID, Model.Item);
+
+    if (Model.Item.TemplateID == Sitecore.Feature.Library.Templates.PremiereWealthHighlightItem.ID)
+    {
+        if (itemArticle.Fields[Sitecore.Feature.Library.Templates.PremiereWealthHighlightItem.Fields.File].Value != string.Empty)
+        {
+            Sitecore.Data.Fields.FileField field = (Sitecore.Data.Fields.FileField)itemArticle.Fields[Sitecore.Feature.Library.Templates.PremiereWealthHighlightItem.Fields.File];
+            if (field.MediaItem != null)
+            {
+                urlFile = Sitecore.Resources.Media.MediaManager.GetMediaUrl(field.MediaItem);
+                targetWindow = "_blank";
+            }
+
+        }
+        else
+        {
+            urlFile = itemArticle.Url();
+        }
+    }
+    else
+    {
+        if (itemArticle.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields._File].Value != string.Empty)
+        {
+            Sitecore.Data.Fields.FileField field = (Sitecore.Data.Fields.FileField)itemArticle.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields._File];
+            if (field.MediaItem != null)
+            {
+                urlFile = Sitecore.Resources.Media.MediaManager.GetMediaUrl(field.MediaItem);
+                targetWindow = "_blank";
+            }
+
+        }
+        else
+        {
+            urlFile = itemArticle.Url();
+        }
+    }
+
+
+
+
+    //if (Model.Item.TemplateID == Sitecore.Feature.Library.Templates.ArticleItem.ID)
+    //{
+    //    ListValue = Model.Item.Fields[Sitecore.Feature.Library.Templates.ArticleItem.Fields.Category];
+    //    if (ListValue != null)
+    //    {
+    //        Item[] items = ListValue.GetItems();
+    //        CategoryValue = items.Select(x => x.Fields[Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title].Value).First();
+    //    }
+    //}
+    //if (Model.Item.TemplateID == Sitecore.Feature.Library.Templates.PremiereWealthHighlightItem.ID)
+    //{
+    //    ListValue = Model.Item.Fields[Sitecore.Feature.Library.Templates.PremiereWealthHighlightItem.Fields.Category];
+    //    if (ListValue != null)
+    //    {
+    //        Item[] items = ListValue.GetItems();
+    //        CategoryValue = items.Select(x => x.Fields[Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title].Value).First();
+    //    }
+    //}
+    //if (Model.Item.TemplateID == Sitecore.Feature.Library.Templates.BusinessArticleItem.ID)
+    //{
+    //    ListValue = Model.Item.Fields[Sitecore.Feature.Library.Templates.BusinessArticleItem.Fields.Category];
+    //    if (ListValue != null)
+    //    {
+    //        Item[] items = ListValue.GetItems();
+    //        CategoryValue = items.Select(x => x.Fields[Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title].Value).First();
+    //    }
+    //}
+    //if (Model.Item.TemplateID == Sitecore.Feature.Library.Templates.MoreFromSyariahItem.ID)
+    //{
+    //    ListValue = Model.Item.Fields[Sitecore.Feature.Library.Templates.MoreFromSyariahItem.Fields.Category];
+    //    if (ListValue != null)
+    //    {
+    //        Item[] items = ListValue.GetItems();
+    //        CategoryValue = items.Select(x => x.Fields[Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title].Value).First();
+    //    }
+    //}
+
+}
+
+@*<div>@Model.Item.TemplateID&nbsp;@Model.Item.TemplateName</div>*@
+@*@if (Model.Item.TemplateID == Sitecore.Feature.Library.Templates.ArticleItem.ID)
+    {
+        <div class="story-card js-demo-skeleton-content @cssHide">
+            <div class="image"><a href="@linkurl">@Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Image)</a></div>
+            <div class="title">
+                <h4 class="yellow-text">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.ArticleItem.Fields.Category)</h4>
+                <h2><a href="@linkurl" target="_blank">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Title)</a></h2>
+            </div>
+        </div>
+    }
+    @if (Model.Item.TemplateID == Sitecore.Feature.Library.Templates.ArticlePWHighlightItem.ID)
+    {
+        <div class="story-card js-demo-skeleton-content @cssHide">
+            <div class="image"><a href="@linkurl">@Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Image)</a></div>
+            <div class="title">
+                <h4 class="yellow-text">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.ArticlePWHighlightItem.Fields.Category)</h4>
+                <h2><a href="@linkurl" target="_blank">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Title)</a></h2>
+            </div>
+        </div>
+    }
+    @if (Model.Item.TemplateID == Sitecore.Feature.Library.Templates.BusinessArticleItem.ID)
+    {
+        <div class="story-card js-demo-skeleton-content @cssHide">
+            <div class="image"><a href="@linkurl">@Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Image)</a></div>
+            <div class="title">
+                <h4 class="yellow-text">@CategoryValue</h4>
+                <h2><a href="@linkurl" target="_blank">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Title)</a></h2>
+            </div>
+        </div>
+    }*@
+
+
+<div class="story-card js-demo-skeleton-content @cssHide">
+    <div class="image">
+        @*<a href="@urlFile">@Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Image)</a>*@
+        <a href="@urlFile" target="@targetWindow">@Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail)</a>
+    </div>
+    <div class="title">
+        <h4 class="yellow-text">@CategoryValue</h4>
+        <h2><a href="@urlFile" target="@targetWindow">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Title)</a></h2>
+    </div>
+</div>

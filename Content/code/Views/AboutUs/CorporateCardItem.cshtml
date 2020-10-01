@@ -1,0 +1,56 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Data.Items
+@model RenderingModel
+@{
+
+}
+@*<div class="row">
+    @Html.Sitecore().DynamicPlaceholder("story-list-tri-content")
+</div>*@
+<div class="row">
+    @foreach (Item childItem in Model.Item.Children.Where(x => x.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowInMenu].Value == "1"))
+    {
+        string link = childItem.Url();
+        bool status = false;
+        var ButtonColor = string.IsNullOrEmpty(childItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonColor].Value) ? "btn btn-outline-primary addon" : Sitecore.Context.Database.GetItem(childItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonColor].Value).Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.stringTitle].ToString();
+        if (!string.IsNullOrEmpty(childItem.LinkFieldUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.Link)))
+        {
+            Sitecore.Data.Fields.LinkField _link = childItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Link];
+            link = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+
+            //link = childItem.LinkFieldUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.Link);
+            status = true;
+            //((Sitecore.Data.Fields.LinkField)childItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Link])
+        }
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="m-cards-giro-card simple-card">
+                <div class="image"><img src="@childItem.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail)" /></div>
+                <div class="desc">
+                    <a class="ptitle" href="@link">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, childItem)</a>
+                    <div class="cta">
+                        @if (status)
+                        {
+                            <a class="@ButtonColor" href="@link" @Html.Raw(((Sitecore.Data.Fields.LinkField)childItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Link]).Target.Length > 0 ? "target=" + ((Sitecore.Data.Fields.LinkField)childItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Link]).Target + "" : string.Empty)>
+                                @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, childItem)
+                                <img src="/-/media/Feature/Content/Icon/Arrow Right/arrowright363bigblack2x.jpg" alt="apply now" />
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="@ButtonColor" href="@link">
+                                @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, childItem)
+                                <img src="/-/media/Feature/Content/Icon/Arrow Right/arrowright363bigblack2x.jpg" alt="apply now" />
+                            </a>
+                        }
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

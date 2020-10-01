@@ -1,0 +1,18 @@
+﻿---
+ID: "d0b6835b-1246-4592-8b55-f942c5650dc0"
+Parent: "85af1925-452d-4010-a14f-2be2055749e2"
+Template: "85af1925-452d-4010-a14f-2be2055749e2"
+Path: /sitecore/templates/Feature/Content/Structure Group Category/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180301T090323Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

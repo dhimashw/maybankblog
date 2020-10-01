@@ -1,0 +1,64 @@
+﻿---
+ID: "68ccd21d-d558-4dff-9f84-2e2d8c5e6e15"
+Parent: "5fa104b6-ca34-4a23-92c7-221839db03f0"
+Template: "5fa104b6-ca34-4a23-92c7-221839db03f0"
+Path: /sitecore/templates/Feature/Content/Infinite Benefit Text/__Standard Values
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Applications/16x16/document_plain_green.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180411T052959Z
+    - ID: "2941b285-67a3-4d46-9e45-f609827158b0"
+      Hint: Text
+      Value: |
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                          <div class="p-group">
+                            <p><strong>Nilai Tukar yang Kompetitif (Travel)</strong></p>
+                            <p class="gray-text">Nikmati perjalanan liburan Anda dengan nilai tukar uang yang sangat kompetitif.</p>
+                          </div>
+                          <div class="p-group">
+                            <p><strong>Penawaran untuk transaksi di luar negeri, hotel, airlines &amp; Travel</strong></p>
+                            <p class="gray-text">Nikmati perjalanan liburan Anda dengan nilai tukar uang yang sangat kompetitif.</p>
+                          </div>
+                          <div class="p-group">
+                            <p><strong>Travel life insurance</strong></p>
+                            <p class="gray-text">Perlindungan kecelakaan perjalanan gratis dengan nilai pertanggungan hingga Rp 500 Juta.</p>
+                          </div>
+                          <div class="p-group">
+                            <p><strong>Travel inconvenience insurance</strong></p>
+                            <p class="gray-text">Perlindungan gratis atas ketidaknyamanan perjalanan akibat keterlambatan pesawat hingga kehilangan bagasi untuk setiap perjalanan Anda, yaitu sebesar Rp 2,5 Juta untuk Pemegang Kartu dan sebesar Rp 5 Juta untuk keluarga.</p>
+                          </div>
+                        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                          <div class="p-group">
+                            <p><strong>Loyalty Program</strong></p>
+                            <p class="gray-text">Dapatkan cashback hingga Rp 105 Ribu per bulan untuk setiap transaksi pembelian tiket nonton, restoran, isi bensin dan belanja di supermarket, dengan minimum transaksi Rp 1,5 Juta per bulan.</p>
+                          </div>
+                          <div class="p-group">
+                            <p><strong>Installment</strong></p>
+                            <p class="gray-text">Cicilan 0% 3 dan 6 bulan di hotel, travel agent, branded fashion dan untuk transaksi di luar negeri.</p>
+                          </div>
+                          <div class="p-group">
+                            <p><strong>Welcome Package</strong></p>
+                            <p class="gray-text">Dapatkan welcome bonus hingga 1.000 AirAsia BIG Point* untuk Maybank White Card Anda yang telah disetujui selama periode program, khusus untuk Pemegang Maybank White Card baru.</p>
+                          </div>
+                          <div class="p-group">
+                            <p><strong>Penawaran menarik di Merchant Regional</strong></p>
+                            <ol class="gray-text">
+                              <li>Diskon hingga 25% untuk pemeriksaan kesehatan di Malaysia.</li>
+                              <li>Diskon hingga 10% untuk berbelanja di Club 21 Singapura.</li>
+                            </ol>
+                          </div>
+                        </div>
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

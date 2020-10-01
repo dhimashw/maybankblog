@@ -1,0 +1,72 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions;
+@using Sitecore.Feature.Library.Helper
+@using Sitecore.Data.Items
+@using Sitecore.Data.Fields
+@using template = Sitecore.Feature.Library.Templates.Sponsor
+@model PagedData<Item>
+@{ 
+    LinkField link = null;
+    string url = null;
+
+    int count = Model.Data.Count() / 3;
+    if (Model.Data.Count() % 3 > 0)
+    {
+        count++;
+    }
+}
+
+<div class="row">
+    @for (int i = 0; i < count; i++)
+    {   
+    <div class="row remove-margin">
+        @foreach (Item item in Model.Data.Skip(i * 3).Take(3))
+        {
+            link = item.Fields[template.Fields.ExternalUrl];
+            url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(link);
+            <div class="col-xs-12 col-xs-6@landscape col-sm-4 py-3">
+                <div class="skeleton js-demo-skeleton my-3">
+                    <div class="skeleton__img"></div>
+                    <div class="skeleton__body">
+                        <div class="skeleton__line quarter"></div><br />
+                        <div class="skeleton__line"></div>
+                        <div class="skeleton__line half"></div>
+                        <div class="skeleton__line ounce"></div>
+                    </div>
+                </div>
+                <div class="card js-demo-skeleton-content hide">
+                    <div class="card__header">
+                        <div class="card__img valign">
+                            <a href="@url" @Html.Raw(link.Target.Length > 0 ? "target=" + link.Target : "")>
+                                <div class="img-wrapper__logo d-table-cell valign__item">
+                                    @Html.Sitecore().ImageField(template.Fields.Logo, item, cssClass: "no-animation img-responsive")
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card__body mt-4 px-2">
+                        <h3 class="card__title mb-2">
+                            @Html.Raw(Html.Sitecore().Field(template.Fields.Brand, item))
+                        </h3>
+                        <p class="t-uppercase t-size-14">
+                            @Html.Raw(Html.Sitecore().Field(template.Fields.Tag, item))
+                        </p><br />
+                        <p class="t-paragraph">
+                            @Html.Raw(Html.Sitecore().Field(template.Fields.Description, item))
+                        </p>
+                    </div>
+                    @if (item.Fields["Show CTA"].Value == "1")
+                    {
+                        <div class="card__footer px-2"><a href="@url" @Html.Raw(link.Target.Length > 0 ? "target=" + link.Target : "") class="btn btn-link"><span class="t-uppercase t-size-14 color-g4">@Html.Sitecore().Field(template.Fields.LinkLabel, item)</span><img class="pl-2" src="/Assets/mbm/img/icon/arrow-right-yellow.svg"></a></div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+    }
+
+</div>
+<div>
+    @Html.Partial("~/Views/Pagination/_Pagination.cshtml", Model)
+</div>

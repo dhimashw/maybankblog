@@ -1,0 +1,9 @@
+¼
+6Sitecore.Feature.Content.Indexing.BlogIndexingProvider*System.Configuration.Provider.ProviderBaseobjectµ
+=GetQueryPredicate(Sitecore.Foundation.Indexing.Models.IQuery)tSitecore.Feature.Content.Indexing.BlogIndexingProvider.GetQueryPredicate(Sitecore.Foundation.Indexing.Models.IQuery)¤
+tFormatResult(Sitecore.ContentSearch.SearchTypes.SearchResultItem, Sitecore.Foundation.Indexing.Models.ISearchResult)«Sitecore.Feature.Content.Indexing.BlogIndexingProvider.FormatResult(Sitecore.ContentSearch.SearchTypes.SearchResultItem, Sitecore.Foundation.Indexing.Models.ISearchResult)g
+BlogIndexingProvider()MSitecore.Feature.Content.Indexing.BlogIndexingProvider.BlogIndexingProvider()Y
+ContentType.getFSitecore.Feature.Content.Indexing.BlogIndexingProvider.ContentType.getY
+ContentType.setFSitecore.Feature.Content.Indexing.BlogIndexingProvider.ContentType.setg
+SupportedTemplates.getMSitecore.Feature.Content.Indexing.BlogIndexingProvider.SupportedTemplates.getg
+SupportedTemplates.setMSitecore.Feature.Content.Indexing.BlogIndexingProvider.SupportedTemplates.set

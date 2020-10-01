@@ -1,0 +1,90 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helpers
+@using Sitecore.Links
+@using Sitecore.Feature.Content.Models
+
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+@{
+    var item = Sitecore.Context.Database.GetItem(Model.DataSourceID);
+    //var contextItem = Sitecore.Context.Database.GetItem(Sitecore.Feature.Library.Helper.Variables.FAQBucket);
+    //var categoryMultilist = LibraryHelpers.GetDynamicMultiList(contextItem);
+    var categoryMultilist = Model.PureData;
+    int counter = 0;
+    string isMBM = RenderingContext.Current.Rendering.Parameters["isMBM"] == "1" ? RenderingContext.Current.Rendering.Parameters["isMBM"] : "0";
+}
+
+
+@Html.Partial("~/Views/FAQ/_FAQBannerWithSearch.cshtml")
+<div id="isMBM" style="display:none;">
+    @isMBM
+</div>
+<div class="section narrow-bot m-info-box most-asked-list">
+    <div class="container">
+        @Html.Sitecore().DynamicPlaceholder("faq-content")
+    </div>
+</div>
+<div class="section bg-gray narrow-bot m-info-box most-asked-list bg-color-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="heading full">
+                    <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.FAQContent.Fields.FAQCategoryTitle, item)</h1>
+                </div>
+            </div>
+        </div>
+        @for (int i = 1; i <= categoryMultilist.Count(); i++)
+        {
+           
+            if (i % 4 == 1)
+            {
+                <div class="row">
+                    @for (int j = counter; j < categoryMultilist.Count(); j++)
+                    {
+                        var param = Sitecore.Context.PageMode.IsExperienceEditor ? "&categoryFaqId=" + @categoryMultilist.ElementAt(j).ID.ToShortID() : "?categoryFaqId=" + @categoryMultilist.ElementAt(j).ID.ToShortID();
+                        Sitecore.Data.Fields.LinkField _link = categoryMultilist.ElementAt(j).Fields[Sitecore.Feature.Library.Templates.Link.Fields.Link];
+                        string url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail, categoryMultilist.ElementAt(j), cssClass: "v-m-1 removestyle")
+                            <div class="p-group">
+                                <h3>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, categoryMultilist.ElementAt(j))</h3>
+                                
+                                @if (isMBM == "1")
+                                {
+                                    foreach (Sitecore.Data.Items.Item itemContent in Model.Data.Where(x => x.Fields[Sitecore.Feature.Library.Templates.MBMFAQ.Fields.Category].Value == categoryMultilist.ElementAt(j).ID.ToString()).OrderByDescending(c => c.Created).Take(2))
+                                    {
+                                        <p class="gray-text">@itemContent.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</p>
+                                    }
+                                }
+                                else
+                                {
+                                    foreach (Sitecore.Data.Items.Item itemContent in Model.Data.Where(x => Sitecore.Context.Database.GetItem(x.Fields["Category"].Source).ID == categoryMultilist.ElementAt(j).ID).OrderByDescending(c => c.Created).Take(2))
+                                    {
+                                    <p class="gray-text">@itemContent.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</p>
+                                    }
+                                }
+                                <p class="gray-text">
+                                    @*<a class="see-more normal-text" href="@categoryMultilist.ElementAt(j).LinkFieldUrl(Sitecore.Feature.Library.Templates.Link.Fields.Link)@param">View all Question</a>*@
+                                    <a class="see-more normal-text" href="@url@param">View all Question</a>
+                                </p>
+                            </div>
+                        </div>
+                        if (j % 4 == 3)
+                        {
+                            break;
+                        }
+                    }
+
+                </div>
+            }
+            counter++;
+        }
+    </div>
+</div>
+
+<style>
+    .page-header .page-banner--as-bg{
+        display:none;
+    }
+</style>

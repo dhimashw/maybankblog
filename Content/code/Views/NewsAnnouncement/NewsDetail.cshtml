@@ -1,0 +1,29 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Feature.Library.Helper
+@using Sitecore.Data.Items;
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+@{
+//var items = Sitecore.Context.Database.Items()
+}
+<div class="section m-info-box article-page" id="print-area">
+    <div class="container">
+        <h3 class="article-date"> @Html.Sitecore().RenderDate(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Date, Model.Item, Sitecore.Feature.Library.Helper.Variables.globalFormatDateTime)</h3>
+        <h1 class="article-title">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Title, Model.Item)</h1>
+        @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Image, cssClass: "img-responsive pull-right-md")
+        <div>&nbsp;</div>
+        <div class="gray-text article-content">
+            <p>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Body)</p>
+        </div>
+        <div class="article-footer">
+            <div class="btn btn-outline-primary addon free-img-size">
+                @Html.Sitecore().Dictionary("/Feature/News/Print This Page", "Edit This Content On Dictionary")
+                <img src="~/assets/img/icons/print.png" />
+            </div>
+        </div>
+    </div>
+</div>

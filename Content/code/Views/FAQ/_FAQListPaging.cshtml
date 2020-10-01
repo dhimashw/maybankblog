@@ -1,0 +1,163 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library.Helpers
+@using Sitecore.Links
+@using Sitecore.Feature.Content.Models
+@using Sitecore.Foundation.Dictionary.Extensions
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+@{
+    var item = Sitecore.Context.Database.GetItem(Model.DataSourceID);
+    //var contextItem = Sitecore.Context.Database.GetItem(Sitecore.Feature.Library.Helper.Variables.FAQBucket);
+    //var categoryMultilist = LibraryHelpers.GetDynamicMultiList(contextItem);
+    var categoryMultilist = Model.PureData;
+    string keyword = Request.QueryString["keyword"] != null ? Request.QueryString["keyword"].ToLower() : string.Empty;
+    string categoryId = Request.QueryString[Sitecore.Feature.Library.Helper.Variables._categoryId] != null ? Request.QueryString[Sitecore.Feature.Library.Helper.Variables._categoryId] : "all";
+    string isTabActive = string.Empty;
+    //string isMBM = RenderingContext.Current.Rendering.Parameters["isMBM"] == "1" ? RenderingContext.Current.Rendering.Parameters["isMBM"] : "0";
+    string isMBM = Request.QueryString["isMBM"] != null ? Request.QueryString["isMBM"].ToLower() : string.Empty;
+    var tabexist = categoryMultilist.Where(x => x.ID.ToShortID().ToString().Contains(categoryId)).Count();
+
+    if (categoryId == "all" || categoryId == string.Empty)
+    {
+        isTabActive = "active";
+    }
+    if (tabexist == 0)
+    {
+        isTabActive = "active";
+        categoryId = "all";
+    }
+}
+<div class="section py-0 split-side">
+    <div class="split-frame">
+        <div class="side white">
+            <div class="inner-frame">
+                <div class="content-tabs standard-text compact do-not-trigger" id="tab-faq" data-targetClass="topic-subs">
+                    <div class="tab-handle @isTabActive" data-targetID="all">
+                        <p>@Html.Sitecore().Dictionary("/Feature/faq/All Result", "All Result")</p>
+                        <div class="counter">
+                            @Model.CounterData.Count()
+                        </div>
+                    </div>
+
+                    @foreach (Sitecore.Data.Items.Item itemCategory in categoryMultilist)
+                    {
+                        //if (categoryId == itemCategory.ID.ToShortID().ToString())
+                        //{
+                        //    isTabActive = "active";
+                        //}
+                        //else
+                        //{
+                        //    isTabActive = string.Empty;
+                        //}
+                        <div class="tab-handle" data-targetID="@itemCategory.ID.ToShortID()">
+                            <p>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, itemCategory)</p>
+                            <div class="counter">
+                                @if (isMBM == "1")
+                                {
+                                    @Model.CounterData.Where(x => (x.Fields[Sitecore.Feature.Library.Templates.MBMFAQ.Fields.Category].Value == itemCategory.ID.ToString())).Count()
+
+                                }
+                                else
+                                {
+                                    @Model.CounterData.Where(c => Sitecore.Context.Database.GetItem(c.Fields["Category"].Source).ID == itemCategory.ID).Where(k => k.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title].Value.ToLower().Contains(keyword)
+                                                                                            || k.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Content].Value.ToLower().Contains(keyword)).Count()
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="main partial">
+            <div class="inner-frame">
+                @if (categoryId == "all" || categoryId == "")
+                {
+                    <div class="content-tabs-target topic-subs" id="all">
+                        <div class="faq-header">
+                            <p>@Html.Sitecore().Dictionary("/Feature/faq/FAQ", "Frequently Asked Question")</p>
+                            <h1>@Html.Sitecore().Dictionary("/Feature/faq/All Result", "All Result")</h1>
+                        </div>
+                        <div class="faq-list">
+                            @foreach (Sitecore.Data.Items.Item itemContent in Model.Data)
+                            {
+                                string subcategory = string.Empty;
+                                if (isMBM == "1")
+                                {
+                                    subcategory = itemContent.Fields["Sub Category"].HasValue ? Sitecore.Context.Database.GetItem(itemContent.Fields["Sub Category"].Value).DisplayName : string.Empty;
+                                }
+                                <div class="faq-item">
+                                    <div class="frame">
+                                        <h3>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, itemContent)</h3>
+                                        @*<h4 style="color:grey">@Sitecore.Context.Database.GetItem(itemContent.Fields["Category"].Value).DisplayName</h4>*@
+                                        @*<h4 style="color:grey">@Sitecore.Context.Database.GetItem(itemContent.Fields["Sub Category"].Value).DisplayName</h4>*@
+                                        <h4 style="color:grey">@subcategory</h4>
+                                        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content, itemContent)
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+                else
+                {
+
+                    foreach (var itemCategory in categoryMultilist)
+                    {
+                        string isHideDiv = string.Empty;
+                        if (categoryId != itemCategory.ID.ToShortID().ToString())
+                        {
+                            isHideDiv = "style=display:none;";
+                        }
+                        <div class="content-tabs-target topic-subs" id="@itemCategory.ID.ToShortID()" @isHideDiv>
+                            <div class="faq-header">
+                                <p>@Html.Sitecore().Dictionary("/Feature/faq/FAQ", "Frequently Asked Question")</p>
+                                <h1>@itemCategory.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title]</h1>
+                            </div>
+                            <div class="faq-list">
+                                @if (isMBM == "1")
+                                {
+                                    foreach (Sitecore.Data.Items.Item itemContent in Model.Data
+                                    .Where(c => c.Fields[Sitecore.Feature.Library.Templates.MBMFAQ.Fields.Category].Value == itemCategory.ID.ToString())
+                                    .Where(k => k.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title].Value.ToLower().Contains(keyword)
+                                    || k.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Content].Value.ToLower().Contains(keyword)))
+                                    {
+                                        string subcategory = itemContent.Fields["Sub Category"].HasValue ? Sitecore.Context.Database.GetItem(itemContent.Fields["Sub Category"].Value).DisplayName : string.Empty;
+                                        <div class="faq-item">
+                                            <div class="frame">
+                                                <h3>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, itemContent)</h3>
+                                                @*<h4>@Sitecore.Context.Database.GetItem(itemContent.Fields["Category"].Value).DisplayName</h4>*@
+                                                @*<h4>@Sitecore.Context.Database.GetItem(itemContent.Fields["Sub Category"].Value).DisplayName</h4>*@
+                                                <h4>@subcategory</h4>
+                                                @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content, itemContent)
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    foreach (Sitecore.Data.Items.Item itemContent in Model.Data
+                                    .Where(c => Sitecore.Context.Database.GetItem(c.Fields["Category"].Source).ID == itemCategory.ID)
+                                    .Where(k => k.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Title].Value.ToLower().Contains(keyword)
+                                    || k.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.Content].Value.ToLower().Contains(keyword)))
+                                    {
+                                        <div class="faq-item">
+                                            <div class="frame">
+                                                <h3>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, itemContent)</h3>
+                                                <h4>@Sitecore.Context.Database.GetItem(itemContent.Fields["Category"].Value).DisplayName</h4>
+                                                @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Content, itemContent)
+                                            </div>
+                                        </div>
+                                    }
+                                }
+
+                            </div>
+                        </div>
+
+                    }
+                }
+                @Html.Partial("~/Views/Pagination/_Pagination.cshtml", Model)
+            </div>
+        </div>
+    </div>
+</div>

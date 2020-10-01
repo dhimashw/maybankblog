@@ -1,0 +1,56 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    string anchorID = RenderingContext.Current.Rendering.Parameters["ID"] != null ? RenderingContext.Current.Rendering.Parameters["ID"].Trim() : string.Empty;
+    if (!string.IsNullOrEmpty(anchorID))
+    {
+    }
+
+    if (!Model?.Item?.IsDerived(new Sitecore.Data.ID("{1285F104-5697-4B00-8C7A-520DFEF2734A}")) ?? true)
+    {
+        @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.Benefit.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+        return;
+    }
+}
+
+@if (!string.IsNullOrEmpty(anchorID) == true)
+{
+    @*<a name="@anchorID"></a>*@
+    <div class="large-pad">
+        <div class="frame">
+            <a class="anchor" name="@anchorID"></a>
+        </div>
+    </div>
+}
+<div class="row">
+    @foreach (Sitecore.Data.Items.Item BenefitItem in Model.Item.Children)
+    {
+        if (Model.Item.Children.Count() > 2)
+        {
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.Benefit.Fields.Icon, BenefitItem, cssClass: "RemoveDefaultImageField section-icon")
+                <h1 class="icon-title">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Benefit.Fields.stringBenefitTitle, BenefitItem)</h1>
+                <div class="p-group">
+                    @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Benefit.Fields.stringBenefitDescription, BenefitItem)
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.Benefit.Fields.Icon, BenefitItem, cssClass: "RemoveDefaultImageField section-icon")
+                <h1 class="icon-title">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Benefit.Fields.stringBenefitTitle, BenefitItem)</h1>
+                <div class="p-group">
+                    @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Benefit.Fields.stringBenefitDescription, BenefitItem)
+                </div>
+            </div>
+        }
+    }
+</div>

@@ -1,0 +1,77 @@
+
+aSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.DisplayAllComment(bool)k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs (%"0*¾
+0¦
+£
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs   ((
+%0"System.Web.UI.WebControls.Repeater"__id*ƒ*€K
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment"1
+commentList"System.Web.UI.WebControls.Repeaterí
+ê
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs %  (4
+%1System.Data.DataSet"qSitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment.SearchComment(string, string, int, int)*MK
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment*
+""*
+""*
+""*
+""ˆ…
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs   (4
+
+%2void"1System.Web.UI.WebControls.Repeater.DataSource.set**
+(
+%0"System.Web.UI.WebControls.Repeater*
+
+%1System.Data.DataSet2DataSource.set¦
+£
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs! !((
+%3"System.Web.UI.WebControls.Repeater"__id*ƒ*€K
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment"1
+commentList"System.Web.UI.WebControls.Repeaterãà
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs! !("
+
+%4void"-System.Web.UI.WebControls.Repeater.DataBind()**
+(
+%3"System.Web.UI.WebControls.Repeater2
+DataBind()*
+1
+2*Ù
+1ÏÌ
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs% %(
+%5System.Web.UI.Page"System.Web.UI.Control.Page.get*
+System.Web.UI.Control2Page.getÚ
+×
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs% %(!'
+%6!System.Web.UI.ClientScriptManager"#System.Web.UI.Page.ClientScript.get*
+
+%5System.Web.UI.Pageä
+á
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs%8 %(F
+%7System.Type"object.GetType()*MK
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment¸
+µ
+l
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs% %(¥
+
+%8void"ZSystem.Web.UI.ClientScriptManager.RegisterStartupScript(System.Type, string, string, bool)*)
+'
+%6!System.Web.UI.ClientScriptManager*
+
+%7System.Type*
+	activeTab*
+""*
+""*
+2*ˆ
+2"‚
+k
+aC:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\DeletedComment.ascx.cs' '(	
+implicit return:
+setTabboolBMK
+ISitecore.Feature.Administrators.Sitecore.Admin.UserControl.DeletedComment

@@ -1,0 +1,190 @@
+
+GSitecore.Feature.Content.Repositories.BlogRepository.SitecoreHelper.getQ
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs% %("0*“
+0˙
+˜
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs' '(")
+%0#Sitecore.Mvc.Helpers.SitecoreHelper"__id*q*o6
+4Sitecore.Feature.Content.Repositories.BlogRepository"5
+sitecoreHelper#Sitecore.Mvc.Helpers.SitecoreHelper«
+ƒ
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs' '(*
+
+%1bool""object.operator ==(object, object)*
+"
+object*+
+)
+%0#Sitecore.Mvc.Helpers.SitecoreHelper*
+""*
+1
+2*Ó
+1Ê
+„
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs* *(l)
+%2#Sitecore.Mvc.Helpers.SitecoreHelper"<Sitecore.Mvc.Helpers.ThreadHelper.GetThreadData<TDataType>()*%"#
+!Sitecore.Mvc.Helpers.ThreadHelper˙
+˜
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs) *(lo6
+4Sitecore.Feature.Content.Repositories.BlogRepository"5
+sitecoreHelper#Sitecore.Mvc.Helpers.SitecoreHelper"__id*+
+)
+%2#Sitecore.Mvc.Helpers.SitecoreHelper*
+2*“
+2˙
+˜
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs- -(")
+%3#Sitecore.Mvc.Helpers.SitecoreHelper"__id*q*o6
+4Sitecore.Feature.Content.Repositories.BlogRepository"5
+sitecoreHelper#Sitecore.Mvc.Helpers.SitecoreHelper«
+ƒ
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs- -(*
+
+%4bool""object.operator ==(object, object)*
+"
+object*+
+)
+%3#Sitecore.Mvc.Helpers.SitecoreHelper*
+""*
+3
+4*˘ 
+3“
+œ
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs/. /(V(
+%5"Sitecore.Mvc.Common.ContextService"(Sitecore.Mvc.Common.ContextService.Get()*&"$
+"Sitecore.Mvc.Common.ContextServiceÈÊ
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs/. /(p 
+%6System.Web.Mvc.ViewContext"2Sitecore.Mvc.Common.ContextService.GetCurrent<T>()**
+(
+%5"Sitecore.Mvc.Common.ContextService2GetCurrent<T>()´
+®
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs/  /(p)
+viewContextSystem.Web.Mvc.ViewContext"__id*"
+ 
+%6System.Web.Mvc.ViewContext¯
+ı
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs0 0(U
+
+%7void"5Sitecore.Diagnostics.Assert.IsNotNull(object, string)*"
+Sitecore.Diagnostics.Assert*+
+)
+viewContextSystem.Web.Mvc.ViewContext*
+viewContext„‡
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs3F 3(Z'
+%8!System.Web.Mvc.ViewDataDictionary"'System.Web.Mvc.ViewContext.ViewData.get*+
+)
+viewContextSystem.Web.Mvc.ViewContext2ViewData.get∂≥
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs3 3([1
+%9+Sitecore.Mvc.Presentation.ViewDataContainer"+Sitecore.Mvc.Presentation.ViewDataContainer•
+¢
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs3 3(E
+%10void"`Sitecore.Mvc.Presentation.ViewDataContainer.ViewDataContainer(System.Web.Mvc.ViewDataDictionary)*3
+1
+%9+Sitecore.Mvc.Presentation.ViewDataContainer*)
+'
+%8!System.Web.Mvc.ViewDataDictionaryìê
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs1, 3(\ 
+%11System.Web.Mvc.HtmlHelper"System.Web.Mvc.HtmlHelperŒ
+À
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs10 1(:
+%12void"cSystem.Web.Mvc.HtmlHelper.HtmlHelper(System.Web.Mvc.ViewContext, System.Web.Mvc.IViewDataContainer)*"
+ 
+%11System.Web.Mvc.HtmlHelper*+
+)
+viewContextSystem.Web.Mvc.ViewContext*3
+1
+%9+Sitecore.Mvc.Presentation.ViewDataContainer©
+¶
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs1 3(\'
+
+htmlHelperSystem.Web.Mvc.HtmlHelper"__id*"
+ 
+%11System.Web.Mvc.HtmlHelperˆ
+Û
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs4 4(S
+%13void"5Sitecore.Diagnostics.Assert.IsNotNull(object, string)*"
+Sitecore.Diagnostics.Assert*)
+'
+
+htmlHelperSystem.Web.Mvc.HtmlHelper*
+
+htmlHelperß§
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs5% 5(X*
+%14#Sitecore.Mvc.Helpers.SitecoreHelper"#Sitecore.Mvc.Helpers.SitecoreHelperã
+à
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs5) 5(L
+%15void"MSitecore.Mvc.Helpers.SitecoreHelper.SitecoreHelper(System.Web.Mvc.HtmlHelper)*,
+*
+%14#Sitecore.Mvc.Helpers.SitecoreHelper*)
+'
+
+htmlHelperSystem.Web.Mvc.HtmlHelper˚
+¯
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs5 5(Xo6
+4Sitecore.Feature.Content.Repositories.BlogRepository"5
+sitecoreHelper#Sitecore.Mvc.Helpers.SitecoreHelper"__id*,
+*
+%14#Sitecore.Mvc.Helpers.SitecoreHelper˚
+¯
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs6: 6(H*
+%16#Sitecore.Mvc.Helpers.SitecoreHelper"__id*q*o6
+4Sitecore.Feature.Content.Repositories.BlogRepository"5
+sitecoreHelper#Sitecore.Mvc.Helpers.SitecoreHelper˝
+˙
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs6 6([
+%17void"5Sitecore.Diagnostics.Assert.IsNotNull(object, string)*"
+Sitecore.Diagnostics.Assert*,
+*
+%16#Sitecore.Mvc.Helpers.SitecoreHelper*
+sitecoreHelper˚
+¯
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs8 8($*
+%18#Sitecore.Mvc.Helpers.SitecoreHelper"__id*q*o6
+4Sitecore.Feature.Content.Repositories.BlogRepository"5
+sitecoreHelper#Sitecore.Mvc.Helpers.SitecoreHelperˇ
+¸
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs7 8(%
+%19void"ESitecore.Mvc.Helpers.ThreadHelper.SetThreadData<TDataType>(TDataType)*%"#
+!Sitecore.Mvc.Helpers.ThreadHelper*,
+*
+%18#Sitecore.Mvc.Helpers.SitecoreHelper*
+4*Ö
+4˚
+¯
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs; ;(%*
+%20#Sitecore.Mvc.Helpers.SitecoreHelper"__id*q*o6
+4Sitecore.Feature.Content.Repositories.BlogRepository"5
+sitecoreHelper#Sitecore.Mvc.Helpers.SitecoreHelper"Å
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs; ;(&,
+*
+%20#Sitecore.Mvc.Helpers.SitecoreHelper*m
+5"h
+Q
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs< <(
+implicit returnB8"6
+4Sitecore.Feature.Content.Repositories.BlogRepository

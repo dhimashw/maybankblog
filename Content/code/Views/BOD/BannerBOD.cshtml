@@ -1,0 +1,50 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.BODHeaderContent.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.BODHeaderContent.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;    
+}
+@{ 
+    Sitecore.Data.Fields.LinkField _link = Model.Item.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url];
+    string url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+}
+<div class="section m-info-box head-bod">
+    <div class="container-frame">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 bod-main-col">
+                    <div class="bod-main-frame">
+                        <div class="bod-main">
+                            <a href="@url">
+                                @*@Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields._Image, Model.Item)*@   
+                                <img src="@Model.Item.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields._Image)" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 col-f-right">
+                    <div class="desktop-copy summary">
+                        <h2>
+                            @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title, Model.Item)
+                        </h2>
+                        <p class="posisi gray-text">@Model.Item.Fields[Sitecore.Feature.Library.Templates.BODHeaderContent.Fields.BODPosition].Value</p>
+                        <p class="gray-text">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields._SummaryRichText, Model.Item)</p>
+                        @if (Model.Item.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowCTA].Value == "1")
+                        {
+                            <a class="gray-text see-more" href="@url">
+                                @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, Model.Item)
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+
+`Sitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll.GetUser(string, string)j
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.cs (""0*«
+0¶
+£
+j
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.cs (-
+%0string"__concat*
+
+
+domainNamestring*
+\≠
+™
+j
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.cs (8
+%1string"__concat*
+
+%0string*
+
+userNamestring‡
+›
+j
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.cs (9
+
+%2bool".Sitecore.Security.Accounts.User.Exists(string)*#"!
+Sitecore.Security.Accounts.User*
+
+%1string*
+1
+2*Ç
+1¶
+£
+j
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.cs% (6
+%3string"__concat*
+
+
+domainNamestring*
+\≠
+™
+j
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.cs% (A
+%4string"__concat*
+
+%3string*
+
+userNamestringã
+à
+j
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.cs (H%
+%5Sitecore.Security.Accounts.User"6Sitecore.Security.Accounts.User.FromName(string, bool)*#"!
+Sitecore.Security.Accounts.User*
+
+%4string*
+"""ï
+j
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.cs (I'
+%
+%5Sitecore.Security.Accounts.User*y
+2"t
+j
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.cs (
+""*á
+3"Å
+j
+`C:\Review Code\Maybank Blog\Administrators\code\Sitecore\Admin\UserControl\BulkUploadAll.ascx.cs (	
+implicit return:
+
+domainNamestring:
+userNamestringBL"J
+HSitecore.Feature.Administrators.Sitecore.Admin.UserControl.BulkUploadAll

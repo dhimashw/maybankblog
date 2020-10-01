@@ -1,0 +1,38 @@
+﻿@using Sitecore.Feature.Content
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+
+@if (Model.Data != null)
+{
+    <div class="list row">
+        @foreach (var item in Model.Data)
+        {
+            <div class="col col-xs-12 col-lg-4 col-sm-12 col-md-4">
+                <div class="skeleton js-demo-skeleton">
+                    <div class="skeleton__img"></div>
+                    <div class="skeleton__body">
+                        <div class="skeleton__line"></div>
+                        <div class="skeleton__line half"></div>
+                    </div>
+                </div>
+                <div class="story-card js-demo-skeleton-content hide">
+                    <div class="image">
+                        <a href="@item.Url()">@Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail, item)</a>
+                    </div>
+                    <div class="title">
+                        <h2><a href="@item.Url()">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, item)</a></h2>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <!-- PAGINATION COMPONENT -->
+    @Html.Partial("~/Views/Pagination/_Pagination.cshtml", Model)
+}
+else
+{
+
+    @Html.Partial("~/Views/ErrorPage/EmptyData.cshtml")
+}

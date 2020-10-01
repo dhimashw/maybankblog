@@ -1,0 +1,108 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Data.Items
+@using Sitecore.Feature.Content.Repositories
+@model Sitecore.Mvc.Presentation.RenderingModel
+@{
+    double countItem = Model.Item.Children.Count;
+
+    //float countRow = countItem / 3;
+    double countRow = Math.Ceiling(countItem / 3);
+    //double generateRow = Math.Round(countRow, MidpointRounding.AwayFromZero);
+    double generateRow = countRow;
+    if ((countItem % 3) > 0)
+    {
+        generateRow = generateRow + 1;
+    }
+    int nextItems = 0;
+}
+@*<div class="section m-info-box list-bod">
+        <div class="container">
+            <div class="row inline-centered">
+                @foreach (Item item in Model.Item.Children)
+                {
+                    <div class="col col-xs-12 col-sm-4">
+                        <div class="bod-image-frame">
+                            <div class="bod-image">
+                                <a href="@item.Url()">
+                                    <img src="@item.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields._Image)" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bod-copy">
+                            <h2><a href="@item.Url()">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title, item)</a></h2>
+                            <p>@item.Fields[Sitecore.Feature.Library.Templates.BODContent.Fields.BODPosition].Value</p>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>*@
+
+@*<div class="section m-info-box list-bod">
+        <div class="container">
+            <div class="row inline-centered">
+                @foreach (Item item in items)
+                {
+                    <div class="col col-xs-12 col-sm-4">
+                        <div class="bod-image-frame">
+                            <div class="bod-image">
+                                <a href="@item.Url()">
+                                    <img src="@item.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields._Image)" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bod-copy">
+                            <h2><a href="@item.Url()">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title, item)</a></h2>
+                            <p>@item.Fields[Sitecore.Feature.Library.Templates.BODContent.Fields.BODPosition].Value</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>*@
+
+
+@for (int i = 0; i < generateRow; i++)
+{
+    IEnumerable<Item> itemsListBOD = ContentRepository.getListBOD(Model.Item.ID, nextItems);
+    <div class="section m-info-box list-bod">
+        <div class="container">
+            <div class="row inline-centered">
+                @foreach (Item itemBOD in itemsListBOD)
+                {
+                    Sitecore.Data.Fields.LinkField _link = itemBOD.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url];
+                    string url = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+
+                    <div class="col col-xs-12 col-sm-4">
+                        <div class="bod-image-frame">
+                            <div class="bod-image">
+                                <a href="@url">                                    
+                                    <img src="@itemBOD.ImageUrl(Sitecore.Feature.Library.Templates.BaseField.Fields._Image)" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bod-copy">
+                            <h2>
+                                <a href="@url">
+                                    @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.GeneralValue.Fields.Title, itemBOD)
+                                </a>
+                            </h2>
+                            <p>@itemBOD.Fields[Sitecore.Feature.Library.Templates.BODHeaderContent.Fields.BODPosition].Value</p>
+                        </div>
+                    </div>
+                }
+                @{
+                    nextItems = nextItems + 3;
+                }
+
+            </div>
+        </div>
+    </div>
+}

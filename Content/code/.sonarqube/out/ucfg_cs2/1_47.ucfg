@@ -1,0 +1,55 @@
+
+OSitecore.Feature.Content.Repositories.BlogRepository.GetAllNotApprovedComment()S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csõ- õ(E"0*¹
+0‚
+ÿ
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs÷, ÷(;(
+%0"System.Collections.Generic.List<T>"DSitecore.Feature.Content.Repositories.BlogRepository.GetAllComment()*86
+4Sitecore.Feature.Content.Repositories.BlogRepositoryÍ
+Ê
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs÷, ÷(d/
+%1)System.Collections.Generic.IEnumerable<T>"rSystem.Linq.Enumerable.Where<TSource>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, bool>)*"
+System.Linq.Enumerable**
+(
+%0"System.Collections.Generic.List<T>*
+""Ä
+Á
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.cs÷% ÷(d1
+item)System.Collections.Generic.IEnumerable<T>"__id*1
+/
+%1)System.Collections.Generic.IEnumerable<T>Œ
+‰
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csø  ø(,	
+%2int"VSystem.Linq.Enumerable.Count<TSource>(System.Collections.Generic.IEnumerable<TSource>)*"
+System.Linq.Enumerable*3
+1
+item)System.Collections.Generic.IEnumerable<T>¬
+©
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csø. ø(;(
+%3"System.Collections.Generic.List<T>"WSystem.Linq.Enumerable.ToList<TSource>(System.Collections.Generic.IEnumerable<TSource>)*"
+System.Linq.Enumerable*3
+1
+item)System.Collections.Generic.IEnumerable<T>ä
+á
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csø ø(<
+%4System.Tuple<T1, T2>"#System.Tuple.Create<T1, T2>(T1, T2)*"
+System.Tuple*
+	
+%2int**
+(
+%3"System.Collections.Generic.List<T>"s
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csø ø(=
+
+%4System.Tuple<T1, T2>*o
+1"j
+S
+GC:\Review Code\Maybank Blog\Content\code\Repositories\BlogRepository.csù ù(	
+implicit returnB86
+4Sitecore.Feature.Content.Repositories.BlogRepository

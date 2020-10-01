@@ -1,0 +1,25 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Feature.Library;
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.FreeTextAndDescription.ID) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.FreeTextAndDescription.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{    
+    string AnchorItemID = RenderingContext.Current.Rendering.Parameters["ID"] != null ? RenderingContext.Current.Rendering.Parameters["ID"].Trim() : "";
+}
+
+<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="@AnchorItemID">
+    <div class="heading full">
+        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields._TitleRichText)
+    </div>
+    <p class="gray-text">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields._SubTitleRichText)</p>
+</div>
+<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 col-f-right">
+    @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Text.Fields.TextContent)
+</div>

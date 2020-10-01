@@ -1,0 +1,34 @@
+﻿---
+ID: "eadce748-7f84-435c-afaf-3343ea583b27"
+Parent: "d3e209e1-ef86-48d7-858d-c8cf264e281e"
+Template: "f1828a2c-7e5d-4bbd-98ca-320474871548"
+Path: "/sitecore/media library/Feature/Content/General Features/ico-savings"
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: "-/media/EADCE7487F84435CAFAF3343EA583B27.ashx?h=16&thn=1&w=16"
+- ID: "40e50ed9-ba07-4702-992e-a912738d32dc"
+  Hint: Blob
+  BlobID: "682a7dc8-1f68-43e2-a4a8-bba0f87d26a8"
+  Value: PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NiIgaGVpZ2h0PSI0NiIgdmlld0JveD0iMCAwIDQ2IDQ2Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41Ij4KICAgICAgICA8cGF0aCBmaWxsPSIjRkZGIiBkPSJNMzYuNDc3IDQxLjg2N0g5LjUyM2E3LjE4OCA3LjE4OCAwIDAgMS03LjE4Ny03LjE4N1Y5LjUyM2E3LjE4OCA3LjE4OCAwIDAgMSA3LjE4Ny03LjE4N2gyNi45NTRhNy4xODggNy4xODggMCAwIDEgNy4xODcgNy4xODdWMzQuNjhhNy4xODggNy4xODggMCAwIDEtNy4xODcgNy4xODd6Ii8+CiAgICAgICAgPHBhdGggZmlsbD0iI0ZGQzYwMCIgZD0iTTMxLjA4NiAxOS40MDZhOC4wODcgOC4wODcgMCAxIDEtMTYuMTczLS4wMDEgOC4wODcgOC4wODcgMCAwIDEgMTYuMTczLjAwMXoiLz4KICAgICAgICA8cGF0aCBkPSJNMjUuNjk1IDE5LjQwNmEyLjY5NiAyLjY5NiAwIDAgMS01LjM5IDAgMi42OTYgMi42OTYgMCAwIDEgNS4zOSAwek0xMS4zMiA0MS44Njd2MS43OTdNMzQuNjggNDEuODY3djEuNzk3TTIyLjEwMiAzMi44ODNhMS43OTggMS43OTggMCAxIDEtMy41OTUtLjAwMSAxLjc5OCAxLjc5OCAwIDAgMSAzLjU5NSAwek0yMi4xMDIgMzIuODgzaDUuMzkiLz4KICAgIDwvZz4KPC9zdmc+Cg==
+- ID: "6954b7c7-2487-423f-8600-436cb3b6dc0e"
+  Hint: Size
+  Value: 736
+- ID: "6f47a0a5-9c94-4b48-abeb-42d38def6054"
+  Hint: Mime Type
+  Value: image/svg+xml
+- ID: "c06867fe-9a43-4c7d-b739-48780492d06f"
+  Hint: Extension
+  Value: svg
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180718T073755Z
+    - ID: "65885c44-8fcd-4a7f-94f1-ee63703fe193"
+      Hint: Alt
+      Value: "ico-savings"

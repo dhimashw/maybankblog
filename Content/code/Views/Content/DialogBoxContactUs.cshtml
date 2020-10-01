@@ -1,0 +1,70 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.ContactUs.ID) ?? true)
+    {
+        @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.ContactUs.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+        return;
+    }
+    Sitecore.Data.Items.Item CurrentItemPage = RenderingContext.Current.PageContext.Item;
+    List<Sitecore.Data.Items.Item> itemContactUs = Model.Item.Children.Where(x => x.TemplateID == Sitecore.Feature.Library.Templates.ImageAndDescription.ID).ToList();
+}
+
+<div class="modal" tabindex="-1" role="dialog" modal-name="modal-contact-us">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+        <div class="modal-content white-text">
+            <div class="modal-header">
+                <button class="close js-modal-trigger-close" type="button" data-dismiss="modal" aria-label="Close"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path id="modal-close-svg" d="M10.437 8.58l6.845-6.845A1.016 1.016 0 1 0 15.845.298L9 7.143 2.156.298A1.016 1.016 0 1 0 .719 1.735L7.563 8.58.298 15.845a1.016 1.016 0 1 0 1.437 1.437L9 10.018l7.265 7.264a1.013 1.013 0 0 0 1.437 0 1.016 1.016 0 0 0 0-1.437L10.437 8.58z" fill="#000" fill-rule="evenodd" /></svg></button>
+            </div>
+            <div class="modal-body m-modals-info-modals">
+                <div class="m-info-box contact-popup">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h2>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.ContactUs.Fields.Title, Model.Item)</h2>
+                                <p class="gray-text">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.ContactUs.Fields.Description, Model.Item)</p>
+                            </div>
+                        </div>
+                        @if (itemContactUs.Count > 0)
+                        {
+                            int counter = 0;
+                            <div class="row">
+                                @foreach (Sitecore.Data.Items.Item myItem in itemContactUs)
+                                {
+                                    counter += 1;
+                                    Sitecore.Data.Fields.LinkField _link = myItem.Fields[Sitecore.Feature.Library.Templates.ImageLink.Fields.UrlImageLink];
+                                    string redirectItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+                                    <div class="col-xs-12 col-sm-6 icon-element">
+                                        @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.ImageLink.Fields.Image, myItem, cssClass: "removestyle")
+                                        <div class="copy">
+                                            <h4>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.ImageLink.Fields.TitleImageLink, myItem)</h4>
+                                            @if (counter == 1)
+                                            {
+                                                <h5>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.TopNav.Fields.ContactUsPICnumber, CurrentItemPage)</h5>
+                                                <a class="see-more visible-md-block" href="@redirectItemUrl">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, myItem)</a>
+                                                @*<a class="see-more visible-xs-block" href="@redirectItemUrl">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, myItem)</a>*@
+                                            }
+                                            else
+                                            {
+                                                <a class="see-more" href="@redirectItemUrl">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, myItem)</a>
+                                            }
+                                            
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        }
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

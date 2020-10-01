@@ -1,0 +1,32 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Data.Items
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model RenderingModel
+
+@if (!Model?.Item?.IsDerived(Sitecore.Feature.Library.Templates.AccordionHolder.ID) ?? true)
+{
+    @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.AccordionHolder.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="mb-5">@Model.Item.Fields[Sitecore.Feature.Library.Templates.AccordionHolder.Fields.Title].Value</h1>
+        <div class="m-accordion">
+
+            @foreach (Item item in Model.Item.Children)
+            {
+                <div class="accordion-list">
+                    <a class="a-title" href="javascript:void(0);">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.AccordionItem.Fields.Title, item)</a>
+                    <div class="a-content">
+                        @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.AccordionItem.Fields.Content, item)
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

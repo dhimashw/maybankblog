@@ -1,0 +1,40 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Data.Items
+@*@model RenderingModel*@
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+@{
+
+}
+
+<div class="row">
+
+    @if (Model.Data.Count() > 0)
+    {
+        foreach (Item item in Model.Data)
+        {
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="m-cards-giro-card simple-card">
+                    <div class="image">
+                        @*<img src="@item.ImageUrl(Sitecore.Feature.Library.Templates.NewsArticle.Fields.Image)"/>*@
+                        @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.BaseField.Fields.Thumbnail, item)
+                    </div>
+                    <div class="desc">
+                        <a class="ptitle" href="@item.Url()">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, item)</a>
+                        <div class="cta">
+                            <a class="btn btn-outline-primary addon" href="@item.Url()">
+                                @Html.Sitecore().Dictionary("/Feature/Content/See More", "Please Edit on Dictionary")                                
+                                <img src="/assets/img/icons/arrow-right/arrow-right-363-big-black@2x.png" alt="apply now" />                                                                
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+@Html.Partial("~/Views/Pagination/_Pagination.cshtml", Model)

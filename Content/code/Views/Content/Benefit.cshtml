@@ -1,0 +1,74 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Feature.Library.Helper
+@using System.linq
+@model RenderingModel
+@{
+    string anchorID = RenderingContext.Current.Rendering.Parameters["ID"] != null ? RenderingContext.Current.Rendering.Parameters["ID"].Trim() : string.Empty;
+    if (!string.IsNullOrEmpty(anchorID))
+    {
+    }
+}
+@if (!Model?.Item?.IsDerived(new Sitecore.Data.ID("{1285F104-5697-4B00-8C7A-520DFEF2734A}")) ?? true)
+{
+    @Html.PageEditorInfo(AlertTexts.InvalidDataSourceTemplate(Sitecore.Feature.Library.Templates.Benefit.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+
+@if (!string.IsNullOrEmpty(anchorID) == true)
+{
+    @*<a name="@anchorID"></a>*@
+    <div class="large-pad">
+        <div class="frame">
+            <a class="anchor" name="@anchorID"></a>
+        </div>
+    </div>
+}
+<div>
+    <div class="heading">
+        <h1>@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.Title, Model.Item)</h1>
+    </div>
+    <div class="row">
+        @if (Model.Item != null && Model.Item.Children.Count > 0)
+        {
+            foreach (Sitecore.Data.Items.Item BenefitItem in Model.Item.Children)
+            {
+                Sitecore.Data.Fields.LinkField _link = BenefitItem.Fields[Sitecore.Feature.Library.Templates.GeneralUrl.Fields.Url];
+                string redirectItemUrl = Sitecore.Feature.Library.Helper.Core.getGeneralLink(_link);
+
+                <div class="card-ico borderless col-12 col-lg-3 col-md-6 col-sm-6">
+                    <div class="card-ico-wrapper">
+                        <div class="card-ico-wrapper">
+                            <div class="card-ico-box">
+                                <div class="card-ico-box-wrapper text-center">
+                                    <div class="table full-height">
+                                        <div class="table-cell">
+                                            <div class="card-ico-image">
+                                                @Html.Sitecore().ImageField(Sitecore.Feature.Library.Templates.Benefit.Fields.Icon, BenefitItem, cssClass: "RemoveDefaultImageField")
+                                            </div>
+                                            <div class="card-ico-caption">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Benefit.Fields.stringBenefitTitle, BenefitItem)</div>
+                                            <div class="card-ico-p">
+                                                @Html.Sitecore().Field(Sitecore.Feature.Library.Templates.Benefit.Fields.stringBenefitDescription, BenefitItem)
+                                            </div>
+                                            
+                                            @if (BenefitItem.Fields[Sitecore.Feature.Library.Templates.BaseField.Fields.ShowCTA].Value == "1")
+                                            {
+                                                <div class="card-ico-caption">
+                                                    <a href="@redirectItemUrl" class="see-more">@Html.Sitecore().Field(Sitecore.Feature.Library.Templates.BaseField.Fields.ButtonLabel, BenefitItem)</a>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

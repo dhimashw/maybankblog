@@ -1,0 +1,51 @@
+﻿@using Sitecore.Feature.Content
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+@using Sitecore.Foundation.Dictionary.Extensions
+@model Sitecore.Feature.Library.Helper.PagedData<Sitecore.Data.Items.Item>
+@{
+    System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo(Sitecore.Context.Language.Name);
+    System.Globalization.CultureInfo en = new System.Globalization.CultureInfo("en");
+}
+@if (Model.DataSourceID != (Sitecore.Data.ID)null)
+{
+    Sitecore.Data.Items.Item LihatLebihItem = Sitecore.Context.Database.GetItem(Model.DataSourceID);
+    string idTypeBangunan = LihatLebihItem.Fields[Sitecore.Feature.Library.Templates.PropertiBekas.Fields.TypeBangungan].Value;
+    string idKondisi = LihatLebihItem.Fields[Sitecore.Feature.Library.Templates.PropertiBekas.Fields.Kondisi].Value;
+    Sitecore.Data.Items.Item typeBangunan = Sitecore.Context.Database.GetItem(new Sitecore.Data.ID(idTypeBangunan));
+    Sitecore.Data.Items.Item kondisi = Sitecore.Context.Database.GetItem(new Sitecore.Data.ID(idKondisi));
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content white-text">
+            <div class="modal-header ayda-header">
+                <div class="ayda-image" style="background-image:url('@LihatLebihItem.ImageUrl(Sitecore.Feature.Library.Templates.PropertiBekas.Fields.Thumbnail)')"></div>
+                <button class="close js-modal-trigger-close" type="button" data-dismiss="modal" aria-label="Close"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path id="modal-close-svg" d="M10.437 8.58l6.845-6.845A1.016 1.016 0 1 0 15.845.298L9 7.143 2.156.298A1.016 1.016 0 1 0 .719 1.735L7.563 8.58.298 15.845a1.016 1.016 0 1 0 1.437 1.437L9 10.018l7.265 7.264a1.013 1.013 0 0 0 1.437 0 1.016 1.016 0 0 0 0-1.437L10.437 8.58z" fill="#000" fill-rule="evenodd" /></svg></button>
+            </div>
+            <div class="modal-body m-modals-info-modals no-max-height">
+                <h1>IDR @String.Format("{0:n0}", System.Convert.ToDouble(!string.IsNullOrWhiteSpace(LihatLebihItem.Fields[Sitecore.Feature.Library.Templates.PropertiBekas.Fields.Price].Value) ? LihatLebihItem.Fields[Sitecore.Feature.Library.Templates.PropertiBekas.Fields.Price].Value : "0", en).ToString(Sitecore.Feature.Library.Helper.Variables._defaultFormatCurrency, ci))</h1>
+                <p>@LihatLebihItem.Fields[Sitecore.Feature.Library.Templates.PropertiBekas.Fields.Summary]</p>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <p class="gray-text">
+                            SHM No : @LihatLebihItem.Fields[Sitecore.Feature.Library.Templates.PropertiBekas.Fields.SHMNo]
+                            <br />
+                            Jenis : @typeBangunan.DisplayName, LT/LB: @LihatLebihItem.Fields[Sitecore.Feature.Library.Templates.PropertiBekas.Fields.LTBT]
+                            <br /> 
+                            Kondisi : @kondisi.DisplayName
+                        </p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <p class="gray-text">
+                            PIC : @LihatLebihItem.Fields[Sitecore.Feature.Library.Templates.PropertiBekas.Fields.PIC]
+                            <br />
+                            HP : @LihatLebihItem.Fields[Sitecore.Feature.Library.Templates.PropertiBekas.Fields.HP]
+                            <br />
+                            Email : @LihatLebihItem.Fields[Sitecore.Feature.Library.Templates.PropertiBekas.Fields.Email]
+                        </p>
+                    </div>
+                </div>
+                <div class="btn btn-tertiary addon js-modal-trigger modalHubungiKami" modal="ayda-contact" data-switch="true">Contact Us<img src="/assets/img/icons/arrow-right/arrow-right-363@2x.png" alt="submit" /></div>
+            </div>
+        </div>
+    </div>
+}

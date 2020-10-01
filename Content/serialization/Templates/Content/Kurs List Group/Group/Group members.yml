@@ -1,0 +1,21 @@
+﻿---
+ID: "f7c24fda-bc9d-4536-9049-ebd0bd568c97"
+Parent: "18add961-14d9-4a36-9d11-a9da036ee045"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Feature/Content/Kurs List Group/Group/Group members
+DB: master
+SharedFields:
+- ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
+  Hint: Source
+  Value: "query:/sitecore/content/Maybank/Corporate/Data/Kurs/*[@@templateid='{CC2E23EB-0CE1-4C25-9FF5-340D6ACE73A4}']"
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: Multilist
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180301T090618Z
